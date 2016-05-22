@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Install Gitolite To Manage Your Git Repositories</title>
+	<atom:link href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-19533</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 24 Jul 2012 05:12:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-19533</guid>
+		<description>Thanks Roger. I&#039;ve written a new post http://www.bigfastblog.com/gitolite-installation-step-by-step
+This covers Ubuntu 12.04LTS and changes to Gitolite.</description>
+		<content:encoded><![CDATA[<p>Thanks Roger. I&#8217;ve written a new post <a href="http://www.bigfastblog.com/gitolite-installation-step-by-step" rel="nofollow">http://www.bigfastblog.com/gitolite-installation-step-by-step</a><br />
+This covers Ubuntu 12.04LTS and changes to Gitolite.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-19532</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 24 Jul 2012 05:11:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-19532</guid>
+		<description>Just wrote new post http://www.bigfastblog.com/gitolite-installation-step-by-step</description>
+		<content:encoded><![CDATA[<p>Just wrote new post <a href="http://www.bigfastblog.com/gitolite-installation-step-by-step" rel="nofollow">http://www.bigfastblog.com/gitolite-installation-step-by-step</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Charles Burns</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-19511</link>
+		<dc:creator>Charles Burns</dc:creator>
+		<pubDate>Mon, 23 Jul 2012 19:26:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-19511</guid>
+		<description>I second what Roger Ivy says above: Love to see an updated version of thbis how-to for the most recent version of gitolite, since gl-easy-install doesn&#039;t exist anymore...</description>
+		<content:encoded><![CDATA[<p>I second what Roger Ivy says above: Love to see an updated version of thbis how-to for the most recent version of gitolite, since gl-easy-install doesn&#8217;t exist anymore&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Roger Ivy</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-19373</link>
+		<dc:creator>Roger Ivy</dc:creator>
+		<pubDate>Wed, 18 Jul 2012 21:35:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-19373</guid>
+		<description>Phil, do you have updated instructions for the most recent versions of both Gotolite and Ubuntu (12.04LTS)?
+
+It seems that this command is no longer valid: gl-easy-install
+
+I&#039;ve tried these instructions but hit permission issues: https://github.com/sitaramc/gitolite</description>
+		<content:encoded><![CDATA[<p>Phil, do you have updated instructions for the most recent versions of both Gotolite and Ubuntu (12.04LTS)?</p>
+<p>It seems that this command is no longer valid: gl-easy-install</p>
+<p>I&#8217;ve tried these instructions but hit permission issues: <a href="https://github.com/sitaramc/gitolite" rel="nofollow">https://github.com/sitaramc/gitolite</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Michal</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-12568</link>
+		<dc:creator>Michal</dc:creator>
+		<pubDate>Sun, 15 Apr 2012 05:05:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-12568</guid>
+		<description>Unfortunately the file gl-easy-install is no longer distributed with gitolite and this &quot;remote&quot; installation is no longer possible. In short - when you use non-root installation method, you create your git user, clone gitolite, run src/gl-system-install and later gl-setup YourName.pub (on the server), clone your gitolite-admin repo (to the workstation)</description>
+		<content:encoded><![CDATA[<p>Unfortunately the file gl-easy-install is no longer distributed with gitolite and this &#8220;remote&#8221; installation is no longer possible. In short &#8211; when you use non-root installation method, you create your git user, clone gitolite, run src/gl-system-install and later gl-setup YourName.pub (on the server), clone your gitolite-admin repo (to the workstation)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: dale</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-4839</link>
+		<dc:creator>dale</dc:creator>
+		<pubDate>Wed, 28 Sep 2011 14:47:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-4839</guid>
+		<description>If you open the gl-easy-install file line 143 has a comment that &quot;this *must* be run as &quot;src/gl-easy-install&quot;, not by cd-ing to src and then running &quot;./gl-easy-install.  You may want to update your gl-easy-install instructions.  
+
+Excellent article, I have been struggling with the gitolite install, there&#039;s many docs on it, but your&#039;s made the most sense.</description>
+		<content:encoded><![CDATA[<p>If you open the gl-easy-install file line 143 has a comment that &#8220;this *must* be run as &#8220;src/gl-easy-install&#8221;, not by cd-ing to src and then running &#8220;./gl-easy-install.  You may want to update your gl-easy-install instructions.  </p>
+<p>Excellent article, I have been struggling with the gitolite install, there&#8217;s many docs on it, but your&#8217;s made the most sense.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: ed</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3806</link>
+		<dc:creator>ed</dc:creator>
+		<pubDate>Tue, 19 Jul 2011 23:04:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-3806</guid>
+		<description>i believe the steps:
+
+cd gitolite/src
+./gl-easy-install gitolite gitbox gitadmin
+ is initiated from the client side. but who is gitadmin? what privileges does it have and on where? 
+
+for absolute beginner, it is not clear in the article. can you add more details? thanks</description>
+		<content:encoded><![CDATA[<p>i believe the steps:</p>
+<p>cd gitolite/src<br />
+./gl-easy-install gitolite gitbox gitadmin<br />
+ is initiated from the client side. but who is gitadmin? what privileges does it have and on where? </p>
+<p>for absolute beginner, it is not clear in the article. can you add more details? thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Tim Orph</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3803</link>
+		<dc:creator>Tim Orph</dc:creator>
+		<pubDate>Tue, 19 Jul 2011 16:56:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-3803</guid>
+		<description>Of course.. this is what I should do :)
+Thank you for making me realize.</description>
+		<content:encoded><![CDATA[<p>Of course.. this is what I should do <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /><br />
+Thank you for making me realize.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3802</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 19 Jul 2011 16:06:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-3802</guid>
+		<description>Curious why you want to do this?
+
+You can easily checkout a git repository as a separate user on the same machine.
+
+The repositories will be found under /home/gitolite/repositories if you followed the instructions above.
+
+Possibly look at installing gitweb, as this may do all the things you want.
+http://progit.org/book/ch4-6.html
+http://groups.google.com/group/gitolite/msg/e7579cbd35dc1b3d</description>
+		<content:encoded><![CDATA[<p>Curious why you want to do this?</p>
+<p>You can easily checkout a git repository as a separate user on the same machine.</p>
+<p>The repositories will be found under /home/gitolite/repositories if you followed the instructions above.</p>
+<p>Possibly look at installing gitweb, as this may do all the things you want.<br />
+<a href="http://progit.org/book/ch4-6.html" rel="nofollow">http://progit.org/book/ch4-6.html</a><br />
+<a href="http://groups.google.com/group/gitolite/msg/e7579cbd35dc1b3d" rel="nofollow">http://groups.google.com/group/gitolite/msg/e7579cbd35dc1b3d</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Tim Orph</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3799</link>
+		<dc:creator>Tim Orph</dc:creator>
+		<pubDate>Tue, 19 Jul 2011 10:13:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-3799</guid>
+		<description>Does anyone know if it is posible to use server where gitolite is installed, as client and edit repository files ? i don&#039;t know where does even gitolite save this files on server so i could try &quot;git status&quot; or smth.</description>
+		<content:encoded><![CDATA[<p>Does anyone know if it is posible to use server where gitolite is installed, as client and edit repository files ? i don&#8217;t know where does even gitolite save this files on server so i could try &#8220;git status&#8221; or smth.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3693</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Mon, 11 Jul 2011 16:02:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-3693</guid>
+		<description>This is probably what you&#039;re looking for...
+http://progit.org/book/ch4-8.html#config_file_and_access_control_rules</description>
+		<content:encoded><![CDATA[<p>This is probably what you&#8217;re looking for&#8230;<br />
+<a href="http://progit.org/book/ch4-8.html#config_file_and_access_control_rules" rel="nofollow">http://progit.org/book/ch4-8.html#config_file_and_access_control_rules</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Pradeep Sharma</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3686</link>
+		<dc:creator>Pradeep Sharma</dc:creator>
+		<pubDate>Mon, 11 Jul 2011 07:49:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-3686</guid>
+		<description>This how-to is really great. Do you know of some other article(may be yours), where I can get details on setting up collaborators.</description>
+		<content:encoded><![CDATA[<p>This how-to is really great. Do you know of some other article(may be yours), where I can get details on setting up collaborators.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3645</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 07 Jul 2011 18:06:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-3645</guid>
+		<description>Thanks Pradeep! I&#039;ve updated the text.</description>
+		<content:encoded><![CDATA[<p>Thanks Pradeep! I&#8217;ve updated the text.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Pradeep Sharma</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3638</link>
+		<dc:creator>Pradeep Sharma</dc:creator>
+		<pubDate>Thu, 07 Jul 2011 11:33:34 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-3638</guid>
+		<description>it should be ssh gitbox and not ssh gitolite</description>
+		<content:encoded><![CDATA[<p>it should be ssh gitbox and not ssh gitolite</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Getting started with Git</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-1917</link>
+		<dc:creator>Getting started with Git</dc:creator>
+		<pubDate>Mon, 11 Apr 2011 08:04:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-1917</guid>
+		<description>[...] There are two downsides with Git. The first is that there&#8217;s no central server to store the code base. GitHub can fulfill this role if you don&#8217;t mind someone else hosting your source code. If you want to set up a central server yourself it seems the best solution is gitolite. The documentation isn&#8217;t for beginners, but I found a decent tutorial on setting up gitolite. [...]</description>
+		<content:encoded><![CDATA[<p>[...] There are two downsides with Git. The first is that there&#8217;s no central server to store the code base. GitHub can fulfill this role if you don&#8217;t mind someone else hosting your source code. If you want to set up a central server yourself it seems the best solution is gitolite. The documentation isn&#8217;t for beginners, but I found a decent tutorial on setting up gitolite. [...]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Website design</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-1524</link>
+		<dc:creator>Website design</dc:creator>
+		<pubDate>Sun, 13 Mar 2011 21:31:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-1524</guid>
+		<description>Nice fast tutorial. Thank you.
+
+One remark though. Regarding &quot;cat id_rsa_gitolite.pub &gt;&gt; .ssh/authorized_keys&quot; ...
+
+In my case gitolite user&#039;s authorized_keys file needs to have following format in them:
+
+command=&quot;/usr/share/gitolite/gl-auth-command johndoe&quot;,no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAvwKWiIoF23S6TXMEr8H2U18hkpuPrt5nOsUhqvR7XB8Wpkf7Al5SKNpgpfb/4CGVrSSzDvwmTN/cO6SDO3td8h1NBVl0APaAmZ7x6RFyoN5NCco/raOfVK+0Ktwg1Yoq7S8TdUKRP1phDHnHnlSkwbhzk1TETOEiSZTboH6FMHs johndoe@hostname
+
+Only putting pub key file in it did not work.</description>
+		<content:encoded><![CDATA[<p>Nice fast tutorial. Thank you.</p>
+<p>One remark though. Regarding &#8220;cat id_rsa_gitolite.pub &gt;&gt; .ssh/authorized_keys&#8221; &#8230;</p>
+<p>In my case gitolite user&#8217;s authorized_keys file needs to have following format in them:</p>
+<p>command=&#8221;/usr/share/gitolite/gl-auth-command johndoe&#8221;,no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAvwKWiIoF23S6TXMEr8H2U18hkpuPrt5nOsUhqvR7XB8Wpkf7Al5SKNpgpfb/4CGVrSSzDvwmTN/cO6SDO3td8h1NBVl0APaAmZ7x6RFyoN5NCco/raOfVK+0Ktwg1Yoq7S8TdUKRP1phDHnHnlSkwbhzk1TETOEiSZTboH6FMHs johndoe@hostname</p>
+<p>Only putting pub key file in it did not work.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-855</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 25 Jan 2011 17:39:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-855</guid>
+		<description>Excellent suggestion, Airtonix. I&#039;m finding that to be a better way to go as I write posts, as it makes it easier for others to simply cut-and-paste the commands.</description>
+		<content:encoded><![CDATA[<p>Excellent suggestion, Airtonix. I&#8217;m finding that to be a better way to go as I write posts, as it makes it easier for others to simply cut-and-paste the commands.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: airtonix</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-849</link>
+		<dc:creator>airtonix</dc:creator>
+		<pubDate>Tue, 25 Jan 2011 12:29:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-849</guid>
+		<description>1. Instead of hardconding the customisable names you should use a step to customise them : 
+
+$REMOTE_HOST=&quot;gitbox&quot;
+$REMOTE_USER=&quot;Phil&quot;
+
+
+2. you need to specify the home directory of the remote user when copying the public key to the remote host
+
+scp ~/.ssh/id_rsa_gitolite.pub gitbox
+
+needs to be 
+
+scp ~/.ssh/id_rsa_gitolite.pub $REMOTE_HOST:/home/$REMOTE_USER</description>
+		<content:encoded><![CDATA[<p>1. Instead of hardconding the customisable names you should use a step to customise them : </p>
+<p>$REMOTE_HOST=&#8221;gitbox&#8221;<br />
+$REMOTE_USER=&#8221;Phil&#8221;</p>
+<p>2. you need to specify the home directory of the remote user when copying the public key to the remote host</p>
+<p>scp ~/.ssh/id_rsa_gitolite.pub gitbox</p>
+<p>needs to be </p>
+<p>scp ~/.ssh/id_rsa_gitolite.pub $REMOTE_HOST:/home/$REMOTE_USER</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-168</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Fri, 03 Dec 2010 19:07:24 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324#comment-168</guid>
+		<description>More great gitolite information can be found on the gitolite github page
+https://github.com/sitaramc/gitolite</description>
+		<content:encoded><![CDATA[<p>More great gitolite information can be found on the gitolite github page<br />
+<a href="https://github.com/sitaramc/gitolite" rel="nofollow">https://github.com/sitaramc/gitolite</a></p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

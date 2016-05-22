@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Big Fast Blog</title>
+	<atom:link href="http://www.bigfastblog.com/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Thu, 17 Jan 2013 18:33:21 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+		<item>
+		<title>Ruby’s EventMachine – Part 3 : Thin</title>
+		<link>http://www.bigfastblog.com/rubys-eventmachine-part-3-thin</link>
+		<comments>http://www.bigfastblog.com/rubys-eventmachine-part-3-thin#comments</comments>
+		<pubDate>Tue, 30 Oct 2012 21:26:31 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[EventMachine]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[Ruby On Rails]]></category>
+		<category><![CDATA[event-based]]></category>
+		<category><![CDATA[event-loop]]></category>
+		<category><![CDATA[eventmachine]]></category>
+		<category><![CDATA[rack]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[ruby on rails]]></category>
+		<category><![CDATA[thin]]></category>
+		<category><![CDATA[web server]]></category>
+		<category><![CDATA[web-development]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1788</guid>
+		<description><![CDATA[As mentioned in <a href="http://www.bigfastblog.com/rubys-eventmachine-part-1-event-based-programming">part 1</a> and <a href="http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster">part 2</a> of this <a href="http://www.bigfastblog.com/category/ruby-2/eventmachine">series on Ruby's EventMachine</a>, Thin is where most folks encounter EventMachine for the first time, even if they do not realize it. EventMachine is at the core of Thin and allows for the high concurrency that Thin provides to your Rails application. In this post I will look at Thin's usage of EventMachine.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/rubys-eventmachine-part-3-thin/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>A/B Testing in Ruby On Rails</title>
+		<link>http://www.bigfastblog.com/ab-testing-in-ruby-on-rails</link>
+		<comments>http://www.bigfastblog.com/ab-testing-in-ruby-on-rails#comments</comments>
+		<pubDate>Tue, 23 Oct 2012 20:15:38 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[FluidFeatures]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[Ruby On Rails]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[a/b testing]]></category>
+		<category><![CDATA[fluidfeatures]]></category>
+		<category><![CDATA[gem]]></category>
+		<category><![CDATA[multi-variant testing]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[ruby on rails]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1741</guid>
+		<description><![CDATA[In this post I am going to demonstrate, step-by-step, a way to A/B test new features from within Ruby-On-Rails using FluidFeatures. FluidFeatures is currently in closed-beta and requires request for inclusion in the beta program. We are looking for enthusiastic A/B testers, so we can get feedback on the service before releasing it to the masses.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/ab-testing-in-ruby-on-rails/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Ruby’s EventMachine – Part 2 : Asynchronous != Faster</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster</link>
+		<comments>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster#comments</comments>
+		<pubDate>Mon, 24 Sep 2012 20:19:12 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[EventMachine]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[asynchronous]]></category>
+		<category><![CDATA[benchmark]]></category>
+		<category><![CDATA[event-loop]]></category>
+		<category><![CDATA[eventmachine]]></category>
+		<category><![CDATA[fast]]></category>
+		<category><![CDATA[memcached]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[synchronous]]></category>
+		<category><![CDATA[tornado]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721</guid>
+		<description><![CDATA[In this post I will look synchronous vs asynchronous programming with Ruby's <a href="https://github.com/eventmachine/eventmachine">EventMachine</a>, to show that asynchronous does not always mean that your code will run faster.
+
+In <a href="http://www.bigfastblog.com/rubys-eventmachine-part-1-event-based-programming">part 1</a> of this series on Ruby's EventMachine I discussed the benefits of event-based programming in general. I am a big fan of event-based programming, as you will see in these posts, but I wanted to flip the coin over and look at one of the down-sides of event-based programming. ]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/feed</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Ruby&#8217;s EventMachine &#8211; Part 1 : Event-based Programming</title>
+		<link>http://www.bigfastblog.com/rubys-eventmachine-part-1-event-based-programming</link>
+		<comments>http://www.bigfastblog.com/rubys-eventmachine-part-1-event-based-programming#comments</comments>
+		<pubDate>Fri, 14 Sep 2012 22:19:41 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[EventMachine]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[Ruby On Rails]]></category>
+		<category><![CDATA[apache]]></category>
+		<category><![CDATA[epoll]]></category>
+		<category><![CDATA[eventlib]]></category>
+		<category><![CDATA[eventmachine]]></category>
+		<category><![CDATA[ioloop]]></category>
+		<category><![CDATA[nginx]]></category>
+		<category><![CDATA[perl]]></category>
+		<category><![CDATA[poe]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[ruby on rails]]></category>
+		<category><![CDATA[thin]]></category>
+		<category><![CDATA[tornado]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1699</guid>
+		<description><![CDATA[In this first post, of a series on Ruby's <a href="https://github.com/eventmachine/eventmachine">EventMachine</a>, I will introduce EventMachine and explain why event-based programming is good for your wallet.
+
+EventMachine, which just turned <a href="http://rubygems.org/gems/eventmachine/versions/1.0.0">1.0.0</a> this week, is more than just a gem, it is a new paradigm for many Ruby programmers and is not always easy to just drop into your existing stack. As the name suggests, it gives you <a href="http://en.wikipedia.org/wiki/Event-driven_programming">event-based programming</a>.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/rubys-eventmachine-part-1-event-based-programming/feed</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Fluid Feature Rollout For Ruby On Rails</title>
+		<link>http://www.bigfastblog.com/fluid-feature-rollout-for-ruby-on-rails</link>
+		<comments>http://www.bigfastblog.com/fluid-feature-rollout-for-ruby-on-rails#comments</comments>
+		<pubDate>Fri, 14 Sep 2012 00:25:39 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[FluidFeatures]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[Ruby On Rails]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[continuous integration]]></category>
+		<category><![CDATA[degrade]]></category>
+		<category><![CDATA[feature]]></category>
+		<category><![CDATA[fluidfeatures]]></category>
+		<category><![CDATA[lean]]></category>
+		<category><![CDATA[production]]></category>
+		<category><![CDATA[rollout]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[ruby on rails]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1578</guid>
+		<description><![CDATA[In this blog post I am going to introduce a new service for Ruby On Rails developers called <a href="http://fluidfeatures.com/">FluidFeatures</a> that helps you manage rolling out new features to your site and provides a way to easily do A/B testing (competing versions of a feature) right in the belly of your code.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/fluid-feature-rollout-for-ruby-on-rails/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Ruby exit, exit!, SystemExit and at_exit blunder</title>
+		<link>http://www.bigfastblog.com/ruby-exit-exit-systemexit-and-at_exit-blunder</link>
+		<comments>http://www.bigfastblog.com/ruby-exit-exit-systemexit-and-at_exit-blunder#comments</comments>
+		<pubDate>Sat, 08 Sep 2012 22:25:14 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[at_exit]]></category>
+		<category><![CDATA[exception]]></category>
+		<category><![CDATA[exit]]></category>
+		<category><![CDATA[process management]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rescue]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[ruby on rails]]></category>
+		<category><![CDATA[supervisord]]></category>
+		<category><![CDATA[systemexit]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1657</guid>
+		<description><![CDATA[Recently, we hit a problem with Ruby's "<a href="http://www.ruby-doc.org/core-1.9.3/Kernel.html#method-i-exit">exit</a>" command. If something went horribly wrong and it made no sense for our application to continue in its current state then we would abort with "exit 1". We use <a href="http://supervisord.org/">supervisord</a> to manage processes, so in this case when we exited with exit status of 1, <a href="http://supervisord.org/">supervisord</a> would assume something went wrong and restart the process for us. Or at least that is what we thought...
+]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/ruby-exit-exit-systemexit-and-at_exit-blunder/feed</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+		<item>
+		<title>Colorful Ruby Code In HTML Using CodeRay</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html</link>
+		<comments>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html#comments</comments>
+		<pubDate>Mon, 03 Sep 2012 17:27:10 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[blogging]]></category>
+		<category><![CDATA[coderay]]></category>
+		<category><![CDATA[colorize]]></category>
+		<category><![CDATA[css]]></category>
+		<category><![CDATA[gem]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[pygments]]></category>
+		<category><![CDATA[render]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[syntax highlighting]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634</guid>
+		<description><![CDATA[In this blog post I will demonstrate a quick and easy way I have found to syntax highlight your Ruby code in pretty colors for your blog posts or other HTML-based display purposes. Please note, this blog post is designed for use with color monitors only, obviously.
+
+The focus of this post is Ruby, but this method also applies for syntax highlighting C, C++, Python, CSS, Clojure, diff, Groovy, HAML, ERB, Java, JavaScript, PHP, SQL, XML and YAML.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/feed</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Gitolite Installation Step-By-Step</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step</link>
+		<comments>http://www.bigfastblog.com/gitolite-installation-step-by-step#comments</comments>
+		<pubDate>Tue, 24 Jul 2012 05:04:35 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Infrastrucutre]]></category>
+		<category><![CDATA[Software Development]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[github]]></category>
+		<category><![CDATA[gitolite]]></category>
+		<category><![CDATA[ssh-keygen]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554</guid>
+		<description><![CDATA[In this post I will walk you through how to setup your own gitolite server and start hosting your own git repositories.
+
+Gitolite is a great tool for doing this and works in a very git-like way for managing users, access-rights and setting up new repositories for collaboration between your team. A common reason to setup Gitolite is to remove reliance on services like GitHub.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/gitolite-installation-step-by-step/feed</wfw:commentRss>
+		<slash:comments>47</slash:comments>
+		</item>
+		<item>
+		<title>54 Hours In The Okanagan Building A Startup</title>
+		<link>http://www.bigfastblog.com/54-hours-in-the-okanagan-building-a-startup</link>
+		<comments>http://www.bigfastblog.com/54-hours-in-the-okanagan-building-a-startup#comments</comments>
+		<pubDate>Tue, 06 Mar 2012 02:04:26 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Start-Ups]]></category>
+		<category><![CDATA[54hours]]></category>
+		<category><![CDATA[accelerate okanagan]]></category>
+		<category><![CDATA[amazon s3]]></category>
+		<category><![CDATA[bc]]></category>
+		<category><![CDATA[canvas]]></category>
+		<category><![CDATA[html5]]></category>
+		<category><![CDATA[html5 canvas]]></category>
+		<category><![CDATA[kelowna]]></category>
+		<category><![CDATA[kelowna innovation centre]]></category>
+		<category><![CDATA[nginx]]></category>
+		<category><![CDATA[oauth]]></category>
+		<category><![CDATA[okanagan]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[startup weekend]]></category>
+		<category><![CDATA[startups]]></category>
+		<category><![CDATA[swokanagan]]></category>
+		<category><![CDATA[tornado]]></category>
+		<category><![CDATA[tweepy]]></category>
+		<category><![CDATA[twitter]]></category>
+		<category><![CDATA[vancouver]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1500</guid>
+		<description><![CDATA[Remember, Startup Weekend equates to about 21 hours of development time and that includes brainstorming, planning, talking to mentors, other meetings, eating and a bit of fun. Also, skill-sets between developers do not always line up. The key phrase is “ship it!” whether it is good, bad, ugly or broken. The clock is ticking.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/54-hours-in-the-okanagan-building-a-startup/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Deploy The Tornado Chat Demo On The Stackato PaaS Sandbox</title>
+		<link>http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox</link>
+		<comments>http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox#comments</comments>
+		<pubDate>Tue, 10 Jan 2012 17:57:08 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Infrastrucutre]]></category>
+		<category><![CDATA[PaaS]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[activestate]]></category>
+		<category><![CDATA[clojure]]></category>
+		<category><![CDATA[cloudfoundry]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[mongodb]]></category>
+		<category><![CDATA[paas]]></category>
+		<category><![CDATA[perl]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[sandbox]]></category>
+		<category><![CDATA[stackato]]></category>
+		<category><![CDATA[tornado]]></category>
+		<category><![CDATA[vmware]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1459</guid>
+		<description><![CDATA[In this blog post I'll go through an example, in repeatable steps, of how to get up and running with the Tornado chat demo on ActiveState's public sandbox for Stackato.
+
+ActiveState's Stackato PaaS (Platform-as-a-Service) is based on VMware's open-source PaaS, Cloud Foundry, and offers an enterprise PaaS solution that will run on any public cloud, private cloud, laptop or desktop.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Geohash Intro</title>
+		<link>http://www.bigfastblog.com/geohash-intro</link>
+		<comments>http://www.bigfastblog.com/geohash-intro#comments</comments>
+		<pubDate>Fri, 16 Dec 2011 07:53:15 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Geospatial]]></category>
+		<category><![CDATA[clojure]]></category>
+		<category><![CDATA[geo]]></category>
+		<category><![CDATA[geographic]]></category>
+		<category><![CDATA[geohash]]></category>
+		<category><![CDATA[geospatial]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[key-value]]></category>
+		<category><![CDATA[location]]></category>
+		<category><![CDATA[maps]]></category>
+		<category><![CDATA[memcached]]></category>
+		<category><![CDATA[nearest neighbour]]></category>
+		<category><![CDATA[perl]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[scala]]></category>
+		<category><![CDATA[search]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1387</guid>
+		<description><![CDATA[Geohashing is a simple way to encode latitude and longitude and grouping nearby points on the globe with varying resolutions. It was created by Gustavo Niemeyer. This blog post looks at how it's implemented any why it is such an elegant solution for encoding and managing location-based data.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/geohash-intro/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Rollout, Degrade, Metrics and Capacity</title>
+		<link>http://www.bigfastblog.com/rollout-degrade-metrics-and-capacity</link>
+		<comments>http://www.bigfastblog.com/rollout-degrade-metrics-and-capacity#comments</comments>
+		<pubDate>Wed, 14 Dec 2011 00:16:36 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[a-b-testing]]></category>
+		<category><![CDATA[averages]]></category>
+		<category><![CDATA[capacity planning]]></category>
+		<category><![CDATA[degrade]]></category>
+		<category><![CDATA[fetlife]]></category>
+		<category><![CDATA[ganglia]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[monitoring]]></category>
+		<category><![CDATA[percentiles]]></category>
+		<category><![CDATA[redis]]></category>
+		<category><![CDATA[rollout]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[scala]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1418</guid>
+		<description><![CDATA[Last week I attended a presentation by James Golick, CTO of fetlife.com. Intriguingly advertised as &#8220;Scaling a Website to 300 Million Page Views Per Month with Scala&#8221; I thought it was worth a break from building cooq.com to attend. Fetlife have been heavy users of Ruby, but are transitioning to Scala and having been using [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/rollout-degrade-metrics-and-capacity/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Summify&#8217;s Technology Examined</title>
+		<link>http://www.bigfastblog.com/summifys-technology-examined</link>
+		<comments>http://www.bigfastblog.com/summifys-technology-examined#comments</comments>
+		<pubDate>Mon, 07 Mar 2011 10:11:57 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Start-Ups]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[algorithms]]></category>
+		<category><![CDATA[amazon ec2]]></category>
+		<category><![CDATA[django]]></category>
+		<category><![CDATA[gunicorn]]></category>
+		<category><![CDATA[guy kawasaki]]></category>
+		<category><![CDATA[iphone api]]></category>
+		<category><![CDATA[jquery template]]></category>
+		<category><![CDATA[json api]]></category>
+		<category><![CDATA[mongodb]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[nginx]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[redis]]></category>
+		<category><![CDATA[slow clients]]></category>
+		<category><![CDATA[summify]]></category>
+		<category><![CDATA[the long tail]]></category>
+		<category><![CDATA[tornado]]></category>
+		<category><![CDATA[tornado swirl]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1248</guid>
+		<description><![CDATA[In this post I will look at the technology infrastructure behind <a href="http://summify.com/">Summify.com</a>, a website that strives to make our lives easier and helps us deal with the information overload we all experience every time we sit down at our computers. Summify has aggregated over 200 million stories from the web and serves them up on-demand through a series of different mediums. The website uses Tornado to push real-time updates out to the users and they have developed over a dozen backend systems, some of which I will cover in this blog post.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/summifys-technology-examined/feed</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Other People&#8217;s Data &#8211; An Interview With &#8220;Drawn To Scale&#8221;</title>
+		<link>http://www.bigfastblog.com/an-interview-with-drawn-to-scale</link>
+		<comments>http://www.bigfastblog.com/an-interview-with-drawn-to-scale#comments</comments>
+		<pubDate>Mon, 14 Feb 2011 19:13:56 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Interview]]></category>
+		<category><![CDATA[NoSQL]]></category>
+		<category><![CDATA[Start-Ups]]></category>
+		<category><![CDATA[big data]]></category>
+		<category><![CDATA[bradford stephens]]></category>
+		<category><![CDATA[business intelligence]]></category>
+		<category><![CDATA[cloud-computing]]></category>
+		<category><![CDATA[data management]]></category>
+		<category><![CDATA[data processing]]></category>
+		<category><![CDATA[drawn to scale]]></category>
+		<category><![CDATA[ec2]]></category>
+		<category><![CDATA[gaming]]></category>
+		<category><![CDATA[hadoop]]></category>
+		<category><![CDATA[hbase]]></category>
+		<category><![CDATA[high scalability]]></category>
+		<category><![CDATA[iaas]]></category>
+		<category><![CDATA[media]]></category>
+		<category><![CDATA[paas]]></category>
+		<category><![CDATA[rackspace]]></category>
+		<category><![CDATA[social networks]]></category>
+		<category><![CDATA[spire]]></category>
+		<category><![CDATA[startup]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=748</guid>
+		<description><![CDATA[In this blog-post Bradford Stephens, Drawn To Scale's founder, answers a series of technical, business and personal questions to give an overview of what Drawn To Scale is and where it is going. Who are the founders? What is their background, technology and business model? How were they going to manage other people's big data? Can one tool fit the demands from a broad range of data challenges that different businesses are seeing?]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/an-interview-with-drawn-to-scale/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Quora&#8217;s Technology Examined</title>
+		<link>http://www.bigfastblog.com/quoras-technology-examined</link>
+		<comments>http://www.bigfastblog.com/quoras-technology-examined#comments</comments>
+		<pubDate>Mon, 31 Jan 2011 20:37:19 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Start-Ups]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[adam d'angelo]]></category>
+		<category><![CDATA[amazon ec2]]></category>
+		<category><![CDATA[aws]]></category>
+		<category><![CDATA[charlie cheever]]></category>
+		<category><![CDATA[comet]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[haproxy]]></category>
+		<category><![CDATA[livenode]]></category>
+		<category><![CDATA[long-polling]]></category>
+		<category><![CDATA[memcached]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[nginx]]></category>
+		<category><![CDATA[nosql]]></category>
+		<category><![CDATA[paste]]></category>
+		<category><![CDATA[pylons]]></category>
+		<category><![CDATA[quora]]></category>
+		<category><![CDATA[quora.com]]></category>
+		<category><![CDATA[search-box]]></category>
+		<category><![CDATA[steve souders]]></category>
+		<category><![CDATA[technology]]></category>
+		<category><![CDATA[thrift]]></category>
+		<category><![CDATA[tornado]]></category>
+		<category><![CDATA[ubuntu linux]]></category>
+		<category><![CDATA[webnode2]]></category>
+		<category><![CDATA[webscale]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1120</guid>
+		<description><![CDATA[In this blog post I will delve into the snippets of information available on Quora and look at Quora from a technical perspective. What technical decisions have they made? What does their architecture look like? What languages and frameworks do they use? How do they make that search bar respond so quickly?]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/quoras-technology-examined/feed</wfw:commentRss>
+		<slash:comments>36</slash:comments>
+		</item>
+		<item>
+		<title>Run The Latest Whirr And Deploy HBase In Minutes</title>
+		<link>http://www.bigfastblog.com/run-the-latest-whirr-and-deploy-hbase-in-minutes</link>
+		<comments>http://www.bigfastblog.com/run-the-latest-whirr-and-deploy-hbase-in-minutes#comments</comments>
+		<pubDate>Tue, 25 Jan 2011 00:17:48 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Hadoop]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[amazon ec2]]></category>
+		<category><![CDATA[cloud-computing]]></category>
+		<category><![CDATA[hadoop]]></category>
+		<category><![CDATA[hbase]]></category>
+		<category><![CDATA[maven]]></category>
+		<category><![CDATA[nosql]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[whirr]]></category>
+		<category><![CDATA[zookeeper]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1077</guid>
+		<description><![CDATA[In a few of my recent posts I have covered the ease of deploying clusters of Hadoop and Cassandra using Whirr. With Whirr you can simply write a configuration file specifying which cloud provider you are using, your credentials and the definition of the cluster you desire and it will build it for you. In [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/run-the-latest-whirr-and-deploy-hbase-in-minutes/feed</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Quickly Launch A Cassandra Cluster On Amazon EC2</title>
+		<link>http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2</link>
+		<comments>http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2#comments</comments>
+		<pubDate>Sat, 22 Jan 2011 02:58:39 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Cassandra]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[amazon ec2]]></category>
+		<category><![CDATA[cassandra]]></category>
+		<category><![CDATA[cluster]]></category>
+		<category><![CDATA[homebrew]]></category>
+		<category><![CDATA[mac os x]]></category>
+		<category><![CDATA[nosql]]></category>
+		<category><![CDATA[whirr]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1051</guid>
+		<description><![CDATA[If you have read my previous post, &#8220;Map-Reduce With Ruby Using Hadoop&#8220;, then you will know that firing up a Hadoop cluster is really simple when you use Whirr. Without even ssh&#8217;ing on the machines in the cloud you can start-up your cluster and interact with it. In this post I&#8217;ll show you that it [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>De-volatile Your Memcached. Upgrade to Membase</title>
+		<link>http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase</link>
+		<comments>http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase#comments</comments>
+		<pubDate>Fri, 21 Jan 2011 20:16:23 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Membase]]></category>
+		<category><![CDATA[NoSQL]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[caching]]></category>
+		<category><![CDATA[distributed]]></category>
+		<category><![CDATA[key-value store]]></category>
+		<category><![CDATA[membase]]></category>
+		<category><![CDATA[memcached]]></category>
+		<category><![CDATA[moxi]]></category>
+		<category><![CDATA[nosql]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[web-development]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=995</guid>
+		<description><![CDATA[If you have used Memcached and have gotten carried away with how it can make everything faster, you may have felt some pain when that volatile memory disappeared into the ether due to a restart or a failure. Your house of cards comes tumbling down as suddenly nothing is in cache! Your application is scrambling around trying to fully serve your users and the database is screaming at the application, "what the *%$@ is going on up there?". All your lack-of-performance implementation sins are exposed in one fell swoop and your boss stops inviting you to play golf. It's tough, but a few hours later Memcached is singing again with a full belly of cache and your application layer is putting the kettle on to make your exhausted database a nice cuppa tea. You start to wonder... how can I persist this "caching" data?]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase/feed</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>SQLShell. A Cross-Database SQL Tool With NoSQL Potential</title>
+		<link>http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential</link>
+		<comments>http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential#comments</comments>
+		<pubDate>Wed, 19 Jan 2011 01:07:26 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Databases]]></category>
+		<category><![CDATA[clapper.org]]></category>
+		<category><![CDATA[couchdb]]></category>
+		<category><![CDATA[google storage]]></category>
+		<category><![CDATA[hbase]]></category>
+		<category><![CDATA[hive]]></category>
+		<category><![CDATA[homebrew]]></category>
+		<category><![CDATA[jdbc]]></category>
+		<category><![CDATA[mongodb]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[nosql]]></category>
+		<category><![CDATA[oracle]]></category>
+		<category><![CDATA[postgresql]]></category>
+		<category><![CDATA[psql]]></category>
+		<category><![CDATA[rdbms]]></category>
+		<category><![CDATA[redis]]></category>
+		<category><![CDATA[scala]]></category>
+		<category><![CDATA[sqlcmd]]></category>
+		<category><![CDATA[sqlite]]></category>
+		<category><![CDATA[sqlshell]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=958</guid>
+		<description><![CDATA[In this blog post I will introduce SQLShell and demonstrate, step-by-step, how to install it and start using it with MySQL. I will also reflect on the possibilites of using this with NoSQL technologies, such as HBase, MongoDB, Hive, CouchDB, Redis and Google BigQuery.
+
+<a href="http://software.clapper.org/sqlshell">SQLShell</a> is a cross-platform, cross-database command-line tool for SQL, much like <em>psql</em> for PostgreSQL or the <em>mysql</em> command-line tool for MySQL.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Hosting Images With Google Storage Manager</title>
+		<link>http://www.bigfastblog.com/hosting-images-google-storage-manager</link>
+		<comments>http://www.bigfastblog.com/hosting-images-google-storage-manager#comments</comments>
+		<pubDate>Sat, 15 Jan 2011 00:32:21 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[dfs]]></category>
+		<category><![CDATA[distributed file storage]]></category>
+		<category><![CDATA[file uploader]]></category>
+		<category><![CDATA[file-server]]></category>
+		<category><![CDATA[gfs]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[google i/o]]></category>
+		<category><![CDATA[google storage]]></category>
+		<category><![CDATA[google storage manager]]></category>
+		<category><![CDATA[hosting]]></category>
+		<category><![CDATA[images]]></category>
+		<category><![CDATA[storage]]></category>
+		<category><![CDATA[upload]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=875</guid>
+		<description><![CDATA[Today I received my invite from Google "Google Storage for Developers". Yes, like most of us, my life if wrapped in layers of googliness. In this post I'm going to review briefly what Google Storage is and upload the image files, for the images you see in this post, using the Google Storage Manager. ]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/hosting-images-google-storage-manager/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Zero-Copy. Transfer Data Faster In Ruby</title>
+		<link>http://www.bigfastblog.com/zero-copy-transfer-data-faster-in-ruby</link>
+		<comments>http://www.bigfastblog.com/zero-copy-transfer-data-faster-in-ruby#comments</comments>
+		<pubDate>Fri, 14 Jan 2011 21:27:12 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[file-server]]></category>
+		<category><![CDATA[gem]]></category>
+		<category><![CDATA[io]]></category>
+		<category><![CDATA[io_splice]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[linux]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[splice]]></category>
+		<category><![CDATA[zero-copy]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=836</guid>
+		<description><![CDATA[In this post I will explain the concept behind "zero-copy", which is feature of the Linux allowing for faster transfer of data between pipes, file-descriptors and sockets. I will demonstrate how you can use this functionality in your Ruby projects using a code example. This functionality has been implemented in C, Java, Ruby, Perl and nameless other languages, but in this blog I will focus on the Ruby usage.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/zero-copy-transfer-data-faster-in-ruby/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>The Apache Projects &#8211; The Justice League Of Scalability</title>
+		<link>http://www.bigfastblog.com/the-apache-projects-the-justice-league-of-scalability</link>
+		<comments>http://www.bigfastblog.com/the-apache-projects-the-justice-league-of-scalability#comments</comments>
+		<pubDate>Tue, 11 Jan 2011 23:48:00 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Data processing]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[activemq]]></category>
+		<category><![CDATA[apache projects]]></category>
+		<category><![CDATA[apache software foundation]]></category>
+		<category><![CDATA[asf]]></category>
+		<category><![CDATA[cassandra]]></category>
+		<category><![CDATA[hadoop]]></category>
+		<category><![CDATA[hbase]]></category>
+		<category><![CDATA[high scalability]]></category>
+		<category><![CDATA[lucene]]></category>
+		<category><![CDATA[mahout]]></category>
+		<category><![CDATA[rabbitmq]]></category>
+		<category><![CDATA[solr]]></category>
+		<category><![CDATA[zeromq]]></category>
+		<category><![CDATA[zookeeper]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=442</guid>
+		<description><![CDATA[In this post I will define what I believe to be the most important projects within the <a href="http://projects.apache.org/">Apache Projects</a> for building scalable web sites and generally managing large volumes of data.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/the-apache-projects-the-justice-league-of-scalability/feed</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>Landsliding Into PostGIS With KML Files</title>
+		<link>http://www.bigfastblog.com/landsliding-into-postgis-with-kml-files</link>
+		<comments>http://www.bigfastblog.com/landsliding-into-postgis-with-kml-files#comments</comments>
+		<pubDate>Wed, 05 Jan 2011 17:25:39 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Geospatial]]></category>
+		<category><![CDATA[PostGIS]]></category>
+		<category><![CDATA[Software Development]]></category>
+		<category><![CDATA[esri shapefile]]></category>
+		<category><![CDATA[gdal]]></category>
+		<category><![CDATA[geo]]></category>
+		<category><![CDATA[geographic]]></category>
+		<category><![CDATA[geospatial]]></category>
+		<category><![CDATA[gis]]></category>
+		<category><![CDATA[homebrew]]></category>
+		<category><![CDATA[kml]]></category>
+		<category><![CDATA[kmz]]></category>
+		<category><![CDATA[landslides]]></category>
+		<category><![CDATA[latitude]]></category>
+		<category><![CDATA[libkml]]></category>
+		<category><![CDATA[longitude]]></category>
+		<category><![CDATA[macosx]]></category>
+		<category><![CDATA[ogr2ogr]]></category>
+		<category><![CDATA[postgis]]></category>
+		<category><![CDATA[postgresql]]></category>
+		<category><![CDATA[shapefile]]></category>
+		<category><![CDATA[shp]]></category>
+		<category><![CDATA[sql]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=665</guid>
+		<description><![CDATA[In this post I will show, in repeatable steps, how to install <a href="http://postgis.refractions.net/">PostGIS</a>, load in geospatial data found in a <a href="http://en.wikipedia.org/wiki/Keyhole_Markup_Language">KML</a> file and run queries against that data. The focus of this geospatial data will be landslides and our resulting database will allow us to query, using longitude and latitude co-ordinates, the landslide status of a specific geographical point.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/landsliding-into-postgis-with-kml-files/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Embed Base64-Encoded Images Inline In HTML</title>
+		<link>http://www.bigfastblog.com/embed-base64-encoded-images-inline-in-html</link>
+		<comments>http://www.bigfastblog.com/embed-base64-encoded-images-inline-in-html#comments</comments>
+		<pubDate>Mon, 03 Jan 2011 19:23:17 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[base64]]></category>
+		<category><![CDATA[embedded image]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[html5]]></category>
+		<category><![CDATA[img]]></category>
+		<category><![CDATA[inline-image]]></category>
+		<category><![CDATA[web-development]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=682</guid>
+		<description><![CDATA[Here is how you can embed an image in HTML inline. This is similar to how you embed an image in a HTML email message.
+]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/embed-base64-encoded-images-inline-in-html/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Map-Reduce With Ruby Using Hadoop</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop</link>
+		<comments>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop#comments</comments>
+		<pubDate>Fri, 31 Dec 2010 17:38:35 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Data processing]]></category>
+		<category><![CDATA[Hadoop]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[amazon ec2]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[cloudera]]></category>
+		<category><![CDATA[data processing]]></category>
+		<category><![CDATA[hadoop]]></category>
+		<category><![CDATA[hadoop cluster]]></category>
+		<category><![CDATA[hadoop streaming]]></category>
+		<category><![CDATA[hdfs]]></category>
+		<category><![CDATA[jclouds]]></category>
+		<category><![CDATA[map-reduce]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[whirr]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484</guid>
+		<description><![CDATA[Here I demonstrate, with repeatable steps, how to fire-up a Hadoop cluster on Amazon EC2, load data onto the HDFS (Hadoop Distributed File-System), write map-reduce scripts in Ruby and use them to run a map-reduce job on your Hadoop cluster. You will <em>not</em> need to ssh into the cluster, as all tasks are run from your local machine. Below I am using my MacBook Pro as my local machine, but the steps I have provided should be reproducible on other platforms running bash and Java.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/feed</wfw:commentRss>
+		<slash:comments>29</slash:comments>
+		</item>
+		<item>
+		<title>Homebrew &#8211; Intro To The Mac OS X Package Installer</title>
+		<link>http://www.bigfastblog.com/homebrew-intro-to-the-mac-os-x-package-installer</link>
+		<comments>http://www.bigfastblog.com/homebrew-intro-to-the-mac-os-x-package-installer#comments</comments>
+		<pubDate>Thu, 09 Dec 2010 09:51:15 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Software Development]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[brew]]></category>
+		<category><![CDATA[darwin ports]]></category>
+		<category><![CDATA[homebrew]]></category>
+		<category><![CDATA[install]]></category>
+		<category><![CDATA[mac os x]]></category>
+		<category><![CDATA[macports]]></category>
+		<category><![CDATA[mongodb]]></category>
+		<category><![CDATA[postgresql]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[sysadmin]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=443</guid>
+		<description><![CDATA[I thought I should mention the very easy Homebrew package installer for Mac OS X. I&#8217;ve found it quite simple to use and have not turned back since I blew away my MacPorts. You can find Homebrew on gitub and you can find the recommended installation instructions there which are as follows. ruby -e "$(curl [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/homebrew-intro-to-the-mac-os-x-package-installer/feed</wfw:commentRss>
+		<slash:comments>33</slash:comments>
+		</item>
+		<item>
+		<title>How To Get Experience Working With Large Datasets</title>
+		<link>http://www.bigfastblog.com/how-to-get-experience-working-with-large-datasets</link>
+		<comments>http://www.bigfastblog.com/how-to-get-experience-working-with-large-datasets#comments</comments>
+		<pubDate>Wed, 08 Dec 2010 19:50:28 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Data processing]]></category>
+		<category><![CDATA[amazon ec2]]></category>
+		<category><![CDATA[bbc]]></category>
+		<category><![CDATA[cassandra]]></category>
+		<category><![CDATA[data processing]]></category>
+		<category><![CDATA[dbpedia]]></category>
+		<category><![CDATA[ebs]]></category>
+		<category><![CDATA[freebase]]></category>
+		<category><![CDATA[hadoop]]></category>
+		<category><![CDATA[hdfs]]></category>
+		<category><![CDATA[large datasets]]></category>
+		<category><![CDATA[livedoor]]></category>
+		<category><![CDATA[lucene]]></category>
+		<category><![CDATA[mongodb]]></category>
+		<category><![CDATA[nosql]]></category>
+		<category><![CDATA[rackspace]]></category>
+		<category><![CDATA[solr]]></category>
+		<category><![CDATA[wikipedia]]></category>
+		<category><![CDATA[working with data]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=394</guid>
+		<description><![CDATA[There are data sources out there, but which data source you choose depends on which technology you wish to get experience working with. The experience should be of the technologies you are using, rather than what the data is. Certain datasets pair better with certain technologies. Simulating the data can be another approach. You just need a clever way of generating and randomizing your fake data. Thirdly, you can use a hybrid approach. Take real data and replay it on a loop, randomizing it as it goes through. Simulating the Twitter fire-hose should not be too hard, should it?]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/how-to-get-experience-working-with-large-datasets/feed</wfw:commentRss>
+		<slash:comments>19</slash:comments>
+		</item>
+		<item>
+		<title>Find The Road To Your Happiness By Helping Others</title>
+		<link>http://www.bigfastblog.com/find-the-road-to-your-happiness-by-helping-others</link>
+		<comments>http://www.bigfastblog.com/find-the-road-to-your-happiness-by-helping-others#comments</comments>
+		<pubDate>Mon, 06 Dec 2010 21:28:13 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[customer service]]></category>
+		<category><![CDATA[entrepreneurship]]></category>
+		<category><![CDATA[apple]]></category>
+		<category><![CDATA[customer feedback]]></category>
+		<category><![CDATA[customers]]></category>
+		<category><![CDATA[feature creep]]></category>
+		<category><![CDATA[features]]></category>
+		<category><![CDATA[helping]]></category>
+		<category><![CDATA[ingenuity]]></category>
+		<category><![CDATA[niche]]></category>
+		<category><![CDATA[online communities]]></category>
+		<category><![CDATA[web-development]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=368</guid>
+		<description><![CDATA[This is a common theme I've heard in many of the books I've read. Although, in the books I've read, this pearl of wisdom is phrased a little differently. The way to <em>build a successful business</em> is to help as many people as you can. Apparently, the cash will follow, if you concentrate on the helping part. The number of people you help is also important. The more people you help, the better. For instance, Facebook "helps" 250 million people per day, whereas Google only helps around 90 million people per day. Helping all those people has become very profitable for these two companies and many more. It's all about changing the focus from "how do I make money" to "how do I help more people". ]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/find-the-road-to-your-happiness-by-helping-others/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Highchart Vs Flot.js &#8211; Comparing JavaScript Graphing Engines</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines</link>
+		<comments>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines#comments</comments>
+		<pubDate>Fri, 03 Dec 2010 22:55:44 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[charts]]></category>
+		<category><![CDATA[client-side]]></category>
+		<category><![CDATA[flot.js]]></category>
+		<category><![CDATA[graphs]]></category>
+		<category><![CDATA[highchart]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[png]]></category>
+		<category><![CDATA[render]]></category>
+		<category><![CDATA[reporting]]></category>
+		<category><![CDATA[server-side]]></category>
+		<category><![CDATA[svg]]></category>
+		<category><![CDATA[web-development]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356</guid>
+		<description><![CDATA[In previous projects at MailChannels I have used Flot.js for graphing. There were many reasons I chose this originally. The graphs are interactive and can be manipulated within the browser without having to communicate back to the server. You can retrieve additional data from the server which enables you to be able to scan left [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/feed</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Install Gitolite To Manage Your Git Repositories</title>
+		<link>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories</link>
+		<comments>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories#comments</comments>
+		<pubDate>Fri, 03 Dec 2010 19:03:46 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Software Development]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[code repository]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[gitolite]]></category>
+		<category><![CDATA[install]]></category>
+		<category><![CDATA[installation]]></category>
+		<category><![CDATA[mac osx]]></category>
+		<category><![CDATA[ssh-keygen]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=324</guid>
+		<description><![CDATA[This post has been depreciated. A newer post is available. Gitolite Installation Step-By-Step Recently, netSIGN asked me to setup gitolite to give external developers controlled access to git repositories. Gitolite enables easy management of this access control. In this post I will detail how I set this up. The first thing to note about the [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/feed</wfw:commentRss>
+		<slash:comments>19</slash:comments>
+		</item>
+		<item>
+		<title>To Show Ads Or Not To Show Ads</title>
+		<link>http://www.bigfastblog.com/to-advertise-or-not-to-advertise</link>
+		<comments>http://www.bigfastblog.com/to-advertise-or-not-to-advertise#comments</comments>
+		<pubDate>Thu, 02 Dec 2010 22:47:05 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Money]]></category>
+		<category><![CDATA[adsense]]></category>
+		<category><![CDATA[wikipedia]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=319</guid>
+		<description><![CDATA[I was just reading &#8220;An appeal from Wikipedia founder Jimmy Wales&#8221;, where he is asking for donations for supporting the continuation of Wikipedia, ad-free. I do not need to tell you what an amazing website Wikipedia is. It&#8217;s a vast pool of information with a very large volume of visitors. It would be a perfect [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/to-advertise-or-not-to-advertise/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Tools for Testing Ruby On Rails</title>
+		<link>http://www.bigfastblog.com/tools-for-testing-ruby-on-rails</link>
+		<comments>http://www.bigfastblog.com/tools-for-testing-ruby-on-rails#comments</comments>
+		<pubDate>Wed, 20 Oct 2010 18:05:15 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Coding]]></category>
+		<category><![CDATA[Ruby On Rails]]></category>
+		<category><![CDATA[bdd]]></category>
+		<category><![CDATA[bonjour]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[coding]]></category>
+		<category><![CDATA[cucumber]]></category>
+		<category><![CDATA[factorygirl]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rspec]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[ruby on rails]]></category>
+		<category><![CDATA[selenium]]></category>
+		<category><![CDATA[shoulda]]></category>
+		<category><![CDATA[tdd]]></category>
+		<category><![CDATA[technical]]></category>
+		<category><![CDATA[test::unit]]></category>
+		<category><![CDATA[testing]]></category>
+		<category><![CDATA[webrat]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=305</guid>
+		<description><![CDATA[I&#8217;m getting stuck into learning Ruby On Rails and the topic of which tools / frameworks to use for testing came up. Here&#8217;s some notes. I&#8217;ll be reading up on these testing frameworks in the following order. If you&#8217;ve got an thoughts, comments or other ideas, please let me know in the comments. Test::Unit Vanilla [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/tools-for-testing-ruby-on-rails/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Great And Real Customer Service</title>
+		<link>http://www.bigfastblog.com/great-and-real-customer-service</link>
+		<comments>http://www.bigfastblog.com/great-and-real-customer-service#comments</comments>
+		<pubDate>Wed, 06 Oct 2010 04:20:37 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Customers]]></category>
+		<category><![CDATA[Marketing]]></category>
+		<category><![CDATA[startup]]></category>
+		<category><![CDATA[customer loyalty]]></category>
+		<category><![CDATA[customer service]]></category>
+		<category><![CDATA[customers]]></category>
+		<category><![CDATA[groupon]]></category>
+		<category><![CDATA[happiness]]></category>
+		<category><![CDATA[leanpub]]></category>
+		<category><![CDATA[marketing]]></category>
+		<category><![CDATA[word-of-mouth]]></category>
+		<category><![CDATA[zappos]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=266</guid>
+		<description><![CDATA[Customer service has been on my mind recently. Funny, because I do not currently have any customers. I&#8217;ve been reading (listening to an audiobook, but it sounds funny if I say &#8220;listening to&#8221;) the Zappos: Delivering Happiness book. Last night I spoke with Alex Toul on Twitter who has just written a post entitled The [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/great-and-real-customer-service/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Location, Location, Location</title>
+		<link>http://www.bigfastblog.com/location-location-location</link>
+		<comments>http://www.bigfastblog.com/location-location-location#comments</comments>
+		<pubDate>Fri, 01 Oct 2010 22:22:43 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[bootstrapping]]></category>
+		<category><![CDATA[startup]]></category>
+		<category><![CDATA[vancouver]]></category>
+		<category><![CDATA[app store]]></category>
+		<category><![CDATA[catch the canary]]></category>
+		<category><![CDATA[compass engine]]></category>
+		<category><![CDATA[development]]></category>
+		<category><![CDATA[entrepreneur]]></category>
+		<category><![CDATA[facebook places]]></category>
+		<category><![CDATA[flock and swarm]]></category>
+		<category><![CDATA[foursquare]]></category>
+		<category><![CDATA[location]]></category>
+		<category><![CDATA[location data]]></category>
+		<category><![CDATA[location-based data]]></category>
+		<category><![CDATA[mobile development]]></category>
+		<category><![CDATA[twitter]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=244</guid>
+		<description><![CDATA[I&#8217;ve been meeting other Vancouver entrepreneurs at various networking events and discussing ideas with them. A common theme I&#8217;m seeing is that most of them are very focused on building technology with location-based data at the heart of the application. This is the next (or current) big thing and it feels like everyone is jumping [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/location-location-location/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Data Mining Without Hadoop</title>
+		<link>http://www.bigfastblog.com/data-mining-without-hadoop-2</link>
+		<comments>http://www.bigfastblog.com/data-mining-without-hadoop-2#comments</comments>
+		<pubDate>Thu, 30 Sep 2010 21:41:06 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Data processing]]></category>
+		<category><![CDATA[Hadoop]]></category>
+		<category><![CDATA[data mining]]></category>
+		<category><![CDATA[data processing]]></category>
+		<category><![CDATA[hadoop]]></category>
+		<category><![CDATA[hdfs]]></category>
+		<category><![CDATA[high scalability]]></category>
+		<category><![CDATA[large data]]></category>
+		<category><![CDATA[sort]]></category>
+		<category><![CDATA[streaming]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=238</guid>
+		<description><![CDATA[This is a follow-up to my recent blog-post on Working With Large Data Sets. That post had some interest, so I thought it would be a good idea to go through the methodologies I had used for processing this data. I entitled this &#8220;Data Mining Without Hadoop&#8221;, because I have experience using Hadoop, and although [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/data-mining-without-hadoop-2/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Bootstrappers Unite!</title>
+		<link>http://www.bigfastblog.com/bootstrappers-unite</link>
+		<comments>http://www.bigfastblog.com/bootstrappers-unite#comments</comments>
+		<pubDate>Wed, 29 Sep 2010 16:26:35 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[bootstrapping]]></category>
+		<category><![CDATA[entrepreneurship]]></category>
+		<category><![CDATA[startup]]></category>
+		<category><![CDATA[bootstrappers]]></category>
+		<category><![CDATA[entrepreneur]]></category>
+		<category><![CDATA[funding]]></category>
+		<category><![CDATA[investing]]></category>
+		<category><![CDATA[investopedia]]></category>
+		<category><![CDATA[meetup]]></category>
+		<category><![CDATA[pasobella]]></category>
+		<category><![CDATA[starbucks]]></category>
+		<category><![CDATA[toeflnow]]></category>
+		<category><![CDATA[vancouver]]></category>
+		<category><![CDATA[venture]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=215</guid>
+		<description><![CDATA[&#8220;A situation in which an entrepreneur starts a company with little capital. An individual is said to be bootstrapping when he or she attempts to found and build a company from personal finances or from the operating revenues of the new company.&#8221; &#160; &#160; &#8211; &#8220;Bootstrapping&#8221; by Investopedia I just got back from another session [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/bootstrappers-unite/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Working With Large Data Sets</title>
+		<link>http://www.bigfastblog.com/working-with-large-data-sets</link>
+		<comments>http://www.bigfastblog.com/working-with-large-data-sets#comments</comments>
+		<pubDate>Thu, 23 Sep 2010 18:35:57 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Data processing]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[data processing]]></category>
+		<category><![CDATA[fire hose]]></category>
+		<category><![CDATA[firehose]]></category>
+		<category><![CDATA[hadoop]]></category>
+		<category><![CDATA[hdfs]]></category>
+		<category><![CDATA[large data sets]]></category>
+		<category><![CDATA[mailchannels]]></category>
+		<category><![CDATA[real-time search]]></category>
+		<category><![CDATA[spamhaus]]></category>
+		<category><![CDATA[statistics]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=149</guid>
+		<description><![CDATA[For the past three and a half years I have been working for a start-up in downtown Vancouver. We have been developing a high performance SMTP proxy that can scale to handle tens of thousands of connections per second on each machine, even with pretty standard hardware. For the past 18 months I&#8217;ve moved from [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/working-with-large-data-sets/feed</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>iPhone 3G&#8217;s iOS 4.1 Upgrade Cannot Come Soon Enough</title>
+		<link>http://www.bigfastblog.com/iphone-3gs-ios-4-1-upgrade-cannot-come-soon-enough</link>
+		<comments>http://www.bigfastblog.com/iphone-3gs-ios-4-1-upgrade-cannot-come-soon-enough#comments</comments>
+		<pubDate>Sun, 05 Sep 2010 17:48:12 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[apple]]></category>
+		<category><![CDATA[iphone 3g]]></category>
+		<category><![CDATA[iOS 4.0]]></category>
+		<category><![CDATA[iOS 4.1]]></category>
+		<category><![CDATA[iphone]]></category>
+		<category><![CDATA[iphone 3G]]></category>
+		<category><![CDATA[September 8th]]></category>
+		<category><![CDATA[slow]]></category>
+		<category><![CDATA[upgrade]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=133</guid>
+		<description><![CDATA[When I signed up to Apple&#8217;s iPhone Developer programme I had full intention of developing some really cool apps. It has not happened yet, but I have been able to get the latest and greatest iPhone OS betas installed on my phone and have been able to start using the latest features early, which is [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/iphone-3gs-ios-4-1-upgrade-cannot-come-soon-enough/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Gmail Priority Inbox &#8211; The Email Marketer&#8217;s Nightmare</title>
+		<link>http://www.bigfastblog.com/gmail-priority-inbox-the-email-marketers-nightmare</link>
+		<comments>http://www.bigfastblog.com/gmail-priority-inbox-the-email-marketers-nightmare#comments</comments>
+		<pubDate>Fri, 03 Sep 2010 14:42:53 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[gmail]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[email marketing]]></category>
+		<category><![CDATA[ham]]></category>
+		<category><![CDATA[inbox]]></category>
+		<category><![CDATA[priority inbox]]></category>
+		<category><![CDATA[spam]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=116</guid>
+		<description><![CDATA[Gmail Priority Inbox is a great idea. Prior to this the Inbox was split into 2 levels &#8211; Inbox and Spam. This Priority Inbox creates a third middle level, which is essentially &#8220;ham&#8221;. Ham is all the things that waste your time, but come from organisations that you are affiliated with in some way, such [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/gmail-priority-inbox-the-email-marketers-nightmare/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Diaspora &#8211; Coming back out of the cloud will be painful</title>
+		<link>http://www.bigfastblog.com/diaspora-coming-back-out-of-the-cloud-will-be-painful</link>
+		<comments>http://www.bigfastblog.com/diaspora-coming-back-out-of-the-cloud-will-be-painful#comments</comments>
+		<pubDate>Wed, 01 Sep 2010 21:05:26 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[facebook]]></category>
+		<category><![CDATA[cloud]]></category>
+		<category><![CDATA[diaspora]]></category>
+		<category><![CDATA[kickstarter]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=95</guid>
+		<description><![CDATA[$200,641 has been pledged for the development of Diaspora, the decentralized web implementation, which intends to replace Facebook with a version that is distributed. Each user will retain their own data on their own machine. I see a huge flaw in this. They&#8217;re moving in the wrong direction. The web is moving to the cloud, [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/diaspora-coming-back-out-of-the-cloud-will-be-painful/feed</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Is Your Next Phone a Nokia?</title>
+		<link>http://www.bigfastblog.com/is-your-next-phone-a-nokia</link>
+		<comments>http://www.bigfastblog.com/is-your-next-phone-a-nokia#comments</comments>
+		<pubDate>Fri, 07 May 2010 22:25:42 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[mobile]]></category>
+		<category><![CDATA[nokia]]></category>
+		<category><![CDATA[android]]></category>
+		<category><![CDATA[flash]]></category>
+		<category><![CDATA[iphone]]></category>
+		<category><![CDATA[meego]]></category>
+		<category><![CDATA[n900]]></category>
+		<category><![CDATA[opengl]]></category>
+		<category><![CDATA[phone]]></category>
+		<category><![CDATA[smartphone]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=65</guid>
+		<description><![CDATA[This week I attended Mobile Geeks Vancouver where we were given a presentation by Samir Agarwal, Head of Maemo Operations at Nokia in Mountain View, California. The presentation by Samir was definitely eye opening. After winning an Android phone at the Vancouver Android Developers Meetup last week I thought I&#8217;d covered all the bases of [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/is-your-next-phone-a-nokia/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>An Android Developer, I Am</title>
+		<link>http://www.bigfastblog.com/an-android-developer-i-am</link>
+		<comments>http://www.bigfastblog.com/an-android-developer-i-am#comments</comments>
+		<pubDate>Sun, 02 May 2010 00:49:12 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[android]]></category>
+		<category><![CDATA[developer]]></category>
+		<category><![CDATA[galaxy spica]]></category>
+		<category><![CDATA[phone]]></category>
+		<category><![CDATA[rogers]]></category>
+		<category><![CDATA[samsung]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=63</guid>
+		<description><![CDATA[Well, I guess I have to be now, because I have just won a Samsung Galaxy Spica Android phone from Rogers. They kindly donated it to the Vancouver Android Developers Meetup. It&#8217;s running 1.5, so I want to get it updated to 2.1 and multi-touch-ness as soon as possible. More info to follow&#8230;]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/an-android-developer-i-am/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Is iChat the future of iPhone 4.0?</title>
+		<link>http://www.bigfastblog.com/is-ichat-the-future-of-iphone-4-0</link>
+		<comments>http://www.bigfastblog.com/is-ichat-the-future-of-iphone-4-0#comments</comments>
+		<pubDate>Thu, 22 Apr 2010 04:47:32 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[apple]]></category>
+		<category><![CDATA[iphone 3g]]></category>
+		<category><![CDATA[mac]]></category>
+		<category><![CDATA[phone calls]]></category>
+		<category><![CDATA[Engadget]]></category>
+		<category><![CDATA[iChat]]></category>
+		<category><![CDATA[iPad]]></category>
+		<category><![CDATA[iPhone 4G]]></category>
+		<category><![CDATA[phone]]></category>
+		<category><![CDATA[Skype]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=61</guid>
+		<description><![CDATA[After seeing the iPhone 4G on Engadget and the front facing camera that will be included, I started to think about what Apple intends as the future of the device. For the iPad Wifi+3G Apple has negotiated some great deals with cellphone networks. These are basically no contract data plans with no phone service (iPad [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/is-ichat-the-future-of-iphone-4-0/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Mac OSX&#8217;s Preview Annotations</title>
+		<link>http://www.bigfastblog.com/mac-osxs-preview-annotations</link>
+		<comments>http://www.bigfastblog.com/mac-osxs-preview-annotations#comments</comments>
+		<pubDate>Tue, 13 Apr 2010 18:56:39 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[apple]]></category>
+		<category><![CDATA[application]]></category>
+		<category><![CDATA[imac]]></category>
+		<category><![CDATA[mac]]></category>
+		<category><![CDATA[productivity]]></category>
+		<category><![CDATA[utility]]></category>
+		<category><![CDATA[annotations]]></category>
+		<category><![CDATA[leopard]]></category>
+		<category><![CDATA[mac osx]]></category>
+		<category><![CDATA[preview]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=38</guid>
+		<description><![CDATA[This is what I&#8217;ve been looking for all my life. Well, all my take-a-screenshot-to-help-explain-which-button-to-click-on life, anyway. It doesn&#8217;t happen very often, but when it does you want to do it quickly. I&#8217;m talking about taking a screenshot and adding some simple annotations. Draw a circle around this button, add a arrow to point to that [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/mac-osxs-preview-annotations/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Sclogging &#8211; A Different Slant On Blogging</title>
+		<link>http://www.bigfastblog.com/sclogging-a-different-slant-on-blogging</link>
+		<comments>http://www.bigfastblog.com/sclogging-a-different-slant-on-blogging#comments</comments>
+		<pubDate>Mon, 29 Sep 2008 00:32:00 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[aweber]]></category>
+		<category><![CDATA[blogging]]></category>
+		<category><![CDATA[blogosphere]]></category>
+		<category><![CDATA[email marketing]]></category>
+		<category><![CDATA[rss]]></category>
+		<category><![CDATA[sclogging]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=28</guid>
+		<description><![CDATA[This week I had an idea for a different form of blogging. This stemmed from the fact that we&#8217;ve been seeing a great response with opt-in email and responsiveness to email campaigns. Communicating directly with your audience via opt-in email gives you such a closer and detailed view of who your are communicating with than [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/sclogging-a-different-slant-on-blogging/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Welcome To Rogers &#8211; The Story Of The Phantom Caller</title>
+		<link>http://www.bigfastblog.com/welcome-to-rogers-the-story-of-the-phantom-caller</link>
+		<comments>http://www.bigfastblog.com/welcome-to-rogers-the-story-of-the-phantom-caller#comments</comments>
+		<pubDate>Sat, 13 Sep 2008 18:18:00 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[caller-id]]></category>
+		<category><![CDATA[customer service]]></category>
+		<category><![CDATA[evil dead]]></category>
+		<category><![CDATA[iphone 3g]]></category>
+		<category><![CDATA[phone calls]]></category>
+		<category><![CDATA[rogers]]></category>
+		<category><![CDATA[wireless]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=27</guid>
+		<description><![CDATA[I recently purchased my first iPhone. Here in Canada, like every other country, there&#8217;s only one provider of the iPhone, which is Rogers. I&#8217;ve really not enjoyed my experience with Bell and I had heard that Rogers was just the same so it made no difference in switching. When I switched our numbers over the [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/welcome-to-rogers-the-story-of-the-phantom-caller/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>iPhone 3G &#8211; Battery Dies Twice As Fast</title>
+		<link>http://www.bigfastblog.com/iphone-3g-battery-dies-twice-as-fast</link>
+		<comments>http://www.bigfastblog.com/iphone-3g-battery-dies-twice-as-fast#comments</comments>
+		<pubDate>Wed, 10 Sep 2008 20:42:00 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[battery life]]></category>
+		<category><![CDATA[firmware update]]></category>
+		<category><![CDATA[iphone 3g]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=26</guid>
+		<description><![CDATA[I&#8217;m finding the battery 3G iPhone is dying very fast. Hopefully the 2.1 iPhone firmware update being released on Friday will do as they say it will and make the battery life better.]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/iphone-3g-battery-dies-twice-as-fast/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>&quot;Simplify Media&quot; For The iPhone &#8211; Too Simple?</title>
+		<link>http://www.bigfastblog.com/simplify-media-for-the-iphone-too-simple</link>
+		<comments>http://www.bigfastblog.com/simplify-media-for-the-iphone-too-simple#comments</comments>
+		<pubDate>Mon, 08 Sep 2008 04:26:00 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[imac]]></category>
+		<category><![CDATA[iphone app]]></category>
+		<category><![CDATA[itunes]]></category>
+		<category><![CDATA[lyricwiki]]></category>
+		<category><![CDATA[remote]]></category>
+		<category><![CDATA[simplify media]]></category>
+		<category><![CDATA[streaming audio]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=25</guid>
+		<description><![CDATA[Like most people nowadays my computer&#8217;s music collection has grown out of all proportion. I have more music on there than I could ever hope to listen to. Gigabytes on top of gigabytes. Luckily there are plenty of great apps out there like iTunes that can manage this and let me search, rate, sort, structure [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/simplify-media-for-the-iphone-too-simple/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Google Chrome In Parallels &#8211; Flash Is Too Slow</title>
+		<link>http://www.bigfastblog.com/google-chrome-in-parallels-flash-is-too-slow</link>
+		<comments>http://www.bigfastblog.com/google-chrome-in-parallels-flash-is-too-slow#comments</comments>
+		<pubDate>Sun, 07 Sep 2008 00:38:00 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[flash]]></category>
+		<category><![CDATA[google chrome]]></category>
+		<category><![CDATA[parallels]]></category>
+		<category><![CDATA[problems]]></category>
+		<category><![CDATA[slow]]></category>
+		<category><![CDATA[windows]]></category>
+		<category><![CDATA[youtube]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=24</guid>
+		<description><![CDATA[I use Windows on my iMac using Parallels and Firefox runs very well. There&#8217;s not really anything I cannot do, since it is actually the fasted experience of Windows I&#8217;ve ever had. This is mainly due to using Macs and having not needed Windows for a long time, whilst the speed to computers and virtualization [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/google-chrome-in-parallels-flash-is-too-slow/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Pandora Genome Meets Apple iTunes?</title>
+		<link>http://www.bigfastblog.com/pandora-genome-meets-apple-itunes</link>
+		<comments>http://www.bigfastblog.com/pandora-genome-meets-apple-itunes#comments</comments>
+		<pubDate>Fri, 05 Sep 2008 15:09:00 +0000</pubDate>
+		<dc:creator>Phil Whelan</dc:creator>
+				<category><![CDATA[apple]]></category>
+		<category><![CDATA[copyright royality board]]></category>
+		<category><![CDATA[internet radio]]></category>
+		<category><![CDATA[itunes]]></category>
+		<category><![CDATA[music genome]]></category>
+		<category><![CDATA[music industry]]></category>
+		<category><![CDATA[pandora]]></category>
+
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=23</guid>
+		<description><![CDATA[With iTunes 8 just around the corner and some rumored changes that include iTunes suggesting songs you might like or in some way to grouping your music better, I saw a potential acquisition for Apple or possibility or partnership with the Internet radio station Pandora. Pandora uses what it terms &#8220;the music genome&#8221; that it [...]]]></description>
+		<wfw:commentRss>http://www.bigfastblog.com/pandora-genome-meets-apple-itunes/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

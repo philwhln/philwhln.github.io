@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Colorful Ruby Code In HTML Using CodeRay</title>
+	<atom:link href="http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: Rodrigo Rosenfeld Rosas</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21443</link>
+		<dc:creator>Rodrigo Rosenfeld Rosas</dc:creator>
+		<pubDate>Sun, 09 Sep 2012 19:44:41 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21443</guid>
+		<description>I never enabled editing to the codes blocks displayed in my articles :)
+
+But anyway, Ruby is not involved at all with CodeMirror. It is all handled in the client-side. See an example here:
+
+http://codemirror.net/demo/fullscreen.html</description>
+		<content:encoded><![CDATA[<p>I never enabled editing to the codes blocks displayed in my articles <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>But anyway, Ruby is not involved at all with CodeMirror. It is all handled in the client-side. See an example here:</p>
+<p><a href="http://codemirror.net/demo/fullscreen.html" rel="nofollow">http://codemirror.net/demo/fullscreen.html</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21442</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Sun, 09 Sep 2012 19:39:39 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21442</guid>
+		<description>Sweet. Thanks for introducing me to Toto and http://codemirror.net/ looks cool! Pretty rich API http://codemirror.net/doc/manual.html
+
+Question: When I&#039;m editing with CodeMirror, is it sending the edited text back to Ruby for re-syntax-highlighting?</description>
+		<content:encoded><![CDATA[<p>Sweet. Thanks for introducing me to Toto and <a href="http://codemirror.net/" rel="nofollow">http://codemirror.net/</a> looks cool! Pretty rich API <a href="http://codemirror.net/doc/manual.html" rel="nofollow">http://codemirror.net/doc/manual.html</a></p>
+<p>Question: When I&#8217;m editing with CodeMirror, is it sending the edited text back to Ruby for re-syntax-highlighting?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rodrigo Rosenfeld Rosas</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21441</link>
+		<dc:creator>Rodrigo Rosenfeld Rosas</dc:creator>
+		<pubDate>Sun, 09 Sep 2012 19:12:11 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21441</guid>
+		<description>Hi Phil, I&#039;m using codemirror for highlighting CoffeeScript in my site. My site is a custom Rails application inspired by Toto&#039;s idea:
+
+http://codemirror.net/
+https://github.com/cloudhead/toto
+
+My articles are written in Markdown and code examples lie between &quot;@@@ language-identifier&quot;..&quot;@@@&quot; blocks.
+
+Most are processed using CodeRay but for CoffeeScript I had to use client-side processing cause I couldn&#039;t find any Ruby highlighting library that understands CoffeeScript :(</description>
+		<content:encoded><![CDATA[<p>Hi Phil, I&#8217;m using codemirror for highlighting CoffeeScript in my site. My site is a custom Rails application inspired by Toto&#8217;s idea:</p>
+<p><a href="http://codemirror.net/" rel="nofollow">http://codemirror.net/</a><br />
+<a href="https://github.com/cloudhead/toto" rel="nofollow">https://github.com/cloudhead/toto</a></p>
+<p>My articles are written in Markdown and code examples lie between &#8220;@@@ language-identifier&#8221;..&#8221;@@@&#8221; blocks.</p>
+<p>Most are processed using CodeRay but for CoffeeScript I had to use client-side processing cause I couldn&#8217;t find any Ruby highlighting library that understands CoffeeScript <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> </p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jaime Iniesta</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21390</link>
+		<dc:creator>Jaime Iniesta</dc:creator>
+		<pubDate>Sat, 08 Sep 2012 12:36:40 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21390</guid>
+		<description>I recently used CodeRay to colorize syntax in the comments of a rails app, letting the users define the code sections, applying autolinking and simple formatting. Here&#039;s how:
+
+http://jaimeiniesta.posterous.com/how-to-colorize-code-in-comments-using-codera</description>
+		<content:encoded><![CDATA[<p>I recently used CodeRay to colorize syntax in the comments of a rails app, letting the users define the code sections, applying autolinking and simple formatting. Here&#8217;s how:</p>
+<p><a href="http://jaimeiniesta.posterous.com/how-to-colorize-code-in-comments-using-codera" rel="nofollow">http://jaimeiniesta.posterous.com/how-to-colorize-code-in-comments-using-codera</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21348</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Fri, 07 Sep 2012 05:12:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21348</guid>
+		<description>Pygments, which is similar to CodeRay but is written in Python, supports CoffeeScript. http://pygments.org/docs/lexers/
+
+This is what GitHub uses for their syntax highlighting.</description>
+		<content:encoded><![CDATA[<p>Pygments, which is similar to CodeRay but is written in Python, supports CoffeeScript. <a href="http://pygments.org/docs/lexers/" rel="nofollow">http://pygments.org/docs/lexers/</a></p>
+<p>This is what GitHub uses for their syntax highlighting.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21330</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 06 Sep 2012 14:56:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21330</guid>
+		<description>Hi Rodrigo,
+
+I missed the fact that CodeRay did not support CoffeeScript. Thanks for pointing that out. Could you share some details about your implementation? I am sure that there are others hitting this post with the same issue.
+
+Cheers,
+Phil</description>
+		<content:encoded><![CDATA[<p>Hi Rodrigo,</p>
+<p>I missed the fact that CodeRay did not support CoffeeScript. Thanks for pointing that out. Could you share some details about your implementation? I am sure that there are others hitting this post with the same issue.</p>
+<p>Cheers,<br />
+Phil</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rodrigo Rosenfeld Rosas</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21323</link>
+		<dc:creator>Rodrigo Rosenfeld Rosas</dc:creator>
+		<pubDate>Thu, 06 Sep 2012 13:06:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21323</guid>
+		<description>The missing feature from CodeRay is lack of support for CoffeeScript :( I had to implement CS highlighting using client-side libraries in my homepage :(</description>
+		<content:encoded><![CDATA[<p>The missing feature from CodeRay is lack of support for CoffeeScript <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' />  I had to implement CS highlighting using client-side libraries in my homepage <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> </p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21228</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 04 Sep 2012 02:10:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21228</guid>
+		<description>Thanks for the tip Ted!</description>
+		<content:encoded><![CDATA[<p>Thanks for the tip Ted!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ted Nielsen</title>
+		<link>http://www.bigfastblog.com/syntax-highlight-your-ruby-code-in-html/comment-page-1#comment-21217</link>
+		<dc:creator>Ted Nielsen</dc:creator>
+		<pubDate>Mon, 03 Sep 2012 21:09:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1634#comment-21217</guid>
+		<description>I prefer Array.select{ statement } over Array.reject{ !statement }; it lends itself to higher readability and maintenance.</description>
+		<content:encoded><![CDATA[<p>I prefer Array.select{ statement } over Array.reject{ !statement }; it lends itself to higher readability and maintenance.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

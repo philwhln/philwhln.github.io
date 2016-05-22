@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<title>De-volatile Your Memcached. Upgrade to Membase | Big Fast Blog</title>
+
+<link rel="stylesheet" href="/wp-content/themes/hybrid/style.css" type="text/css" media="screen" />
+<link rel="author" href="https://plus.google.com/101358683928607234715/posts"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="WordPress 3.0.1" />
+<meta name="template" content="Hybrid 0.8" />
+<link rel="pingback" href="http://www.bigfastblog.com/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; Feed" href="http://feeds.feedburner.com/philwhelansblog" />
+<link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; Comments Feed" href="http://feeds.feedburner.com/philwhelansblog" />
+<link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; De-volatile Your Memcached. Upgrade to Membase Comments Feed" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase/feed" />
+<link rel='stylesheet' id='wp_greet_box_style-css'  href='http://www.bigfastblog.com/wp-content/plugins/wp-greet-box/css/style.css?ver=3.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rpx_style-css'  href='http://www.bigfastblog.com/wp-content/plugins/rpx/files/style.php?ver=3.0.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-includes/js/jquery/jquery.js?ver=1.4.2'></script>
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-content/plugins/sharebar/js/sharebar.js?ver=3.0.1'></script>
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-content/plugins/wp-greet-box/js/functions.js?ver=3.0.1'></script>
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-content/plugins/wp-greet-box/js/js-mode.js?ver=3.0.1'></script>
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-content/plugins/rpx/files/javascript.php?ver=3.0.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.bigfastblog.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.bigfastblog.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Big Fast Blog' href='http://www.bigfastblog.com' />
+<link rel='start' title='Firefox &#8211; A must have web browser' href='http://www.bigfastblog.com/firefox-a-must-have-web-browser' />
+<link rel='prev' title='SQLShell. A Cross-Database SQL Tool With NoSQL Potential' href='http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential' />
+<link rel='next' title='Quickly Launch A Cassandra Cluster On Amazon EC2' href='http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2' />
+<link rel='shortlink' href='http://www.bigfastblog.com/?p=995' />
+
+<!-- All in One SEO Pack 1.6.12.1 by Michael Torbert of Semper Fi Web Design[275,300] -->
+<meta name="description" content="Membase's TCP interface is identical Memcached, so migrating your existing code-base will not be an issue at all." />
+<meta name="keywords" content="caching,distributed,key-value store,membase,memcached,moxi,nosql,review,web-development" />
+<link rel="canonical" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase" />
+<!-- /all in one seo pack -->
+
+<script type="text/javascript">var AKPC_IDS = "";</script>
+	<link rel="stylesheet" href="http://www.bigfastblog.com/wp-content/plugins/sharebar/css/sharebar.css" type="text/css" media="screen" />
+<script type="text/javascript">jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal:'true',swidth:'65',minwidth:1000,position:'left',leftOffset:20,rightOffset:10}); });</script>
+<!-- Sharebar Plugin by Monjurul Dolon (http://mdolon.com/) - more info at: http://devgrow.com/sharebar-wordpress-plugin -->
+
+
+</head>
+
+<body class="wordpress ltr en_US y2016 m05 d22 h13 sunday not-logged-in singular singular-post singular-post-995 single-995 primary-active secondary-inactive subsidiary-inactive">
+
+
+<div id="body-container">
+
+	
+	<div id="header-container">
+
+		<div id="header">
+
+			<a href="/"><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/big_fast_blog_title5.png" width="650" height="191" Alt="Phil Whelan's Big Fast Blog" border="0"></a>
+
+		</div><!-- #header -->
+
+	</div><!-- #header-container -->
+
+	<div id="navigation">
+			<div id="page-nav" class="page-nav"></div>
+	</div><!-- #navigation -->
+
+	<div id="container">
+
+		
+	<div id="content" class="hfeed content">
+
+		
+		<div id="utility-before-content" class="sidebar utility">
+
+			<div id="text-13" class="widget widget_text widget-widget_text"><div class="widget-inside">			<div class="textwidget"><a href="https://twitter.com/philwhln" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @philwhln</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+		</div></div>
+		</div><!-- #utility-before-content .utility -->
+
+	
+		
+			<div id="post-995" class="hentry post publish post-1 odd author-admin category-membase category-nosql-2 category-web-development post_tag-caching post_tag-distributed post_tag-key-value-store post_tag-membase-2 post_tag-memcached post_tag-moxi post_tag-nosql post_tag-review post_tag-web-development-2">
+
+				<h1 class="post-title entry-title"><a href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase" title="De-volatile Your Memcached. Upgrade to Membase" rel="bookmark">De-volatile Your Memcached. Upgrade to Membase</a></h1><p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard"><a class="url fn n" href="http://www.bigfastblog.com/author/admin/" title="Phil Whelan">Phil Whelan</a></span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Friday, January 21st, 2011, 12:16 pm">January 21, 2011</abbr> </p>
+				<div class="entry-content">
+					<div id="greet_block"><noscript><div class="greet_block wpgb_cornered"><div class="greet_text"><div class="greet_image"><a href="http://feeds.feedburner.com/philwhelansblog"  rel="nofollow"><img src="http://www.bigfastblog.com/wp-content/plugins/wp-greet-box/images/rss_icon.png" alt="WP Greet Box icon"/></a></div>Hello there! If you are new here, you might want to <a href="http://feeds.feedburner.com/philwhelansblog" rel="nofollow"><strong>subscribe to the RSS feed</strong></a> for updates on this topic.<div style="clear:both"></div><div class="greet_block_powered_by">Powered by <a href="http://omninoggin.com/projects/wordpress-plugins/wp-greet-box-wordpress-plugin/" title="WP Greet Box WordPress Plugin" style="text-decoration:none;">WP Greet Box</a> <a href="http://omninoggin.com/" title="WordPress Plugin" style="text-decoration:none;">WordPress Plugin</a></div><div style="clear:both"></div></div></div></noscript></div><ul id="sharebar" style="background:#;border-color:#;">
+<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
+<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p><a href="http://www.flickr.com/photos/hojusaram/484764113/" title="20070505-135556.jpg by hojusaram, on Flickr"><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/memcached_to_membase/memcached_to_membase.jpg" width="333" height="500" alt="20070505-135556.jpg" align="left" style="padding-bottom: 20px" /></a></p>
+<h2>Migrate From Memcached</h2>
+<p>Memcached is usually your first stop when optimizing a website. It is a great tool. It&#8217;s fast and simple. You can build on this simplicity to do a lot of cool stuff. It is cool because it makes your website functionality so much faster and your boss will pat you on the back and say &#8220;Wow! You really did some magic on the site. Let&#8217;s talk about that promotion. Do you play golf?&#8221;. Yes, you managed to pull a rabbit out of the hat and your website has gone from zero to Matrix&#8217;s Nero. <a href="http://twitter.com/#!/ingenthr">Matt Ingenthron</a> said internally at <a href="http://www.membase.com/company">Membase Inc</a> they view Memcached as a rabbit. It is fast, but it is pretty dumb and procreates quickly. Before you know it, it will be running wild all over your system. Once you have sped up one area of the site, you will start crowbarring Memcached into every corner. And why not.</p>
+<h3>It&#8217;s Easy</h3>
+<p>One of the first things you will find about Membase is that it&#8217;s TCP interface is identical Memcached, so migrating your existing code-base will not be an issue at all. Deployment seems simple enough. In fact, you could get away with not touching your application code or client configuration at all if the IPs and ports do not change. This is a big win for Membase, due to large usage of Memcached out there.</p>
+<h2>What Is Wrong With Memcached?</h2>
+<p>Memcached has it&#8217;s limitations. It does not scale well. While, there is no reason you could not have a large cluster of machines, moving to large+1 machines is going to lose a lot of your data. There is no master to organize the re-balancing of the data. In effect, each client (each instance your application) is the master. Memcached servers are simple dumb beasts. You can tell any Memcached server to store any key-value and it will, even if the client will never find it there.</p>
+<h3>Memcached&#8217;s Hashing Algorithm</h3>
+<p>Memcached servers know nothing of the other Memcached servers in the cluster. The client decides which Memcached server will store which key by using a hashing algorithm. The algorithm takes, as input, a <em>list</em> of Memcached servers and the <em>key</em> of data to store. It will always return the same server for a given key and does so in a way that scatters the keys evenly across the Memcached servers. The same hashing algorithm is built into all of the clients. Therefore, all of the clients need to being using the same algorithm and the same list of servers (configured in the same order). If one client has a list of 10 servers and another client has a list of 11 servers, then they will not be writing and reading the same keys in the same place, and things will get a tad confusing.</p>
+<h3>It&#8217;s Fast!</h3>
+<p>On the plus side, using a hashing algorithm is incredibly fast and means you do not need to talk to any other service to find the data. The more you look at Memcached the more you can see these areas where speed has been made the priority. It has been this speed that has made Memcached such a powerful force as a caching solution and so successful.</p>
+<p><script type="text/javascript"><!--
+google_ad_client = "pub-5260338827095335";
+/* philwhln inner content leader */
+google_ad_slot = "1476289318";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script><br />
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+<h3>The Shuffle</h2>
+<p>With Memcached&#8217;s hashing algorithm, the resulting server for a given key is heavily dependent on the number of servers. Therefore, if the number of servers changes, then the locations of the keys will shuffle. Key &#8220;A&#8221; will move from server &#8220;X&#8221; to server &#8220;Y&#8221; while key &#8220;B&#8221; might move in the opposite direction, from server &#8220;Y&#8221; to server &#8220;X&#8221;. Since there is no migration of the data between Memcached servers, the data is effectively lost and this could be most of your data. I say &#8220;effectively lost&#8221; because the data is still in it&#8217;s original place, but the clients are now looking for it in a different place, due to changing the input (number of servers) to the hashing algorithm. The Memcached servers are blindly unaware that anything has changed.</p>
+<h2>Membase&#8217;s Data Management</h2>
+<p>Knowing this weakness of the hashing algorithm, I was surprised that Membase was still using this. The main weakness is that it puts the onus on the client to decide where to put the data. While this is fast, it overly burdens the clients with making important decisions in cluster management.</p>
+<h3>Re-routing</h3>
+<p>Membase has managed to lift this burden from the client by allowing the client to connect to any of the Membase servers and then <em>re-routing</em> the request if necessary. Unlike Memcached, each Membase server knows which keys it should be storing data for. When one Membase server receives a request for a key that it is not responsible for, it re-routes the request to the appropriate Membase server. This is handled by a component of Membase called &#8220;Moxi&#8221; (&#8220;Memcached Proxy&#8221;).</p>
+<h3>Buckets And Replication</h3>
+<p>Membase hashes keys to &#8220;buckets&#8221;, not servers, and the number of buckets remains fixed. Buckets are a way to divide up the entire dataset into equal chunks. The hashing algorithm ensures the even distribution of keys across the buckets. By default the number of buckets it 1024.</p>
+<p>Since the number of buckets does not change, the assignment of a given key to a given bucket does not change, so keys remain in the same bucket as your cluster grows. The buckets still need to be assigned to Membase servers, but this is easier to manage with a known fixed number of items. It also allows for assigning the same buckets to multiple servers. Yes, Membase provides replication for your data.</p>
+<h3>Cluster Size Limitations</h3>
+<p>It is important to note that using the default of 1024 buckets will prevent you from having more than 1024 nodes in your cluster. While this is a big cluster, there are many organisations out there managing their data with clusters of more that 1024 machines. In Membase&#8217;s current state this limitation is a mute point, since even 1024 nodes is not feasible due to way nodes communicate with each other. Having no master and the fact that &#8220;each node is created equal&#8221; means that each node is talking to all the other nodes in the cluster. This is a lot of network chatter and it seems that it would grow <a href="http://en.wikipedia.org/wiki/Factorial">factorially</a>. This is a focus for further development of Membase.</p>
+<h2>Moxi &#8211; The Memcached Proxy</h2>
+<p>I mentioned above that <em>Moxi</em> is the component of Membase that handles the re-routing of requests to other Membase servers when the server receiving the original request is not the one responsible for the data requested. Here I will explain a little more about what Moxi is, since it is a major part of Membase&#8217;s design.</p>
+<p>Moxi was bulit for Memcached to get around the problem of maintaining configuration within the client. With Moxi, all clients can talk to a single Moxi and requests will be proxied through to the appropriate Memcached server. Additional Memcached servers can be added or removed with no change to the clients.</p>
+<p>When new Memcached servers are added to or removed from the cluster, Moxi can be notified over the &#8220;management channel&#8221;.</p>
+<p>Just like Memcached servers can run in parallel with no knowledge of each other, so can Moxi servers. Each Moxi server can talk to the same cluster of Memcached servers. Because we can run multiple Moxi servers in parallel, we can conveniently run one Moxi server on each of the client machines. These Moxi servers can provide caching for popular GET requests, and result in faster responses for these requests.</p>
+<p>When a Memcached server fails, Moxi pushes messages out over the management channel. This allows some form of manager, listening to the management channel, to reconfigure the cluster and push configuration changes back to all the Moxi servers. Better still, a Moxi can listen to other Moxi&#8217;s management channels and they can work as a team.</p>
+<p>Moxi is now a major component of Membase. In helps manage the cluster. It sits at the edge of each Membase server, listening for requests from clients and re-routes those requests to other Membase servers if necessary.</p>
+<h2>There Is No Master. All Nodes Created Equal</h2>
+<p>Just as Memcached has no master, neither does Membase. In Memcached each client is effectively a master, as this is where all of the key management logic lies, using the hashing algorithm. In Membase this management logic lies within each Membase server, <em>not</em> within the client. All nodes are created equal. Therefore there is no single point of failure. This is a very important benefit of Membase. A masterless system is a powerful thing. It can truly run wild &#8211; much like rabbits.</p>
+<h2>&#8220;Smart Clients&#8221;</h2>
+<p><em>Smart clients</em> are clients that embed the <em>Moxi</em> component. Without this, the client does not know where the data is stored in the cluster. It will arbitrarily ask one of the Membase servers. That Membase server may have the data and can return it, but more likely it will re-route the request to the Membase server that does have the data. This re-routing can be avoided if the client runs the Moxi component itself. As data is moved around within the cluster and Membase servers leave and join, the client&#8217;s Moxi will always have an up-to-date record of where to find the data for a given key. It can now request it directly from the Membase server responsible for the data and avoid this re-routing step.</p>
+<p>A second benefit to smart clients is <em>persistent connections</em>. Moxi can more intelligently create connections to each Membase server and keep those connections open as long each server is part of the cluster. Not needing to establish a new TCP connection [or re-routing] each time you do a SET or GET from the client is a big win for performance.</p>
+<h2>Streaming Changes</h2>
+<p>Having done some work with <a href="http://en.wikipedia.org/wiki/Message_queue">messaging queues</a>, I like the idea of being able to tap into a system and see the data that is flowing through it without affecting the system&#8217;s functionality. This allows for re-using the live data for other purposes without having the re-code or re-architecture your system. Membase uses streaming for replication. A new node can have the contents of a bucket streamed to it from another node and it can then continue listening on this stream for real-time updates to the data. Alternatively, an interested third-party can tap into the stream and watch for real-time changes as they flow through. This can be useful if you want to push some or all of those changes back up to the client or into another data-store, such as Hadoop, HBase or MySQL. While Membase&#8217;s focus is speed and simplicity, other tools might be more useful for structured (MySQL) or heavy-weight (Hadoop) manipulation of your data.</p>
+<h2>Persistence</h2>
+<p>If you have used Memcached and have gotten carried away with how it can make everything faster, you may have felt some pain when that volatile memory disappeared into the ether due to a restart or a failure. Your house of cards comes tumbling down as suddenly nothing is in cache! Your application is scrambling around trying to fully serve your users and the database is screaming at the application, &#8220;what the *%$@ is going on up there?&#8221;. All your lack-of-performance implementation sins are exposed in one fell swoop and your boss stops inviting you to play golf. It&#8217;s tough, but a few hours later Memcached is singing again with a full belly of cache and your application layer is putting the kettle on to make your exhausted database a nice cuppa tea. You start to wonder&#8230; how can I persist this &#8220;caching&#8221; data?</p>
+<p>Membase persists data to disk. This may be the single thing you want to know. Even if you do not care about how it works, or you have no time to investigate and compare it to other NoSQL data-stores, you should be able to sleep better knowing there is &#8220;an upgrade&#8221; for Memcached that is less votatile.</p>
+<p>Membase&#8217;s configuration specifies two conditions for writing data to the disk. It will be written when it reaches a certain age or if it has been updated frequently. Frequently updated data will never get old enough to reach the required age for persistence, so this alternative rule is required. </p>
+<div style="float: left; width: 300px; height: 250px; padding: 30px; padding-left: 0px; padding-bottom: 50px;"><script type="text/javascript"><!--
+google_ad_client = "pub-5260338827095335";
+/* philwhln post resources left big sq */
+google_ad_slot = "8297487856";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script><br />
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<h2>Conclusion</h2>
+<p>It seems the philosophy of Membase is similar Memcached, &#8220;Be fast, but know your limitations&#8221;. I liked this with Memcached and I like it with Membase, too. The choices they have made in the design of Membase are about performance and taking Memcached to the next level. While it is a huge leap from Memcached, it is only a small step for developers who want to deploy this as an alternative to replace, or &#8220;upgrade&#8221;, Memcached. There is no reason that it will be particularly slower than Memcached, since your data can still live in the RAM that you are currently using for Memcached. You have the additional benefit of that data being persisted to disk in the background and being immediately available after a rewrite. Volatility is has been replaced with replication and rebalancing.</p>
+<p>Some other things that were not covered in this blog post are the authentication layer in Membase (via SASL or port), how Membase makes use of SQLite under the hood, the REST interface, how Membase uses vector clocks to handle collisions from multiple-writers and the very impressive user-interface to Membase, which I will cover in a future post.</p>
+<p>While the focus of this blog post has been on Membase as a replacement to Memcached as a persistent caching layer, Membase is a distributed key-value [NoSQL] data-store in it&#8217;s own right and can be used for much more than just caching.</p>
+<h2>Resources</h2>
+<ul>
+<li><a href="http://www.membase.com/">Membase</a></li>
+<li><a href="http://www.slideshare.net/northscale/moxi-memcached-proxy">&#8220;Moxi &#8211; Memcached Proxy&#8221;. Good presentation on Slideshare</a></li>
+<li><a href="http://www.membase.com/sites/default/files/uploads/all/whitepapers/Membase-NoSQL-Whitepaper.pdf">Membase NoSQL Whitepaper (PDF)</a></l>
+</ul>
+<div id="post-394" class="hentry post publish post-9 odd author-admin category-data-processing post_tag-amazon-ec2 post_tag-bbc post_tag-cassandra post_tag-data-processing-2 post_tag-dbpedia post_tag-ebs post_tag-freebase post_tag-hadoop post_tag-hdfs post_tag-large-datasets post_tag-livedoor post_tag-lucene post_tag-mongodb post_tag-nosql post_tag-rackspace post_tag-solr post_tag-wikipedia post_tag-working-with-data">
+<h2 class="entry-title"><a href="http://www.bigfastblog.com/how-to-get-experience-working-with-large-datasets" title="How To Get Experience Working With Large Datasets" rel="bookmark">How To Get Experience Working With Large Datasets</a></h2>
+<p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard"><a class="url fn n" href="http://www.bigfastblog.com/author/admin/" title="Phil Whelan">Phil Whelan</a></span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Wednesday, December 8th, 2010, 11:50 am">December 8, 2010</abbr></p>
+<div style="float: left;"><img width="180" height="180" src="http://www.bigfastblog.com/wp-content/uploads/2010/12/big_dataset_experience_sq.jpg" class="attachment-post-thumbnail wp-post-image" alt="big_dataset_experience_sq" title="big_dataset_experience_sq"></div>
+<div class="entry-content">
+<p>There are data sources out there, but which data source you choose depends on which technology you wish to get experience working with. The experience should be of the technologies you are using, rather than what the data is. Certain datasets pair better with certain technologies. Simulating the data can be another approach. You just need a clever way of generating and randomizing your fake data. Thirdly, you can use a hybrid approach. Take real data and replay it on a loop, randomizing it as it goes through. Simulating the Twitter fire-hose should not be too hard, should it?</p>
+</p></div>
+<p><!-- .entry-content --></p>
+<div class="continue-reading"><a href="http://www.bigfastblog.com/how-to-get-experience-working-with-large-datasets"><strong>Continue reading&#8230;</strong></a></div>
+</p></div>
+<script type="text/javascript">AKPC_IDS += "995,";</script>									</div><!-- .entry-content -->
+
+				<p class="entry-meta"><span class="category">Posted in <a href="http://www.bigfastblog.com/category/nosql-2/membase" rel="tag">Membase</a>, <a href="http://www.bigfastblog.com/category/nosql-2" rel="tag">NoSQL</a>, <a href="http://www.bigfastblog.com/category/web-development" rel="tag">Web Development</a></span> <span class="post_tag">| Tagged <a href="http://www.bigfastblog.com/tag/caching" rel="tag">caching</a>, <a href="http://www.bigfastblog.com/tag/distributed" rel="tag">distributed</a>, <a href="http://www.bigfastblog.com/tag/key-value-store" rel="tag">key-value store</a>, <a href="http://www.bigfastblog.com/tag/membase-2" rel="tag">membase</a>, <a href="http://www.bigfastblog.com/tag/memcached" rel="tag">memcached</a>, <a href="http://www.bigfastblog.com/tag/moxi" rel="tag">moxi</a>, <a href="http://www.bigfastblog.com/tag/nosql" rel="tag">nosql</a>, <a href="http://www.bigfastblog.com/tag/review" rel="tag">review</a>, <a href="http://www.bigfastblog.com/tag/web-development-2" rel="tag">web-development</a></span> | <a class="comments-link" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase#comments" title="Comment on De-volatile Your Memcached. Upgrade to Membase">6 Responses</a></p>
+			</div><!-- .hentry -->
+
+			
+		<div id="utility-after-singular" class="sidebar utility">
+
+			<div id="text-16" class="widget widget_text widget-widget_text"><div class="widget-inside">			<div class="textwidget"><a href="https://twitter.com/philwhln" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @philwhln</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+		</div></div>
+		</div><!-- #utility-after-singular .utility -->
+
+	
+			
+<div id="comments-template">
+
+	
+		<div id="comments">
+
+			<h3 id="comments-number" class="comments-header">6 responses to &#8220;De-volatile Your Memcached. Upgrade to Membase&#8221;</h3>
+
+			
+			<ol class="comment-list">
+				
+	<li id="comment-829" class="comment even thread-even depth-1 comment reader">
+
+		<a href="http://www.membase.com" rel="external nofollow" title="Perry Krug"><img alt='Perry Krug' src='http://1.gravatar.com/avatar/70b38bbe52aff967313a7acf9dd8f43d?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.membase.com"><a href="http://www.membase.com" title="Perry Krug" class="url" rel="external nofollow">Perry Krug</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, January 22nd, 2011, 6:31 pm">January 22, 2011</abbr> at <abbr class="comment-time" title="Saturday, January 22nd, 2011, 6:31 pm">6:31 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-829" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Phil, this is a fantastic blog…thank you very much.</p>
+<p>A few points of clarification. Please take these as constructive criticism, you have done an excellent job up to here and I simply want to add a bit more detail for your/our readers:</p>
+<p>- When talking about the hashing algorithm stuff, you are absolutely correct about how memcached handles things. You are also correct about how Membase handles the “re-routing” of client requests. However, we actually use “vBuckets” (not regular buckets…those are the logical keyspaces within a Membase cluster. Yes, I know it’s confusing…we apologize  .</p>
+<p>- Membase doesn’t actually have a cluster size limit. You are correct that you can only have 1024 servers holding “active” data, but if you have more than 1024 nodes in the cluster, some will only be handling replica data. The cluster itself will still be viable. We are also planning on raising this limit in the future when we run into deployments that need it. 1024 was appropriate from a testing and qualification perspective for now. You are still correct about the chattiness of the nodes and that we are continuing development in this area.</p>
+<p>- It’s worth pointing out that running Moxi on the client side is our best-practice for non-”smart” clients and will eliminate any extra network hops when retrieving data since Moxi can go directly to the Membase server for a particular key.</p>
+<p>- ”smart” clients don’t actually embed Moxi within them…they simply contain the same logic that Moxi does. Take a look at the Enyim (<a href="http://memcached.enyim.com/" rel="nofollow">http://memcached.enyim.com/</a>) client and our updated spymemcached client for Java (<a href="http://wiki.membase.org/display/membase/prerelease+spymemcached+vBucket" rel="nofollow">http://wiki.membase.org/display/membase/prerelease+spymemcached+vBucket</a>). We’ve also begun the process of writing a libmembase C library (<a href="http://trondn.blogspot.com/2010/12/building-libmembase.html" rel="nofollow">http://trondn.blogspot.com/2010/12/building-libmembase.html</a>). You can really think of Moxi as the first “smart” client…though it can do much more.</p>
+<p>- It “may” be worthwhile calling out Membase’s features of replication and the TAP interface a bit more if you like…they’re rather key to the whole system (no pun intended)</p>
+<p>Thanks again and I really look forward to your continuing investigation of Membase. Please let me know if there’s anything I can do to help in your pursuit.</p>
+<p>Perry Krug</p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-846" class="comment byuser comment-author-admin bypostauthor odd alt depth-2 comment role-administrator user-admin entry-author">
+
+		<a href="http://www.bigfastblog.com" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.bigfastblog.com"><a href="http://www.bigfastblog.com" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, January 24th, 2011, 4:42 pm">January 24, 2011</abbr> at <abbr class="comment-time" title="Monday, January 24th, 2011, 4:42 pm">4:42 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-846" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Wow! Thanks for the excellent feedback on the post, Perry. I will definitely incorporate all those points in future Membase posts. I appreciate the clarifications and all the pointers to more resources.</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment --></ol>
+</li><!-- .comment -->
+	<li id="comment-4104" class="comment even thread-odd thread-alt depth-1 comment reader">
+
+		<a href="http://www.linuxbox.co.uk" rel="external nofollow" title="Peter Smith"><img alt='Peter Smith' src='http://0.gravatar.com/avatar/e8f1b679872435d5dd0d09d85f204395?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.linuxbox.co.uk"><a href="http://www.linuxbox.co.uk" title="Peter Smith" class="url" rel="external nofollow">Peter Smith</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 11:56 am">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 11:56 am">11:56 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4104" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Great article, but just a quick note on memcache limitations. Consistent hashing  (the PHP APIs support this, and some other languages too) solves the problems that occur when memcache servers are added/removed from the pool, so this isn&#8217;t really a reason not to use memcache (since there&#8217;s a simple solution).</p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-4105" class="comment byuser comment-author-admin bypostauthor odd alt depth-2 comment role-administrator user-admin entry-author">
+
+		<a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 2:26 pm">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 2:26 pm">2:26 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4105" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Thanks Peter. I had not come across this concept. </p>
+<p>Here&#8217;s a little explanation for other readers&#8230;<br />
+<a href="http://code.google.com/p/memcached/wiki/FAQ#What_is_a_%22consistent_hashing%22_client?" rel="nofollow">http://code.google.com/p/memcached/wiki/FAQ</a></p>
+<p>Here is a Ruby implementation&#8230;<br />
+<a href="http://www.mikeperham.com/2009/01/14/consistent-hashing-in-memcache-client/" rel="nofollow">http://www.mikeperham.com/2009/01/14/consistent-hashing-in-memcache-client/</a></p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment --></ol>
+</li><!-- .comment -->
+	<li id="comment-4106" class="comment even thread-even depth-1 comment reader">
+
+		<a href="http://www.couchbase.com" rel="external nofollow" title="Perry Krug"><img alt='Perry Krug' src='http://0.gravatar.com/avatar/202cbbf282c581c26d97a79f0fcfec5f?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.couchbase.com"><a href="http://www.couchbase.com" title="Perry Krug" class="url" rel="external nofollow">Perry Krug</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 4:01 pm">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 4:01 pm">4:01 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4106" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Consistent hashing does make the addition/removal of servers &#8220;less&#8221; impactful, but it&#8217;s not perfect.  As a database, Membase (and now Couchbase Server) needed to be perfectly consistent and the vbucket concept has been extremely valuable to our project. </p>
+<p>As simply a memcached replacement, Membase does offer a number of other advantages like replication and failover, as well as persistence to disk (though some argue that a cache shouldn&#8217;t have to be persistent).  With the introduction of CouchDB underneath (creating the Couchbase Server 2.0 product) you also get robust indexing and map-reduce functionality (useful even in a &#8220;cache&#8221;) and cross datacenter replication is close on the horizon.</p>
+<p>We believe that memcached is still an extremely valuable technology and has many valid use cases, we even have customers running &#8220;standard&#8221; memcached within their Membase cluster.  Mostly for the enhanced monitoring and clustering that we bring to it, but also for much more transient data that they truly just need a volatile cache for.</p>
+<p>Full disclosure, I&#8217;m a bit biased having worked at Couchbase (formerly Membase, formerly NorthScale) for over a year now, but there is some seriously cool and useful technology being born before our eyes.</p>
+<p>Perry Krug<br />
+Sr. Solutions Architect, Couchbase<br />
+<a href="mailto:perry@couchbase.com">perry@couchbase.com</a></p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->
+	<li id="comment-4759" class="pingback odd alt thread-odd thread-alt depth-1 pingback reader">
+
+		<a href="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html" rel="external nofollow" title="printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets"><img alt='printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets' src='http://0.gravatar.com/avatar/?d=http://www.bigfastblog.com/wp-content/themes/hybrid/library/images/pingback.png&amp;s=80' class='avatar avatar-80 photo avatar-default' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html"><a href="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html" title="printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets" class="url" rel="external nofollow">printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Wednesday, September 21st, 2011, 11:42 pm">September 21, 2011</abbr> at <abbr class="comment-time" title="Wednesday, September 21st, 2011, 11:42 pm">11:42 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4759" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>[...] start with a quote: Matt Ingenthron said internally at Membase Inc they view Memcached as a rabbit. It is fast, but it [...]</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->			</ol><!-- .comment-list -->
+
+			
+							<div class="comment-navigation paged-navigation">
+									</div><!-- .comment-navigation -->
+			
+		</div><!-- #comments -->
+
+	
+									
+</div><!-- #comments-template -->
+			
+		
+		
+	
+		<div class="navigation-links">
+			<a href="http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential" rel="prev"><span class="previous">&laquo; Previous</span></a>			<a href="http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2" rel="next"><span class="next">Next &raquo;</span></a>		</div><!-- .navigation-links -->
+
+	
+	</div><!-- .content .hfeed -->
+
+		
+	<div id="primary" class="sidebar aside">
+
+		
+				<div id="popularity-lists-1" class="widget widget_popularity_lists widget-widget_popularity_lists"><div class="widget-inside">			<h3 class="widget-title">Top Posts</h3>			<ul>
+			<li><a href="http://www.bigfastblog.com/homebrew-intro-to-the-mac-os-x-package-installer">Homebrew - Intro To The Mac OS X Package Installer</a></li><li><a href="http://www.bigfastblog.com/quoras-technology-examined">Quora's Technology Examined</a></li><li><a href="http://www.bigfastblog.com/gitolite-installation-step-by-step">Gitolite Installation Step-By-Step</a></li><li><a href="http://www.bigfastblog.com/how-to-get-experience-working-with-large-datasets">How To Get Experience Working With Large Datasets</a></li><li><a href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories">Install Gitolite To Manage Your Git Repositories</a></li><li><a href="http://www.bigfastblog.com/embed-base64-encoded-images-inline-in-html">Embed Base64-Encoded Images Inline In HTML</a></li><li><a href="http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop">Map-Reduce With Ruby Using Hadoop</a></li><li><a href="http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines">Highchart Vs Flot.js - Comparing JavaScript Graphing Engines </a></li>			</ul>
+		</div></div><div id="hybrid-tags-2" class="widget tags widget-tags"><div class="widget-inside"><h3 class="widget-title">Tags</h3><p class="post_tag-cloud term-cloud"><a href='http://www.bigfastblog.com/tag/amazon-ec2' class='tag-link-211' title='6 topics' style='font-size: 15.194444444444pt;'>amazon ec2</a> <a href='http://www.bigfastblog.com/tag/android' class='tag-link-74' title='2 topics' style='font-size: 8pt;'>android</a> <a href='http://www.bigfastblog.com/tag/apple' class='tag-link-20' title='3 topics' style='font-size: 10.333333333333pt;'>apple</a> <a href='http://www.bigfastblog.com/tag/cassandra' class='tag-link-204' title='3 topics' style='font-size: 10.333333333333pt;'>cassandra</a> <a href='http://www.bigfastblog.com/tag/customers-2' class='tag-link-148' title='2 topics' style='font-size: 8pt;'>customers</a> <a href='http://www.bigfastblog.com/tag/data-processing-2' class='tag-link-107' title='5 topics' style='font-size: 13.833333333333pt;'>data processing</a> <a href='http://www.bigfastblog.com/tag/entrepreneur' class='tag-link-123' title='2 topics' style='font-size: 8pt;'>entrepreneur</a> <a href='http://www.bigfastblog.com/tag/entrepreneurship' class='tag-link-117' title='2 topics' style='font-size: 8pt;'>entrepreneurship</a> <a href='http://www.bigfastblog.com/tag/eventmachine-2' class='tag-link-422' title='3 topics' style='font-size: 10.333333333333pt;'>eventmachine</a> <a href='http://www.bigfastblog.com/tag/gem' class='tag-link-274' title='3 topics' style='font-size: 10.333333333333pt;'>gem</a> <a href='http://www.bigfastblog.com/tag/git' class='tag-link-177' title='3 topics' style='font-size: 10.333333333333pt;'>git</a> <a href='http://www.bigfastblog.com/tag/gitolite' class='tag-link-178' title='2 topics' style='font-size: 8pt;'>gitolite</a> <a href='http://www.bigfastblog.com/tag/google' class='tag-link-89' title='2 topics' style='font-size: 8pt;'>google</a> <a href='http://www.bigfastblog.com/tag/hadoop' class='tag-link-102' title='7 topics' style='font-size: 16.166666666667pt;'>hadoop</a> <a href='http://www.bigfastblog.com/tag/hbase' class='tag-link-264' title='4 topics' style='font-size: 12.277777777778pt;'>hbase</a> <a href='http://www.bigfastblog.com/tag/hdfs' class='tag-link-103' title='4 topics' style='font-size: 12.277777777778pt;'>hdfs</a> <a href='http://www.bigfastblog.com/tag/high-scalability' class='tag-link-114' title='3 topics' style='font-size: 10.333333333333pt;'>high scalability</a> <a href='http://www.bigfastblog.com/tag/homebrew' class='tag-link-216' title='4 topics' style='font-size: 12.277777777778pt;'>homebrew</a> <a href='http://www.bigfastblog.com/tag/install' class='tag-link-51' title='2 topics' style='font-size: 8pt;'>install</a> <a href='http://www.bigfastblog.com/tag/iphone' class='tag-link-65' title='2 topics' style='font-size: 8pt;'>iphone</a> <a href='http://www.bigfastblog.com/tag/java' class='tag-link-276' title='3 topics' style='font-size: 10.333333333333pt;'>java</a> <a href='http://www.bigfastblog.com/tag/location' class='tag-link-136' title='2 topics' style='font-size: 8pt;'>location</a> <a href='http://www.bigfastblog.com/tag/mac-osx' class='tag-link-59' title='2 topics' style='font-size: 8pt;'>mac osx</a> <a href='http://www.bigfastblog.com/tag/memcached' class='tag-link-306' title='4 topics' style='font-size: 12.277777777778pt;'>memcached</a> <a href='http://www.bigfastblog.com/tag/mongodb' class='tag-link-210' title='5 topics' style='font-size: 13.833333333333pt;'>mongodb</a> <a href='http://www.bigfastblog.com/tag/mysql' class='tag-link-293' title='3 topics' style='font-size: 10.333333333333pt;'>mysql</a> <a href='http://www.bigfastblog.com/tag/nginx' class='tag-link-326' title='4 topics' style='font-size: 12.277777777778pt;'>nginx</a> <a href='http://www.bigfastblog.com/tag/nosql' class='tag-link-205' title='6 topics' style='font-size: 15.194444444444pt;'>nosql</a> <a href='http://www.bigfastblog.com/tag/perl' class='tag-link-377' title='3 topics' style='font-size: 10.333333333333pt;'>perl</a> <a href='http://www.bigfastblog.com/tag/phone' class='tag-link-72' title='3 topics' style='font-size: 10.333333333333pt;'>phone</a> <a href='http://www.bigfastblog.com/tag/postgresql' class='tag-link-221' title='3 topics' style='font-size: 10.333333333333pt;'>postgresql</a> <a href='http://www.bigfastblog.com/tag/python' class='tag-link-355' title='5 topics' style='font-size: 13.833333333333pt;'>python</a> <a href='http://www.bigfastblog.com/tag/rails' class='tag-link-172' title='2 topics' style='font-size: 8pt;'>rails</a> <a href='http://www.bigfastblog.com/tag/redis' class='tag-link-301' title='3 topics' style='font-size: 10.333333333333pt;'>redis</a> <a href='http://www.bigfastblog.com/tag/ruby' class='tag-link-166' title='15 topics' style='font-size: 22pt;'>ruby</a> <a href='http://www.bigfastblog.com/tag/ruby-on-rails-2' class='tag-link-157' title='6 topics' style='font-size: 15.194444444444pt;'>ruby on rails</a> <a href='http://www.bigfastblog.com/tag/scala' class='tag-link-302' title='3 topics' style='font-size: 10.333333333333pt;'>scala</a> <a href='http://www.bigfastblog.com/tag/ssh-keygen' class='tag-link-180' title='2 topics' style='font-size: 8pt;'>ssh-keygen</a> <a href='http://www.bigfastblog.com/tag/startup' class='tag-link-119' title='3 topics' style='font-size: 10.333333333333pt;'>startup</a> <a href='http://www.bigfastblog.com/tag/tornado' class='tag-link-330' title='6 topics' style='font-size: 15.194444444444pt;'>tornado</a> <a href='http://www.bigfastblog.com/tag/twitter' class='tag-link-133' title='2 topics' style='font-size: 8pt;'>twitter</a> <a href='http://www.bigfastblog.com/tag/vancouver' class='tag-link-120' title='2 topics' style='font-size: 8pt;'>vancouver</a> <a href='http://www.bigfastblog.com/tag/web-development-2' class='tag-link-193' title='5 topics' style='font-size: 13.833333333333pt;'>web-development</a> <a href='http://www.bigfastblog.com/tag/whirr' class='tag-link-223' title='3 topics' style='font-size: 10.333333333333pt;'>whirr</a> <a href='http://www.bigfastblog.com/tag/wikipedia' class='tag-link-174' title='2 topics' style='font-size: 8pt;'>wikipedia</a></p></div></div>
+		
+	</div><!-- #primary .aside -->
+
+
+	</div><!-- #container -->
+
+	<div id="footer-container">
+
+		
+		<div id="footer">
+
+			<small>Copyright &#169; 2016 <a class="site-link" href="http://www.bigfastblog.com" title="Big Fast Blog" rel="home"><span>Big Fast Blog</span></a> | Vancouver, BC, Canada</small>
+		</div><!-- #footer -->
+
+		
+	</div><!-- #footer-container -->
+
+</div><!-- #body-container -->
+
+
+<script type="text/javascript">
+jQuery(function() {
+	
+	jQuery.post("index.php",{ak_action:"api_record_view", ids: AKPC_IDS, type:"single"}, false, "json");
+});
+</script>
+	
+<!-- Ockamo -->
+<script>
+var s = ("https:" == document.location.protocol) ? "https://ssl.ockamo.com/js/scripts/secure.js" : "http://ockamo.com/js/scripts/capture.js";
+document.write(unescape("%3Cscript src='"+s+"' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- /Ockamo -->
+
+</body>
+</html>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

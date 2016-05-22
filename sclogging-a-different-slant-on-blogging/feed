@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Sclogging &#8211; A Different Slant On Blogging</title>
+	<atom:link href="http://www.bigfastblog.com/sclogging-a-different-slant-on-blogging/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/sclogging-a-different-slant-on-blogging</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: David Cawley</title>
+		<link>http://www.bigfastblog.com/sclogging-a-different-slant-on-blogging/comment-page-1#comment-6</link>
+		<dc:creator>David Cawley</dc:creator>
+		<pubDate>Mon, 29 Sep 2008 02:26:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=28#comment-6</guid>
+		<description>I&#039;m surprised that Facebook hasn&#039;t jumped on the blogging bandwagon. I&#039;d imagine some day they will and I hope it&#039;s called &#039;flogging&#039; :o) People already love to share status updates so why don&#039;t they directly integrate blogging as they have a semi-closed platform?</description>
+		<content:encoded><![CDATA[<p>I&#8217;m surprised that Facebook hasn&#8217;t jumped on the blogging bandwagon. I&#8217;d imagine some day they will and I hope it&#8217;s called &#8216;flogging&#8217; <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_surprised.gif' alt=':o' class='wp-smiley' /> ) People already love to share status updates so why don&#8217;t they directly integrate blogging as they have a semi-closed platform?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

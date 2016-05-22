@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<title>Install Gitolite To Manage Your Git Repositories | Big Fast Blog</title>
+
+<link rel="stylesheet" href="/wp-content/themes/hybrid/style.css" type="text/css" media="screen" />
+<link rel="author" href="https://plus.google.com/101358683928607234715/posts"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="WordPress 3.0.1" />
+<meta name="template" content="Hybrid 0.8" />
+<link rel="pingback" href="http://www.bigfastblog.com/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; Feed" href="http://feeds.feedburner.com/philwhelansblog" />
+<link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; Comments Feed" href="http://feeds.feedburner.com/philwhelansblog" />
+<link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; Install Gitolite To Manage Your Git Repositories Comments Feed" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/feed" />
+<link rel='stylesheet' id='wp_greet_box_style-css'  href='http://www.bigfastblog.com/wp-content/plugins/wp-greet-box/css/style.css?ver=3.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rpx_style-css'  href='http://www.bigfastblog.com/wp-content/plugins/rpx/files/style.php?ver=3.0.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-includes/js/jquery/jquery.js?ver=1.4.2'></script>
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-content/plugins/sharebar/js/sharebar.js?ver=3.0.1'></script>
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-content/plugins/wp-greet-box/js/functions.js?ver=3.0.1'></script>
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-content/plugins/wp-greet-box/js/js-mode.js?ver=3.0.1'></script>
+<script type='text/javascript' src='http://www.bigfastblog.com/wp-content/plugins/rpx/files/javascript.php?ver=3.0.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.bigfastblog.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.bigfastblog.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Big Fast Blog' href='http://www.bigfastblog.com' />
+<link rel='start' title='Firefox &#8211; A must have web browser' href='http://www.bigfastblog.com/firefox-a-must-have-web-browser' />
+<link rel='prev' title='To Show Ads Or Not To Show Ads' href='http://www.bigfastblog.com/to-advertise-or-not-to-advertise' />
+<link rel='next' title='Highchart Vs Flot.js &#8211; Comparing JavaScript Graphing Engines' href='http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines' />
+<link rel='shortlink' href='http://www.bigfastblog.com/?p=324' />
+
+<!-- All in One SEO Pack 1.6.12.1 by Michael Torbert of Semper Fi Web Design[275,300] -->
+<meta name="description" content="This post has been depreciated. A newer post is available. Gitolite Installation Step-By-Step Recently, netSIGN asked me to setup gitolite to give" />
+<meta name="keywords" content="code repository,git,gitolite,install,installation,mac osx,ssh-keygen" />
+<link rel="canonical" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories" />
+<!-- /all in one seo pack -->
+
+<script type="text/javascript">var AKPC_IDS = "";</script>
+	<link rel="stylesheet" href="http://www.bigfastblog.com/wp-content/plugins/sharebar/css/sharebar.css" type="text/css" media="screen" />
+<script type="text/javascript">jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal:'true',swidth:'65',minwidth:1000,position:'left',leftOffset:20,rightOffset:10}); });</script>
+<!-- Sharebar Plugin by Monjurul Dolon (http://mdolon.com/) - more info at: http://devgrow.com/sharebar-wordpress-plugin -->
+
+
+</head>
+
+<body class="wordpress ltr en_US y2016 m05 d22 h13 sunday not-logged-in singular singular-post singular-post-324 single-324 primary-active secondary-inactive subsidiary-inactive">
+
+
+<div id="body-container">
+
+	
+	<div id="header-container">
+
+		<div id="header">
+
+			<a href="/"><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/big_fast_blog_title5.png" width="650" height="191" Alt="Phil Whelan's Big Fast Blog" border="0"></a>
+
+		</div><!-- #header -->
+
+	</div><!-- #header-container -->
+
+	<div id="navigation">
+			<div id="page-nav" class="page-nav"></div>
+	</div><!-- #navigation -->
+
+	<div id="container">
+
+		
+	<div id="content" class="hfeed content">
+
+		
+		<div id="utility-before-content" class="sidebar utility">
+
+			<div id="text-13" class="widget widget_text widget-widget_text"><div class="widget-inside">			<div class="textwidget"><a href="https://twitter.com/philwhln" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @philwhln</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+		</div></div>
+		</div><!-- #utility-before-content .utility -->
+
+	
+		
+			<div id="post-324" class="hentry post publish post-1 odd author-admin category-software-development category-uncategorized post_tag-code-repository post_tag-git post_tag-gitolite post_tag-install post_tag-installation post_tag-mac-osx post_tag-ssh-keygen">
+
+				<h1 class="post-title entry-title"><a href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories" title="Install Gitolite To Manage Your Git Repositories" rel="bookmark">Install Gitolite To Manage Your Git Repositories</a></h1><p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard"><a class="url fn n" href="http://www.bigfastblog.com/author/admin/" title="Phil Whelan">Phil Whelan</a></span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Friday, December 3rd, 2010, 11:03 am">December 3, 2010</abbr> </p>
+				<div class="entry-content">
+					<div id="greet_block"><noscript><div class="greet_block wpgb_cornered"><div class="greet_text"><div class="greet_image"><a href="http://feeds.feedburner.com/philwhelansblog"  rel="nofollow"><img src="http://www.bigfastblog.com/wp-content/plugins/wp-greet-box/images/rss_icon.png" alt="WP Greet Box icon"/></a></div>Hello there! If you are new here, you might want to <a href="http://feeds.feedburner.com/philwhelansblog" rel="nofollow"><strong>subscribe to the RSS feed</strong></a> for updates on this topic.<div style="clear:both"></div><div class="greet_block_powered_by">Powered by <a href="http://omninoggin.com/projects/wordpress-plugins/wp-greet-box-wordpress-plugin/" title="WP Greet Box WordPress Plugin" style="text-decoration:none;">WP Greet Box</a> <a href="http://omninoggin.com/" title="WordPress Plugin" style="text-decoration:none;">WordPress Plugin</a></div><div style="clear:both"></div></div></div></noscript></div><ul id="sharebar" style="background:#;border-color:#;">
+<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
+<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><div style="border: 1px #ddd solid; margin: 5px; padding: 5px; background-color: #FFFF99;">
+<strong>This post has been depreciated. A newer post is available.<br />
+<a href="http://www.bigfastblog.com/gitolite-installation-step-by-step">Gitolite Installation Step-By-Step</a><br />
+</strong></div>
+<p>Recently, <a href="http://www.netsign.com">netSIGN</a> asked me to setup <a href="https://github.com/sitaramc/gitolite">gitolite</a> to give external developers controlled access to git repositories. Gitolite enables easy management of this access control. In this post I will detail how I set this up.</p>
+<p>The first thing to note about the gitolite install is that the installer is run remotely. Therefore, you will want to download the gitolite installation code onto your local machine.</p>
+<pre>git clone git://github.com/sitaramc/gitolite</pre>
+<p>This will fetch the gitolite code from github.</p>
+<pre>Cloning into gitolite...
+remote: Counting objects: 3156, done.
+remote: Compressing objects: 100% (1438/1438), done.
+remote: Total 3156 (delta 2149), reused 2479 (delta 1681)
+Receiving objects: 100% (3156/3156), 699.61 KiB | 268 KiB/s, done.
+Resolving deltas: 100% (2149/2149), done.</pre>
+<p>You will need to setup the git user account on the remote machine, under which gitolite will run, so login. </p>
+<pre>ssh gitbox</pre>
+<p><em>gitbox</em> is the hostname of the remote machine I am using. You can replace this with your remote machine&#8217;s hostname or IP.</p>
+<p>Now create the user. I&#8217;m calling my user &#8220;gitolite&#8221;, but you can use &#8220;git&#8221; or anything else.</p>
+<pre>sudo adduser \
+  --system \
+  --shell /bin/bash \
+  --gecos 'git version control' \
+  --group \
+  --disabled-password \
+  --home /home/gitolite gitolite</pre>
+<p>In this example above <em>/home/gitolite</em> is where gitolite and your code repositories will live.</p>
+<p>Now you can return to your local machine.</p>
+<pre>exit</pre>
+<p>Notice that when we created the user, we used <em>&#8211;disable-password</em>, which prevents us logging into the machine using a password. Therefore we&#8217;ll need to upload a ssh key for running the installer. Here, I will create a public and private keypair with the name <em>id_rsa_gitolite</em>.</p>
+<pre>cd ~/.ssh
+ssh-keygen -t rsa -f id_rsa_gitolite
+cd ~
+</pre>
+<p>Hit return at the prompts to create the key without passphrase authentication.</p>
+<p>You public key can be found here.</p>
+<pre>~/.ssh/id_rsa_gitolite.pub</pre>
+<p>And the private key here.</p>
+<pre>~/.ssh/id_rsa_gitolite</pre>
+<p>Now you&#8217;ll need to upload the public key to gitolite user account, so that we can log into that account using our private key.</p>
+<pre>scp ~/.ssh/id_rsa_gitolite.pub gitbox</pre>
+<p>Now login to the remote machine</p>
+<pre>ssh gitbox</pre>
+<p>and copy the key to the gitolite account.</p>
+<pre>sudo cp id_rsa_gitolite.pub /home/gitolite
+sudo chown gitolite:gitolite /home/gitolite/id_rsa_gitolite.pub</pre>
+<p>Become the <em>gitolite</em> user</p>
+<pre>sudo su - gitolite</pre>
+<p>and add the gitolite public key to the list of authorized keys that can be used to login as this user.</p>
+<pre>mkdir .ssh
+chmod 700 .ssh
+cat id_rsa_gitolite.pub >> .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
+rm id_rsa_gitolite.pub
+</pre>
+<p>Now it&#8217;s time to return to you local machine.</p>
+<pre>exit # from gitolite user
+exit # from remote machine
+</pre>
+<p>To make things simple on ssh side I recommend adding the configuration for the gitolite account to you ssh config.</p>
+<pre>vim ~/.ssh/config</pre>
+<pre>Host gitbox
+   User gitolite
+   Hostname gitbox
+   Port 22
+   IdentityFile ~/.ssh/id_rsa_gitolite
+</pre>
+<p>Now you should be able to login to the remote machine as the gitolite user using the following&#8230;</p>
+<pre>ssh gitbox
+exit</pre>
+<p>The installer command <em>gl-easy-install</em> takes the following arguments</p>
+<pre>gl-easy-install &lt;user&gt; &lt;host&gt; [ &lt;port&gt; ] &lt;admin name&gt; &lt;host nickname&gt;</pre>
+<p>If <em>port</em> is not given it will default to <em>22</em>.</p>
+<p>Now you can run the gitolite installer using the gitolite code we downloaded.</p>
+<pre>cd gitolite/src
+./gl-easy-install gitolite gitbox gitadmin
+</pre>
+<p>If all went well you should have a checked-out gitolite-admin git repository in your home directory.</p>
+<pre>cd ~/gitolite-admin</pre>
+<p>This will be used for managing your users and git repositories. By simply editing <em>conf/gitolite.conf</em> and pushing it to the gitolite server you can create new repositories. Adding new users will involve adding an ssh key to the <em>keydir</em>. I will cover more on these in a follow-up post.</p>
+<script type="text/javascript">AKPC_IDS += "324,";</script>									</div><!-- .entry-content -->
+
+				<p class="entry-meta"><span class="category">Posted in <a href="http://www.bigfastblog.com/category/software-development" rel="tag">Software Development</a>, <a href="http://www.bigfastblog.com/category/uncategorized" rel="tag">Uncategorized</a></span> <span class="post_tag">| Tagged <a href="http://www.bigfastblog.com/tag/code-repository" rel="tag">code repository</a>, <a href="http://www.bigfastblog.com/tag/git" rel="tag">git</a>, <a href="http://www.bigfastblog.com/tag/gitolite" rel="tag">gitolite</a>, <a href="http://www.bigfastblog.com/tag/install" rel="tag">install</a>, <a href="http://www.bigfastblog.com/tag/installation" rel="tag">installation</a>, <a href="http://www.bigfastblog.com/tag/mac-osx" rel="tag">mac osx</a>, <a href="http://www.bigfastblog.com/tag/ssh-keygen" rel="tag">ssh-keygen</a></span> | <a class="comments-link" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories#comments" title="Comment on Install Gitolite To Manage Your Git Repositories">19 Responses</a></p>
+			</div><!-- .hentry -->
+
+			
+		<div id="utility-after-singular" class="sidebar utility">
+
+			<div id="text-16" class="widget widget_text widget-widget_text"><div class="widget-inside">			<div class="textwidget"><a href="https://twitter.com/philwhln" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @philwhln</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+		</div></div>
+		</div><!-- #utility-after-singular .utility -->
+
+	
+			
+<div id="comments-template">
+
+	
+		<div id="comments">
+
+			<h3 id="comments-number" class="comments-header">19 responses to &#8220;Install Gitolite To Manage Your Git Repositories&#8221;</h3>
+
+			
+			<ol class="comment-list">
+				
+	<li id="comment-168" class="comment byuser comment-author-admin bypostauthor even thread-even depth-1 comment role-administrator user-admin entry-author">
+
+		<a href="http://www.bigfastblog.com" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.bigfastblog.com"><a href="http://www.bigfastblog.com" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Friday, December 3rd, 2010, 11:07 am">December 3, 2010</abbr> at <abbr class="comment-time" title="Friday, December 3rd, 2010, 11:07 am">11:07 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-168" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>More great gitolite information can be found on the gitolite github page<br />
+<a href="https://github.com/sitaramc/gitolite" rel="nofollow">https://github.com/sitaramc/gitolite</a></p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->
+	<li id="comment-849" class="comment odd alt thread-odd thread-alt depth-1 comment reader">
+
+		<img alt='airtonix' src='http://0.gravatar.com/avatar/454cea4c773e4e7ef6ceeb7ef0e18bd9?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">airtonix</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Tuesday, January 25th, 2011, 4:29 am">January 25, 2011</abbr> at <abbr class="comment-time" title="Tuesday, January 25th, 2011, 4:29 am">4:29 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-849" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>1. Instead of hardconding the customisable names you should use a step to customise them : </p>
+<p>$REMOTE_HOST=&#8221;gitbox&#8221;<br />
+$REMOTE_USER=&#8221;Phil&#8221;</p>
+<p>2. you need to specify the home directory of the remote user when copying the public key to the remote host</p>
+<p>scp ~/.ssh/id_rsa_gitolite.pub gitbox</p>
+<p>needs to be </p>
+<p>scp ~/.ssh/id_rsa_gitolite.pub $REMOTE_HOST:/home/$REMOTE_USER</p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-855" class="comment byuser comment-author-admin bypostauthor even depth-2 comment role-administrator user-admin entry-author">
+
+		<a href="http://www.bigfastblog.com" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.bigfastblog.com"><a href="http://www.bigfastblog.com" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Tuesday, January 25th, 2011, 9:39 am">January 25, 2011</abbr> at <abbr class="comment-time" title="Tuesday, January 25th, 2011, 9:39 am">9:39 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-855" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Excellent suggestion, Airtonix. I&#8217;m finding that to be a better way to go as I write posts, as it makes it easier for others to simply cut-and-paste the commands.</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment --></ol>
+</li><!-- .comment -->
+	<li id="comment-1524" class="comment odd alt thread-even depth-1 comment reader">
+
+		<a href="http://www.maastermedia.com" rel="external nofollow" title="Website design"><img alt='Website design' src='http://1.gravatar.com/avatar/9a7cadee6e1855db142177d0453a3376?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.maastermedia.com"><a href="http://www.maastermedia.com" title="Website design" class="url" rel="external nofollow">Website design</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Sunday, March 13th, 2011, 2:31 pm">March 13, 2011</abbr> at <abbr class="comment-time" title="Sunday, March 13th, 2011, 2:31 pm">2:31 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-1524" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Nice fast tutorial. Thank you.</p>
+<p>One remark though. Regarding &#8220;cat id_rsa_gitolite.pub &gt;&gt; .ssh/authorized_keys&#8221; &#8230;</p>
+<p>In my case gitolite user&#8217;s authorized_keys file needs to have following format in them:</p>
+<p>command=&#8221;/usr/share/gitolite/gl-auth-command johndoe&#8221;,no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAvwKWiIoF23S6TXMEr8H2U18hkpuPrt5nOsUhqvR7XB8Wpkf7Al5SKNpgpfb/4CGVrSSzDvwmTN/cO6SDO3td8h1NBVl0APaAmZ7x6RFyoN5NCco/raOfVK+0Ktwg1Yoq7S8TdUKRP1phDHnHnlSkwbhzk1TETOEiSZTboH6FMHs johndoe@hostname</p>
+<p>Only putting pub key file in it did not work.</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->
+	<li id="comment-1917" class="pingback even thread-odd thread-alt depth-1 pingback reader">
+
+		<a href="http://www.benmccann.com/dev-blog/getting-started-with-git/" rel="external nofollow" title="Getting started with Git"><img alt='Getting started with Git' src='http://0.gravatar.com/avatar/?d=http://www.bigfastblog.com/wp-content/themes/hybrid/library/images/pingback.png&amp;s=80' class='avatar avatar-80 photo avatar-default' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.benmccann.com/dev-blog/getting-started-with-git/"><a href="http://www.benmccann.com/dev-blog/getting-started-with-git/" title="Getting started with Git" class="url" rel="external nofollow">Getting started with Git</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, April 11th, 2011, 1:04 am">April 11, 2011</abbr> at <abbr class="comment-time" title="Monday, April 11th, 2011, 1:04 am">1:04 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-1917" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>[...] There are two downsides with Git. The first is that there&#8217;s no central server to store the code base. GitHub can fulfill this role if you don&#8217;t mind someone else hosting your source code. If you want to set up a central server yourself it seems the best solution is gitolite. The documentation isn&#8217;t for beginners, but I found a decent tutorial on setting up gitolite. [...]</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->
+	<li id="comment-3638" class="comment odd alt thread-even depth-1 comment reader">
+
+		<img alt='Pradeep Sharma' src='http://0.gravatar.com/avatar/0bb106b95fc10c738cab68c357558262?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Pradeep Sharma</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, July 7th, 2011, 4:33 am">July 7, 2011</abbr> at <abbr class="comment-time" title="Thursday, July 7th, 2011, 4:33 am">4:33 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3638" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>it should be ssh gitbox and not ssh gitolite</p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-3645" class="comment byuser comment-author-admin bypostauthor even depth-2 comment role-administrator user-admin entry-author">
+
+		<a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, July 7th, 2011, 11:06 am">July 7, 2011</abbr> at <abbr class="comment-time" title="Thursday, July 7th, 2011, 11:06 am">11:06 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3645" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Thanks Pradeep! I&#8217;ve updated the text.</p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-3686" class="comment odd alt depth-3 comment reader">
+
+		<img alt='Pradeep Sharma' src='http://0.gravatar.com/avatar/0bb106b95fc10c738cab68c357558262?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Pradeep Sharma</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, July 11th, 2011, 12:49 am">July 11, 2011</abbr> at <abbr class="comment-time" title="Monday, July 11th, 2011, 12:49 am">12:49 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3686" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>This how-to is really great. Do you know of some other article(may be yours), where I can get details on setting up collaborators.</p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-3693" class="comment byuser comment-author-admin bypostauthor even depth-4 comment role-administrator user-admin entry-author">
+
+		<a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, July 11th, 2011, 9:02 am">July 11, 2011</abbr> at <abbr class="comment-time" title="Monday, July 11th, 2011, 9:02 am">9:02 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3693" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>This is probably what you&#8217;re looking for&#8230;<br />
+<a href="http://progit.org/book/ch4-8.html#config_file_and_access_control_rules" rel="nofollow">http://progit.org/book/ch4-8.html#config_file_and_access_control_rules</a></p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment --></ol>
+</li><!-- .comment --></ol>
+</li><!-- .comment --></ol>
+</li><!-- .comment -->
+	<li id="comment-3799" class="comment odd alt thread-odd thread-alt depth-1 comment reader">
+
+		<img alt='Tim Orph' src='http://1.gravatar.com/avatar/967ec6191f9d954005e791c8afbc1e63?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Tim Orph</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Tuesday, July 19th, 2011, 3:13 am">July 19, 2011</abbr> at <abbr class="comment-time" title="Tuesday, July 19th, 2011, 3:13 am">3:13 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3799" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Does anyone know if it is posible to use server where gitolite is installed, as client and edit repository files ? i don&#8217;t know where does even gitolite save this files on server so i could try &#8220;git status&#8221; or smth.</p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-3802" class="comment byuser comment-author-admin bypostauthor even depth-2 comment role-administrator user-admin entry-author">
+
+		<a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Tuesday, July 19th, 2011, 9:06 am">July 19, 2011</abbr> at <abbr class="comment-time" title="Tuesday, July 19th, 2011, 9:06 am">9:06 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3802" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Curious why you want to do this?</p>
+<p>You can easily checkout a git repository as a separate user on the same machine.</p>
+<p>The repositories will be found under /home/gitolite/repositories if you followed the instructions above.</p>
+<p>Possibly look at installing gitweb, as this may do all the things you want.<br />
+<a href="http://progit.org/book/ch4-6.html" rel="nofollow">http://progit.org/book/ch4-6.html</a><br />
+<a href="http://groups.google.com/group/gitolite/msg/e7579cbd35dc1b3d" rel="nofollow">http://groups.google.com/group/gitolite/msg/e7579cbd35dc1b3d</a></p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment --></ol>
+</li><!-- .comment -->
+	<li id="comment-3803" class="comment odd alt thread-even depth-1 comment reader">
+
+		<img alt='Tim Orph' src='http://1.gravatar.com/avatar/967ec6191f9d954005e791c8afbc1e63?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Tim Orph</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Tuesday, July 19th, 2011, 9:56 am">July 19, 2011</abbr> at <abbr class="comment-time" title="Tuesday, July 19th, 2011, 9:56 am">9:56 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3803" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Of course.. this is what I should do <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /><br />
+Thank you for making me realize.</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->
+	<li id="comment-3806" class="comment even thread-odd thread-alt depth-1 comment reader">
+
+		<img alt='ed' src='http://0.gravatar.com/avatar/aff2c092406ded6e7093ebd0bccdb0fc?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">ed</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Tuesday, July 19th, 2011, 4:04 pm">July 19, 2011</abbr> at <abbr class="comment-time" title="Tuesday, July 19th, 2011, 4:04 pm">4:04 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-3806" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>i believe the steps:</p>
+<p>cd gitolite/src<br />
+./gl-easy-install gitolite gitbox gitadmin<br />
+ is initiated from the client side. but who is gitadmin? what privileges does it have and on where? </p>
+<p>for absolute beginner, it is not clear in the article. can you add more details? thanks</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->
+	<li id="comment-4839" class="comment odd alt thread-even depth-1 comment reader">
+
+		<img alt='dale' src='http://1.gravatar.com/avatar/70ef5a873859d8225bc42fd2df6d165c?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">dale</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Wednesday, September 28th, 2011, 7:47 am">September 28, 2011</abbr> at <abbr class="comment-time" title="Wednesday, September 28th, 2011, 7:47 am">7:47 am</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-4839" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>If you open the gl-easy-install file line 143 has a comment that &#8220;this *must* be run as &#8220;src/gl-easy-install&#8221;, not by cd-ing to src and then running &#8220;./gl-easy-install.  You may want to update your gl-easy-install instructions.  </p>
+<p>Excellent article, I have been struggling with the gitolite install, there&#8217;s many docs on it, but your&#8217;s made the most sense.</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->
+	<li id="comment-12568" class="comment even thread-odd thread-alt depth-1 comment reader">
+
+		<img alt='Michal' src='http://1.gravatar.com/avatar/d178acdade435f84e8ff43af1b838c3a?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Michal</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, April 14th, 2012, 10:05 pm">April 14, 2012</abbr> at <abbr class="comment-time" title="Saturday, April 14th, 2012, 10:05 pm">10:05 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-12568" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Unfortunately the file gl-easy-install is no longer distributed with gitolite and this &#8220;remote&#8221; installation is no longer possible. In short &#8211; when you use non-root installation method, you create your git user, clone gitolite, run src/gl-system-install and later gl-setup YourName.pub (on the server), clone your gitolite-admin repo (to the workstation)</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment -->
+	<li id="comment-19373" class="comment odd alt thread-even depth-1 comment reader">
+
+		<img alt='Roger Ivy' src='http://1.gravatar.com/avatar/df7b8a8bc19dd3bc020708a8fd59e2be?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Roger Ivy</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Wednesday, July 18th, 2012, 2:35 pm">July 18, 2012</abbr> at <abbr class="comment-time" title="Wednesday, July 18th, 2012, 2:35 pm">2:35 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-19373" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Phil, do you have updated instructions for the most recent versions of both Gotolite and Ubuntu (12.04LTS)?</p>
+<p>It seems that this command is no longer valid: gl-easy-install</p>
+<p>I&#8217;ve tried these instructions but hit permission issues: <a href="https://github.com/sitaramc/gitolite" rel="nofollow">https://github.com/sitaramc/gitolite</a></p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-19533" class="comment byuser comment-author-admin bypostauthor even depth-2 comment role-administrator user-admin entry-author">
+
+		<a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, July 23rd, 2012, 10:12 pm">July 23, 2012</abbr> at <abbr class="comment-time" title="Monday, July 23rd, 2012, 10:12 pm">10:12 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-19533" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Thanks Roger. I&#8217;ve written a new post <a href="http://www.bigfastblog.com/gitolite-installation-step-by-step" rel="nofollow">http://www.bigfastblog.com/gitolite-installation-step-by-step</a><br />
+This covers Ubuntu 12.04LTS and changes to Gitolite.</p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment --></ol>
+</li><!-- .comment -->
+	<li id="comment-19511" class="comment odd alt thread-odd thread-alt depth-1 comment reader">
+
+		<img alt='Charles Burns' src='http://0.gravatar.com/avatar/ae14185b22f65c974fca9c67d7e876cb?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Charles Burns</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, July 23rd, 2012, 12:26 pm">July 23, 2012</abbr> at <abbr class="comment-time" title="Monday, July 23rd, 2012, 12:26 pm">12:26 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-19511" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>I second what Roger Ivy says above: Love to see an updated version of thbis how-to for the most recent version of gitolite, since gl-easy-install doesn&#8217;t exist anymore&#8230;</p>
+		</div><!-- .comment-text -->
+
+		
+	<ol class='children'>
+
+	<li id="comment-19532" class="comment byuser comment-author-admin bypostauthor even depth-2 comment role-administrator user-admin entry-author">
+
+		<a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, July 23rd, 2012, 10:11 pm">July 23, 2012</abbr> at <abbr class="comment-time" title="Monday, July 23rd, 2012, 10:11 pm">10:11 pm</abbr></span> | <a class="permalink" href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories/comment-page-1#comment-19532" title="Permalink to comment ">Permalink</a>  </div>
+		<div class="comment-text">
+			
+			<p>Just wrote new post <a href="http://www.bigfastblog.com/gitolite-installation-step-by-step" rel="nofollow">http://www.bigfastblog.com/gitolite-installation-step-by-step</a></p>
+		</div><!-- .comment-text -->
+
+		
+	</li><!-- .comment --></ol>
+</li><!-- .comment -->			</ol><!-- .comment-list -->
+
+			
+							<div class="comment-navigation paged-navigation">
+									</div><!-- .comment-navigation -->
+			
+		</div><!-- #comments -->
+
+	
+									
+</div><!-- #comments-template -->
+			
+		
+		
+	
+		<div class="navigation-links">
+			<a href="http://www.bigfastblog.com/to-advertise-or-not-to-advertise" rel="prev"><span class="previous">&laquo; Previous</span></a>			<a href="http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines" rel="next"><span class="next">Next &raquo;</span></a>		</div><!-- .navigation-links -->
+
+	
+	</div><!-- .content .hfeed -->
+
+		
+	<div id="primary" class="sidebar aside">
+
+		
+				<div id="popularity-lists-1" class="widget widget_popularity_lists widget-widget_popularity_lists"><div class="widget-inside">			<h3 class="widget-title">Top Posts</h3>			<ul>
+			<li><a href="http://www.bigfastblog.com/homebrew-intro-to-the-mac-os-x-package-installer">Homebrew - Intro To The Mac OS X Package Installer</a></li><li><a href="http://www.bigfastblog.com/quoras-technology-examined">Quora's Technology Examined</a></li><li><a href="http://www.bigfastblog.com/gitolite-installation-step-by-step">Gitolite Installation Step-By-Step</a></li><li><a href="http://www.bigfastblog.com/how-to-get-experience-working-with-large-datasets">How To Get Experience Working With Large Datasets</a></li><li><a href="http://www.bigfastblog.com/install-gitolite-to-manage-your-git-repositories">Install Gitolite To Manage Your Git Repositories</a></li><li><a href="http://www.bigfastblog.com/embed-base64-encoded-images-inline-in-html">Embed Base64-Encoded Images Inline In HTML</a></li><li><a href="http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop">Map-Reduce With Ruby Using Hadoop</a></li><li><a href="http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines">Highchart Vs Flot.js - Comparing JavaScript Graphing Engines </a></li>			</ul>
+		</div></div><div id="hybrid-tags-2" class="widget tags widget-tags"><div class="widget-inside"><h3 class="widget-title">Tags</h3><p class="post_tag-cloud term-cloud"><a href='http://www.bigfastblog.com/tag/amazon-ec2' class='tag-link-211' title='6 topics' style='font-size: 15.194444444444pt;'>amazon ec2</a> <a href='http://www.bigfastblog.com/tag/android' class='tag-link-74' title='2 topics' style='font-size: 8pt;'>android</a> <a href='http://www.bigfastblog.com/tag/apple' class='tag-link-20' title='3 topics' style='font-size: 10.333333333333pt;'>apple</a> <a href='http://www.bigfastblog.com/tag/cassandra' class='tag-link-204' title='3 topics' style='font-size: 10.333333333333pt;'>cassandra</a> <a href='http://www.bigfastblog.com/tag/customers-2' class='tag-link-148' title='2 topics' style='font-size: 8pt;'>customers</a> <a href='http://www.bigfastblog.com/tag/data-processing-2' class='tag-link-107' title='5 topics' style='font-size: 13.833333333333pt;'>data processing</a> <a href='http://www.bigfastblog.com/tag/entrepreneur' class='tag-link-123' title='2 topics' style='font-size: 8pt;'>entrepreneur</a> <a href='http://www.bigfastblog.com/tag/entrepreneurship' class='tag-link-117' title='2 topics' style='font-size: 8pt;'>entrepreneurship</a> <a href='http://www.bigfastblog.com/tag/eventmachine-2' class='tag-link-422' title='3 topics' style='font-size: 10.333333333333pt;'>eventmachine</a> <a href='http://www.bigfastblog.com/tag/gem' class='tag-link-274' title='3 topics' style='font-size: 10.333333333333pt;'>gem</a> <a href='http://www.bigfastblog.com/tag/git' class='tag-link-177' title='3 topics' style='font-size: 10.333333333333pt;'>git</a> <a href='http://www.bigfastblog.com/tag/gitolite' class='tag-link-178' title='2 topics' style='font-size: 8pt;'>gitolite</a> <a href='http://www.bigfastblog.com/tag/google' class='tag-link-89' title='2 topics' style='font-size: 8pt;'>google</a> <a href='http://www.bigfastblog.com/tag/hadoop' class='tag-link-102' title='7 topics' style='font-size: 16.166666666667pt;'>hadoop</a> <a href='http://www.bigfastblog.com/tag/hbase' class='tag-link-264' title='4 topics' style='font-size: 12.277777777778pt;'>hbase</a> <a href='http://www.bigfastblog.com/tag/hdfs' class='tag-link-103' title='4 topics' style='font-size: 12.277777777778pt;'>hdfs</a> <a href='http://www.bigfastblog.com/tag/high-scalability' class='tag-link-114' title='3 topics' style='font-size: 10.333333333333pt;'>high scalability</a> <a href='http://www.bigfastblog.com/tag/homebrew' class='tag-link-216' title='4 topics' style='font-size: 12.277777777778pt;'>homebrew</a> <a href='http://www.bigfastblog.com/tag/install' class='tag-link-51' title='2 topics' style='font-size: 8pt;'>install</a> <a href='http://www.bigfastblog.com/tag/iphone' class='tag-link-65' title='2 topics' style='font-size: 8pt;'>iphone</a> <a href='http://www.bigfastblog.com/tag/java' class='tag-link-276' title='3 topics' style='font-size: 10.333333333333pt;'>java</a> <a href='http://www.bigfastblog.com/tag/location' class='tag-link-136' title='2 topics' style='font-size: 8pt;'>location</a> <a href='http://www.bigfastblog.com/tag/mac-osx' class='tag-link-59' title='2 topics' style='font-size: 8pt;'>mac osx</a> <a href='http://www.bigfastblog.com/tag/memcached' class='tag-link-306' title='4 topics' style='font-size: 12.277777777778pt;'>memcached</a> <a href='http://www.bigfastblog.com/tag/mongodb' class='tag-link-210' title='5 topics' style='font-size: 13.833333333333pt;'>mongodb</a> <a href='http://www.bigfastblog.com/tag/mysql' class='tag-link-293' title='3 topics' style='font-size: 10.333333333333pt;'>mysql</a> <a href='http://www.bigfastblog.com/tag/nginx' class='tag-link-326' title='4 topics' style='font-size: 12.277777777778pt;'>nginx</a> <a href='http://www.bigfastblog.com/tag/nosql' class='tag-link-205' title='6 topics' style='font-size: 15.194444444444pt;'>nosql</a> <a href='http://www.bigfastblog.com/tag/perl' class='tag-link-377' title='3 topics' style='font-size: 10.333333333333pt;'>perl</a> <a href='http://www.bigfastblog.com/tag/phone' class='tag-link-72' title='3 topics' style='font-size: 10.333333333333pt;'>phone</a> <a href='http://www.bigfastblog.com/tag/postgresql' class='tag-link-221' title='3 topics' style='font-size: 10.333333333333pt;'>postgresql</a> <a href='http://www.bigfastblog.com/tag/python' class='tag-link-355' title='5 topics' style='font-size: 13.833333333333pt;'>python</a> <a href='http://www.bigfastblog.com/tag/rails' class='tag-link-172' title='2 topics' style='font-size: 8pt;'>rails</a> <a href='http://www.bigfastblog.com/tag/redis' class='tag-link-301' title='3 topics' style='font-size: 10.333333333333pt;'>redis</a> <a href='http://www.bigfastblog.com/tag/ruby' class='tag-link-166' title='15 topics' style='font-size: 22pt;'>ruby</a> <a href='http://www.bigfastblog.com/tag/ruby-on-rails-2' class='tag-link-157' title='6 topics' style='font-size: 15.194444444444pt;'>ruby on rails</a> <a href='http://www.bigfastblog.com/tag/scala' class='tag-link-302' title='3 topics' style='font-size: 10.333333333333pt;'>scala</a> <a href='http://www.bigfastblog.com/tag/ssh-keygen' class='tag-link-180' title='2 topics' style='font-size: 8pt;'>ssh-keygen</a> <a href='http://www.bigfastblog.com/tag/startup' class='tag-link-119' title='3 topics' style='font-size: 10.333333333333pt;'>startup</a> <a href='http://www.bigfastblog.com/tag/tornado' class='tag-link-330' title='6 topics' style='font-size: 15.194444444444pt;'>tornado</a> <a href='http://www.bigfastblog.com/tag/twitter' class='tag-link-133' title='2 topics' style='font-size: 8pt;'>twitter</a> <a href='http://www.bigfastblog.com/tag/vancouver' class='tag-link-120' title='2 topics' style='font-size: 8pt;'>vancouver</a> <a href='http://www.bigfastblog.com/tag/web-development-2' class='tag-link-193' title='5 topics' style='font-size: 13.833333333333pt;'>web-development</a> <a href='http://www.bigfastblog.com/tag/whirr' class='tag-link-223' title='3 topics' style='font-size: 10.333333333333pt;'>whirr</a> <a href='http://www.bigfastblog.com/tag/wikipedia' class='tag-link-174' title='2 topics' style='font-size: 8pt;'>wikipedia</a></p></div></div>
+		
+	</div><!-- #primary .aside -->
+
+
+	</div><!-- #container -->
+
+	<div id="footer-container">
+
+		
+		<div id="footer">
+
+			<small>Copyright &#169; 2016 <a class="site-link" href="http://www.bigfastblog.com" title="Big Fast Blog" rel="home"><span>Big Fast Blog</span></a> | Vancouver, BC, Canada</small>
+		</div><!-- #footer -->
+
+		
+	</div><!-- #footer-container -->
+
+</div><!-- #body-container -->
+
+
+<script type="text/javascript">
+jQuery(function() {
+	
+	jQuery.post("index.php",{ak_action:"api_record_view", ids: AKPC_IDS, type:"single"}, false, "json");
+});
+</script>
+	
+<!-- Ockamo -->
+<script>
+var s = ("https:" == document.location.protocol) ? "https://ssl.ockamo.com/js/scripts/secure.js" : "http://ockamo.com/js/scripts/capture.js";
+document.write(unescape("%3Cscript src='"+s+"' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- /Ockamo -->
+
+</body>
+</html>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

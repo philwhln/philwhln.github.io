@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Ruby’s EventMachine – Part 2 : Asynchronous != Faster</title>
+	<atom:link href="http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-24376</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 30 Oct 2012 21:43:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-24376</guid>
+		<description>Be careful what you wish for...
+http://www.bigfastblog.com/rubys-eventmachine-part-3-thin</description>
+		<content:encoded><![CDATA[<p>Be careful what you wish for&#8230;<br />
+<a href="http://www.bigfastblog.com/rubys-eventmachine-part-3-thin" rel="nofollow">http://www.bigfastblog.com/rubys-eventmachine-part-3-thin</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Nicolás</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-24355</link>
+		<dc:creator>Nicolás</dc:creator>
+		<pubDate>Tue, 30 Oct 2012 13:18:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-24355</guid>
+		<description>Greate post! Waiting for part 3!!!</description>
+		<content:encoded><![CDATA[<p>Greate post! Waiting for part 3!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jarmo Pertman</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-22538</link>
+		<dc:creator>Jarmo Pertman</dc:creator>
+		<pubDate>Thu, 04 Oct 2012 17:54:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-22538</guid>
+		<description>You could also try Benchmark.bmbm instead of .measure to see if there&#039;s any effect when having also the rehearsal phase.</description>
+		<content:encoded><![CDATA[<p>You could also try Benchmark.bmbm instead of .measure to see if there&#8217;s any effect when having also the rehearsal phase.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Pirozhkov</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-22455</link>
+		<dc:creator>Phil Pirozhkov</dc:creator>
+		<pubDate>Sun, 30 Sep 2012 23:29:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-22455</guid>
+		<description>Forgot to mention that on my machine sync is only 50%-100% faster than async given your benchmark. (2 cores, linux 3.5.4).</description>
+		<content:encoded><![CDATA[<p>Forgot to mention that on my machine sync is only 50%-100% faster than async given your benchmark. (2 cores, linux 3.5.4).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Pirozhkov</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-22451</link>
+		<dc:creator>Phil Pirozhkov</dc:creator>
+		<pubDate>Sun, 30 Sep 2012 22:45:40 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-22451</guid>
+		<description>It&#039;s a very good example that EM is still far from being perfect.
+This is mostly due to the poor memcached protocol implementation, which adds all these callbacks to an array and is poping it one by one.
+
+There&#039;s a problem in test itself, you should consider that in evented style you never know which operation finishes first, and you cannot be sure that DEL is sent after SET and GET. So this should be better:
+
+
+&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;require &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&#039;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;em-synchrony&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&#039;&lt;/span&gt;&lt;/span&gt;
+require &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&#039;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;em-synchrony/em-memcache&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&#039;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;def&lt;/span&gt; &lt;span style=&quot;color:#06B;font-weight:bold&quot;&gt;async2&lt;/span&gt;
+  &lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;EventMachine&lt;/span&gt;.synchrony &lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;do&lt;/span&gt;
+    cache = &lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;EM&lt;/span&gt;::&lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;P&lt;/span&gt;::&lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;Memcache&lt;/span&gt;.connect
+
+    &lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;TEST_SIZE&lt;/span&gt;.times &lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;do&lt;/span&gt; &#124;n&#124;
+      cache.set &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;key&lt;/span&gt;&lt;span style=&quot;background-color:hsla(0,0%,0%,0.07);color:black&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#666&quot;&gt;#{&lt;/span&gt;n&lt;span style=&quot;font-weight:bold;color:#666&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;, &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;value&lt;/span&gt;&lt;span style=&quot;background-color:hsla(0,0%,0%,0.07);color:black&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#666&quot;&gt;#{&lt;/span&gt;n&lt;span style=&quot;font-weight:bold;color:#666&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;end&lt;/span&gt;
+    &lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;TEST_SIZE&lt;/span&gt;.times &lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;do&lt;/span&gt; &#124;n&#124;
+      value = cache.get &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;key&lt;/span&gt;&lt;span style=&quot;background-color:hsla(0,0%,0%,0.07);color:black&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#666&quot;&gt;#{&lt;/span&gt;n&lt;span style=&quot;font-weight:bold;color:#666&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;end&lt;/span&gt;
+    &lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;TEST_SIZE&lt;/span&gt;.times &lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;do&lt;/span&gt; &#124;n&#124;
+      cache.delete(&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;key&lt;/span&gt;&lt;span style=&quot;background-color:hsla(0,0%,0%,0.07);color:black&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#666&quot;&gt;#{&lt;/span&gt;n&lt;span style=&quot;font-weight:bold;color:#666&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;)
+    &lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;end&lt;/span&gt;
+
+    &lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;EventMachine&lt;/span&gt;.stop
+  &lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;end&lt;/span&gt;
+&lt;span style=&quot;color:#080;font-weight:bold&quot;&gt;end&lt;/span&gt;
+
+puts &lt;span style=&quot;color:#036;font-weight:bold&quot;&gt;Benchmark&lt;/span&gt;.measure { puts &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;async:&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;; async2 }
+
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+However, the overhead is the same.</description>
+		<content:encoded><![CDATA[<p>It&#8217;s a very good example that EM is still far from being perfect.<br />
+This is mostly due to the poor memcached protocol implementation, which adds all these callbacks to an array and is poping it one by one.</p>
+<p>There&#8217;s a problem in test itself, you should consider that in evented style you never know which operation finishes first, and you cannot be sure that DEL is sent after SET and GET. So this should be better:</p>
+<div class="CodeRay">
+<div class="code">
+<pre>require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">em-synchrony</span><span style="color:#710">'</span></span>
+require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">em-synchrony/em-memcache</span><span style="color:#710">'</span></span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">async2</span>
+  <span style="color:#036;font-weight:bold">EventMachine</span>.synchrony <span style="color:#080;font-weight:bold">do</span>
+    cache = <span style="color:#036;font-weight:bold">EM</span>::<span style="color:#036;font-weight:bold">P</span>::<span style="color:#036;font-weight:bold">Memcache</span>.connect
+
+    <span style="color:#036;font-weight:bold">TEST_SIZE</span>.times <span style="color:#080;font-weight:bold">do</span> |n|
+      cache.set <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">key</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>n<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>n<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+    <span style="color:#080;font-weight:bold">end</span>
+    <span style="color:#036;font-weight:bold">TEST_SIZE</span>.times <span style="color:#080;font-weight:bold">do</span> |n|
+      value = cache.get <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">key</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>n<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+    <span style="color:#080;font-weight:bold">end</span>
+    <span style="color:#036;font-weight:bold">TEST_SIZE</span>.times <span style="color:#080;font-weight:bold">do</span> |n|
+      cache.delete(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">key</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>n<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>)
+    <span style="color:#080;font-weight:bold">end</span>
+
+    <span style="color:#036;font-weight:bold">EventMachine</span>.stop
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+puts <span style="color:#036;font-weight:bold">Benchmark</span>.measure { puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">async:</span><span style="color:#710">&quot;</span></span>; async2 }
+</pre>
+</div>
+</div>
+<p>However, the overhead is the same.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ludovic Henry</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-22319</link>
+		<dc:creator>Ludovic Henry</dc:creator>
+		<pubDate>Fri, 28 Sep 2012 08:19:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-22319</guid>
+		<description>If you are using OS/X - BSD, you should be using kqueue with &quot;EM.kqueue = true if EM.kqueue?&quot;.
+
+About Epoll, if it&#039;s not available on the platform (not on linux2.6+), it should fallback to select..</description>
+		<content:encoded><![CDATA[<p>If you are using OS/X &#8211; BSD, you should be using kqueue with &#8220;EM.kqueue = true if EM.kqueue?&#8221;.</p>
+<p>About Epoll, if it&#8217;s not available on the platform (not on linux2.6+), it should fallback to select..</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-22286</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 27 Sep 2012 17:53:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-22286</guid>
+		<description>Hi Ludovic,
+
+I added EM.epoll before EM.run and here are the results
+
+$ ruby memcached.rb
+sync:
+  3.950000   4.240000   8.190000 ( 16.496183)
+async:
+ 40.090000   1.110000  41.200000 ( 41.708882)
+
+Actually a little worse performance, but this is running on my Mac and epoll is for multiplexed I/O that is available in Linux 2.6 kernels.
+
+Cheers,
+Phil</description>
+		<content:encoded><![CDATA[<p>Hi Ludovic,</p>
+<p>I added EM.epoll before EM.run and here are the results</p>
+<p>$ ruby memcached.rb<br />
+sync:<br />
+  3.950000   4.240000   8.190000 ( 16.496183)<br />
+async:<br />
+ 40.090000   1.110000  41.200000 ( 41.708882)</p>
+<p>Actually a little worse performance, but this is running on my Mac and epoll is for multiplexed I/O that is available in Linux 2.6 kernels.</p>
+<p>Cheers,<br />
+Phil</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ludovic Henry</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-22151</link>
+		<dc:creator>Ludovic Henry</dc:creator>
+		<pubDate>Tue, 25 Sep 2012 05:48:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-22151</guid>
+		<description>What are the results if you use epoll instead of select? Thank you.</description>
+		<content:encoded><![CDATA[<p>What are the results if you use epoll instead of select? Thank you.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: yuan</title>
+		<link>http://www.bigfastblog.com/ruby-eventmachine-part-2-asynchronous-not-equal-faster/comment-page-1#comment-22146</link>
+		<dc:creator>yuan</dc:creator>
+		<pubDate>Tue, 25 Sep 2012 02:56:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1721#comment-22146</guid>
+		<description>great!  how can I integrate eventmachine to my rails apps?</description>
+		<content:encoded><![CDATA[<p>great!  how can I integrate eventmachine to my rails apps?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Highchart Vs Flot.js &#8211; Comparing JavaScript Graphing Engines</title>
+	<atom:link href="http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: Alan Chavez</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-65206</link>
+		<dc:creator>Alan Chavez</dc:creator>
+		<pubDate>Tue, 10 Sep 2013 15:12:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-65206</guid>
+		<description>For automated reports what I do is running PhantomJS (or casperJS) which are headless browsers and then just create the charts. 
+
+Casper is based on PhantomJS, and PhantomJS works on node, that&#039;s something you could use for offline reporting.</description>
+		<content:encoded><![CDATA[<p>For automated reports what I do is running PhantomJS (or casperJS) which are headless browsers and then just create the charts. </p>
+<p>Casper is based on PhantomJS, and PhantomJS works on node, that&#8217;s something you could use for offline reporting.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jaimin</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-43433</link>
+		<dc:creator>Jaimin</dc:creator>
+		<pubDate>Wed, 24 Apr 2013 16:57:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-43433</guid>
+		<description>Have you tried jqplot - http://www.jqplot.com/?</description>
+		<content:encoded><![CDATA[<p>Have you tried jqplot &#8211; <a href="http://www.jqplot.com/?" rel="nofollow">http://www.jqplot.com/?</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: eLobrino</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-27253</link>
+		<dc:creator>eLobrino</dc:creator>
+		<pubDate>Tue, 27 Nov 2012 05:09:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-27253</guid>
+		<description>Yeah it&#039;s free to download and to use.</description>
+		<content:encoded><![CDATA[<p>Yeah it&#8217;s free to download and to use.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-25228</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 08 Nov 2012 20:24:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-25228</guid>
+		<description>Hi Chris. Only for a personal or non-profit project. A single website license is $80.</description>
+		<content:encoded><![CDATA[<p>Hi Chris. Only for a personal or non-profit project. A single website license is $80.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chris</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-25226</link>
+		<dc:creator>Chris</dc:creator>
+		<pubDate>Thu, 08 Nov 2012 20:13:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-25226</guid>
+		<description>Highchart is free o.O
+http://www.highcharts.com
+
+-Chris</description>
+		<content:encoded><![CDATA[<p>Highchart is free o.O<br />
+<a href="http://www.highcharts.com" rel="nofollow">http://www.highcharts.com</a></p>
+<p>-Chris</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-9492</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 21 Feb 2012 06:22:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-9492</guid>
+		<description>I have tried both of these and they work very well. An example of wkhtmltopdf with flot.js, that I worked on, can be seen to you download PDF reports from gtmetrix.com</description>
+		<content:encoded><![CDATA[<p>I have tried both of these and they work very well. An example of wkhtmltopdf with flot.js, that I worked on, can be seen to you download PDF reports from gtmetrix.com</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: tau-lepton</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-3484</link>
+		<dc:creator>tau-lepton</dc:creator>
+		<pubDate>Sun, 26 Jun 2011 23:57:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-3484</guid>
+		<description>have you tried wkhtmltopdf? and wkhtmltoimage?</description>
+		<content:encoded><![CDATA[<p>have you tried wkhtmltopdf? and wkhtmltoimage?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Khan</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-2951</link>
+		<dc:creator>Khan</dc:creator>
+		<pubDate>Thu, 19 May 2011 05:08:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-2951</guid>
+		<description>It&#039;ll be great if you can show an example of highcharts with perl.
+
+Thanks</description>
+		<content:encoded><![CDATA[<p>It&#8217;ll be great if you can show an example of highcharts with perl.</p>
+<p>Thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Montreal Web Design</title>
+		<link>http://www.bigfastblog.com/highchart-vs-flot-js-comparing-javascript-graphing-engines/comment-page-1#comment-490</link>
+		<dc:creator>Montreal Web Design</dc:creator>
+		<pubDate>Mon, 27 Dec 2010 03:46:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=356#comment-490</guid>
+		<description>If you are using Java for HTTP server you might be able to integrate it with rhino http://www.mozilla.org/rhino/ and SVG Rasterizer</description>
+		<content:encoded><![CDATA[<p>If you are using Java for HTTP server you might be able to integrate it with rhino <a href="http://www.mozilla.org/rhino/" rel="nofollow">http://www.mozilla.org/rhino/</a> and SVG Rasterizer</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

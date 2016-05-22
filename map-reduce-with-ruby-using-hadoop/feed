@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Map-Reduce With Ruby Using Hadoop</title>
+	<atom:link href="http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: bodla dharani kumar</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-213930</link>
+		<dc:creator>bodla dharani kumar</dc:creator>
+		<pubDate>Sun, 16 Feb 2014 06:58:45 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-213930</guid>
+		<description>hi to all,
+Good Morning,
+I had a set of 22documents in the form of text files of size 20MB and loaded in hdfs,when running hadoop streaming map/reduce funtion from command line of hdfs ,it took 4mins 31 secs for streaming the 22 text files.How to increase the map/reduce process as fast as possible so that these text files should complete the process by 5-10 seconds.
+What changes I need to do on ambari hadoop. 
+And having cores = 2
+Allocated 2GB of data for Yarn,and 400GB for HDFS
+default virtual memory for a job map-task = 341 MB
+default virtual memory for a job reduce-task = 683 MB
+MAP side sort buffer memory = 136 MB
+And when running a job ,Hbase error with Region server goes down,Hive metastore status service check timed out.
+
+Note:[hdfs@s ~]$ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.2.0.2.0.6.0-76.jar -D mapred.map.tasks=2 -input hdfs:/apps/*.txt -output /home/ambari-qa/8.txt -mapper /home/coartha/mapper.py -file /home/coartha/mapper.py -reducer /home/coartha/reducer.py -file /home/coartha/reducer.py
+
+
+Thanks &amp; regards,
+Bodla Dharani Kumar,</description>
+		<content:encoded><![CDATA[<p>hi to all,<br />
+Good Morning,<br />
+I had a set of 22documents in the form of text files of size 20MB and loaded in hdfs,when running hadoop streaming map/reduce funtion from command line of hdfs ,it took 4mins 31 secs for streaming the 22 text files.How to increase the map/reduce process as fast as possible so that these text files should complete the process by 5-10 seconds.<br />
+What changes I need to do on ambari hadoop.<br />
+And having cores = 2<br />
+Allocated 2GB of data for Yarn,and 400GB for HDFS<br />
+default virtual memory for a job map-task = 341 MB<br />
+default virtual memory for a job reduce-task = 683 MB<br />
+MAP side sort buffer memory = 136 MB<br />
+And when running a job ,Hbase error with Region server goes down,Hive metastore status service check timed out.</p>
+<p>Note:[hdfs@s ~]$ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.2.0.2.0.6.0-76.jar -D mapred.map.tasks=2 -input hdfs:/apps/*.txt -output /home/ambari-qa/8.txt -mapper /home/coartha/mapper.py -file /home/coartha/mapper.py -reducer /home/coartha/reducer.py -file /home/coartha/reducer.py</p>
+<p>Thanks &amp; regards,<br />
+Bodla Dharani Kumar,</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-14782</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 15 May 2012 22:40:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-14782</guid>
+		<description>Great! I&#039;m glad the process still working and the blog post is still valid. Thanks for the comment.</description>
+		<content:encoded><![CDATA[<p>Great! I&#8217;m glad the process still working and the blog post is still valid. Thanks for the comment.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Andrii Vozniuk</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-14745</link>
+		<dc:creator>Andrii Vozniuk</dc:creator>
+		<pubDate>Tue, 15 May 2012 16:27:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-14745</guid>
+		<description>Phil, thanks for the detailed tutorial!
+I had my custom MapReduce application up and running on an EC2 cluster just in a few hours.
+I reproduced the steps with whirr-0.7.1 and hadoop-0.20.2-cdh3u4.</description>
+		<content:encoded><![CDATA[<p>Phil, thanks for the detailed tutorial!<br />
+I had my custom MapReduce application up and running on an EC2 cluster just in a few hours.<br />
+I reproduced the steps with whirr-0.7.1 and hadoop-0.20.2-cdh3u4.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Joao Salcedo</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-9136</link>
+		<dc:creator>Joao Salcedo</dc:creator>
+		<pubDate>Sun, 12 Feb 2012 08:52:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-9136</guid>
+		<description>Nice tutorial, Everything work just how it should be !!!
+
+Just a small question , what if I wanna connect to the instance , where I can find the key in order to connect to it.
+
+
+Cheers,
+
+Joao</description>
+		<content:encoded><![CDATA[<p>Nice tutorial, Everything work just how it should be !!!</p>
+<p>Just a small question , what if I wanna connect to the instance , where I can find the key in order to connect to it.</p>
+<p>Cheers,</p>
+<p>Joao</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Dr. SHyam Sarkar</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-4787</link>
+		<dc:creator>Dr. SHyam Sarkar</dc:creator>
+		<pubDate>Sat, 24 Sep 2011 02:47:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-4787</guid>
+		<description>Hello,
+
+We have following properties set :
+
+whirr.service-name=hadoop
+whirr.cluster-name=myhadoopcluster
+whirr.instance-templates=1 jt+nn,1 dn+tt
+whirr.provider=ec2
+whirr.credential=mYar/KSbx+UL+nqGr9hSgGHIOqXC9tjNcuO9UwF/
+whirr.identity=AKIAJCDTYGREJYIECQZA
+whirr.private-key-file=${sys:user.home}/.ssh/id_rsa
+whirr.public-key-file=${sys:user.home}/.ssh/id_rsa.pub
+whirr.hadoop-install-runurl=cloudera/cdh/install
+whirr.hadoop-configure-runurl=cloudera/cdh/post-configure
+whirr.image-id=ami-3bc9997e
+whirr.hardware-id=i-bffa23f8
+whirr.location-id=us.west-1c
+
+But we are getting following error:
+
+[ec2-user@ip-10-170-103-243 ~]$ ./whirr-0.3.0-cdh3u1/bin/whirr launch-cluster --config hadoop.properties --run-url-base http://whirr.s3.amazonaws.com/0.3.0-cdh3u0/util
+Bootstrapping cluster
+Configuring template
+Exception in thread &quot;main&quot; java.util.NoSuchElementException
+        at com.google.common.collect.AbstractIterator.next(AbstractIterator.java:147)
+        at com.google.common.collect.Iterators.find(Iterators.java:679)
+        at com.google.common.collect.Iterables.find(Iterables.java:555)
+        at org.jclouds.compute.domain.internal.TemplateBuilderImpl.locationId(TemplateBuilderImpl.java:492)
+        at org.apache.whirr.service.jclouds.TemplateBuilderStrategy.configureTemplateBuilder(TemplateBuilderStrategy.java:41)
+        at org.apache.whirr.service.hadoop.HadoopTemplateBuilderStrategy.configureTemplateBuilder(HadoopTemplateBuilderStrategy.java:31)
+        at org.apache.whirr.cluster.actions.BootstrapClusterAction.buildTemplate(BootstrapClusterAction.java:144)
+        at org.apache.whirr.cluster.actions.BootstrapClusterAction.doAction(BootstrapClusterAction.java:94)
+        at org.apache.whirr.cluster.actions.ScriptBasedClusterAction.execute(ScriptBasedClusterAction.java:74)
+        at org.apache.whirr.service.Service.launchCluster(Service.java:71)
+        at org.apache.whirr.cli.command.LaunchClusterCommand.run(LaunchClusterCommand.java:61)
+        at org.apache.whirr.cli.Main.run(Main.java:65)
+        at org.apache.whirr.cli.Main.main(Main.java:91)
+
+Can we get any help ?  What shold we do ?
+
+Thanks,
+S.Sarkar</description>
+		<content:encoded><![CDATA[<p>Hello,</p>
+<p>We have following properties set :</p>
+<p>whirr.service-name=hadoop<br />
+whirr.cluster-name=myhadoopcluster<br />
+whirr.instance-templates=1 jt+nn,1 dn+tt<br />
+whirr.provider=ec2<br />
+whirr.credential=mYar/KSbx+UL+nqGr9hSgGHIOqXC9tjNcuO9UwF/<br />
+whirr.identity=AKIAJCDTYGREJYIECQZA<br />
+whirr.private-key-file=${sys:user.home}/.ssh/id_rsa<br />
+whirr.public-key-file=${sys:user.home}/.ssh/id_rsa.pub<br />
+whirr.hadoop-install-runurl=cloudera/cdh/install<br />
+whirr.hadoop-configure-runurl=cloudera/cdh/post-configure<br />
+whirr.image-id=ami-3bc9997e<br />
+whirr.hardware-id=i-bffa23f8<br />
+whirr.location-id=us.west-1c</p>
+<p>But we are getting following error:</p>
+<p>[ec2-user@ip-10-170-103-243 ~]$ ./whirr-0.3.0-cdh3u1/bin/whirr launch-cluster &#8211;config hadoop.properties &#8211;run-url-base <a href="http://whirr.s3.amazonaws.com/0.3.0-cdh3u0/util" rel="nofollow">http://whirr.s3.amazonaws.com/0.3.0-cdh3u0/util</a><br />
+Bootstrapping cluster<br />
+Configuring template<br />
+Exception in thread &#8220;main&#8221; java.util.NoSuchElementException<br />
+        at com.google.common.collect.AbstractIterator.next(AbstractIterator.java:147)<br />
+        at com.google.common.collect.Iterators.find(Iterators.java:679)<br />
+        at com.google.common.collect.Iterables.find(Iterables.java:555)<br />
+        at org.jclouds.compute.domain.internal.TemplateBuilderImpl.locationId(TemplateBuilderImpl.java:492)<br />
+        at org.apache.whirr.service.jclouds.TemplateBuilderStrategy.configureTemplateBuilder(TemplateBuilderStrategy.java:41)<br />
+        at org.apache.whirr.service.hadoop.HadoopTemplateBuilderStrategy.configureTemplateBuilder(HadoopTemplateBuilderStrategy.java:31)<br />
+        at org.apache.whirr.cluster.actions.BootstrapClusterAction.buildTemplate(BootstrapClusterAction.java:144)<br />
+        at org.apache.whirr.cluster.actions.BootstrapClusterAction.doAction(BootstrapClusterAction.java:94)<br />
+        at org.apache.whirr.cluster.actions.ScriptBasedClusterAction.execute(ScriptBasedClusterAction.java:74)<br />
+        at org.apache.whirr.service.Service.launchCluster(Service.java:71)<br />
+        at org.apache.whirr.cli.command.LaunchClusterCommand.run(LaunchClusterCommand.java:61)<br />
+        at org.apache.whirr.cli.Main.run(Main.java:65)<br />
+        at org.apache.whirr.cli.Main.main(Main.java:91)</p>
+<p>Can we get any help ?  What shold we do ?</p>
+<p>Thanks,<br />
+S.Sarkar</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Daniel</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-4657</link>
+		<dc:creator>Daniel</dc:creator>
+		<pubDate>Tue, 13 Sep 2011 20:43:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-4657</guid>
+		<description>Hi Phil, 
+
+I am using Hadoop Mapreduce to predict secondary structure of a given long sequence. The idea is, I have a chunks of segments of a sequence and they are written into a single file input where each line is one segment. I have used one of the programs for secondary structure predictions as my mapper code (Hadoop Streaming).
+The out put of the mapper was successful that it produces the predicted structures in terms of dot-bracket notation. I want to use a simple reducer that glue all the outputs from the mapper in an orderly manner.
+For Example, If my input was like
+
+
+....
+And my mapper output is a predicted structure but not in order
+
+
+
+What I am looking is a reducer code that sorts and Glue and outputs in a form similar to the following:
+......
+
+Any help...Thanks</description>
+		<content:encoded><![CDATA[<p>Hi Phil, </p>
+<p>I am using Hadoop Mapreduce to predict secondary structure of a given long sequence. The idea is, I have a chunks of segments of a sequence and they are written into a single file input where each line is one segment. I have used one of the programs for secondary structure predictions as my mapper code (Hadoop Streaming).<br />
+The out put of the mapper was successful that it produces the predicted structures in terms of dot-bracket notation. I want to use a simple reducer that glue all the outputs from the mapper in an orderly manner.<br />
+For Example, If my input was like</p>
+<p>&#8230;.<br />
+And my mapper output is a predicted structure but not in order</p>
+<p>What I am looking is a reducer code that sorts and Glue and outputs in a form similar to the following:<br />
+&#8230;&#8230;</p>
+<p>Any help&#8230;Thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-4141</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 09 Aug 2011 18:39:36 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-4141</guid>
+		<description>Hi threecuptea,
+
+Do you mind re-posting this to whirr&#039;s mailing list?
+
+http://incubator.apache.org/whirr/mail-lists.html
+
+There&#039;s a release almost finished which should support cdh much better (v0.6)</description>
+		<content:encoded><![CDATA[<p>Hi threecuptea,</p>
+<p>Do you mind re-posting this to whirr&#8217;s mailing list?</p>
+<p><a href="http://incubator.apache.org/whirr/mail-lists.html" rel="nofollow">http://incubator.apache.org/whirr/mail-lists.html</a></p>
+<p>There&#8217;s a release almost finished which should support cdh much better (v0.6)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Harit</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-4111</link>
+		<dc:creator>Harit</dc:creator>
+		<pubDate>Sun, 07 Aug 2011 06:08:08 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-4111</guid>
+		<description>I guess the reducer is missing the code,because the last line when it completes, has to put the result to the output.
+I ran the same logic in Java and then in Ruby using hadoop and realized that my last node is missing in the result data. so I added the following line at the very end of reducer.rb
+
+puts prev_key + separator + key_total.to_s
+
+and it worked.</description>
+		<content:encoded><![CDATA[<p>I guess the reducer is missing the code,because the last line when it completes, has to put the result to the output.<br />
+I ran the same logic in Java and then in Ruby using hadoop and realized that my last node is missing in the result data. so I added the following line at the very end of reducer.rb</p>
+<p>puts prev_key + separator + key_total.to_s</p>
+<p>and it worked.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: threecuptea</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-4107</link>
+		<dc:creator>threecuptea</dc:creator>
+		<pubDate>Sun, 07 Aug 2011 01:37:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-4107</guid>
+		<description>I started using EC2 yesterday and I got this working today thanks to your article.  However, it&#039;s not without twist and turn.    
+1.  I got http://whirr.s3.amazonaws.com/0.3.0-cdh3u1/util/configure-hostnames not found error when I run &#039;whirr launch-cluster&#039;. They haven&#039;t put configure-hostnames for cdh3u1 in s3 yet.   I workaround by adding --run-url-base http://whirr.s3.amazonaws.com/0.3.0-cdh3u0/util.  I got this advice from http://www.cloudera.com/blog/2011/07/cdh3u1-released/
+
+2. I followed the instruction to set up Hadoop client in the the host initiating whirr and got the following error when it tried to connect to name node.
+11/08/07 01:03:48 INFO ipc.Client: Retrying connect to server: ec2-107-20-60-75.
+compute-1.amazonaws.com/10.116.78.198:8020. Already tried 9 time(s).
+Bad connection to FS. command aborted. exception: Call to ec2-107-20-60-75.compu
+te-1.amazonaws.com/10.116.78.198:8020 failed on local exception: java.net.Socket
+Exception: Connection refused
+
+It has to do with security.  I checked the security group jclouds#myhadoopcluster3#us-east-1.  It allows inbound on 80, 50070, 50030 only from the host initiating whirr launch-cluster and allow inbound on 8020, 8021 only from the name node host.   I added rules to allow inbound on 8020, 8021 from the host initiating whirr and apply the rule change.  That doesn&#039;t help.   In my case, the host initiating whirr launch-cluster is a EC2 instance too.
+
+3.  I can ssh to cluster hosts from the host initiating whirr without any key.  iptable is empty and selinux is disabled.  Network rules seems set up outside the linux box. No luck.
+
+4.  I ends up transferring files to name nodes and run map reduce job there. Whirr script create /user/hive/warehouse but no /user/ec2-user.  Need to create that directory and input sub-directory.  You might also add  -jobconf mapred.reduce.tasks=1 since the default is 10 in this case.
+	
+Thanks.</description>
+		<content:encoded><![CDATA[<p>I started using EC2 yesterday and I got this working today thanks to your article.  However, it&#8217;s not without twist and turn.<br />
+1.  I got <a href="http://whirr.s3.amazonaws.com/0.3.0-cdh3u1/util/configure-hostnames" rel="nofollow">http://whirr.s3.amazonaws.com/0.3.0-cdh3u1/util/configure-hostnames</a> not found error when I run &#8216;whirr launch-cluster&#8217;. They haven&#8217;t put configure-hostnames for cdh3u1 in s3 yet.   I workaround by adding &#8211;run-url-base <a href="http://whirr.s3.amazonaws.com/0.3.0-cdh3u0/util" rel="nofollow">http://whirr.s3.amazonaws.com/0.3.0-cdh3u0/util</a>.  I got this advice from <a href="http://www.cloudera.com/blog/2011/07/cdh3u1-released/" rel="nofollow">http://www.cloudera.com/blog/2011/07/cdh3u1-released/</a></p>
+<p>2. I followed the instruction to set up Hadoop client in the the host initiating whirr and got the following error when it tried to connect to name node.<br />
+11/08/07 01:03:48 INFO ipc.Client: Retrying connect to server: ec2-107-20-60-75.<br />
+compute-1.amazonaws.com/10.116.78.198:8020. Already tried 9 time(s).<br />
+Bad connection to FS. command aborted. exception: Call to ec2-107-20-60-75.compu<br />
+te-1.amazonaws.com/10.116.78.198:8020 failed on local exception: java.net.Socket<br />
+Exception: Connection refused</p>
+<p>It has to do with security.  I checked the security group jclouds#myhadoopcluster3#us-east-1.  It allows inbound on 80, 50070, 50030 only from the host initiating whirr launch-cluster and allow inbound on 8020, 8021 only from the name node host.   I added rules to allow inbound on 8020, 8021 from the host initiating whirr and apply the rule change.  That doesn&#8217;t help.   In my case, the host initiating whirr launch-cluster is a EC2 instance too.</p>
+<p>3.  I can ssh to cluster hosts from the host initiating whirr without any key.  iptable is empty and selinux is disabled.  Network rules seems set up outside the linux box. No luck.</p>
+<p>4.  I ends up transferring files to name nodes and run map reduce job there. Whirr script create /user/hive/warehouse but no /user/ec2-user.  Need to create that directory and input sub-directory.  You might also add  -jobconf mapred.reduce.tasks=1 since the default is 10 in this case.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-3208</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 09 Jun 2011 06:21:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-3208</guid>
+		<description>Thanks Jack! You&#039;re right. Well spotted.</description>
+		<content:encoded><![CDATA[<p>Thanks Jack! You&#8217;re right. Well spotted.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jack Veenstra</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-3204</link>
+		<dc:creator>Jack Veenstra</dc:creator>
+		<pubDate>Thu, 09 Jun 2011 01:22:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-3204</guid>
+		<description>There&#039;s a bug in your reduce script.  You output the total only when you get a new key.  So the last key&#039;s total will never be included in the output.</description>
+		<content:encoded><![CDATA[<p>There&#8217;s a bug in your reduce script.  You output the total only when you get a new key.  So the last key&#8217;s total will never be included in the output.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Allen</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-3081</link>
+		<dc:creator>Allen</dc:creator>
+		<pubDate>Sun, 29 May 2011 10:54:33 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-3081</guid>
+		<description>I tried whirr 0.5.0, and it still doesn&#039;t work. 
+
+It worked well if my hadoop.properties as below:
+
+whirr.service-name=hadoop
+whirr.cluster-name=myhadoopcluster
+whirr.instance-templates=1 jt+nn,1 dn+tt
+whirr.provider=ec2
+whirr.identity=
+whirr.credential=
+whirr.private-key-file=${sys:user.home}/.ssh/id_rsa
+whirr.public-key-file=${sys:user.home}/.ssh/id_rsa.pub
+whirr.hardware-id= m1.large
+whirr.location-id=us-west-1
+whirr.hadoop-install-runurl=cloudera/cdh/install
+whirr.hadoop-configure-runurl=cloudera/cdh/post-configure
+
+
+But once i added two more lines into hadoop.properties file, it went wrong:
+whirr.image-id= us-west-1/ami-***** (my ami)
+jclouds.ec2.ami-owners=(my owner id&gt;
+
+I have posted a question on whirr forum and see if i could get any solution. Will update here if i get anything. thx</description>
+		<content:encoded><![CDATA[<p>I tried whirr 0.5.0, and it still doesn&#8217;t work. </p>
+<p>It worked well if my hadoop.properties as below:</p>
+<p>whirr.service-name=hadoop<br />
+whirr.cluster-name=myhadoopcluster<br />
+whirr.instance-templates=1 jt+nn,1 dn+tt<br />
+whirr.provider=ec2<br />
+whirr.identity=<br />
+whirr.credential=<br />
+whirr.private-key-file=${sys:user.home}/.ssh/id_rsa<br />
+whirr.public-key-file=${sys:user.home}/.ssh/id_rsa.pub<br />
+whirr.hardware-id= m1.large<br />
+whirr.location-id=us-west-1<br />
+whirr.hadoop-install-runurl=cloudera/cdh/install<br />
+whirr.hadoop-configure-runurl=cloudera/cdh/post-configure</p>
+<p>But once i added two more lines into hadoop.properties file, it went wrong:<br />
+whirr.image-id= us-west-1/ami-***** (my ami)<br />
+jclouds.ec2.ami-owners=(my owner id&gt;</p>
+<p>I have posted a question on whirr forum and see if i could get any solution. Will update here if i get anything. thx</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Allen</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-3079</link>
+		<dc:creator>Allen</dc:creator>
+		<pubDate>Sun, 29 May 2011 08:07:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-3079</guid>
+		<description>Cool, I will try both, post the questions and new Whirr, will update here later on if i get any solution. Thx :)</description>
+		<content:encoded><![CDATA[<p>Cool, I will try both, post the questions and new Whirr, will update here later on if i get any solution. Thx <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Adrian Cole</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-3071</link>
+		<dc:creator>Adrian Cole</dc:creator>
+		<pubDate>Sat, 28 May 2011 18:09:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-3071</guid>
+		<description>I think you would be best taking this to the whirr user list, where you can let us know what didn&#039;t work:
+   https://cwiki.apache.org/confluence/display/WHIRR/MailingLists
+
+There are recipes in the latest version of whirr here, as well:
+   http://svn.apache.org/repos/asf/incubator/whirr/trunk/recipes/hadoop-ec2.properties
+
+Unrelated, but if you don&#039;t mind trying 0.5.0, voting it up can get the new rev, including recipes released!
+   http://people.apache.org/~tomwhite/whirr-0.5.0-incubating-candidate-1/
+
+Cheers,
+A</description>
+		<content:encoded><![CDATA[<p>I think you would be best taking this to the whirr user list, where you can let us know what didn&#8217;t work:<br />
+   <a href="https://cwiki.apache.org/confluence/display/WHIRR/MailingLists" rel="nofollow">https://cwiki.apache.org/confluence/display/WHIRR/MailingLists</a></p>
+<p>There are recipes in the latest version of whirr here, as well:<br />
+   <a href="http://svn.apache.org/repos/asf/incubator/whirr/trunk/recipes/hadoop-ec2.properties" rel="nofollow">http://svn.apache.org/repos/asf/incubator/whirr/trunk/recipes/hadoop-ec2.properties</a></p>
+<p>Unrelated, but if you don&#8217;t mind trying 0.5.0, voting it up can get the new rev, including recipes released!<br />
+   <a href="http://people.apache.org/~tomwhite/whirr-0.5.0-incubating-candidate-1/" rel="nofollow">http://people.apache.org/~tomwhite/whirr-0.5.0-incubating-candidate-1/</a></p>
+<p>Cheers,<br />
+A</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Allen</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-3064</link>
+		<dc:creator>Allen</dc:creator>
+		<pubDate>Sat, 28 May 2011 07:19:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-3064</guid>
+		<description>When i would like fire up a customized ec2 instance, i added following parameters into hadoop.properties:
+
+whirr.image-id= us-west-1/ami-**********
+jclouds.ec2.ami-owners=******************
+whirr.hardware-id= m1.large
+whirr.location-id=us-west-1
+
+But it doesn&#039;t work. Any thought? thanks</description>
+		<content:encoded><![CDATA[<p>When i would like fire up a customized ec2 instance, i added following parameters into hadoop.properties:</p>
+<p>whirr.image-id= us-west-1/ami-**********<br />
+jclouds.ec2.ami-owners=******************<br />
+whirr.hardware-id= m1.large<br />
+whirr.location-id=us-west-1</p>
+<p>But it doesn&#8217;t work. Any thought? thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sid</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-1939</link>
+		<dc:creator>Sid</dc:creator>
+		<pubDate>Tue, 12 Apr 2011 10:44:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-1939</guid>
+		<description>What a great post! Really clearly written and keeps to it&#039;s promise of being able to demonstrate through repeatable steps. Particularly liked the cues for tea breaks for the lengthy download/install steps. Nice work!</description>
+		<content:encoded><![CDATA[<p>What a great post! Really clearly written and keeps to it&#8217;s promise of being able to demonstrate through repeatable steps. Particularly liked the cues for tea breaks for the lengthy download/install steps. Nice work!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: cjbottaro</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-1140</link>
+		<dc:creator>cjbottaro</dc:creator>
+		<pubDate>Sat, 19 Feb 2011 05:35:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-1140</guid>
+		<description>Great post, thank you very much for that.
+
+Next question though... how do you use Cassandra for input/output (while still using Ruby)?
+
+I know you can run Hadoop jobs against Cassandra in Java with the InputFormat they provide, but how to do so using streaming?</description>
+		<content:encoded><![CDATA[<p>Great post, thank you very much for that.</p>
+<p>Next question though&#8230; how do you use Cassandra for input/output (while still using Ruby)?</p>
+<p>I know you can run Hadoop jobs against Cassandra in Java with the InputFormat they provide, but how to do so using streaming?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Navin</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-980</link>
+		<dc:creator>Navin</dc:creator>
+		<pubDate>Sun, 06 Feb 2011 07:51:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-980</guid>
+		<description>Further update: Amazon replied to my request within 12 hours and, in fact, did reverse charges.  Phew!</description>
+		<content:encoded><![CDATA[<p>Further update: Amazon replied to my request within 12 hours and, in fact, did reverse charges.  Phew!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Navin</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-950</link>
+		<dc:creator>Navin</dc:creator>
+		<pubDate>Thu, 03 Feb 2011 22:23:12 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-950</guid>
+		<description>Worked my way through the tutorial soon after my last comment and have been meaning to come back and thank you for writing this up!  I am inspired to pick something from this list 
+
+http://www.quora.com/What-are-some-good-toy-problems-in-data-science 
+
+and play some more.  
+
+Not all is well though - I received a bill from AWS for $100 this morning!  While following your tutorial I fumbled my way through signing up for AWS and assumed that I would only ever be operating within a free tier - boy was I wrong!  Some three weeks later and I realise that I&#039;ve had &quot;small&quot; EC2 servers going all this time ... 
+
+So, may I suggest that you please augment your post to direct the reader to shut down (and terminate) their EC2 instances after they are done with the tute, and, perhaps, include directions on how to ensure that they use Amazon&#039;s free http://aws.amazon.com/free/ tier?
+
+It is evident that I&#039;ve made some silly mistakes while following this but I hope I am not atypical of your garden variety newbie that is curious about big data.  I hope that I find a way to get Amazon to reverse charges (don&#039;t like my chances though).  In any case, my enthusiasm is not dampened - thanks again for getting me started :)
+
+Navin</description>
+		<content:encoded><![CDATA[<p>Worked my way through the tutorial soon after my last comment and have been meaning to come back and thank you for writing this up!  I am inspired to pick something from this list </p>
+<p><a href="http://www.quora.com/What-are-some-good-toy-problems-in-data-science" rel="nofollow">http://www.quora.com/What-are-some-good-toy-problems-in-data-science</a> </p>
+<p>and play some more.  </p>
+<p>Not all is well though &#8211; I received a bill from AWS for $100 this morning!  While following your tutorial I fumbled my way through signing up for AWS and assumed that I would only ever be operating within a free tier &#8211; boy was I wrong!  Some three weeks later and I realise that I&#8217;ve had &#8220;small&#8221; EC2 servers going all this time &#8230; </p>
+<p>So, may I suggest that you please augment your post to direct the reader to shut down (and terminate) their EC2 instances after they are done with the tute, and, perhaps, include directions on how to ensure that they use Amazon&#8217;s free <a href="http://aws.amazon.com/free/" rel="nofollow">http://aws.amazon.com/free/</a> tier?</p>
+<p>It is evident that I&#8217;ve made some silly mistakes while following this but I hope I am not atypical of your garden variety newbie that is curious about big data.  I hope that I find a way to get Amazon to reverse charges (don&#8217;t like my chances though).  In any case, my enthusiasm is not dampened &#8211; thanks again for getting me started <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>Navin</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-824</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Sat, 22 Jan 2011 03:04:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-824</guid>
+		<description>I have just posted &quot;Quickly Launch A Cassandra Cluster On Amazon EC2&quot;, which follows a very similar process. http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2</description>
+		<content:encoded><![CDATA[<p>I have just posted &#8220;Quickly Launch A Cassandra Cluster On Amazon EC2&#8243;, which follows a very similar process. <a href="http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2" rel="nofollow">http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-723</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Sun, 16 Jan 2011 20:04:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-723</guid>
+		<description>Excellent! Glad you got if figured out. When you get through to the end of the example, let us know your thoughts are of using Whirr + Hadoop + Ruby.</description>
+		<content:encoded><![CDATA[<p>Excellent! Glad you got if figured out. When you get through to the end of the example, let us know your thoughts are of using Whirr + Hadoop + Ruby.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Navin</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-722</link>
+		<dc:creator>Navin</dc:creator>
+		<pubDate>Sun, 16 Jan 2011 19:57:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-722</guid>
+		<description>Um, yes, sorry! A problem with &quot;whirr.credentials&quot; getting truncated to &quot;whirr.cred&quot; while copying keys across.  How embarrassing!
+
+Apologies - and thanks for taking the time to reply ...
+
+Navin</description>
+		<content:encoded><![CDATA[<p>Um, yes, sorry! A problem with &#8220;whirr.credentials&#8221; getting truncated to &#8220;whirr.cred&#8221; while copying keys across.  How embarrassing!</p>
+<p>Apologies &#8211; and thanks for taking the time to reply &#8230;</p>
+<p>Navin</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Adrian Cole</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-721</link>
+		<dc:creator>Adrian Cole</dc:creator>
+		<pubDate>Sun, 16 Jan 2011 19:24:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-721</guid>
+		<description>Hi, Navin.
+
+There&#039;s probably an issue with the property syntax inside your hadoop.properties.  Have a look at http://incubator.apache.org/projects/whirr.html and https://cwiki.apache.org/WHIRR/configuration-guide.html
+
+If you still have issues, send your query to the user list, you&#039;ll get on track quickly! 
+
+whirr-user@incubator.apache.org
+
+Cheers,
+-Adrian</description>
+		<content:encoded><![CDATA[<p>Hi, Navin.</p>
+<p>There&#8217;s probably an issue with the property syntax inside your hadoop.properties.  Have a look at <a href="http://incubator.apache.org/projects/whirr.html" rel="nofollow">http://incubator.apache.org/projects/whirr.html</a> and <a href="https://cwiki.apache.org/WHIRR/configuration-guide.html" rel="nofollow">https://cwiki.apache.org/WHIRR/configuration-guide.html</a></p>
+<p>If you still have issues, send your query to the user list, you&#8217;ll get on track quickly! </p>
+<p><a href="mailto:whirr-user@incubator.apache.org">whirr-user@incubator.apache.org</a></p>
+<p>Cheers,<br />
+-Adrian</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Navin</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-719</link>
+		<dc:creator>Navin</dc:creator>
+		<pubDate>Sun, 16 Jan 2011 10:45:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-719</guid>
+		<description>Phil - thanks very much for taking the time to write this up!  I am new to AWS and EC2 and am running into a problem at the point where I first try and launch clusters - wondering if you can please help?  I have my Access Key ID and Secret Access Key in my hadoop.properties, and the output I get is as follows:
+
+&lt;pre&gt;&lt;small&gt;
+[~/src/cloudera/whirr-0.1.0+23]$ bin/whirr launch-cluster --config hadoop.properties                                                                                                     rvm:ruby-1.8.7-p299 
+Launching myhadoopcluster cluster
+Exception in thread &quot;main&quot; com.google.inject.CreationException: Guice creation errors:
+
+1) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=jclouds.credential) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=jclouds.credential)
+    for parameter 2 at org.jclouds.aws.filters.FormSigner.(FormSigner.java:91)
+  at org.jclouds.aws.config.AWSFormSigningRestClientModule.provideRequestSigner(AWSFormSigningRestClientModule.java:66)
+
+1 error
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:410)
+	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:166)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:118)
+	at com.google.inject.InjectorBuilder.build(InjectorBuilder.java:100)
+	at com.google.inject.Guice.createInjector(Guice.java:95)
+	at com.google.inject.Guice.createInjector(Guice.java:72)
+	at org.jclouds.rest.RestContextBuilder.buildInjector(RestContextBuilder.java:141)
+	at org.jclouds.compute.ComputeServiceContextBuilder.buildInjector(ComputeServiceContextBuilder.java:53)
+	at org.jclouds.aws.ec2.EC2ContextBuilder.buildInjector(EC2ContextBuilder.java:101)
+	at org.jclouds.compute.ComputeServiceContextBuilder.buildComputeServiceContext(ComputeServiceContextBuilder.java:66)
+	at org.jclouds.compute.ComputeServiceContextFactory.buildContextUnwrappingExceptions(ComputeServiceContextFactory.java:72)
+	at org.jclouds.compute.ComputeServiceContextFactory.createContext(ComputeServiceContextFactory.java:114)
+	at org.apache.whirr.service.ComputeServiceContextBuilder.build(ComputeServiceContextBuilder.java:41)
+	at org.apache.whirr.service.hadoop.HadoopService.launchCluster(HadoopService.java:84)
+	at org.apache.whirr.service.hadoop.HadoopService.launchCluster(HadoopService.java:61)
+	at org.apache.whirr.cli.command.LaunchClusterCommand.run(LaunchClusterCommand.java:61)
+	at org.apache.whirr.cli.Main.run(Main.java:65)
+	at org.apache.whirr.cli.Main.main(Main.java:91)
+&lt;/pre&gt;&lt;/small&gt;
+
+PS: The rvm:ruby-1.8.7-p299 is part of my prompt and not in the output.
+
+Thanks in advance for any pointers on getting this resolved.
+
+Regards,
+Navin</description>
+		<content:encoded><![CDATA[<p>Phil &#8211; thanks very much for taking the time to write this up!  I am new to AWS and EC2 and am running into a problem at the point where I first try and launch clusters &#8211; wondering if you can please help?  I have my Access Key ID and Secret Access Key in my hadoop.properties, and the output I get is as follows:</p>
+<pre><small>
+[~/src/cloudera/whirr-0.1.0+23]$ bin/whirr launch-cluster --config hadoop.properties                                                                                                     rvm:ruby-1.8.7-p299
+Launching myhadoopcluster cluster
+Exception in thread "main" com.google.inject.CreationException: Guice creation errors:
+
+1) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=jclouds.credential) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=jclouds.credential)
+    for parameter 2 at org.jclouds.aws.filters.FormSigner.(FormSigner.java:91)
+  at org.jclouds.aws.config.AWSFormSigningRestClientModule.provideRequestSigner(AWSFormSigningRestClientModule.java:66)
+
+1 error
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:410)
+	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:166)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:118)
+	at com.google.inject.InjectorBuilder.build(InjectorBuilder.java:100)
+	at com.google.inject.Guice.createInjector(Guice.java:95)
+	at com.google.inject.Guice.createInjector(Guice.java:72)
+	at org.jclouds.rest.RestContextBuilder.buildInjector(RestContextBuilder.java:141)
+	at org.jclouds.compute.ComputeServiceContextBuilder.buildInjector(ComputeServiceContextBuilder.java:53)
+	at org.jclouds.aws.ec2.EC2ContextBuilder.buildInjector(EC2ContextBuilder.java:101)
+	at org.jclouds.compute.ComputeServiceContextBuilder.buildComputeServiceContext(ComputeServiceContextBuilder.java:66)
+	at org.jclouds.compute.ComputeServiceContextFactory.buildContextUnwrappingExceptions(ComputeServiceContextFactory.java:72)
+	at org.jclouds.compute.ComputeServiceContextFactory.createContext(ComputeServiceContextFactory.java:114)
+	at org.apache.whirr.service.ComputeServiceContextBuilder.build(ComputeServiceContextBuilder.java:41)
+	at org.apache.whirr.service.hadoop.HadoopService.launchCluster(HadoopService.java:84)
+	at org.apache.whirr.service.hadoop.HadoopService.launchCluster(HadoopService.java:61)
+	at org.apache.whirr.cli.command.LaunchClusterCommand.run(LaunchClusterCommand.java:61)
+	at org.apache.whirr.cli.Main.run(Main.java:65)
+	at org.apache.whirr.cli.Main.main(Main.java:91)
+</small></pre>
+<p>PS: The rvm:ruby-1.8.7-p299 is part of my prompt and not in the output.</p>
+<p>Thanks in advance for any pointers on getting this resolved.</p>
+<p>Regards,<br />
+Navin</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-693</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 13 Jan 2011 19:07:21 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-693</guid>
+		<description>That&#039;s a great question Andy and the answer is &quot;yes&quot;. You will need to modify your &lt;em&gt;hadoop-site.xml&lt;/em&gt; to replace HDFS with S3.
+
+Check out this wiki page...
+http://wiki.apache.org/hadoop/AmazonS3
+
+This would make a good follow post, so keep watching this space!</description>
+		<content:encoded><![CDATA[<p>That&#8217;s a great question Andy and the answer is &#8220;yes&#8221;. You will need to modify your <em>hadoop-site.xml</em> to replace HDFS with S3.</p>
+<p>Check out this wiki page&#8230;<br />
+<a href="http://wiki.apache.org/hadoop/AmazonS3" rel="nofollow">http://wiki.apache.org/hadoop/AmazonS3</a></p>
+<p>This would make a good follow post, so keep watching this space!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: andy</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-690</link>
+		<dc:creator>andy</dc:creator>
+		<pubDate>Thu, 13 Jan 2011 18:45:21 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-690</guid>
+		<description>Hi Phil, 
+
+one more question,
+
+is there a way to use s3 buckets for the input and output?</description>
+		<content:encoded><![CDATA[<p>Hi Phil, </p>
+<p>one more question,</p>
+<p>is there a way to use s3 buckets for the input and output?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-680</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 13 Jan 2011 00:07:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-680</guid>
+		<description>Thank you for your comment Andy! I&#039;m glad you followed it all the way through and it worked.
+
+In this example the Ruby scripts for Map and Reduce are in the same directory as the bash script that I created for running the job. They do not need to be. You just need to tell the job starter where to find them. For instance, for the map.rb script I have...
+
+-file map.rb
+
+This is a relative path, meaning it&#039;s in the same directory. It could also be relative in another directory..
+
+-file ../someotherdirectory/map.rb
+
+or we could give an absolute path...
+
+-file /Users/phil/someotherdirectory/map.rb
+
+The bash script can also be written is any directory. The path to the JAR file is absolute, so the only other dependencies are the Map and Reduce scripts as I mentioned above.
+
+I hope that answers your question.</description>
+		<content:encoded><![CDATA[<p>Thank you for your comment Andy! I&#8217;m glad you followed it all the way through and it worked.</p>
+<p>In this example the Ruby scripts for Map and Reduce are in the same directory as the bash script that I created for running the job. They do not need to be. You just need to tell the job starter where to find them. For instance, for the map.rb script I have&#8230;</p>
+<p>-file map.rb</p>
+<p>This is a relative path, meaning it&#8217;s in the same directory. It could also be relative in another directory..</p>
+<p>-file ../someotherdirectory/map.rb</p>
+<p>or we could give an absolute path&#8230;</p>
+<p>-file /Users/phil/someotherdirectory/map.rb</p>
+<p>The bash script can also be written is any directory. The path to the JAR file is absolute, so the only other dependencies are the Map and Reduce scripts as I mentioned above.</p>
+<p>I hope that answers your question.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: andy</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-679</link>
+		<dc:creator>andy</dc:creator>
+		<pubDate>Wed, 12 Jan 2011 23:49:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-679</guid>
+		<description>kudos on the good article
+
+I was able to follow along and everything worked (after correcting for my typos).
+
+One thing that wasn&#039;t clear, one can be in any dir for the ruby &amp; bash file work.  I had done this originally in the hadoop folder.
+
+thanks</description>
+		<content:encoded><![CDATA[<p>kudos on the good article</p>
+<p>I was able to follow along and everything worked (after correcting for my typos).</p>
+<p>One thing that wasn&#8217;t clear, one can be in any dir for the ruby &amp; bash file work.  I had done this originally in the hadoop folder.</p>
+<p>thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: The Apache Projects &#8211; The Justice League Of Scalability &#124; Phil Whelan&#039;s Blog</title>
+		<link>http://www.bigfastblog.com/map-reduce-with-ruby-using-hadoop/comment-page-1#comment-665</link>
+		<dc:creator>The Apache Projects &#8211; The Justice League Of Scalability &#124; Phil Whelan&#039;s Blog</dc:creator>
+		<pubDate>Tue, 11 Jan 2011 23:48:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=484#comment-665</guid>
+		<description>[...] and manages the running of distributed Map-Reduce jobs. In an previous post I gave an example using Ruby with Hadoop to perform Map-Reduce [...]</description>
+		<content:encoded><![CDATA[<p>[...] and manages the running of distributed Map-Reduce jobs. In an previous post I gave an example using Ruby with Hadoop to perform Map-Reduce [...]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

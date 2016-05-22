@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Geohash Intro</title>
+	<atom:link href="http://www.bigfastblog.com/geohash-intro/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/geohash-intro</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: George</title>
+		<link>http://www.bigfastblog.com/geohash-intro/comment-page-1#comment-58314</link>
+		<dc:creator>George</dc:creator>
+		<pubDate>Sat, 10 Aug 2013 03:19:48 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1387#comment-58314</guid>
+		<description>Wonderfully written explanation, makes it so even a math noob can understand without treating the audience like an idiot.
+
+One thing, it&#039;s always nice to know a little history of how you found it (brief &amp; undetailed of course) in a piece written informally, adds a nice human element.
+
+
+I especially love your infographics and your description of the location codes, so clear, so pretty.</description>
+		<content:encoded><![CDATA[<p>Wonderfully written explanation, makes it so even a math noob can understand without treating the audience like an idiot.</p>
+<p>One thing, it&#8217;s always nice to know a little history of how you found it (brief &amp; undetailed of course) in a piece written informally, adds a nice human element.</p>
+<p>I especially love your infographics and your description of the location codes, so clear, so pretty.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

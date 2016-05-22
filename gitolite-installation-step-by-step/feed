@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Gitolite Installation Step-By-Step</title>
+	<atom:link href="http://www.bigfastblog.com/gitolite-installation-step-by-step/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/gitolite-installation-step-by-step</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: Maciej Cygan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-275000</link>
+		<dc:creator>Maciej Cygan</dc:creator>
+		<pubDate>Fri, 25 Apr 2014 23:21:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-275000</guid>
+		<description>Hello Phil
+
+I have tested this and it works great. However ! 
+I am now trying to integrate Gitolite with Redmine and its a pain in the ass and i can not get it to work .. is there a chance that you could amend this / or create new tutorial to show how to integrate gitolite with redmine ? I would really appreciate it !! 
+
+Thanks</description>
+		<content:encoded><![CDATA[<p>Hello Phil</p>
+<p>I have tested this and it works great. However !<br />
+I am now trying to integrate Gitolite with Redmine and its a pain in the ass and i can not get it to work .. is there a chance that you could amend this / or create new tutorial to show how to integrate gitolite with redmine ? I would really appreciate it !! </p>
+<p>Thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: rballen</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-259565</link>
+		<dc:creator>rballen</dc:creator>
+		<pubDate>Fri, 04 Apr 2014 13:54:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-259565</guid>
+		<description>Thanks man! I&#039;ve spent hours going round and round trying to install gitolite.  Then I found your article 20 minutes ago and now my pi gitbox is finally working perfectly. Awesome!</description>
+		<content:encoded><![CDATA[<p>Thanks man! I&#8217;ve spent hours going round and round trying to install gitolite.  Then I found your article 20 minutes ago and now my pi gitbox is finally working perfectly. Awesome!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: yewin</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-231334</link>
+		<dc:creator>yewin</dc:creator>
+		<pubDate>Thu, 06 Mar 2014 05:31:46 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-231334</guid>
+		<description>Hi Phil,
+
+Thank you for your wonderful tutorial.
+
+But I feel little wrong in my workstation.
+
+I setting up gitolite server on linux and clone from eclipse windows.
+So I generate SSH key from elipse from windows side.
+Windows &gt; Preferences &gt; General &gt; Network Connections &gt; SSH 2 &gt; Key Management &gt; Generate RSA Key.
+I change the public key name &quot;bob.pub&quot; and copy to my linux server.
+
+And then I follow the &quot;Everyone gets a key&quot; section as the end of post.
+But I always face the following errors.
+
+ssh://gitolite@xx.xx.x.xx:22/home/gitolite/repositories/foo.git FATAL: R  home/gitolite/repositories/foo bob DENIED by fallthru.(or miss-spelled the repo name)
+
+I try the numerous repository path.:
+git+ssh://gitolite@xx.xxx.xx:22/foo
+git+ssh://gitolite@xx.xxx.xx:22/foo.git
+
+It not work and still errors.
+Any suggestion about that??
+I always appreciate your suggestion.
+
+Thank Again.
+yewin</description>
+		<content:encoded><![CDATA[<p>Hi Phil,</p>
+<p>Thank you for your wonderful tutorial.</p>
+<p>But I feel little wrong in my workstation.</p>
+<p>I setting up gitolite server on linux and clone from eclipse windows.<br />
+So I generate SSH key from elipse from windows side.<br />
+Windows &gt; Preferences &gt; General &gt; Network Connections &gt; SSH 2 &gt; Key Management &gt; Generate RSA Key.<br />
+I change the public key name &#8220;bob.pub&#8221; and copy to my linux server.</p>
+<p>And then I follow the &#8220;Everyone gets a key&#8221; section as the end of post.<br />
+But I always face the following errors.</p>
+<p>ssh://gitolite@xx.xx.x.xx:22/home/gitolite/repositories/foo.git FATAL: R  home/gitolite/repositories/foo bob DENIED by fallthru.(or miss-spelled the repo name)</p>
+<p>I try the numerous repository path.:<br />
+git+ssh://gitolite@xx.xxx.xx:22/foo<br />
+git+ssh://gitolite@xx.xxx.xx:22/foo.git</p>
+<p>It not work and still errors.<br />
+Any suggestion about that??<br />
+I always appreciate your suggestion.</p>
+<p>Thank Again.<br />
+yewin</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-124066</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Fri, 22 Nov 2013 01:45:24 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-124066</guid>
+		<description>Thanks! That&#039;s great feedback and will keep it in mind for future posts.</description>
+		<content:encoded><![CDATA[<p>Thanks! That&#8217;s great feedback and will keep it in mind for future posts.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: hopsj</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-123122</link>
+		<dc:creator>hopsj</dc:creator>
+		<pubDate>Thu, 21 Nov 2013 09:20:11 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-123122</guid>
+		<description>Hello and thank you for your tutorial. One suggestion that may help make things more clear is to use usernames that are not exactly the same as the name of the program.  It can be hard for noobs such as myself to interpret the meaning of &#039;gitolite&#039; especially when it appears 4 times in the same command (username, directory, file?)  I found Sitaram&#039;s own tutorials to be difficult to follow for this reason as well.  I would suggest something like gitadmin to refer to the gitolite user, and real-world names such as bob to refer to individual users.</description>
+		<content:encoded><![CDATA[<p>Hello and thank you for your tutorial. One suggestion that may help make things more clear is to use usernames that are not exactly the same as the name of the program.  It can be hard for noobs such as myself to interpret the meaning of &#8216;gitolite&#8217; especially when it appears 4 times in the same command (username, directory, file?)  I found Sitaram&#8217;s own tutorials to be difficult to follow for this reason as well.  I would suggest something like gitadmin to refer to the gitolite user, and real-world names such as bob to refer to individual users.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Shlomit</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-75966</link>
+		<dc:creator>Shlomit</dc:creator>
+		<pubDate>Sun, 13 Oct 2013 13:27:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-75966</guid>
+		<description>It&#039;s me again,
+I saw that even that I change the file conf/gitolite.conf and I run &#039;gitolite setup&#039;, when I run ssh to the git server I got the basic conf that came with the gitolite installation.
+How can I refresh the conf file?
+
+Thanka a lot.</description>
+		<content:encoded><![CDATA[<p>It&#8217;s me again,<br />
+I saw that even that I change the file conf/gitolite.conf and I run &#8216;gitolite setup&#8217;, when I run ssh to the git server I got the basic conf that came with the gitolite installation.<br />
+How can I refresh the conf file?</p>
+<p>Thanka a lot.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Shlomit</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-75894</link>
+		<dc:creator>Shlomit</dc:creator>
+		<pubDate>Sun, 13 Oct 2013 11:02:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-75894</guid>
+		<description>Hi,
+
+Your tutorial is so clear - Thanks,
+
+I feel something missing or I don&#039;t understand something. 
+I have git install and now I add installation of gitolite. 
+How git know to go through gitolite? 
+
+Thanks again for this wonderful tutorial.</description>
+		<content:encoded><![CDATA[<p>Hi,</p>
+<p>Your tutorial is so clear &#8211; Thanks,</p>
+<p>I feel something missing or I don&#8217;t understand something.<br />
+I have git install and now I add installation of gitolite.<br />
+How git know to go through gitolite? </p>
+<p>Thanks again for this wonderful tutorial.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Mehran</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-64491</link>
+		<dc:creator>Mehran</dc:creator>
+		<pubDate>Fri, 06 Sep 2013 12:53:30 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-64491</guid>
+		<description>Hey phil when i run this command.
+git clone gitbox:myserver
+
+system asks for 
+gitosis:myserver&#039;s password:
+
+I dont know which password ...is it password of my server. I tried but it didnot worked.</description>
+		<content:encoded><![CDATA[<p>Hey phil when i run this command.<br />
+git clone gitbox:myserver</p>
+<p>system asks for<br />
+gitosis:myserver&#8217;s password:</p>
+<p>I dont know which password &#8230;is it password of my server. I tried but it didnot worked.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Eshwar</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-53213</link>
+		<dc:creator>Eshwar</dc:creator>
+		<pubDate>Wed, 17 Jul 2013 15:44:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-53213</guid>
+		<description>Phil,
+
+I followed through your article, but i couldn&#039;t clone gitolite:admin repo. 
+I have created a user called &#039;gitolitee&#039; as the user &#039;gitolite&#039; is reserved. 
+
+i have created gitolitee &amp; gitolitee.pub and copied to server through 
+  scp .ssh/gitolitee.pub gitolitee@ubutu:
+
+then i cloned the repo and installed it. But when i clone admin repo in local machine it is asked for password.
+
+Could you help me in this.</description>
+		<content:encoded><![CDATA[<p>Phil,</p>
+<p>I followed through your article, but i couldn&#8217;t clone gitolite:admin repo.<br />
+I have created a user called &#8216;gitolitee&#8217; as the user &#8216;gitolite&#8217; is reserved. </p>
+<p>i have created gitolitee &amp; gitolitee.pub and copied to server through<br />
+  scp .ssh/gitolitee.pub gitolitee@ubutu:</p>
+<p>then i cloned the repo and installed it. But when i clone admin repo in local machine it is asked for password.</p>
+<p>Could you help me in this.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Shuaib</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-53205</link>
+		<dc:creator>Shuaib</dc:creator>
+		<pubDate>Wed, 17 Jul 2013 15:06:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-53205</guid>
+		<description>Hi Phil,
+
+What&#039;s the recommended setup when you want to host the repositories 
+directory somewhere other than /home/git on your server?
+
+Thanks!</description>
+		<content:encoded><![CDATA[<p>Hi Phil,</p>
+<p>What&#8217;s the recommended setup when you want to host the repositories<br />
+directory somewhere other than /home/git on your server?</p>
+<p>Thanks!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-52117</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 09 Jul 2013 01:08:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-52117</guid>
+		<description>Great! Glad you solved it Ido. Thanks for also posting the resolution! I just got back from a trip to Japan, so was not up-to-date with comments.</description>
+		<content:encoded><![CDATA[<p>Great! Glad you solved it Ido. Thanks for also posting the resolution! I just got back from a trip to Japan, so was not up-to-date with comments.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ido</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-52034</link>
+		<dc:creator>Ido</dc:creator>
+		<pubDate>Mon, 08 Jul 2013 07:25:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-52034</guid>
+		<description>I was able to solve this!
+
+I soon found that the user you login with let&#039;s call it &#039;git&#039; and the key file name - must be identical.
+In addition I had to edit the /home/git/.gitolite/conf/gitolite.conf file to add add the the user &#039;git&#039; permissions on this gitolite-admin repository. Now it look like so:
+
+repo gitolite-admin
+    RW+     =   git
+
+repo testing
+    RW+     =   @all
+
+I also deleted all the other keys form /home/git/.gitolite/keydir
+Then run &#039;/home/git/bin/gitolite setup again.
+
+Thanks again for this wonderful blog post!</description>
+		<content:encoded><![CDATA[<p>I was able to solve this!</p>
+<p>I soon found that the user you login with let&#8217;s call it &#8216;git&#8217; and the key file name &#8211; must be identical.<br />
+In addition I had to edit the /home/git/.gitolite/conf/gitolite.conf file to add add the the user &#8216;git&#8217; permissions on this gitolite-admin repository. Now it look like so:</p>
+<p>repo gitolite-admin<br />
+    RW+     =   git</p>
+<p>repo testing<br />
+    RW+     =   @all</p>
+<p>I also deleted all the other keys form /home/git/.gitolite/keydir<br />
+Then run &#8216;/home/git/bin/gitolite setup again.</p>
+<p>Thanks again for this wonderful blog post!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ido</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-52027</link>
+		<dc:creator>Ido</dc:creator>
+		<pubDate>Mon, 08 Jul 2013 06:36:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-52027</guid>
+		<description>Hi Phil,
+
+I followed your blog (Which is great BTW) but I still face permission problem when I try:
+
+Idos-MacBook-Air:~ idofishler$ git clone amazongit:gitolite-admin.git
+Cloning into &#039;gitolite-admin&#039;...
+FATAL: R any gitolite-admin amazongit DENIED by fallthru
+(or you mis-spelled the reponame)
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+I using an EC2 instance - so I suspect something to do with amazon restriction? Any idea about that?
+
+BR,
+Ido</description>
+		<content:encoded><![CDATA[<p>Hi Phil,</p>
+<p>I followed your blog (Which is great BTW) but I still face permission problem when I try:</p>
+<p>Idos-MacBook-Air:~ idofishler$ git clone amazongit:gitolite-admin.git<br />
+Cloning into &#8216;gitolite-admin&#8217;&#8230;<br />
+FATAL: R any gitolite-admin amazongit DENIED by fallthru<br />
+(or you mis-spelled the reponame)<br />
+fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br />
+and the repository exists.</p>
+<p>I using an EC2 instance &#8211; so I suspect something to do with amazon restriction? Any idea about that?</p>
+<p>BR,<br />
+Ido</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Josivan Souza</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-51413</link>
+		<dc:creator>Josivan Souza</dc:creator>
+		<pubDate>Wed, 03 Jul 2013 01:44:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-51413</guid>
+		<description>After create a repository following your blog. How can I clone it from a windows wosktation.
+
+Thanks</description>
+		<content:encoded><![CDATA[<p>After create a repository following your blog. How can I clone it from a windows wosktation.</p>
+<p>Thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: chinmay hundekari</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-50406</link>
+		<dc:creator>chinmay hundekari</dc:creator>
+		<pubDate>Tue, 25 Jun 2013 04:56:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-50406</guid>
+		<description>Thanks a lot for this article.. I finally managed to set up gitolite. 
+
+But I am not able to commit into a new repository. I added  a line in gitolite.conf and i was able to push it and creat a blank repo.
+But then when i try to push with the below command it asks for my password. and i am not able to proceed forward. I am not asked a password while doing a commit on gitolite repository.
+
+git push --all git@ubuntu3:ABCD
+
+ubuntu3 is hostname. and ABCD is the repository.</description>
+		<content:encoded><![CDATA[<p>Thanks a lot for this article.. I finally managed to set up gitolite. </p>
+<p>But I am not able to commit into a new repository. I added  a line in gitolite.conf and i was able to push it and creat a blank repo.<br />
+But then when i try to push with the below command it asks for my password. and i am not able to proceed forward. I am not asked a password while doing a commit on gitolite repository.</p>
+<p>git push &#8211;all git@ubuntu3:ABCD</p>
+<p>ubuntu3 is hostname. and ABCD is the repository.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Amit Dixit</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-46608</link>
+		<dc:creator>Amit Dixit</dc:creator>
+		<pubDate>Fri, 24 May 2013 07:20:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-46608</guid>
+		<description>I did exactly the same as Geoff Ford described to add new user with new workstation.
+
+My .ssh/config file was as below:
+
+Host gitbox
+User gitolite
+Hostname new_host_ip
+Port 22
+IdentityFile ~/.ssh/new_user
+
+But every time it&#039;s ask for password of gitolite user on my machine.
+gitolite@new_host_ip&#039;s password: 
+
+But once I changed the hostname to gitbox, it works fine. The changes I made is as:
+
+Host gitbox
+User gitolite
+Hostname gitbox
+Port 22
+IdentityFile ~/.ssh/new_user
+
+I believe hostname should be our local machine or new host that need to add, Can anyone explain to me why it&#039;s happened.
+
+Thanks,
+Amit Dixit</description>
+		<content:encoded><![CDATA[<p>I did exactly the same as Geoff Ford described to add new user with new workstation.</p>
+<p>My .ssh/config file was as below:</p>
+<p>Host gitbox<br />
+User gitolite<br />
+Hostname new_host_ip<br />
+Port 22<br />
+IdentityFile ~/.ssh/new_user</p>
+<p>But every time it&#8217;s ask for password of gitolite user on my machine.<br />
+gitolite@new_host_ip&#8217;s password: </p>
+<p>But once I changed the hostname to gitbox, it works fine. The changes I made is as:</p>
+<p>Host gitbox<br />
+User gitolite<br />
+Hostname gitbox<br />
+Port 22<br />
+IdentityFile ~/.ssh/new_user</p>
+<p>I believe hostname should be our local machine or new host that need to add, Can anyone explain to me why it&#8217;s happened.</p>
+<p>Thanks,<br />
+Amit Dixit</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ovidiu Visan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-46301</link>
+		<dc:creator>Ovidiu Visan</dc:creator>
+		<pubDate>Tue, 21 May 2013 20:05:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-46301</guid>
+		<description>Thank you very much for this tutorial. It worked great!</description>
+		<content:encoded><![CDATA[<p>Thank you very much for this tutorial. It worked great!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Geoff Ford</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-45832</link>
+		<dc:creator>Geoff Ford</dc:creator>
+		<pubDate>Sat, 18 May 2013 01:04:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-45832</guid>
+		<description>;-)</description>
+		<content:encoded><![CDATA[<p> <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> </p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: D Israel</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-45821</link>
+		<dc:creator>D Israel</dc:creator>
+		<pubDate>Fri, 17 May 2013 22:22:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-45821</guid>
+		<description>Oh oh.  Is that what the comment (above) from Geoff Ford is about?  Just replace the Identity file with the newly created private key (User remains gitolite)?
+
+Thanks.</description>
+		<content:encoded><![CDATA[<p>Oh oh.  Is that what the comment (above) from Geoff Ford is about?  Just replace the Identity file with the newly created private key (User remains gitolite)?</p>
+<p>Thanks.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: D Israel</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-45820</link>
+		<dc:creator>D Israel</dc:creator>
+		<pubDate>Fri, 17 May 2013 22:18:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-45820</guid>
+		<description>I&#039;m new to these key settings.  Does this mean I change my ssh config file to the new username and identity file ?  I didn&#039;t see where you made that change.
+
+Thanks again.</description>
+		<content:encoded><![CDATA[<p>I&#8217;m new to these key settings.  Does this mean I change my ssh config file to the new username and identity file ?  I didn&#8217;t see where you made that change.</p>
+<p>Thanks again.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-45819</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Fri, 17 May 2013 22:11:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-45819</guid>
+		<description>It knows based on which ssh key you authenticate with.</description>
+		<content:encoded><![CDATA[<p>It knows based on which ssh key you authenticate with.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: D Israel</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-45816</link>
+		<dc:creator>D Israel</dc:creator>
+		<pubDate>Fri, 17 May 2013 21:14:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-45816</guid>
+		<description>This is great!  However, I think I&#039;m a little unclear about something.
+
+You create a key for each user, but how does gitolite know which user you are?  Do I have to do something else there?
+
+Thanks again for this.</description>
+		<content:encoded><![CDATA[<p>This is great!  However, I think I&#8217;m a little unclear about something.</p>
+<p>You create a key for each user, but how does gitolite know which user you are?  Do I have to do something else there?</p>
+<p>Thanks again for this.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Getting started with git &#8592; Adm.in Berlin</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-44872</link>
+		<dc:creator>Getting started with git &#8592; Adm.in Berlin</dc:creator>
+		<pubDate>Thu, 09 May 2013 12:53:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-44872</guid>
+		<description>[...] During the journey I was inspired by: http://www.bigfastblog.com/gitolite-installation-step-by-step [...]</description>
+		<content:encoded><![CDATA[<p>[...] During the journey I was inspired by: http://www.bigfastblog.com/gitolite-installation-step-by-step [...]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Lionel Abderemane</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-44420</link>
+		<dc:creator>Lionel Abderemane</dc:creator>
+		<pubDate>Sat, 04 May 2013 09:10:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-44420</guid>
+		<description>It is really clear Thank you</description>
+		<content:encoded><![CDATA[<p>It is really clear Thank you</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Joe</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-44058</link>
+		<dc:creator>Joe</dc:creator>
+		<pubDate>Tue, 30 Apr 2013 15:49:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-44058</guid>
+		<description>Great stuff - explains a lot of what&#039;s happening when trying to access your git repos via gitolite.
+
+I need some guidance on the ssh side of things.
+
+I&#039;ve installed Gitolite and Gitlab 5.0 (Mac OS X Mountain Lion Server - 10.8)
+I can see the Gitlab page just fine - and can add and create users, projects, etc.  I can then look on the machine under the repositories and satellites directory and see everything is there hunky-dorey....
+
+The problem is when I try to clone down up push/pull up to a rego.  I can not connect for the life of me - and I&#039;m sure it has something to do with how SSH is either configured or what the git account is being set up as when trying to grab from a repo.
+
+For instance when I do:  ssh git@fe77.com (that&#039;s the gitolite machine), I get:
+
+PTY allocation request failed on channel 0 
+
+(that&#039;s when on the machine and doing it locally - when on another machine and doing that command - I get in).
+
+Now, this is different than what I should get.  I should get a listing of what repos are allowed with their RW+, etc settings.
+
+I even try :  ssh git@fe77.com info
+
+info: Writing node (dir)Top...
+info: Done.
+File: dir	Node: Top	This is the top of the INFO tree
+  This (the Directory node) gives a menu of major topics. 
+  Typing &quot;d&quot; returns here, &quot;q&quot; exits, &quot;?&quot; lists all INFO commands, &quot;h&quot; 
+  gives a primer for first-timers, &quot;mEmacs&quot; visits the Emacs topic,
+  etc...
+
+(and a whole lot of stuff about emacs, etc)...
+
+Logically, I should get the access rites for repos to Gitolite again - doesn&#039;t happen.
+
+Then, the coup d&#039;etat:
+
+www:temp git$ git clone git@fe77.com:gitolite-admin
+Cloning into &#039;gitolite-admin&#039;...
+fatal: &#039;gitolite-admin&#039; does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+And yes, gitolite-admin is there, and I can pull it down via:
+
+git clone git@fe77.com:repositories/gitolite-admin
+
+But many sites mention that this is the WRONG way to do this since it bypasses Gitolite then - and yes, that is proven in that after pulling it down that way, I can&#039;t push anything up - too numerous errors to describe.
+
+So, my question is this:  how do I get SSH on this machine to be setup correctly, etc? 
+
+I have my .bashrc configured as such (and I know this is what&#039;s called when I do that ssh call):
+
+www:~ git$ more .bashrc
+export GIT_EXEC_PATH=/usr/libexec/git-core
+
+PATH=$HOME/.rvm/bin:$HOME/gitolite/src:$HOME/bin:$PATH # Add RVM to PATH for scripting
+
+Any pointers or help would be fantastic.
+
+Thanks.
+
+Joe...</description>
+		<content:encoded><![CDATA[<p>Great stuff &#8211; explains a lot of what&#8217;s happening when trying to access your git repos via gitolite.</p>
+<p>I need some guidance on the ssh side of things.</p>
+<p>I&#8217;ve installed Gitolite and Gitlab 5.0 (Mac OS X Mountain Lion Server &#8211; 10.8)<br />
+I can see the Gitlab page just fine &#8211; and can add and create users, projects, etc.  I can then look on the machine under the repositories and satellites directory and see everything is there hunky-dorey&#8230;.</p>
+<p>The problem is when I try to clone down up push/pull up to a rego.  I can not connect for the life of me &#8211; and I&#8217;m sure it has something to do with how SSH is either configured or what the git account is being set up as when trying to grab from a repo.</p>
+<p>For instance when I do:  ssh <a href="mailto:git@fe77.com">git@fe77.com</a> (that&#8217;s the gitolite machine), I get:</p>
+<p>PTY allocation request failed on channel 0 </p>
+<p>(that&#8217;s when on the machine and doing it locally &#8211; when on another machine and doing that command &#8211; I get in).</p>
+<p>Now, this is different than what I should get.  I should get a listing of what repos are allowed with their RW+, etc settings.</p>
+<p>I even try :  ssh <a href="mailto:git@fe77.com">git@fe77.com</a> info</p>
+<p>info: Writing node (dir)Top&#8230;<br />
+info: Done.<br />
+File: dir	Node: Top	This is the top of the INFO tree<br />
+  This (the Directory node) gives a menu of major topics.<br />
+  Typing &#8220;d&#8221; returns here, &#8220;q&#8221; exits, &#8220;?&#8221; lists all INFO commands, &#8220;h&#8221;<br />
+  gives a primer for first-timers, &#8220;mEmacs&#8221; visits the Emacs topic,<br />
+  etc&#8230;</p>
+<p>(and a whole lot of stuff about emacs, etc)&#8230;</p>
+<p>Logically, I should get the access rites for repos to Gitolite again &#8211; doesn&#8217;t happen.</p>
+<p>Then, the coup d&#8217;etat:</p>
+<p>www:temp git$ git clone <a href="mailto:git@fe77.com">git@fe77.com</a>:gitolite-admin<br />
+Cloning into &#8216;gitolite-admin&#8217;&#8230;<br />
+fatal: &#8216;gitolite-admin&#8217; does not appear to be a git repository<br />
+fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br />
+and the repository exists.</p>
+<p>And yes, gitolite-admin is there, and I can pull it down via:</p>
+<p>git clone <a href="mailto:git@fe77.com">git@fe77.com</a>:repositories/gitolite-admin</p>
+<p>But many sites mention that this is the WRONG way to do this since it bypasses Gitolite then &#8211; and yes, that is proven in that after pulling it down that way, I can&#8217;t push anything up &#8211; too numerous errors to describe.</p>
+<p>So, my question is this:  how do I get SSH on this machine to be setup correctly, etc? </p>
+<p>I have my .bashrc configured as such (and I know this is what&#8217;s called when I do that ssh call):</p>
+<p>www:~ git$ more .bashrc<br />
+export GIT_EXEC_PATH=/usr/libexec/git-core</p>
+<p>PATH=$HOME/.rvm/bin:$HOME/gitolite/src:$HOME/bin:$PATH # Add RVM to PATH for scripting</p>
+<p>Any pointers or help would be fantastic.</p>
+<p>Thanks.</p>
+<p>Joe&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: silviu</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-43404</link>
+		<dc:creator>silviu</dc:creator>
+		<pubDate>Wed, 24 Apr 2013 11:29:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-43404</guid>
+		<description>thnx alot guys, 
+the top quality tutorial from phil and your hint,geoff, saved my day.
+
+cheers</description>
+		<content:encoded><![CDATA[<p>thnx alot guys,<br />
+the top quality tutorial from phil and your hint,geoff, saved my day.</p>
+<p>cheers</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-29368</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Wed, 19 Dec 2012 20:43:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-29368</guid>
+		<description>Maybe try posting your issue to Gitolite mailing list...
+https://groups.google.com/forum/?fromgroups=#!forum/gitolite</description>
+		<content:encoded><![CDATA[<p>Maybe try posting your issue to Gitolite mailing list&#8230;<br />
+<a href="https://groups.google.com/forum/?fromgroups=#" rel="nofollow">https://groups.google.com/forum/?fromgroups=#</a>!forum/gitolite</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: chelifero</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-29328</link>
+		<dc:creator>chelifero</dc:creator>
+		<pubDate>Wed, 19 Dec 2012 08:36:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-29328</guid>
+		<description>Hi Phil,
+thanks for your answer :)
+
+I&#039;ve already done staging, commit and push the pub key for the user1. I see that with the command git log in user1 pc and I see the key file in /home/gitolite on the remote pc...
+
+What do you think about permission of /home/gitolite/user1.pub file on the remote pc? I seek:
+chown gitolite:gitolite /home/gitolite/user1.pub
+... and ...
+chown user1:user1 /home/gitolite/user1.pub
+but not change the result.</description>
+		<content:encoded><![CDATA[<p>Hi Phil,<br />
+thanks for your answer <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>I&#8217;ve already done staging, commit and push the pub key for the user1. I see that with the command git log in user1 pc and I see the key file in /home/gitolite on the remote pc&#8230;</p>
+<p>What do you think about permission of /home/gitolite/user1.pub file on the remote pc? I seek:<br />
+chown gitolite:gitolite /home/gitolite/user1.pub<br />
+&#8230; and &#8230;<br />
+chown user1:user1 /home/gitolite/user1.pub<br />
+but not change the result.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-29285</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Tue, 18 Dec 2012 17:19:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-29285</guid>
+		<description>Hi Chelifero,
+
+gitolite.conf looks ok to me.
+
+Do you have a key for that user? You should have this file ~/gitolite-admin/keydir/user1.pub which will be the public key of the user1 user.
+
+user1 cannot push the user1.pub key for the gitolite-admin repo, or add itself as an admin, but it sounds as though you done that with the gitolite user (at least the gitolite.conf part).
+
+   cp ~/.ssh/user1.pub ~/gitolite-admin/keydir/user1.pub
+   cd ~/gitolite-admin
+   git add keydir/user1.pub
+   git commit -m &#039;added pub key for user1&#039;
+   git push
+
+Now you should be able to edit the IdentityFile of User gitolite in .ssh/config to point to ~/.ssh/user1</description>
+		<content:encoded><![CDATA[<p>Hi Chelifero,</p>
+<p>gitolite.conf looks ok to me.</p>
+<p>Do you have a key for that user? You should have this file ~/gitolite-admin/keydir/user1.pub which will be the public key of the user1 user.</p>
+<p>user1 cannot push the user1.pub key for the gitolite-admin repo, or add itself as an admin, but it sounds as though you done that with the gitolite user (at least the gitolite.conf part).</p>
+<p>   cp ~/.ssh/user1.pub ~/gitolite-admin/keydir/user1.pub<br />
+   cd ~/gitolite-admin<br />
+   git add keydir/user1.pub<br />
+   git commit -m &#8216;added pub key for user1&#8242;<br />
+   git push</p>
+<p>Now you should be able to edit the IdentityFile of User gitolite in .ssh/config to point to ~/.ssh/user1</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: chelifero</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-29279</link>
+		<dc:creator>chelifero</dc:creator>
+		<pubDate>Tue, 18 Dec 2012 15:33:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-29279</guid>
+		<description>Thanks Phil for this tutorial!!!
+But...
+I want use the same user account to admin gitolite and collaborate, so in my machine I&#039;ve the gitolite-admin folder with this conf/gitolite.conf file:
+
+@admin      =   user1
+@staff      =   user1
+
+repo gitolite-admin
+    RW+     =   gitolite @admin
+
+repo testing
+    RW+     =   @all
+
+repo test_repository
+    RW+     =   user1 @admin
+    R       =   @staff
+
+and this ~/.ssh/config file:
+
+Host gitbox
+Hostname remote_repo_ip_address
+User gitolite
+Port 22
+IdentityFile ~/.ssh/user1
+
+When I try to push conf/gitolite.conf file changes, I see at terminal:
+
+user1@machine1 ~/gitolite-admin $ git push
+FATAL: W any gitolite-admin user1 DENIED by fallthru
+(or you mis-spelled the reponame)
+
+Instead if I modify ~/.ssh/config file in this way:
+
+Host gitbox
+Hostname remote_repo_ip_address
+User gitolite
+Port 22
+IdentityFile ~/.ssh/gitolite
+
+Push is ok, but I can&#039;t work with git as user1. I can&#039;t switch between these file version of file for working.
+What am I doing wrong? Is that possible?</description>
+		<content:encoded><![CDATA[<p>Thanks Phil for this tutorial!!!<br />
+But&#8230;<br />
+I want use the same user account to admin gitolite and collaborate, so in my machine I&#8217;ve the gitolite-admin folder with this conf/gitolite.conf file:</p>
+<p>@admin      =   user1<br />
+@staff      =   user1</p>
+<p>repo gitolite-admin<br />
+    RW+     =   gitolite @admin</p>
+<p>repo testing<br />
+    RW+     =   @all</p>
+<p>repo test_repository<br />
+    RW+     =   user1 @admin<br />
+    R       =   @staff</p>
+<p>and this ~/.ssh/config file:</p>
+<p>Host gitbox<br />
+Hostname remote_repo_ip_address<br />
+User gitolite<br />
+Port 22<br />
+IdentityFile ~/.ssh/user1</p>
+<p>When I try to push conf/gitolite.conf file changes, I see at terminal:</p>
+<p>user1@machine1 ~/gitolite-admin $ git push<br />
+FATAL: W any gitolite-admin user1 DENIED by fallthru<br />
+(or you mis-spelled the reponame)</p>
+<p>Instead if I modify ~/.ssh/config file in this way:</p>
+<p>Host gitbox<br />
+Hostname remote_repo_ip_address<br />
+User gitolite<br />
+Port 22<br />
+IdentityFile ~/.ssh/gitolite</p>
+<p>Push is ok, but I can&#8217;t work with git as user1. I can&#8217;t switch between these file version of file for working.<br />
+What am I doing wrong? Is that possible?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Oguz Meteer</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-27624</link>
+		<dc:creator>Oguz Meteer</dc:creator>
+		<pubDate>Fri, 30 Nov 2012 20:43:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-27624</guid>
+		<description>Hi Phil,
+
+Thanks for the clear tutorial. However I&#039;m having some difficulty installing gitolite. The step where you have to execute:
+
+gitolite/install -to /path/to/home/directory/of/user/gitolite
+
+gives me a &quot;Permission denied&quot; error. I have not created the gitolite home directory in /home/gitolite, because I&#039;m running a RAID5 mirror on my server, and wanted to place the home directory there. Since I used sudo su - gitolite, I would not have expected this error. Any clues?</description>
+		<content:encoded><![CDATA[<p>Hi Phil,</p>
+<p>Thanks for the clear tutorial. However I&#8217;m having some difficulty installing gitolite. The step where you have to execute:</p>
+<p>gitolite/install -to /path/to/home/directory/of/user/gitolite</p>
+<p>gives me a &#8220;Permission denied&#8221; error. I have not created the gitolite home directory in /home/gitolite, because I&#8217;m running a RAID5 mirror on my server, and wanted to place the home directory there. Since I used sudo su &#8211; gitolite, I would not have expected this error. Any clues?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Javier</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-26800</link>
+		<dc:creator>Javier</dc:creator>
+		<pubDate>Thu, 22 Nov 2012 16:51:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-26800</guid>
+		<description>Hi,
+I see the message &quot;remote: Initialized empty Git repository in /home/gitolite/repositories/bigfastblog.git/&quot;
+But... when I my local machine I try to clone this not works :(
+$git clone gitbox:bigfastblog
+======
+FATAL: R any bigfastblog gitolite DENIED by fallthru
+(or you mis-spelled the reponame)
+fatal: The remote end hung up unexpectedly
+======
+
+Ok... In
+vim ~/.ssh/config
+I need add
+@admin = gitolite
+
+And now works :S</description>
+		<content:encoded><![CDATA[<p>Hi,<br />
+I see the message &#8220;remote: Initialized empty Git repository in /home/gitolite/repositories/bigfastblog.git/&#8221;<br />
+But&#8230; when I my local machine I try to clone this not works <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /><br />
+$git clone gitbox:bigfastblog<br />
+======<br />
+FATAL: R any bigfastblog gitolite DENIED by fallthru<br />
+(or you mis-spelled the reponame)<br />
+fatal: The remote end hung up unexpectedly<br />
+======</p>
+<p>Ok&#8230; In<br />
+vim ~/.ssh/config<br />
+I need add<br />
+@admin = gitolite</p>
+<p>And now works :S</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-24785</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Sat, 03 Nov 2012 16:19:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-24785</guid>
+		<description>Thanks Fredrik! Glad you found it useful. Please tweet or share on your favorite social network, so that others more easily find it.</description>
+		<content:encoded><![CDATA[<p>Thanks Fredrik! Glad you found it useful. Please tweet or share on your favorite social network, so that others more easily find it.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Fredrik</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-24783</link>
+		<dc:creator>Fredrik</dc:creator>
+		<pubDate>Sat, 03 Nov 2012 15:42:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-24783</guid>
+		<description>Great tutorial! Usually you face some sort of a obstacle following a tutorial, but here everything just worked flawless and you also explained each steps very well. I usually do not reply on tutorials (which i guess is somewhat rude, but here i had to make an exception) Thanks alot!</description>
+		<content:encoded><![CDATA[<p>Great tutorial! Usually you face some sort of a obstacle following a tutorial, but here everything just worked flawless and you also explained each steps very well. I usually do not reply on tutorials (which i guess is somewhat rude, but here i had to make an exception) Thanks alot!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: bfn</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-22434</link>
+		<dc:creator>bfn</dc:creator>
+		<pubDate>Sun, 30 Sep 2012 13:32:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-22434</guid>
+		<description>This was a problem in the /etc/ssh/sshd_config file, I added “gitolite” user after the AllowUsers directive, and now this is ok :)
+
+(cf: http://sitaramc.github.com/gitolite/sts.html#stsapp1 )</description>
+		<content:encoded><![CDATA[<p>This was a problem in the /etc/ssh/sshd_config file, I added “gitolite” user after the AllowUsers directive, and now this is ok <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>(cf: <a href="http://sitaramc.github.com/gitolite/sts.html#stsapp1" rel="nofollow">http://sitaramc.github.com/gitolite/sts.html#stsapp1</a> )</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-22413</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Sun, 30 Sep 2012 03:52:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-22413</guid>
+		<description>Hi Geoff,
+
+Thanks for the great feedback! Sorry you hit problems with this. The post did not go as far as checking out the repositories for added users, so I think your advice will be a great help to anyone reading this post.
+
+Thanks,
+Phil</description>
+		<content:encoded><![CDATA[<p>Hi Geoff,</p>
+<p>Thanks for the great feedback! Sorry you hit problems with this. The post did not go as far as checking out the repositories for added users, so I think your advice will be a great help to anyone reading this post.</p>
+<p>Thanks,<br />
+Phil</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Geoff Ford</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-22410</link>
+		<dc:creator>Geoff Ford</dc:creator>
+		<pubDate>Sun, 30 Sep 2012 00:47:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-22410</guid>
+		<description>Thank you very much for this awesome tutorial. The only one I have found that takes you right through the process and actually works at the end!!
+
+I would just like to add an additional step for anyone wanting to add new users on other workstations as it took me a while to get this bit working correctly (i.e. not asking for a password).
+
+*Firstly create your keys on the new users machine.
+*Then copy the public key to the keydir folder of the gitolite-admin repo on whichever machine you set up the above steps to administer gitolite from and commit your changes as described above.
+*On the same admin machine edit the conf/gitolite.conf to add your user wherever required and commit your changes again.
+
+Now it was at this point I ran into problems when trying to clone a repo on to my new user&#039;s machine. I kept getting a prompt for a password for my new user. The solution was to create the following .ssh/config file on the new user&#039;s machine:
+
+Host gitbox
+    Hostname your_hostname_here
+    User gitolite
+    Port 22
+    IdentityFile ~/.ssh/new_user_key
+
+Note that whilst you still use the new user&#039;s private key in IdentityFile, the magic comes from entering gitolite as the User as it is this username that is used to make the ssh connection that then passes the new_user_key for authentication. This works because when new users are added to gitolite-admin, the public keys are added as additional keys to the gitolite user on the server in .ssh/authorized_keys.
+
+You can now clone a remote repo to the new user&#039;s machine with the following:
+
+git clone gitbox:your_repo_name
+
+Hope that saves a bit of someone&#039;s time :-)
+
+Thanks
+
+Geoff.</description>
+		<content:encoded><![CDATA[<p>Thank you very much for this awesome tutorial. The only one I have found that takes you right through the process and actually works at the end!!</p>
+<p>I would just like to add an additional step for anyone wanting to add new users on other workstations as it took me a while to get this bit working correctly (i.e. not asking for a password).</p>
+<p>*Firstly create your keys on the new users machine.<br />
+*Then copy the public key to the keydir folder of the gitolite-admin repo on whichever machine you set up the above steps to administer gitolite from and commit your changes as described above.<br />
+*On the same admin machine edit the conf/gitolite.conf to add your user wherever required and commit your changes again.</p>
+<p>Now it was at this point I ran into problems when trying to clone a repo on to my new user&#8217;s machine. I kept getting a prompt for a password for my new user. The solution was to create the following .ssh/config file on the new user&#8217;s machine:</p>
+<p>Host gitbox<br />
+    Hostname your_hostname_here<br />
+    User gitolite<br />
+    Port 22<br />
+    IdentityFile ~/.ssh/new_user_key</p>
+<p>Note that whilst you still use the new user&#8217;s private key in IdentityFile, the magic comes from entering gitolite as the User as it is this username that is used to make the ssh connection that then passes the new_user_key for authentication. This works because when new users are added to gitolite-admin, the public keys are added as additional keys to the gitolite user on the server in .ssh/authorized_keys.</p>
+<p>You can now clone a remote repo to the new user&#8217;s machine with the following:</p>
+<p>git clone gitbox:your_repo_name</p>
+<p>Hope that saves a bit of someone&#8217;s time <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>Thanks</p>
+<p>Geoff.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-22283</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 27 Sep 2012 16:43:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-22283</guid>
+		<description>Hi Bfn,
+
+If you are seeing the password prompt, then this indicates that the ssh keys is not setup correctly, so it is falling back to password authentication. Maybe you missed a step?
+
+Thanks,
+Phil</description>
+		<content:encoded><![CDATA[<p>Hi Bfn,</p>
+<p>If you are seeing the password prompt, then this indicates that the ssh keys is not setup correctly, so it is falling back to password authentication. Maybe you missed a step?</p>
+<p>Thanks,<br />
+Phil</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: bfn</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-22187</link>
+		<dc:creator>bfn</dc:creator>
+		<pubDate>Tue, 25 Sep 2012 21:39:42 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-22187</guid>
+		<description>I’ve followed the steps, but ssh asks me for a password:
+
+$ git clone myserver:gitolite-admin
+Cloning into &#039;gitolite-admin&#039;...
+gitolite@myadress.com&#039;s password:
+
+I never set a password, and if I press “Enter”, it says “Permission denied, please try again”. Any idea? The server is on Debian Squeeze, and the local machine on Ubuntu 12.04.</description>
+		<content:encoded><![CDATA[<p>I’ve followed the steps, but ssh asks me for a password:</p>
+<p>$ git clone myserver:gitolite-admin<br />
+Cloning into &#8216;gitolite-admin&#8217;&#8230;<br />
+<a href="mailto:gitolite@myadress.com">gitolite@myadress.com</a>&#8216;s password:</p>
+<p>I never set a password, and if I press “Enter”, it says “Permission denied, please try again”. Any idea? The server is on Debian Squeeze, and the local machine on Ubuntu 12.04.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jakkudanieru</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-21344</link>
+		<dc:creator>jakkudanieru</dc:creator>
+		<pubDate>Fri, 07 Sep 2012 03:32:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-21344</guid>
+		<description>No ssh-add ~/.ssh/gitolite.pub ?
+Kind of stuff that save people time isn&#039;t it?</description>
+		<content:encoded><![CDATA[<p>No ssh-add ~/.ssh/gitolite.pub ?<br />
+Kind of stuff that save people time isn&#8217;t it?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Joey</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-20910</link>
+		<dc:creator>Joey</dc:creator>
+		<pubDate>Fri, 24 Aug 2012 01:31:01 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-20910</guid>
+		<description>Nice and Superb Gitolite tutorial!</description>
+		<content:encoded><![CDATA[<p>Nice and Superb Gitolite tutorial!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sitaram Chamarty</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-20596</link>
+		<dc:creator>Sitaram Chamarty</dc:creator>
+		<pubDate>Mon, 13 Aug 2012 01:54:30 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-20596</guid>
+		<description>Phil,
+
+That&#039;s a very nice and clearly written blog post.
+
+But the reason I am writing is this: I can&#039;t tell you how much I appreciate the deprecation notice at the top of your older (2010 or so) blog post on this.
+
+In contrast, I had to badger the owner of a then-popular (but already long obsolete) blogpost on gitosis for a few months before he finally relented and put in a very weak disclaimer.  Luckily it&#039;s no longer among the top hits and we no longer get as many people on #git asking for help because they followed that blog and something went wrong.
+
+So... thanks again for making my life easier.
+
+regards,
+
+sitaram</description>
+		<content:encoded><![CDATA[<p>Phil,</p>
+<p>That&#8217;s a very nice and clearly written blog post.</p>
+<p>But the reason I am writing is this: I can&#8217;t tell you how much I appreciate the deprecation notice at the top of your older (2010 or so) blog post on this.</p>
+<p>In contrast, I had to badger the owner of a then-popular (but already long obsolete) blogpost on gitosis for a few months before he finally relented and put in a very weak disclaimer.  Luckily it&#8217;s no longer among the top hits and we no longer get as many people on #git asking for help because they followed that blog and something went wrong.</p>
+<p>So&#8230; thanks again for making my life easier.</p>
+<p>regards,</p>
+<p>sitaram</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Warren Le</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-20441</link>
+		<dc:creator>Warren Le</dc:creator>
+		<pubDate>Tue, 07 Aug 2012 12:41:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-20441</guid>
+		<description>&quot;You used a key that is already set to give you shell access. You cannot use the same key to get shell access as well as access gitolite repos.&quot; (http://sitaramc.github.com/gitolite/emergencies.html#ce)
+
+In our case is &#039;sudo mv gitolite.pub /home/gitolite&#039;
+and &#039;/home/gitolite/bin/gitolite setup -pk gitolite.pub&#039;
+
+Which means we used gitolite.pub to get shell access and access to gitolite repos as well.</description>
+		<content:encoded><![CDATA[<p>&#8220;You used a key that is already set to give you shell access. You cannot use the same key to get shell access as well as access gitolite repos.&#8221; (<a href="http://sitaramc.github.com/gitolite/emergencies.html#ce" rel="nofollow">http://sitaramc.github.com/gitolite/emergencies.html#ce</a>)</p>
+<p>In our case is &#8216;sudo mv gitolite.pub /home/gitolite&#8217;<br />
+and &#8216;/home/gitolite/bin/gitolite setup -pk gitolite.pub&#8217;</p>
+<p>Which means we used gitolite.pub to get shell access and access to gitolite repos as well.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-19728</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Sat, 28 Jul 2012 22:32:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-19728</guid>
+		<description>I&#039;ve updated the post, so you will only have replace &quot;root&quot; with &quot;ubuntu&quot; (or the username you have on the machine) and everything should work. Let me know if you hit any issues.</description>
+		<content:encoded><![CDATA[<p>I&#8217;ve updated the post, so you will only have replace &#8220;root&#8221; with &#8220;ubuntu&#8221; (or the username you have on the machine) and everything should work. Let me know if you hit any issues.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-19727</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Sat, 28 Jul 2012 22:24:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-19727</guid>
+		<description>Hi Roger,
+
+That &quot;root&quot; user is a Linode thing. When you fire-up a new machine you can set the root password before you boot the machine. So, yes, you login via the &quot;root&quot; user. I did not actually do anything myself to get into this position. I know AWS AMI images for Ubuntu generally do not allow you to login via as root, so I hope this does not cause too much confusion.
+
+For AWS, simply replace &quot;root&quot; for &quot;ubuntu&quot; (or the username you have on the machine) and when you run commands as that user (and only that user), ensure that you have them prefixed with &quot;sudo&quot;.
+
+Hope that helps.
+
+[AWS = Amazon Web Services]</description>
+		<content:encoded><![CDATA[<p>Hi Roger,</p>
+<p>That &#8220;root&#8221; user is a Linode thing. When you fire-up a new machine you can set the root password before you boot the machine. So, yes, you login via the &#8220;root&#8221; user. I did not actually do anything myself to get into this position. I know AWS AMI images for Ubuntu generally do not allow you to login via as root, so I hope this does not cause too much confusion.</p>
+<p>For AWS, simply replace &#8220;root&#8221; for &#8220;ubuntu&#8221; (or the username you have on the machine) and when you run commands as that user (and only that user), ensure that you have them prefixed with &#8220;sudo&#8221;.</p>
+<p>Hope that helps.</p>
+<p>[AWS = Amazon Web Services]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Roger Ivy</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-19710</link>
+		<dc:creator>Roger Ivy</dc:creator>
+		<pubDate>Sat, 28 Jul 2012 09:29:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-19710</guid>
+		<description>Thanks for this Phil ... I&#039;m testing it end-2-end.
+
+In the initial hardware section, where you wrote &quot;fresh install of “Ubuntu 12.04 LTS 64bit” with root user setup and ssh access to the root user via password&quot;
+
+I was under the impression that Ubuntu only gives you access to root via &quot;sudo&quot;, that you can&#039;t actually be &quot;root&quot;. Did you set up your initial user as &quot;root&quot;?
+
+...or did you do something like this:
+ sudo passwd
+ Password:
+ Enter new UNIX password:
+ Retype new UNIX password:</description>
+		<content:encoded><![CDATA[<p>Thanks for this Phil &#8230; I&#8217;m testing it end-2-end.</p>
+<p>In the initial hardware section, where you wrote &#8220;fresh install of “Ubuntu 12.04 LTS 64bit” with root user setup and ssh access to the root user via password&#8221;</p>
+<p>I was under the impression that Ubuntu only gives you access to root via &#8220;sudo&#8221;, that you can&#8217;t actually be &#8220;root&#8221;. Did you set up your initial user as &#8220;root&#8221;?</p>
+<p>&#8230;or did you do something like this:<br />
+ sudo passwd<br />
+ Password:<br />
+ Enter new UNIX password:<br />
+ Retype new UNIX password:</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Dakiss</title>
+		<link>http://www.bigfastblog.com/gitolite-installation-step-by-step/comment-page-1#comment-19584</link>
+		<dc:creator>Dakiss</dc:creator>
+		<pubDate>Wed, 25 Jul 2012 11:47:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1554#comment-19584</guid>
+		<description>Good tutorial, clear, effective. Thank you!</description>
+		<content:encoded><![CDATA[<p>Good tutorial, clear, effective. Thank you!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

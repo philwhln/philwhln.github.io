@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: SQLShell. A Cross-Database SQL Tool With NoSQL Potential</title>
+	<atom:link href="http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential/comment-page-1#comment-21156</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Sat, 01 Sep 2012 16:54:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=958#comment-21156</guid>
+		<description>Great info the JDBC driver, Endre. Thanks for sharing!</description>
+		<content:encoded><![CDATA[<p>Great info the JDBC driver, Endre. Thanks for sharing!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Endre</title>
+		<link>http://www.bigfastblog.com/sqlshell-a-cross-database-sql-tool-with-nosql-potential/comment-page-1#comment-21155</link>
+		<dc:creator>Endre</dc:creator>
+		<pubDate>Sat, 01 Sep 2012 16:48:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=958#comment-21155</guid>
+		<description>Very nice and thorough article Phil,
+
+I have only one addition - actually its an update:
+
+there is a JDBC driver for Google BigQuery available for a few days now:
+http://code.google.com/p/starschema-bigquery-jdbc/
+
+This might give many people new perspectives for their data visualization needs.</description>
+		<content:encoded><![CDATA[<p>Very nice and thorough article Phil,</p>
+<p>I have only one addition &#8211; actually its an update:</p>
+<p>there is a JDBC driver for Google BigQuery available for a few days now:<br />
+<a href="http://code.google.com/p/starschema-bigquery-jdbc/" rel="nofollow">http://code.google.com/p/starschema-bigquery-jdbc/</a></p>
+<p>This might give many people new perspectives for their data visualization needs.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

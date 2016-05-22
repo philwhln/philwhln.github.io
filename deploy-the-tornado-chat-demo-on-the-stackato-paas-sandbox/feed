@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Deploy The Tornado Chat Demo On The Stackato PaaS Sandbox</title>
+	<atom:link href="http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox</link>
+	<description>Big Fast Technology</description>
+	<lastBuildDate>Mon, 05 May 2014 08:14:53 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.1</generator>
+	<item>
+		<title>By: Phil Whelan</title>
+		<link>http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox/comment-page-1#comment-8135</link>
+		<dc:creator>Phil Whelan</dc:creator>
+		<pubDate>Thu, 19 Jan 2012 14:39:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1459#comment-8135</guid>
+		<description>Hi Jiaxiaolei,
+
+Thanks for the comment on my blog post. I saw your follow-up post and was glad you were also able to fire up the Tornado Chat Demo app!
+
+Yes, I missed a step. The &quot;stackato target&quot; command. Well spotted! I&#039;ll update the post accordingly.
+
+Thanks,
+Phil</description>
+		<content:encoded><![CDATA[<p>Hi Jiaxiaolei,</p>
+<p>Thanks for the comment on my blog post. I saw your follow-up post and was glad you were also able to fire up the Tornado Chat Demo app!</p>
+<p>Yes, I missed a step. The &#8220;stackato target&#8221; command. Well spotted! I&#8217;ll update the post accordingly.</p>
+<p>Thanks,<br />
+Phil</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jiaxiaolei</title>
+		<link>http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox/comment-page-1#comment-7782</link>
+		<dc:creator>jiaxiaolei</dc:creator>
+		<pubDate>Wed, 11 Jan 2012 06:57:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.bigfastblog.com/?p=1459#comment-7782</guid>
+		<description>hi, phil:
+
+I read your words about stackato in python-tornado groups, and according to your gudiance I finished a server in  ~/src/stackato-samples/python of my own computer. you can find it in &quot;http://jia-tornado-chat.sandbox.activestate.com/&quot;
+
+A couple advises may be provided as follows:
+
+
+1: when you try to login, the default url is &quot;https://api.stackato.local&quot;, so :
+
+$ stackato login
+Attempting login to [https://api.stackato.local]
+Email: jiaxiaolei19871112@gmail.com
+Password: ****************
+Cannot access target (couldn&#039;t open socket: host is unreachable (Name or service not known)
+
+In my view, some description like below should be appeared in your blog, do you think so ? :D
+
+$ stackato target  https://api.sandbox.activestate.com
+Successfully targeted to [https://api.sandbox.activestate.com]
+
+
+2：Use the tornado-chat-mongo, I push my app in ActiveState. You can see in the url http://jia-tornado-chat.sandbox.activestate.com/
+okay, compared with your blog,  it&#039;s ugly!
+so, can you tell me what did you do about the blog we were watching ？
+Any response will be welcome!</description>
+		<content:encoded><![CDATA[<p>hi, phil:</p>
+<p>I read your words about stackato in python-tornado groups, and according to your gudiance I finished a server in  ~/src/stackato-samples/python of my own computer. you can find it in &#8220;http://jia-tornado-chat.sandbox.activestate.com/&#8221;</p>
+<p>A couple advises may be provided as follows:</p>
+<p>1: when you try to login, the default url is &#8220;https://api.stackato.local&#8221;, so :</p>
+<p>$ stackato login<br />
+Attempting login to [https://api.stackato.local]<br />
+Email: <a href="mailto:jiaxiaolei19871112@gmail.com">jiaxiaolei19871112@gmail.com</a><br />
+Password: ****************<br />
+Cannot access target (couldn&#8217;t open socket: host is unreachable (Name or service not known)</p>
+<p>In my view, some description like below should be appeared in your blog, do you think so ? <img src='http://www.bigfastblog.com/wp-includes/images/smilies/icon_biggrin.gif' alt=':D' class='wp-smiley' /> </p>
+<p>$ stackato target  <a href="https://api.sandbox.activestate.com" rel="nofollow">https://api.sandbox.activestate.com</a><br />
+Successfully targeted to [https://api.sandbox.activestate.com]</p>
+<p>2：Use the tornado-chat-mongo, I push my app in ActiveState. You can see in the url <a href="http://jia-tornado-chat.sandbox.activestate.com/" rel="nofollow">http://jia-tornado-chat.sandbox.activestate.com/</a><br />
+okay, compared with your blog,  it&#8217;s ugly!<br />
+so, can you tell me what did you do about the blog we were watching ？<br />
+Any response will be welcome!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

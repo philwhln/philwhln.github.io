@@ -1,0 +1,312 @@
+
+.rpxbox {z-index:1000;  display:none; position:fixed; vertical-align:middle; top:0px; left:0px; width:100%; height:100%;}
+.rpxregbox { display:block; }
+
+.rpxhoriz {
+  z-index:-10; position:fixed; display:block; top:0px; left:0px; width:100%; height:100%; background-color:#111;
+  opacity: .5;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+
+.rpxvert {width:100%; height:100%;}
+
+.rpxvert .rpxvrow .rpxvcol {vertical-align:middle;}
+
+.rpxborder {display:block; width:370px; height:240px; margin-right:auto; margin-left:auto; position:relative; 
+  padding: 5px;
+  background-color: #666;
+  background-color: rgba(0,0,0,.5);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.rpxclose {
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  top: -4px;
+  right: -4px;
+  position: absolute;
+  z-index: 1001;
+}
+
+.rpxiframe,
+.rpxregister {display:block; width:370px; height:240px; background-color:#FFF; border:0; overflow:hidden; position:relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.rpxregister .rpxmessage {
+  font-size:14px;
+  font-family:sans-serif;
+  padding:76px 10px 2px 10px;
+  text-align:center;
+}
+
+.rpxregform {
+  font-size:16px;
+  font-family:sans-serif;
+  padding:2px 10px 0px 10px;
+  text-align:center;
+}
+
+.rpxemail {
+  height:20px;
+  width:200px;
+}
+
+.rpxsubmit {
+  background-color:#D0D0D0;
+  border:1px solid #666;
+}
+
+.rpxsocial {
+  display:inline;
+  font-size:14px;
+  font-family:sans-serif;
+  color:#FFF;
+  background-color:#074764;
+  background-repeat:no-repeat;
+  background-position:2px center;  padding:4px 4px 2px 6px;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+}
+.rpxsocial:hover {cursor:pointer;}
+
+.rpxsocial_small {
+  display:block;
+  font-size:13px;
+  font-family:sans-serif;
+  color:#074764;
+  background-color:transparent;
+  padding:0px;
+  padding-right:5px;
+  margin:0px;
+  float:left;
+}
+.rpxsocial_small:hover {cursor:pointer;}
+.rpxsocial_small span {text-decoration:underline;}
+
+.rpx_social_icons {display:block; position:relative; width:78px; height:17px; margin-left:auto; margin-right:auto;}
+
+.label {font-size:small; font-style:serif; color:#666; margin:3px; padding:0px;}
+input#rpx_share_comment {display:inline; width:15px; margin:0px; padding:0px;}
+
+.rpx_tooltip {
+  position:relative;
+}
+
+.rpx_tooltip .rpx_share_tip {
+  margin:0px;
+  margin-left:-999em;
+  position:absolute;
+  padding:3px;
+}
+
+.rpx_tooltip:hover .rpx_share_tip {
+  border-radius:5px 5px; -moz-border-radius:5px; -webkit-border-radius:5px; 
+  font-family:sans-serif;
+  position: absolute;left:12px; top:-50px; z-index:99;
+  width:90px;
+  margin-left:0px;
+  border:1px solid #666;
+}
+
+.rpx_share_tip {
+  padding:7px;
+  background: #F0F0F0;
+  color:#666;
+}
+
+.rpx_button {margin:4px 6px 16px 0px; padding:0px 5px 5px 0px;}
+
+.rpx_icon_small {
+  display:block;
+  width:16px; 
+  height:16px;
+  margin:1px;
+  float:left;
+  background-image:url('http://www.bigfastblog.com/wp-content/plugins/rpx/images/providers_icons16.png');
+}
+.rpx_icon_small:hover {cursor:pointer;}
+
+.rpx_facebook_small {
+  background-position:0px 0px;
+}
+
+.rpx_twitter_small {
+  background-position:0px -16px;
+}
+
+.rpx_myspace_small {
+  background-position:0px -32px;
+}
+
+.rpx_windowslive_small {
+  background-position:0px -48px;
+}
+
+.rpx_yahoo_small {
+  background-position:0px -64px;
+}
+
+.rpx_google_small {
+  background-position:0px -80px;
+}
+
+.rpx_openid_small {
+  background-position:0px -96px;
+}
+
+.rpx_aol_small {
+  background-position:0px -112px;
+}
+
+.rpx_livejournal_small {
+  background-position:0px -128px;
+}
+
+.rpx_myopenid_small {
+  background-position:0px -144px;
+}
+
+.rpx_netlog_small {
+  background-position:0px -160px;
+}
+
+.rpx_flickr_small {
+  background-position:0px -176px;
+}
+
+.rpx_blogger_small {
+  background-position:0px -192px;
+}
+
+.rpx_verisign_small {
+  background-position:0px -208px;
+}
+
+.rpx_wordpress_small {
+  background-position:0px -224px;
+}
+
+.rpx_hyves_small {
+  background-position:0px -240px;
+}
+
+.rpx_linkedin_small {
+  background-position:0px -256px;
+}
+
+.rpx_paypal_small {
+  background-position:0px -272px;
+}
+
+.rpx_large_icons {
+  display:block;
+  height:32px;
+}
+
+.rpx_icon_large {
+  display:block;
+  width:30px; 
+  height:30px;
+  margin:0px;
+  margin-left:1px;
+  padding:0px;
+  padding-top:1px;
+  padding-bottom:1px;
+  float:left;
+  background-image:url('http://www.bigfastblog.com/wp-content/plugins/rpx/images/providers_icons32.png');
+}
+.rpx_icon_large:hover {cursor:pointer;}
+
+.rpx_facebook_large {
+  background-position:0px 0px;
+}
+
+.rpx_google_large {
+  background-position:0px -32px;
+}
+
+.rpx_linkedin_large {
+  background-position:0px -64px;
+}
+
+.rpx_myspace_large {
+  background-position:0px -96px;
+}
+
+.rpx_twitter_large {
+  background-position:0px -128px;
+}
+
+.rpx_windowslive_large {
+  background-position:0px -160px;
+}
+
+.rpx_yahoo_large {
+  background-position:0px -192px;
+}
+
+.rpx_aol_large {
+  background-position:0px -224px;
+}
+
+.rpx_blogger_large {
+  background-position:0px -256px;
+}
+
+.rpx_flickr_large {
+  background-position:0px -288px;
+}
+
+.rpx_hyves_large {
+  background-position:0px -320px;
+}
+
+.rpx_livejournal_large {
+  background-position:0px -352px;
+}
+
+.rpx_myopenid_large {
+  background-position:0px -384px;
+}
+
+.rpx_netlog_large {
+  background-position:0px -416px;
+}
+
+.rpx_openid_large {
+  background-position:0px -448px;
+}
+
+.rpx_verisign_large {
+  background-position:0px -480px;
+}
+
+.rpx_wordpress_large {
+  background-position:0px -512px;
+}
+
+.rpx_paypal_large {
+  background-position:0px -544px;
+}
+
+.rpxauthor {
+  display:block;
+  position:relative;
+  width:16px;
+  margin:0px;
+  padding:0px;
+  float:left;
+  bottom:-3px;
+  left:-3px;
+  vertical-align:middle;
+}
+
+<!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

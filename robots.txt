@@ -1,23 +1,10 @@
-
-Sitemap: http://www.bigfastblog.com/sitemap.xml
-
 # global
 User-agent: *
-Disallow: /wp-admin/
 Disallow: /wp-includes/
 Disallow: /wp-content/plugins/
-Disallow: /wp-content/cache/
 Disallow: /wp-content/themes/
-Disallow: /trackback/
-Disallow: /feed/
-Disallow: /comments/
 Disallow: /category/*/*
-Disallow: */trackback/
-Disallow: */feed/
-Disallow: */comments/
-Disallow: /*?
 Allow: /wp-content/uploads/
 
 # wistia video sitemap
 Sitemap: http://app.wistia.com/sitemaps/9367.xml
-

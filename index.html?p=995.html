@@ -28,18 +28,12 @@
 <link rel='prev' title='SQLShell. A Cross-Database SQL Tool With NoSQL Potential' href='/sqlshell-a-cross-database-sql-tool-with-nosql-potential' />
 <link rel='next' title='Quickly Launch A Cassandra Cluster On Amazon EC2' href='/quickly-launch-a-cassandra-cluster-on-amazon-ec2' />
 <link rel='shortlink' href='/?p=995' />
-
-<!-- All in One SEO Pack 1.6.12.1 by Michael Torbert of Semper Fi Web Design[275,300] -->
 <meta name="description" content="Membase's TCP interface is identical Memcached, so migrating your existing code-base will not be an issue at all." />
 <meta name="keywords" content="caching,distributed,key-value store,membase,memcached,moxi,nosql,review,web-development" />
 <link rel="canonical" href="/de-volatile-your-memcached-upgrade-to-membase" />
-<!-- /all in one seo pack -->
-
 <script type="text/javascript">var AKPC_IDS = "";</script>
-	<link rel="stylesheet" href="/wp-content/plugins/sharebar/css/sharebar.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/wp-content/plugins/sharebar/css/sharebar.css" type="text/css" media="screen" />
 <script type="text/javascript">jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal:'true',swidth:'65',minwidth:1000,position:'left',leftOffset:20,rightOffset:10}); });</script>
-<!-- Sharebar Plugin by Monjurul Dolon (http://mdolon.com/) - more info at: http://devgrow.com/sharebar-wordpress-plugin -->
-
 
 </head>
 
@@ -49,41 +43,41 @@
 <div id="body-container">
 
 
-	<div id="header-container">
+  <div id="header-container">
 
-		<div id="header">
+    <div id="header">
 
-			<a href="/"><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/big_fast_blog_title5.png" width="650" height="191" Alt="Phil Whelan's Big Fast Blog" border="0"></a>
+      <a href="/"><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/big_fast_blog_title5.png" width="650" height="191" Alt="Phil Whelan's Big Fast Blog" border="0"></a>
 
-		</div><!-- #header -->
+    </div><!-- #header -->
 
-	</div><!-- #header-container -->
+  </div><!-- #header-container -->
 
-	<div id="navigation">
-			<div id="page-nav" class="page-nav"></div>
-	</div><!-- #navigation -->
+  <div id="navigation">
+      <div id="page-nav" class="page-nav"></div>
+  </div><!-- #navigation -->
 
-	<div id="container">
-
-
-	<div id="content" class="hfeed content">
+  <div id="container">
 
 
-		<div id="utility-before-content" class="sidebar utility">
+  <div id="content" class="hfeed content">
 
-			<div id="text-13" class="widget widget_text widget-widget_text"><div class="widget-inside">			<div class="textwidget"><a href="https://twitter.com/philwhln" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @philwhln</a>
+
+    <div id="utility-before-content" class="sidebar utility">
+
+      <div id="text-13" class="widget widget_text widget-widget_text"><div class="widget-inside">      <div class="textwidget"><a href="https://twitter.com/philwhln" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @philwhln</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
-		</div></div>
-		</div><!-- #utility-before-content .utility -->
+    </div></div>
+    </div><!-- #utility-before-content .utility -->
 
 
 
-			<div id="post-995" class="hentry post publish post-1 odd author-admin category-membase category-nosql-2 category-web-development post_tag-caching post_tag-distributed post_tag-key-value-store post_tag-membase-2 post_tag-memcached post_tag-moxi post_tag-nosql post_tag-review post_tag-web-development-2">
+      <div id="post-995" class="hentry post publish post-1 odd author-admin category-membase category-nosql-2 category-web-development post_tag-caching post_tag-distributed post_tag-key-value-store post_tag-membase-2 post_tag-memcached post_tag-moxi post_tag-nosql post_tag-review post_tag-web-development-2">
 
-				<h1 class="post-title entry-title"><a href="/de-volatile-your-memcached-upgrade-to-membase" title="De-volatile Your Memcached. Upgrade to Membase" rel="bookmark">De-volatile Your Memcached. Upgrade to Membase</a></h1><p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard">Phil Whelan</span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Friday, January 21st, 2011, 12:16 pm">January 21, 2011</abbr> </p>
-				<div class="entry-content">
-					<div id="greet_block"><noscript><div class="greet_block wpgb_cornered"><div class="greet_text"><div class="greet_image"><a href="http://feeds.feedburner.com/philwhelansblog"  rel="nofollow"><img src="/wp-content/plugins/wp-greet-box/images/rss_icon.png" alt="WP Greet Box icon"/></a></div>Hello there! If you are new here, you might want to <a href="http://feeds.feedburner.com/philwhelansblog" rel="nofollow"><strong>subscribe to the RSS feed</strong></a> for updates on this topic.<div style="clear:both"></div><div class="greet_block_powered_by">Powered by <a href="http://omninoggin.com/projects/wordpress-plugins/wp-greet-box-wordpress-plugin/" title="WP Greet Box WordPress Plugin" style="text-decoration:none;">WP Greet Box</a> <a href="http://omninoggin.com/" title="WordPress Plugin" style="text-decoration:none;">WordPress Plugin</a></div><div style="clear:both"></div></div></div></noscript></div><ul id="sharebar" style="background:#;border-color:#;">
+        <h1 class="post-title entry-title"><a href="/de-volatile-your-memcached-upgrade-to-membase" title="De-volatile Your Memcached. Upgrade to Membase" rel="bookmark">De-volatile Your Memcached. Upgrade to Membase</a></h1><p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard">Phil Whelan</span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Friday, January 21st, 2011, 12:16 pm">January 21, 2011</abbr> </p>
+        <div class="entry-content">
+          <div id="greet_block"><noscript><div class="greet_block wpgb_cornered"><div class="greet_text"><div class="greet_image"><a href="http://feeds.feedburner.com/philwhelansblog"  rel="nofollow"><img src="/wp-content/plugins/wp-greet-box/images/rss_icon.png" alt="WP Greet Box icon"/></a></div>Hello there! If you are new here, you might want to <a href="http://feeds.feedburner.com/philwhelansblog" rel="nofollow"><strong>subscribe to the RSS feed</strong></a> for updates on this topic.<div style="clear:both"></div><div class="greet_block_powered_by">Powered by <a href="http://omninoggin.com/projects/wordpress-plugins/wp-greet-box-wordpress-plugin/" title="WP Greet Box WordPress Plugin" style="text-decoration:none;">WP Greet Box</a> <a href="http://omninoggin.com/" title="WordPress Plugin" style="text-decoration:none;">WordPress Plugin</a></div><div style="clear:both"></div></div></div></noscript></div><ul id="sharebar" style="background:#;border-color:#;">
 <li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
 <li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/de-volatile-your-memcached-upgrade-to-membase&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p><a href="http://www.flickr.com/photos/hojusaram/484764113/" title="20070505-135556.jpg by hojusaram, on Flickr"><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/memcached_to_membase/memcached_to_membase.jpg" width="333" height="500" alt="20070505-135556.jpg" align="left" style="padding-bottom: 20px" /></a></p>
 <h2>Migrate From Memcached</h2>
@@ -168,38 +162,38 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <p><!-- .entry-content --></p>
 <div class="continue-reading"><a href="/how-to-get-experience-working-with-large-datasets"><strong>Continue reading&#8230;</strong></a></div>
 </p></div>
-<script type="text/javascript">AKPC_IDS += "995,";</script>									</div><!-- .entry-content -->
+<script type="text/javascript">AKPC_IDS += "995,";</script>                  </div><!-- .entry-content -->
 
-				<p class="entry-meta"><span class="category">Posted in <a href="/category/nosql-2/membase" rel="tag">Membase</a>, <a href="/category/nosql-2" rel="tag">NoSQL</a>, <a href="/category/web-development" rel="tag">Web Development</a></span> <span class="post_tag">| Tagged <a href="/tag/caching" rel="tag">caching</a>, <a href="/tag/distributed" rel="tag">distributed</a>, <a href="/tag/key-value-store" rel="tag">key-value store</a>, <a href="/tag/membase-2" rel="tag">membase</a>, <a href="/tag/memcached" rel="tag">memcached</a>, <a href="/tag/moxi" rel="tag">moxi</a>, <a href="/tag/nosql" rel="tag">nosql</a>, <a href="/tag/review" rel="tag">review</a>, <a href="/tag/web-development-2" rel="tag">web-development</a></span> | <a class="comments-link" href="/de-volatile-your-memcached-upgrade-to-membase#comments" title="Comment on De-volatile Your Memcached. Upgrade to Membase">6 Responses</a></p>
-			</div><!-- .hentry -->
+        <p class="entry-meta"><span class="category">Posted in <a href="/category/nosql-2/membase" rel="tag">Membase</a>, <a href="/category/nosql-2" rel="tag">NoSQL</a>, <a href="/category/web-development" rel="tag">Web Development</a></span> <span class="post_tag">| Tagged <a href="/tag/caching" rel="tag">caching</a>, <a href="/tag/distributed" rel="tag">distributed</a>, <a href="/tag/key-value-store" rel="tag">key-value store</a>, <a href="/tag/membase-2" rel="tag">membase</a>, <a href="/tag/memcached" rel="tag">memcached</a>, <a href="/tag/moxi" rel="tag">moxi</a>, <a href="/tag/nosql" rel="tag">nosql</a>, <a href="/tag/review" rel="tag">review</a>, <a href="/tag/web-development-2" rel="tag">web-development</a></span> | <a class="comments-link" href="/de-volatile-your-memcached-upgrade-to-membase#comments" title="Comment on De-volatile Your Memcached. Upgrade to Membase">6 Responses</a></p>
+      </div><!-- .hentry -->
 
 
-		<div id="utility-after-singular" class="sidebar utility">
+    <div id="utility-after-singular" class="sidebar utility">
 
-			<div id="text-16" class="widget widget_text widget-widget_text"><div class="widget-inside">			<div class="textwidget"><a href="https://twitter.com/philwhln" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @philwhln</a>
+      <div id="text-16" class="widget widget_text widget-widget_text"><div class="widget-inside">      <div class="textwidget"><a href="https://twitter.com/philwhln" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @philwhln</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
-		</div></div>
-		</div><!-- #utility-after-singular .utility -->
+    </div></div>
+    </div><!-- #utility-after-singular .utility -->
 
 
 
 <div id="comments-template">
 
 
-		<div id="comments">
+    <div id="comments">
 
-			<h3 id="comments-number" class="comments-header">6 responses to &#8220;De-volatile Your Memcached. Upgrade to Membase&#8221;</h3>
+      <h3 id="comments-number" class="comments-header">6 responses to &#8220;De-volatile Your Memcached. Upgrade to Membase&#8221;</h3>
 
 
-			<ol class="comment-list">
+      <ol class="comment-list">
 
-	<li id="comment-829" class="comment even thread-even depth-1 comment reader">
+  <li id="comment-829" class="comment even thread-even depth-1 comment reader">
 
-		<a href="http://www.membase.com" rel="external nofollow" title="Perry Krug"><img alt='Perry Krug' src='http://1.gravatar.com/avatar/70b38bbe52aff967313a7acf9dd8f43d?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.membase.com"><a href="http://www.membase.com" title="Perry Krug" class="url" rel="external nofollow">Perry Krug</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, January 22nd, 2011, 6:31 pm">January 22, 2011</abbr> at <abbr class="comment-time" title="Saturday, January 22nd, 2011, 6:31 pm">6:31 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-829" title="Permalink to comment ">Permalink</a>  </div>
-		<div class="comment-text">
+    <a href="http://www.membase.com" rel="external nofollow" title="Perry Krug"><img alt='Perry Krug' src='http://1.gravatar.com/avatar/70b38bbe52aff967313a7acf9dd8f43d?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.membase.com"><a href="http://www.membase.com" title="Perry Krug" class="url" rel="external nofollow">Perry Krug</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, January 22nd, 2011, 6:31 pm">January 22, 2011</abbr> at <abbr class="comment-time" title="Saturday, January 22nd, 2011, 6:31 pm">6:31 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-829" title="Permalink to comment ">Permalink</a>  </div>
+    <div class="comment-text">
 
-			<p>Phil, this is a fantastic blog…thank you very much.</p>
+      <p>Phil, this is a fantastic blog…thank you very much.</p>
 <p>A few points of clarification. Please take these as constructive criticism, you have done an excellent job up to here and I simply want to add a bit more detail for your/our readers:</p>
 <p>- When talking about the hashing algorithm stuff, you are absolutely correct about how memcached handles things. You are also correct about how Membase handles the “re-routing” of client requests. However, we actually use “vBuckets” (not regular buckets…those are the logical keyspaces within a Membase cluster. Yes, I know it’s confusing…we apologize  .</p>
 <p>- Membase doesn’t actually have a cluster size limit. You are correct that you can only have 1024 servers holding “active” data, but if you have more than 1024 nodes in the cluster, some will only be handling replica data. The cluster itself will still be viable. We are also planning on raising this limit in the future when we run into deployments that need it. 1024 was appropriate from a testing and qualification perspective for now. You are still correct about the chattiness of the nodes and that we are continuing development in this area.</p>
@@ -208,80 +202,80 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <p>- It “may” be worthwhile calling out Membase’s features of replication and the TAP interface a bit more if you like…they’re rather key to the whole system (no pun intended)</p>
 <p>Thanks again and I really look forward to your continuing investigation of Membase. Please let me know if there’s anything I can do to help in your pursuit.</p>
 <p>Perry Krug</p>
-		</div><!-- .comment-text -->
+    </div><!-- .comment-text -->
 
 
-	<ol class='children'>
+  <ol class='children'>
 
-	<li id="comment-846" class="comment byuser comment-author-admin bypostauthor odd alt depth-2 comment role-administrator user-admin entry-author">
+  <li id="comment-846" class="comment byuser comment-author-admin bypostauthor odd alt depth-2 comment role-administrator user-admin entry-author">
 
-		<a href="/" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.bigfastblog.com"><a href="/" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, January 24th, 2011, 4:42 pm">January 24, 2011</abbr> at <abbr class="comment-time" title="Monday, January 24th, 2011, 4:42 pm">4:42 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-846" title="Permalink to comment ">Permalink</a>  </div>
-		<div class="comment-text">
+    <a href="/" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.bigfastblog.com"><a href="/" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Monday, January 24th, 2011, 4:42 pm">January 24, 2011</abbr> at <abbr class="comment-time" title="Monday, January 24th, 2011, 4:42 pm">4:42 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-846" title="Permalink to comment ">Permalink</a>  </div>
+    <div class="comment-text">
 
-			<p>Wow! Thanks for the excellent feedback on the post, Perry. I will definitely incorporate all those points in future Membase posts. I appreciate the clarifications and all the pointers to more resources.</p>
-		</div><!-- .comment-text -->
+      <p>Wow! Thanks for the excellent feedback on the post, Perry. I will definitely incorporate all those points in future Membase posts. I appreciate the clarifications and all the pointers to more resources.</p>
+    </div><!-- .comment-text -->
 
 
-	</li><!-- .comment --></ol>
+  </li><!-- .comment --></ol>
 </li><!-- .comment -->
-	<li id="comment-4104" class="comment even thread-odd thread-alt depth-1 comment reader">
+  <li id="comment-4104" class="comment even thread-odd thread-alt depth-1 comment reader">
 
-		<a href="http://www.linuxbox.co.uk" rel="external nofollow" title="Peter Smith"><img alt='Peter Smith' src='http://0.gravatar.com/avatar/e8f1b679872435d5dd0d09d85f204395?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.linuxbox.co.uk"><a href="http://www.linuxbox.co.uk" title="Peter Smith" class="url" rel="external nofollow">Peter Smith</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 11:56 am">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 11:56 am">11:56 am</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4104" title="Permalink to comment ">Permalink</a>  </div>
-		<div class="comment-text">
+    <a href="http://www.linuxbox.co.uk" rel="external nofollow" title="Peter Smith"><img alt='Peter Smith' src='http://0.gravatar.com/avatar/e8f1b679872435d5dd0d09d85f204395?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.linuxbox.co.uk"><a href="http://www.linuxbox.co.uk" title="Peter Smith" class="url" rel="external nofollow">Peter Smith</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 11:56 am">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 11:56 am">11:56 am</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4104" title="Permalink to comment ">Permalink</a>  </div>
+    <div class="comment-text">
 
-			<p>Great article, but just a quick note on memcache limitations. Consistent hashing  (the PHP APIs support this, and some other languages too) solves the problems that occur when memcache servers are added/removed from the pool, so this isn&#8217;t really a reason not to use memcache (since there&#8217;s a simple solution).</p>
-		</div><!-- .comment-text -->
+      <p>Great article, but just a quick note on memcache limitations. Consistent hashing  (the PHP APIs support this, and some other languages too) solves the problems that occur when memcache servers are added/removed from the pool, so this isn&#8217;t really a reason not to use memcache (since there&#8217;s a simple solution).</p>
+    </div><!-- .comment-text -->
 
 
-	<ol class='children'>
+  <ol class='children'>
 
-	<li id="comment-4105" class="comment byuser comment-author-admin bypostauthor odd alt depth-2 comment role-administrator user-admin entry-author">
+  <li id="comment-4105" class="comment byuser comment-author-admin bypostauthor odd alt depth-2 comment role-administrator user-admin entry-author">
 
-		<a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 2:26 pm">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 2:26 pm">2:26 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4105" title="Permalink to comment ">Permalink</a>  </div>
-		<div class="comment-text">
+    <a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 2:26 pm">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 2:26 pm">2:26 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4105" title="Permalink to comment ">Permalink</a>  </div>
+    <div class="comment-text">
 
-			<p>Thanks Peter. I had not come across this concept. </p>
+      <p>Thanks Peter. I had not come across this concept. </p>
 <p>Here&#8217;s a little explanation for other readers&#8230;<br />
 <a href="http://code.google.com/p/memcached/wiki/FAQ#What_is_a_%22consistent_hashing%22_client?" rel="nofollow">http://code.google.com/p/memcached/wiki/FAQ</a></p>
 <p>Here is a Ruby implementation&#8230;<br />
 <a href="http://www.mikeperham.com/2009/01/14/consistent-hashing-in-memcache-client/" rel="nofollow">http://www.mikeperham.com/2009/01/14/consistent-hashing-in-memcache-client/</a></p>
-		</div><!-- .comment-text -->
+    </div><!-- .comment-text -->
 
 
-	</li><!-- .comment --></ol>
+  </li><!-- .comment --></ol>
 </li><!-- .comment -->
-	<li id="comment-4106" class="comment even thread-even depth-1 comment reader">
+  <li id="comment-4106" class="comment even thread-even depth-1 comment reader">
 
-		<a href="http://www.couchbase.com" rel="external nofollow" title="Perry Krug"><img alt='Perry Krug' src='http://0.gravatar.com/avatar/202cbbf282c581c26d97a79f0fcfec5f?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.couchbase.com"><a href="http://www.couchbase.com" title="Perry Krug" class="url" rel="external nofollow">Perry Krug</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 4:01 pm">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 4:01 pm">4:01 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4106" title="Permalink to comment ">Permalink</a>  </div>
-		<div class="comment-text">
+    <a href="http://www.couchbase.com" rel="external nofollow" title="Perry Krug"><img alt='Perry Krug' src='http://0.gravatar.com/avatar/202cbbf282c581c26d97a79f0fcfec5f?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.couchbase.com"><a href="http://www.couchbase.com" title="Perry Krug" class="url" rel="external nofollow">Perry Krug</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, August 6th, 2011, 4:01 pm">August 6, 2011</abbr> at <abbr class="comment-time" title="Saturday, August 6th, 2011, 4:01 pm">4:01 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4106" title="Permalink to comment ">Permalink</a>  </div>
+    <div class="comment-text">
 
-			<p>Consistent hashing does make the addition/removal of servers &#8220;less&#8221; impactful, but it&#8217;s not perfect.  As a database, Membase (and now Couchbase Server) needed to be perfectly consistent and the vbucket concept has been extremely valuable to our project. </p>
+      <p>Consistent hashing does make the addition/removal of servers &#8220;less&#8221; impactful, but it&#8217;s not perfect.  As a database, Membase (and now Couchbase Server) needed to be perfectly consistent and the vbucket concept has been extremely valuable to our project. </p>
 <p>As simply a memcached replacement, Membase does offer a number of other advantages like replication and failover, as well as persistence to disk (though some argue that a cache shouldn&#8217;t have to be persistent).  With the introduction of CouchDB underneath (creating the Couchbase Server 2.0 product) you also get robust indexing and map-reduce functionality (useful even in a &#8220;cache&#8221;) and cross datacenter replication is close on the horizon.</p>
 <p>We believe that memcached is still an extremely valuable technology and has many valid use cases, we even have customers running &#8220;standard&#8221; memcached within their Membase cluster.  Mostly for the enhanced monitoring and clustering that we bring to it, but also for much more transient data that they truly just need a volatile cache for.</p>
 <p>Full disclosure, I&#8217;m a bit biased having worked at Couchbase (formerly Membase, formerly NorthScale) for over a year now, but there is some seriously cool and useful technology being born before our eyes.</p>
 <p>Perry Krug<br />
 Sr. Solutions Architect, Couchbase<br />
 <a href="mailto:perry@couchbase.com">perry@couchbase.com</a></p>
-		</div><!-- .comment-text -->
+    </div><!-- .comment-text -->
 
 
-	</li><!-- .comment -->
-	<li id="comment-4759" class="pingback odd alt thread-odd thread-alt depth-1 pingback reader">
+  </li><!-- .comment -->
+  <li id="comment-4759" class="pingback odd alt thread-odd thread-alt depth-1 pingback reader">
 
-		<a href="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html" rel="external nofollow" title="printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets"><img alt='printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets' src='http://0.gravatar.com/avatar/?d=http://www.bigfastblog.com/wp-content/themes/hybrid/library/images/pingback.png&amp;s=80' class='avatar avatar-80 photo avatar-default' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html"><a href="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html" title="printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets" class="url" rel="external nofollow">printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Wednesday, September 21st, 2011, 11:42 pm">September 21, 2011</abbr> at <abbr class="comment-time" title="Wednesday, September 21st, 2011, 11:42 pm">11:42 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4759" title="Permalink to comment ">Permalink</a>  </div>
-		<div class="comment-text">
+    <a href="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html" rel="external nofollow" title="printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets"><img alt='printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets' src='http://0.gravatar.com/avatar/?d=http://www.bigfastblog.com/wp-content/themes/hybrid/library/images/pingback.png&amp;s=80' class='avatar avatar-80 photo avatar-default' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html"><a href="http://www.saltwaterc.eu/use-the-cache-luke-part-1-from-memcached-to-membase-memcached-buckets.html" title="printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets" class="url" rel="external nofollow">printf(&quot; SaltwaterC &quot;); &raquo; Blog Archive &raquo; Use the cache Luke, Part 1: from memcached to Membase memcached buckets</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Wednesday, September 21st, 2011, 11:42 pm">September 21, 2011</abbr> at <abbr class="comment-time" title="Wednesday, September 21st, 2011, 11:42 pm">11:42 pm</abbr></span> | <a class="permalink" href="/de-volatile-your-memcached-upgrade-to-membase/comment-page-1#comment-4759" title="Permalink to comment ">Permalink</a>  </div>
+    <div class="comment-text">
 
-			<p>[...] start with a quote: Matt Ingenthron said internally at Membase Inc they view Memcached as a rabbit. It is fast, but it [...]</p>
-		</div><!-- .comment-text -->
-
-
-	</li><!-- .comment -->			</ol><!-- .comment-list -->
+      <p>[...] start with a quote: Matt Ingenthron said internally at Membase Inc they view Memcached as a rabbit. It is fast, but it [...]</p>
+    </div><!-- .comment-text -->
 
 
-							<div class="comment-navigation paged-navigation">
-									</div><!-- .comment-navigation -->
+  </li><!-- .comment -->      </ol><!-- .comment-list -->
 
-		</div><!-- #comments -->
+
+              <div class="comment-navigation paged-navigation">
+                  </div><!-- .comment-navigation -->
+
+    </div><!-- #comments -->
 
 
 
@@ -290,35 +284,35 @@ Sr. Solutions Architect, Couchbase<br />
 
 
 
-		<div class="navigation-links">
-			<a href="/sqlshell-a-cross-database-sql-tool-with-nosql-potential" rel="prev"><span class="previous">&laquo; Previous</span></a>			<a href="/quickly-launch-a-cassandra-cluster-on-amazon-ec2" rel="next"><span class="next">Next &raquo;</span></a>		</div><!-- .navigation-links -->
+    <div class="navigation-links">
+      <a href="/sqlshell-a-cross-database-sql-tool-with-nosql-potential" rel="prev"><span class="previous">&laquo; Previous</span></a>      <a href="/quickly-launch-a-cassandra-cluster-on-amazon-ec2" rel="next"><span class="next">Next &raquo;</span></a>    </div><!-- .navigation-links -->
 
 
-	</div><!-- .content .hfeed -->
+  </div><!-- .content .hfeed -->
 
 
-	<div id="primary" class="sidebar aside">
+  <div id="primary" class="sidebar aside">
 
 
-				<div id="popularity-lists-1" class="widget widget_popularity_lists widget-widget_popularity_lists"><div class="widget-inside">			<h3 class="widget-title">Top Posts</h3>			<ul>
-			<li><a href="/homebrew-intro-to-the-mac-os-x-package-installer">Homebrew - Intro To The Mac OS X Package Installer</a></li><li><a href="/quoras-technology-examined">Quora's Technology Examined</a></li><li><a href="/gitolite-installation-step-by-step">Gitolite Installation Step-By-Step</a></li><li><a href="/how-to-get-experience-working-with-large-datasets">How To Get Experience Working With Large Datasets</a></li><li><a href="/install-gitolite-to-manage-your-git-repositories">Install Gitolite To Manage Your Git Repositories</a></li><li><a href="/embed-base64-encoded-images-inline-in-html">Embed Base64-Encoded Images Inline In HTML</a></li><li><a href="/map-reduce-with-ruby-using-hadoop">Map-Reduce With Ruby Using Hadoop</a></li><li><a href="/highchart-vs-flot-js-comparing-javascript-graphing-engines">Highchart Vs Flot.js - Comparing JavaScript Graphing Engines </a></li>			</ul>
-		</div></div><div id="hybrid-tags-2" class="widget tags widget-tags"><div class="widget-inside"><h3 class="widget-title">Tags</h3><p class="post_tag-cloud term-cloud"><a href='/tag/amazon-ec2' class='tag-link-211' title='6 topics' style='font-size: 15.194444444444pt;'>amazon ec2</a> <a href='/tag/android' class='tag-link-74' title='2 topics' style='font-size: 8pt;'>android</a> <a href='/tag/apple' class='tag-link-20' title='3 topics' style='font-size: 10.333333333333pt;'>apple</a> <a href='/tag/cassandra' class='tag-link-204' title='3 topics' style='font-size: 10.333333333333pt;'>cassandra</a> <a href='/tag/customers-2' class='tag-link-148' title='2 topics' style='font-size: 8pt;'>customers</a> <a href='/tag/data-processing-2' class='tag-link-107' title='5 topics' style='font-size: 13.833333333333pt;'>data processing</a> <a href='/tag/entrepreneur' class='tag-link-123' title='2 topics' style='font-size: 8pt;'>entrepreneur</a> <a href='/tag/entrepreneurship' class='tag-link-117' title='2 topics' style='font-size: 8pt;'>entrepreneurship</a> <a href='/tag/eventmachine-2' class='tag-link-422' title='3 topics' style='font-size: 10.333333333333pt;'>eventmachine</a> <a href='/tag/gem' class='tag-link-274' title='3 topics' style='font-size: 10.333333333333pt;'>gem</a> <a href='/tag/git' class='tag-link-177' title='3 topics' style='font-size: 10.333333333333pt;'>git</a> <a href='/tag/gitolite' class='tag-link-178' title='2 topics' style='font-size: 8pt;'>gitolite</a> <a href='/tag/google' class='tag-link-89' title='2 topics' style='font-size: 8pt;'>google</a> <a href='/tag/hadoop' class='tag-link-102' title='7 topics' style='font-size: 16.166666666667pt;'>hadoop</a> <a href='/tag/hbase' class='tag-link-264' title='4 topics' style='font-size: 12.277777777778pt;'>hbase</a> <a href='/tag/hdfs' class='tag-link-103' title='4 topics' style='font-size: 12.277777777778pt;'>hdfs</a> <a href='/tag/high-scalability' class='tag-link-114' title='3 topics' style='font-size: 10.333333333333pt;'>high scalability</a> <a href='/tag/homebrew' class='tag-link-216' title='4 topics' style='font-size: 12.277777777778pt;'>homebrew</a> <a href='/tag/install' class='tag-link-51' title='2 topics' style='font-size: 8pt;'>install</a> <a href='/tag/iphone' class='tag-link-65' title='2 topics' style='font-size: 8pt;'>iphone</a> <a href='/tag/java' class='tag-link-276' title='3 topics' style='font-size: 10.333333333333pt;'>java</a> <a href='/tag/location' class='tag-link-136' title='2 topics' style='font-size: 8pt;'>location</a> <a href='/tag/mac-osx' class='tag-link-59' title='2 topics' style='font-size: 8pt;'>mac osx</a> <a href='/tag/memcached' class='tag-link-306' title='4 topics' style='font-size: 12.277777777778pt;'>memcached</a> <a href='/tag/mongodb' class='tag-link-210' title='5 topics' style='font-size: 13.833333333333pt;'>mongodb</a> <a href='/tag/mysql' class='tag-link-293' title='3 topics' style='font-size: 10.333333333333pt;'>mysql</a> <a href='/tag/nginx' class='tag-link-326' title='4 topics' style='font-size: 12.277777777778pt;'>nginx</a> <a href='/tag/nosql' class='tag-link-205' title='6 topics' style='font-size: 15.194444444444pt;'>nosql</a> <a href='/tag/perl' class='tag-link-377' title='3 topics' style='font-size: 10.333333333333pt;'>perl</a> <a href='/tag/phone' class='tag-link-72' title='3 topics' style='font-size: 10.333333333333pt;'>phone</a> <a href='/tag/postgresql' class='tag-link-221' title='3 topics' style='font-size: 10.333333333333pt;'>postgresql</a> <a href='/tag/python' class='tag-link-355' title='5 topics' style='font-size: 13.833333333333pt;'>python</a> <a href='/tag/rails' class='tag-link-172' title='2 topics' style='font-size: 8pt;'>rails</a> <a href='/tag/redis' class='tag-link-301' title='3 topics' style='font-size: 10.333333333333pt;'>redis</a> <a href='/tag/ruby' class='tag-link-166' title='15 topics' style='font-size: 22pt;'>ruby</a> <a href='/tag/ruby-on-rails-2' class='tag-link-157' title='6 topics' style='font-size: 15.194444444444pt;'>ruby on rails</a> <a href='/tag/scala' class='tag-link-302' title='3 topics' style='font-size: 10.333333333333pt;'>scala</a> <a href='/tag/ssh-keygen' class='tag-link-180' title='2 topics' style='font-size: 8pt;'>ssh-keygen</a> <a href='/tag/startup' class='tag-link-119' title='3 topics' style='font-size: 10.333333333333pt;'>startup</a> <a href='/tag/tornado' class='tag-link-330' title='6 topics' style='font-size: 15.194444444444pt;'>tornado</a> <a href='/tag/twitter' class='tag-link-133' title='2 topics' style='font-size: 8pt;'>twitter</a> <a href='/tag/vancouver' class='tag-link-120' title='2 topics' style='font-size: 8pt;'>vancouver</a> <a href='/tag/web-development-2' class='tag-link-193' title='5 topics' style='font-size: 13.833333333333pt;'>web-development</a> <a href='/tag/whirr' class='tag-link-223' title='3 topics' style='font-size: 10.333333333333pt;'>whirr</a> <a href='/tag/wikipedia' class='tag-link-174' title='2 topics' style='font-size: 8pt;'>wikipedia</a></p></div></div>
+        <div id="popularity-lists-1" class="widget widget_popularity_lists widget-widget_popularity_lists"><div class="widget-inside">      <h3 class="widget-title">Top Posts</h3>      <ul>
+      <li><a href="/homebrew-intro-to-the-mac-os-x-package-installer">Homebrew - Intro To The Mac OS X Package Installer</a></li><li><a href="/quoras-technology-examined">Quora's Technology Examined</a></li><li><a href="/gitolite-installation-step-by-step">Gitolite Installation Step-By-Step</a></li><li><a href="/how-to-get-experience-working-with-large-datasets">How To Get Experience Working With Large Datasets</a></li><li><a href="/install-gitolite-to-manage-your-git-repositories">Install Gitolite To Manage Your Git Repositories</a></li><li><a href="/embed-base64-encoded-images-inline-in-html">Embed Base64-Encoded Images Inline In HTML</a></li><li><a href="/map-reduce-with-ruby-using-hadoop">Map-Reduce With Ruby Using Hadoop</a></li><li><a href="/highchart-vs-flot-js-comparing-javascript-graphing-engines">Highchart Vs Flot.js - Comparing JavaScript Graphing Engines </a></li>      </ul>
+    </div></div><div id="hybrid-tags-2" class="widget tags widget-tags"><div class="widget-inside"><h3 class="widget-title">Tags</h3><p class="post_tag-cloud term-cloud"><a href='/tag/amazon-ec2' class='tag-link-211' title='6 topics' style='font-size: 15.194444444444pt;'>amazon ec2</a> <a href='/tag/android' class='tag-link-74' title='2 topics' style='font-size: 8pt;'>android</a> <a href='/tag/apple' class='tag-link-20' title='3 topics' style='font-size: 10.333333333333pt;'>apple</a> <a href='/tag/cassandra' class='tag-link-204' title='3 topics' style='font-size: 10.333333333333pt;'>cassandra</a> <a href='/tag/customers-2' class='tag-link-148' title='2 topics' style='font-size: 8pt;'>customers</a> <a href='/tag/data-processing-2' class='tag-link-107' title='5 topics' style='font-size: 13.833333333333pt;'>data processing</a> <a href='/tag/entrepreneur' class='tag-link-123' title='2 topics' style='font-size: 8pt;'>entrepreneur</a> <a href='/tag/entrepreneurship' class='tag-link-117' title='2 topics' style='font-size: 8pt;'>entrepreneurship</a> <a href='/tag/eventmachine-2' class='tag-link-422' title='3 topics' style='font-size: 10.333333333333pt;'>eventmachine</a> <a href='/tag/gem' class='tag-link-274' title='3 topics' style='font-size: 10.333333333333pt;'>gem</a> <a href='/tag/git' class='tag-link-177' title='3 topics' style='font-size: 10.333333333333pt;'>git</a> <a href='/tag/gitolite' class='tag-link-178' title='2 topics' style='font-size: 8pt;'>gitolite</a> <a href='/tag/google' class='tag-link-89' title='2 topics' style='font-size: 8pt;'>google</a> <a href='/tag/hadoop' class='tag-link-102' title='7 topics' style='font-size: 16.166666666667pt;'>hadoop</a> <a href='/tag/hbase' class='tag-link-264' title='4 topics' style='font-size: 12.277777777778pt;'>hbase</a> <a href='/tag/hdfs' class='tag-link-103' title='4 topics' style='font-size: 12.277777777778pt;'>hdfs</a> <a href='/tag/high-scalability' class='tag-link-114' title='3 topics' style='font-size: 10.333333333333pt;'>high scalability</a> <a href='/tag/homebrew' class='tag-link-216' title='4 topics' style='font-size: 12.277777777778pt;'>homebrew</a> <a href='/tag/install' class='tag-link-51' title='2 topics' style='font-size: 8pt;'>install</a> <a href='/tag/iphone' class='tag-link-65' title='2 topics' style='font-size: 8pt;'>iphone</a> <a href='/tag/java' class='tag-link-276' title='3 topics' style='font-size: 10.333333333333pt;'>java</a> <a href='/tag/location' class='tag-link-136' title='2 topics' style='font-size: 8pt;'>location</a> <a href='/tag/mac-osx' class='tag-link-59' title='2 topics' style='font-size: 8pt;'>mac osx</a> <a href='/tag/memcached' class='tag-link-306' title='4 topics' style='font-size: 12.277777777778pt;'>memcached</a> <a href='/tag/mongodb' class='tag-link-210' title='5 topics' style='font-size: 13.833333333333pt;'>mongodb</a> <a href='/tag/mysql' class='tag-link-293' title='3 topics' style='font-size: 10.333333333333pt;'>mysql</a> <a href='/tag/nginx' class='tag-link-326' title='4 topics' style='font-size: 12.277777777778pt;'>nginx</a> <a href='/tag/nosql' class='tag-link-205' title='6 topics' style='font-size: 15.194444444444pt;'>nosql</a> <a href='/tag/perl' class='tag-link-377' title='3 topics' style='font-size: 10.333333333333pt;'>perl</a> <a href='/tag/phone' class='tag-link-72' title='3 topics' style='font-size: 10.333333333333pt;'>phone</a> <a href='/tag/postgresql' class='tag-link-221' title='3 topics' style='font-size: 10.333333333333pt;'>postgresql</a> <a href='/tag/python' class='tag-link-355' title='5 topics' style='font-size: 13.833333333333pt;'>python</a> <a href='/tag/rails' class='tag-link-172' title='2 topics' style='font-size: 8pt;'>rails</a> <a href='/tag/redis' class='tag-link-301' title='3 topics' style='font-size: 10.333333333333pt;'>redis</a> <a href='/tag/ruby' class='tag-link-166' title='15 topics' style='font-size: 22pt;'>ruby</a> <a href='/tag/ruby-on-rails-2' class='tag-link-157' title='6 topics' style='font-size: 15.194444444444pt;'>ruby on rails</a> <a href='/tag/scala' class='tag-link-302' title='3 topics' style='font-size: 10.333333333333pt;'>scala</a> <a href='/tag/ssh-keygen' class='tag-link-180' title='2 topics' style='font-size: 8pt;'>ssh-keygen</a> <a href='/tag/startup' class='tag-link-119' title='3 topics' style='font-size: 10.333333333333pt;'>startup</a> <a href='/tag/tornado' class='tag-link-330' title='6 topics' style='font-size: 15.194444444444pt;'>tornado</a> <a href='/tag/twitter' class='tag-link-133' title='2 topics' style='font-size: 8pt;'>twitter</a> <a href='/tag/vancouver' class='tag-link-120' title='2 topics' style='font-size: 8pt;'>vancouver</a> <a href='/tag/web-development-2' class='tag-link-193' title='5 topics' style='font-size: 13.833333333333pt;'>web-development</a> <a href='/tag/whirr' class='tag-link-223' title='3 topics' style='font-size: 10.333333333333pt;'>whirr</a> <a href='/tag/wikipedia' class='tag-link-174' title='2 topics' style='font-size: 8pt;'>wikipedia</a></p></div></div>
 
-	</div><!-- #primary .aside -->
-
-
-	</div><!-- #container -->
-
-	<div id="footer-container">
+  </div><!-- #primary .aside -->
 
 
-		<div id="footer">
+  </div><!-- #container -->
 
-			<small>Copyright &#169; 2016 <a class="site-link" href="/" title="Big Fast Blog" rel="home"><span>Big Fast Blog</span></a> | Vancouver, BC, Canada</small>
-		</div><!-- #footer -->
+  <div id="footer-container">
 
 
-	</div><!-- #footer-container -->
+    <div id="footer">
+
+      <small>Copyright &#169; 2016 <a class="site-link" href="/" title="Big Fast Blog" rel="home"><span>Big Fast Blog</span></a> | Vancouver, BC, Canada</small>
+    </div><!-- #footer -->
+
+
+  </div><!-- #footer-container -->
 
 </div><!-- #body-container -->
 
@@ -326,7 +320,7 @@ Sr. Solutions Architect, Couchbase<br />
 <script type="text/javascript">
 jQuery(function() {
 
-	jQuery.post("index.php",{ak_action:"api_record_view", ids: AKPC_IDS, type:"single"}, false, "json");
+  jQuery.post("index.php",{ak_action:"api_record_view", ids: AKPC_IDS, type:"single"}, false, "json");
 });
 </script>
 

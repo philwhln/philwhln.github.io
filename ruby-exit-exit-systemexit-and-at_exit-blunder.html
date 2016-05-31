@@ -31,7 +31,6 @@
 <meta name="description" content="Recently, we hit a problem with Ruby's exit command. If something went horribly wrong and it made no sense for our application to continue in its current state then we would abort with exit 1. We use supervisord to manage processes, so in this case when we exited with exit status of 1, supervisord would assume something went wrong and restart the process for us. Or at least that is what we thought..." />
 <meta name="keywords" content="at_exit,exception,exit,process management,rails,rescue,ruby,ruby on rails,supervisord,systemexit" />
 <link rel="canonical" href="/ruby-exit-exit-systemexit-and-at_exit-blunder" />
-<script type="text/javascript">var AKPC_IDS = "";</script>
   <link rel="stylesheet" href="/wp-content/plugins/sharebar/css/sharebar.css" type="text/css" media="screen" />
 <script type="text/javascript">jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal:'true',swidth:'65',minwidth:1000,position:'left',leftOffset:20,rightOffset:10}); });</script>
 
@@ -109,7 +108,7 @@ puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#71
 <h2>Update</h2>
 <p><a href="http://bibwild.wordpress.com/">Jonathan Rochkind</a> made a really great clarification of the exit / at_exit situation in <a href="/ruby-exit-exit-systemexit-and-at_exit-blunder/comment-page-1#comment-21913">a comment</a> below. I think it is important to read it.</p>
 <h2>Posted in : <a href="/category/ruby-2"> Ruby</a></h2>
-<script type="text/javascript">AKPC_IDS += "1657,";</script>                  </div><!-- .entry-content -->
+                  </div><!-- .entry-content -->
 
         <p class="entry-meta"><span class="category">Posted in <a href="/category/ruby-2" rel="tag">Ruby</a></span> <span class="post_tag">| Tagged <a href="/tag/at_exit" rel="tag">at_exit</a>, <a href="/tag/exception" rel="tag">exception</a>, <a href="/tag/exit" rel="tag">exit</a>, <a href="/tag/process-management" rel="tag">process management</a>, <a href="/tag/rails" rel="tag">rails</a>, <a href="/tag/rescue" rel="tag">rescue</a>, <a href="/tag/ruby" rel="tag">ruby</a>, <a href="/tag/ruby-on-rails-2" rel="tag">ruby on rails</a>, <a href="/tag/supervisord" rel="tag">supervisord</a>, <a href="/tag/systemexit" rel="tag">systemexit</a></span> | <a class="comments-link" href="/ruby-exit-exit-systemexit-and-at_exit-blunder#comments" title="Comment on Ruby exit, exit!, SystemExit and at_exit blunder">11 Responses</a></p>
       </div><!-- .hentry -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
-<head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
+<head profile="https://gmpg.org/xfn/11">
 <title>Fluid Feature Rollout For Ruby On Rails | Big Fast Blog</title>
 
 <link rel="stylesheet" href="/wp-content/themes/hybrid/style.css" type="text/css" media="screen" />
@@ -48,12 +48,12 @@
         <h1 class="post-title entry-title"><a href="/fluid-feature-rollout-for-ruby-on-rails" title="Fluid Feature Rollout For Ruby On Rails" rel="bookmark">Fluid Feature Rollout For Ruby On Rails</a></h1><p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard"><span class="fn">Phil Whelan</span></span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Thursday, September 13th, 2012, 5:25 pm">September 13, 2012</abbr> </p>
         <div class="entry-content">
           <ul id="sharebar" style="background:#;border-color:#;">
-<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/fluid-feature-rollout-for-ruby-on-rails&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
-<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/fluid-feature-rollout-for-ruby-on-rails&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p>In this blog post I am going to introduce a new service for Ruby On Rails developers, that I have been working on, called <a href="http://fluidfeatures.com/">FluidFeatures</a> that helps you manage rolling out new features to your site and provides a way to easily do A/B testing (competing versions of a feature) right in the belly of your code.</p>
-<p>I wrote a post back in December called, <a href="/rollout-degrade-metrics-and-capacity">&#8220;Rollout, Degrade, Metrics and Capacity&#8221;</a> which focused heavily on the Ruby gems <a href="https://github.com/jamesgolick/rollout">rollout</a> and <a href="https://github.com/jamesgolick/degrade">degrade</a>, created by <a href="http://jamesgolick.com/">James Golick</a>. If you&#8217;ve used those popular gems or are thinking of using them, then <a href="http://fluidfeatures.com/">FluidFeatures</a> is also worth a look, though offers a slightly different feature set.</p>
+<li><a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></li><li><iframe src="https://www.facebook.com/plugins/like.php?href=https://www.bigfastblog.com/fluid-feature-rollout-for-ruby-on-rails&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
+<li><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></li><li><iframe src="https://www.facebook.com/plugins/like.php?href=https://www.bigfastblog.com/fluid-feature-rollout-for-ruby-on-rails&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p>In this blog post I am going to introduce a new service for Ruby On Rails developers, that I have been working on, called <a href="https://fluidfeatures.com/">FluidFeatures</a> that helps you manage rolling out new features to your site and provides a way to easily do A/B testing (competing versions of a feature) right in the belly of your code.</p>
+<p>I wrote a post back in December called, <a href="/rollout-degrade-metrics-and-capacity">&#8220;Rollout, Degrade, Metrics and Capacity&#8221;</a> which focused heavily on the Ruby gems <a href="https://github.com/jamesgolick/rollout">rollout</a> and <a href="https://github.com/jamesgolick/degrade">degrade</a>, created by <a href="https://jamesgolick.com/">James Golick</a>. If you&#8217;ve used those popular gems or are thinking of using them, then <a href="https://fluidfeatures.com/">FluidFeatures</a> is also worth a look, though offers a slightly different feature set.</p>
 <div style="display: inline-block">
 <h2>What does it do?</h2>
-<p><a href="http://fluidfeatures.com/">FluidFeatures</a> is based around giving you control over which users see which versions of which features. Once you&#8217;ve installed the <a href="http://rubygems.org/gems/fluidfeatures-rails">gem</a> and added your credentials to your app you can start wrapping chunks of your code in feature blocks.</p>
+<p><a href="https://fluidfeatures.com/">FluidFeatures</a> is based around giving you control over which users see which versions of which features. Once you&#8217;ve installed the <a href="https://rubygems.org/gems/fluidfeatures-rails">gem</a> and added your credentials to your app you can start wrapping chunks of your code in feature blocks.</p>
 <h2>What do I do?</h2>
 <p>You can do something like this inside your controller code&#8230;</p>
 <div class="CodeRay">
@@ -90,19 +90,19 @@
 <p>Some of our users will see the &#8220;default&#8221; weather icon when visit our site. Others will see either rainbows or sunshine. Ok, probably it is hard to see rainbows without sunshine, but we will overlook this meteorological technicality for the sake of demonstration purposes.</p>
 <p>In reality, your features will be much more complex than this and the only limitation of what a &#8220;feature&#8221; can be is limited only by what you can put in an &#8220;if&#8221; statement.</p>
 <h2>The Dashboard</h2>
-<p>The above code will add these 3 versions of the &#8220;weather&#8221; feature to your application <a href="http://fluidfeatures.com/dashboard">dashboard</a>, within FluidFeatures.com.</p>
-<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://commondatastorage.googleapis.com/philwhln/blog/images/lean_features_in_rails/dashboard_weather_versions.png"></p>
+<p>The above code will add these 3 versions of the &#8220;weather&#8221; feature to your application <a href="https://fluidfeatures.com/dashboard">dashboard</a>, within FluidFeatures.com.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://commondatastorage.googleapis.com/philwhln/blog/images/lean_features_in_rails/dashboard_weather_versions.png"></p>
 <p>You will notice that each version has 2 green bars. The top one you control to set what percentage of your user-base will see each version. The sum of all the versions can not go over 100%, so it will stop once the total of versions comes to 100%. The second bar is the percentage of your user-base that saw each version on their most recent visit. Since all your users are not hitting your site every second, this second bar will gradually move up or down to match the top bar and will give you an overview of where you are at.
 </p></div>
 <h2>More Coming Soon&#8230;</h2>
 <p>The above example code snippets are part of demo application we have built called <a href="https://github.com/BigFastSite/userviews">UserViews</a> that you can download from <a href="https://github.com/BigFastSite/userviews">github.com</a></p>
-<p>In a follow-up post I will demonstrate, step-by-step, how to install the <a href="http://rubygems.org/gems/fluidfeatures-rails">fluidfeatures-rails gem</a> and the demo application, <a href="https://github.com/BigFastSite/userviews">UserViews</a>, so that you can try out FluidFeatures for yourself.</p>
+<p>In a follow-up post I will demonstrate, step-by-step, how to install the <a href="https://rubygems.org/gems/fluidfeatures-rails">fluidfeatures-rails gem</a> and the demo application, <a href="https://github.com/BigFastSite/userviews">UserViews</a>, so that you can try out FluidFeatures for yourself.</p>
 <h2>Tell me more&#8230;</h2>
 <p>Sign-up to FluidFeatures Beta Users mailing-list if you are Ruby On Rails developer and this is a service you are interested in using.</p>
 <p><!-- Begin MailChimp Signup Form --></p>
-<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+<link href="https://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
 <div id="mc_embed_signup">
-<form action="http://scalablecreations.us2.list-manage.com/subscribe/post?u=707d1f1a27e889d195e47a636&amp;id=d7b1c949a8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="https://scalablecreations.us2.list-manage.com/subscribe/post?u=707d1f1a27e889d195e47a636&amp;id=d7b1c949a8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
 <div class="clear">
 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>

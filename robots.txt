@@ -2,4 +2,4 @@
 User-agent: *
 
 # wistia video sitemap
-Sitemap: http://app.wistia.com/sitemaps/9367.xml
+Sitemap: https://app.wistia.com/sitemaps/9367.xml

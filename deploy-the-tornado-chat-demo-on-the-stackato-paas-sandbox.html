@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
-<head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
+<head profile="https://gmpg.org/xfn/11">
 <title>Deploy The Tornado Chat Demo On The Stackato PaaS Sandbox  | Big Fast Blog</title>
 
 <link rel="stylesheet" href="/wp-content/themes/hybrid/style.css" type="text/css" media="screen" />
@@ -49,8 +49,8 @@
         <h1 class="post-title entry-title"><a href="/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox" title="Deploy The Tornado Chat Demo On The Stackato PaaS Sandbox" rel="bookmark">Deploy The Tornado Chat Demo On The Stackato PaaS Sandbox</a></h1><p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard"><span class="fn">Phil Whelan</span></span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Tuesday, January 10th, 2012, 9:57 am">January 10, 2012</abbr> </p>
         <div class="entry-content">
           <ul id="sharebar" style="background:#;border-color:#;">
-<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
-<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/stackato-tornado-demo/stackato-logo.png" align="left"><a href="http://www.activestate.com/">ActiveState</a> have recently released their <a href="http://www.activestate.com/cloud">Stackato</a> PaaS (Platform-as-a-Service) which is based on VMware&#8217;s open-source PaaS, <a href="http://www.cloudfoundry.com/">Cloud Foundry</a>, and offers an enterprise PaaS solution that will run on any public cloud, private cloud, laptop or desktop.</p>
+<li><a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></li><li><iframe src="https://www.facebook.com/plugins/like.php?href=https://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
+<li><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></li><li><iframe src="https://www.facebook.com/plugins/like.php?href=https://www.bigfastblog.com/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p><img src="https://commondatastorage.googleapis.com/philwhln/blog/images/stackato-tornado-demo/stackato-logo.png" align="left"><a href="https://www.activestate.com/">ActiveState</a> have recently released their <a href="https://www.activestate.com/cloud">Stackato</a> PaaS (Platform-as-a-Service) which is based on VMware&#8217;s open-source PaaS, <a href="https://www.cloudfoundry.com/">Cloud Foundry</a>, and offers an enterprise PaaS solution that will run on any public cloud, private cloud, laptop or desktop.</p>
 <p>In this blog post I&#8217;ll go through an example, in repeatable steps, of how to get up and running with the <a href="https://github.com/facebook/tornado/tree/master/demos/chat">Tornado chat demo</a> on ActiveState&#8217;s public sandbox for Stackato.</p>
 <ul>
 <li><a href="/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox#get-an-activestate-account">Get An ActiveState Account</a></li>
@@ -63,13 +63,13 @@
 <li><a href="/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox#conclusion">Conclusion</a></li>
 <li><a href="/deploy-the-tornado-chat-demo-on-the-stackato-paas-sandbox#resources">Resources</a></li>
 </ul>
-<p><a href="http://www.tornadoweb.org/">Tornado</a> is an event-driven application framework written in Python. It is used by <a href="/quoras-technology-examined">Quora</a>, <a href="/summifys-technology-examined">Summify</a>, <a href="http://www.facebook.com/">Facebook</a>, <a href="http://friendfeed.com/">Friendfeed</a> and my own <a href="http://www.cooq.com">Cooq.com</a>. Stackato supports a multitude of languages and frameworks, so Tornado could be swapped out with one of the many other <a href="https://github.com/ActiveState/stackato-samples">demos</a> available, which include <a href="https://github.com/ActiveState/stackato-samples/tree/master/php">PHP</a>, <a href="https://github.com/ActiveState/stackato-samples/tree/master/perl">Perl</a>, <a href="https://github.com/ActiveState/stackato-samples/tree/master/ruby">Ruby</a>, <a href="https://github.com/ActiveState/stackato-samples/tree/master/node">Node.js</a>, <a href="https://github.com/ActiveState/stackato-samples/tree/master/java">Java</a> or <a href="https://github.com/ActiveState/stackato-samples/tree/master/clojure">Clojure</a>. Although the JVM languages (Java and Clojure) are currently not supported due to their heavy resource requirements. This demo application also uses <a href="http://www.mongodb.org/">MongoDB</a> as its backend datastore.</p>
+<p><a href="https://www.tornadoweb.org/">Tornado</a> is an event-driven application framework written in Python. It is used by <a href="/quoras-technology-examined">Quora</a>, <a href="/summifys-technology-examined">Summify</a>, <a href="https://www.facebook.com/">Facebook</a>, <a href="https://friendfeed.com/">Friendfeed</a> and my own <a href="https://www.cooq.com">Cooq.com</a>. Stackato supports a multitude of languages and frameworks, so Tornado could be swapped out with one of the many other <a href="https://github.com/ActiveState/stackato-samples">demos</a> available, which include <a href="https://github.com/ActiveState/stackato-samples/tree/master/php">PHP</a>, <a href="https://github.com/ActiveState/stackato-samples/tree/master/perl">Perl</a>, <a href="https://github.com/ActiveState/stackato-samples/tree/master/ruby">Ruby</a>, <a href="https://github.com/ActiveState/stackato-samples/tree/master/node">Node.js</a>, <a href="https://github.com/ActiveState/stackato-samples/tree/master/java">Java</a> or <a href="https://github.com/ActiveState/stackato-samples/tree/master/clojure">Clojure</a>. Although the JVM languages (Java and Clojure) are currently not supported due to their heavy resource requirements. This demo application also uses <a href="https://www.mongodb.org/">MongoDB</a> as its backend datastore.</p>
 <h2 id="get-an-activestate-account">Get An ActiveState Account</h2>
 <p><a href="https://account.activestate.com/signup/?activationnext=http%3A%2F%2Fcommunity.activestate.com%2Fstackato">Sign up for an ActiveState account</a></p>
 <p>You get the usual verification email to confirm your email address.</p>
 <h2 id="install-the-stackato-client">Install The Stackato Client</h2>
-<p>The server software and various virtual machines, which contain the pre-installed server software, is <a href="http://community.activestate.com/stackato/download">available for download</a>, we do not need them, since here we are using the ActiveState&#8217;s sandbox for all our server requirements.</p>
-<p><a href="http://community.activestate.com/stackato/download">Download Stackato Client</a> (v0.18 at time of writing this).</p>
+<p>The server software and various virtual machines, which contain the pre-installed server software, is <a href="https://community.activestate.com/stackato/download">available for download</a>, we do not need them, since here we are using the ActiveState&#8217;s sandbox for all our server requirements.</p>
+<p><a href="https://community.activestate.com/stackato/download">Download Stackato Client</a> (v0.18 at time of writing this).</p>
 <pre>unzip stackato-0.3.13.0.18-macosx10.5-i386-x86_64.zip
 chmod +x stackato-0.3.13.0.18-macosx10.5-i386-x86_64
 mv stackato-0.3.13.0.18-macosx10.5-i386-x86_64 /usr/local/bin/stackato
@@ -85,9 +85,9 @@ mv stackato-0.3.13.0.18-macosx10.5-i386-x86_64 /usr/local/bin/stackato
 <li>Maximum of 2 applications (Python, Perl, Ruby, Node.Js, or other languages as supported in the Sandbox)</li>
 <li>Maximum of 2 services which represent a given database, such as MySQL, MongoDB, Redis, or Postgres</li>
 </ul>
-<p>You should read the <a href="http://docs.stackato.com/sandbox.html">full terms and services</a> for more details.</p>
+<p>You should read the <a href="https://docs.stackato.com/sandbox.html">full terms and services</a> for more details.</p>
 <h2 id="obtaining-stackato-sandbox-access">Obtaining Stackato Sandbox Access</h2>
-<p>Request access to the Stackato Sandbox from the main <a href="http://community.activestate.com/stackato">Stackato page</a>.</p>
+<p>Request access to the Stackato Sandbox from the main <a href="https://community.activestate.com/stackato">Stackato page</a>.</p>
 <p>You can find your Sandbox username and password on your <a href="https://account.activestate.com/">ActiveState account page</a>.</p>
 <h2 id="deploying-the-demo-application">Deploying The Demo Application</h2>
 <p>First inform the stackato client which Stackato installation your will be deploying to. ActiveState&#8217;s Stackato Sandbox is found at <em>https://api.sandbox.activestate.com</em>, so we run the following command.</p>
@@ -99,7 +99,7 @@ Successfully targeted to [https://api.sandbox.activestate.com]</pre>
 
 Email: <em>&lt;your email&gt;</em>
 Password: ****************
-Successfully logged into [http://api.sandbox.activestate.com]
+Successfully logged into [https://api.sandbox.activestate.com]
 </pre>
 <p>Checkout the demo applications, from github, locally onto your machine.</p>
 <pre>$ cd ~/src
@@ -155,7 +155,7 @@ Starting Application [tornado-chat]: OK</pre>
 <blockquote><p>Bigfastblog-chat.sandbox.activestate.com is asking for some information from your Google Account</p></blockquote>
 <p>After clicking &#8220;Allow&#8221;, we&#8217;re taken to the rather basic chat interface that is the Tornado Chat demo.</p>
 <p>We are logged in our as Google Accounts user and can start chatting!</p>
-<p><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/stackato-tornado-demo/chat.png"></p>
+<p><img src="https://commondatastorage.googleapis.com/philwhln/blog/images/stackato-tornado-demo/chat.png"></p>
 <h2 id="stop-the-chatter">Stop The Chatter</h2>
 <p>We can stop the application, if we intend to restart again.</p>
 <pre>$ stackato <strong>stop</strong> tornado-chat
@@ -167,7 +167,7 @@ $ stackato apps
 | tornado-chat | 1 | <strong>STOPPED</strong> | bigfastblog-chat.sandbox.activestate.com | mongo-chat |
 +--------------+---+---------+------------------------------------------+------------+</pre>
 <p>Encase you are curious, this is what you&#8217;ve seen when you visit your sub-domain for this app&#8230;</p>
-<p><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/stackato-tornado-demo/deleted.png"></p>
+<p><img src="https://commondatastorage.googleapis.com/philwhln/blog/images/stackato-tornado-demo/deleted.png"></p>
 <pre>VCAP ROUTER: 404 - DESTINATION NOT FOUND
 
 No application is currently registered at this URL. If you are the site owner,
@@ -187,11 +187,11 @@ No Applications</pre>
 <p>The Stackato sandbox gives you a great way to get a small taste of what Stackato is all about. When you graduate past using the sandbox, you will want to look at the &#8220;micro-cloud&#8221;. It&#8217;s free indefinitely for non-commercial use.</p>
 <h2 id="resources">Resources</h2>
 <ul>
-<li><a href="http://community.activestate.com/stackato">The Official Stackato Website</a></li>
-<li><a href="http://www.youtube.com/watch?v=CunjLaS7Rzo">[YouTube] Stackato Demo &#8211; Micro Cloud to Private PaaS</a></li>
-<li><a href="http://www.activestate.com/cloud#resources">Stackato Resources</a></li>
+<li><a href="https://community.activestate.com/stackato">The Official Stackato Website</a></li>
+<li><a href="https://www.youtube.com/watch?v=CunjLaS7Rzo">[YouTube] Stackato Demo &#8211; Micro Cloud to Private PaaS</a></li>
+<li><a href="https://www.activestate.com/cloud#resources">Stackato Resources</a></li>
 <li><a href="https://github.com/ActiveState/stackato-samples">Other Stackato Demo Applications</a></li>
-<li><a href="http://www.cloudfoundry.com/">Cloud Foundry Homepage</a></li>
+<li><a href="https://www.cloudfoundry.com/">Cloud Foundry Homepage</a></li>
 </ul>
                   </div><!-- .entry-content -->
 
@@ -208,11 +208,11 @@ No Applications</pre>
 
   <li id="comment-7782" class="comment even thread-even depth-1 comment reader">
 
-    <img alt='jiaxiaolei' src='http://1.gravatar.com/avatar/b2bf7f0f9e98806ba6cfc56f5dd66ab9?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">jiaxiaolei</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Tuesday, January 10th, 2012, 10:57 pm">January 10, 2012</abbr> at <abbr class="comment-time" title="Tuesday, January 10th, 2012, 10:57 pm">10:57 pm</abbr></span>  </div>
+    <img alt='jiaxiaolei' src='https://1.gravatar.com/avatar/b2bf7f0f9e98806ba6cfc56f5dd66ab9?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">jiaxiaolei</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Tuesday, January 10th, 2012, 10:57 pm">January 10, 2012</abbr> at <abbr class="comment-time" title="Tuesday, January 10th, 2012, 10:57 pm">10:57 pm</abbr></span>  </div>
     <div class="comment-text">
 
       <p>hi, phil:</p>
-<p>I read your words about stackato in python-tornado groups, and according to your gudiance I finished a server in  ~/src/stackato-samples/python of my own computer. you can find it in &#8220;http://jia-tornado-chat.sandbox.activestate.com/&#8221;</p>
+<p>I read your words about stackato in python-tornado groups, and according to your gudiance I finished a server in  ~/src/stackato-samples/python of my own computer. you can find it in &#8220;https://jia-tornado-chat.sandbox.activestate.com/&#8221;</p>
 <p>A couple advises may be provided as follows:</p>
 <p>1: when you try to login, the default url is &#8220;https://api.stackato.local&#8221;, so :</p>
 <p>$ stackato login<br />
@@ -223,7 +223,7 @@ Cannot access target (couldn&#8217;t open socket: host is unreachable (Name or s
 <p>In my view, some description like below should be appeared in your blog, do you think so ? <img src='/wp-includes/images/smilies/icon_biggrin.gif' alt=':D' class='wp-smiley' /> </p>
 <p>$ stackato target  <a href="https://api.sandbox.activestate.com" rel="nofollow">https://api.sandbox.activestate.com</a><br />
 Successfully targeted to [https://api.sandbox.activestate.com]</p>
-<p>2：Use the tornado-chat-mongo, I push my app in ActiveState. You can see in the url <a href="http://jia-tornado-chat.sandbox.activestate.com/" rel="nofollow">http://jia-tornado-chat.sandbox.activestate.com/</a><br />
+<p>2：Use the tornado-chat-mongo, I push my app in ActiveState. You can see in the url <a href="https://jia-tornado-chat.sandbox.activestate.com/" rel="nofollow">https://jia-tornado-chat.sandbox.activestate.com/</a><br />
 okay, compared with your blog,  it&#8217;s ugly!<br />
 so, can you tell me what did you do about the blog we were watching ？<br />
 Any response will be welcome!</p>
@@ -233,7 +233,7 @@ Any response will be welcome!</p>
 
   <li id="comment-8135" class="comment byuser comment-author-admin bypostauthor odd alt depth-2 comment role-administrator user-admin entry-author">
 
-    <a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, January 19th, 2012, 6:39 am">January 19, 2012</abbr> at <abbr class="comment-time" title="Thursday, January 19th, 2012, 6:39 am">6:39 am</abbr></span>  </div>
+    <a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='https://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, January 19th, 2012, 6:39 am">January 19, 2012</abbr> at <abbr class="comment-time" title="Thursday, January 19th, 2012, 6:39 am">6:39 am</abbr></span>  </div>
     <div class="comment-text">
 
       <p>Hi Jiaxiaolei,</p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
-<head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
+<head profile="https://gmpg.org/xfn/11">
 <title>Zero-Copy. Transfer Data Faster In Ruby | Big Fast Blog</title>
 
 <link rel="stylesheet" href="/wp-content/themes/hybrid/style.css" type="text/css" media="screen" />
@@ -48,8 +48,8 @@
         <h1 class="post-title entry-title"><a href="/zero-copy-transfer-data-faster-in-ruby" title="Zero-Copy. Transfer Data Faster In Ruby" rel="bookmark">Zero-Copy. Transfer Data Faster In Ruby</a></h1><p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard"><span class="fn">Phil Whelan</span></span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Friday, January 14th, 2011, 1:27 pm">January 14, 2011</abbr> </p>
         <div class="entry-content">
           <ul id="sharebar" style="background:#;border-color:#;">
-<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/zero-copy-transfer-data-faster-in-ruby&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
-<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/zero-copy-transfer-data-faster-in-ruby&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p><a href="http://www.flickr.com/photos/zitona/3749382854/" title="McDreamy by Zitona on Flickr"><img src="/wp-content/uploads/2011/01/zero_copy_ruby.jpg" width="270" height="323" alt="Zero-Copy In Ruby Image"" align="left" style="margin-right: 15px" /></a></p>
+<li><a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></li><li><iframe src="https://www.facebook.com/plugins/like.php?href=https://www.bigfastblog.com/zero-copy-transfer-data-faster-in-ruby&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
+<li><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></li><li><iframe src="https://www.facebook.com/plugins/like.php?href=https://www.bigfastblog.com/zero-copy-transfer-data-faster-in-ruby&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p><a href="https://www.flickr.com/photos/zitona/3749382854/" title="McDreamy by Zitona on Flickr"><img src="/wp-content/uploads/2011/01/zero_copy_ruby.jpg" width="270" height="323" alt="Zero-Copy In Ruby Image"" align="left" style="margin-right: 15px" /></a></p>
 <p>In this post I will explain the concept behind &#8220;zero-copy&#8221;, which is feature of the Linux allowing for faster transfer of data between pipes, file-descriptors and sockets. I will demonstrate how you can use this functionality in your Ruby projects using a code example. This functionality has been implemented in C, Java, Ruby, Perl and nameless other languages, but in this blog I will focus on the Ruby usage.</p>
 <h2>What Is &#8220;Zero-Copy&#8221;?</h2>
 <p>The name &#8220;zero-copy&#8221; comes from the fact that the data is not copied from kernel-space to user-space as it usually would be. If you are serving a file, receiving a file, writing to a socket or reading from a socket or pipe and have no interest in programatically looking at the data then you can let the kernel do all the work. Your application runs in user-space and your application defines what you want to do with data as it comes in from various filehandles or sockets and out through other filehandles and sockets. Therefore, it is understandable that the kernel usually needs to pass the data your application, in user-space memory. Zero-copy cuts out the middle-man, your application, when your application is not interested in seeing the data. Roughly speaking, with zero-copy, you can give the kernel two file-descriptors and tell it kernel to &#8220;pass the data from one to the other and let me know when you are done&#8221;.</p>
@@ -59,14 +59,14 @@
 <p>When you serve up a static file to the web, the data is read from a file into your application and then your application writes it out to the socket. Even if you are using the lowest-level API in your chosen language for doing this, it is a two-step process and your application has made two requests to the kernel. &#8220;Read this&#8221;. &#8220;Write this&#8221;. Between these two steps the kernel is switching control back to your application and asking, &#8220;what next?&#8221;.</p>
 <p>With zero-copy you are saying to kernel, &#8220;read from <em>here</em> and write to <em>there</em>&#8220;. This is can be a single call to the kernel, which means less time passing control back to your application and saying, &#8220;what next?&#8221;.</p>
 <h3>Less Copying</h3>
-<p>The second reason that zero-copy is faster is because the kernel is not giving you the data. If it did it would have to copy the data from kernel-space to user-space, since kernel-space is for the kernel&#8217;s eyes only. Instead, the kernel knows what to do with that data. It transfers data from one filehandle to the other filehandle without bothering your application unless there is an error, it has completed, or the application has requested the transfer to be <a href="http://en.wikipedia.org/wiki/Asynchronous_I/O">non-blocking</a>.</p>
+<p>The second reason that zero-copy is faster is because the kernel is not giving you the data. If it did it would have to copy the data from kernel-space to user-space, since kernel-space is for the kernel&#8217;s eyes only. Instead, the kernel knows what to do with that data. It transfers data from one filehandle to the other filehandle without bothering your application unless there is an error, it has completed, or the application has requested the transfer to be <a href="https://en.wikipedia.org/wiki/Asynchronous_I/O">non-blocking</a>.</p>
 <h3>&#8220;Splice&#8221;</h3>
-<p>This system call that does the magic is called <a href="http://www.kernel.org/doc/man-pages/online/pages/man2/splice.2.html">splice</a>. You can read the <a href="http://www.kernel.org/doc/man-pages/online/pages/man2/splice.2.html">Linux manual page here</a>.</p>
+<p>This system call that does the magic is called <a href="https://www.kernel.org/doc/man-pages/online/pages/man2/splice.2.html">splice</a>. You can read the <a href="https://www.kernel.org/doc/man-pages/online/pages/man2/splice.2.html">Linux manual page here</a>.</p>
 <blockquote><p><strong>splice &#8211; splice data to/from a pipe</strong></p>
 <pre style="border: none; background: none; margin: none; padding: none;">ssize_t splice(int fd_in, loff_t *off_in, int fd_out,
                loff_t *off_out, size_t len, unsigned int flags);</pre>
 <p><strong>splice()</strong> moves data between two file descriptors without copying between kernel address space and user address space.  It transfers up to <em>len</em> bytes of data from the file descriptor <em>fd_in</em> to the file descriptor <em>fd_out</em>, where one of the descriptors must refer to a pipe.</p>
-<p> &#8211; from <a href="http://www.kernel.org/doc/man-pages/online/pages/man2/splice.2.html">Kernel.org : splice(2) &#8211; Linux manual page</a>
+<p> &#8211; from <a href="https://www.kernel.org/doc/man-pages/online/pages/man2/splice.2.html">Kernel.org : splice(2) &#8211; Linux manual page</a>
 </p></blockquote>
 <p>The key to note here is that <em>one of the end-points must be a pipe</em>. If neither end-points are a pipe then you can create an intermediary pipe in kernel-space memory and tell the kernel to <em>write to</em> and <em>read from</em> that pipe. You can see <a href="/zero-copy-transfer-data-faster-in-ruby#ruby-example-copy-file-to-file">an example of this below</a>, written in Ruby, where we copy data from one file to another without moving any of the data in user-space memory.</p>
 <h2>Server-Side Data Validation</h2>
@@ -74,7 +74,7 @@
 <h2>Other Factors</h2>
 <p>While you may take some of the burden off the CPU and there is less time spent copying memory, depending on your system and your usage you may not see much difference. Disk seek time and network latency often leave the CPU twiddling it&#8217;s thumbs. Memory copying is very fast. Therefore, you should weigh up the cost and benefits to this. The cost would be the possibly limiting your code to the Linux platform and an additional dependency of the extra code needed to do this (a gem in Ruby&#8217;s case).</p>
 <h2> Performance</h2>
-<p>If you&#8217;re interested in getting deeper into this or would like to approach it from more of a Java angle, then I recommend checking out &#8220;<a href="http://www.ibm.com/developerworks/library/j-zerocopy/index.html">Efficient data transfer through zero copy</a>&#8221; by <a href="http://www.ibm.com/developerworks/library/j-zerocopy/index.html#author1">Sathish K. Palaniappan</a> and <a href="http://www.ibm.com/developerworks/library/j-zerocopy/index.html#author2">Pramod B. Nagaraja</a>. It&#8217;s from here I take the following performance results.</p>
+<p>If you&#8217;re interested in getting deeper into this or would like to approach it from more of a Java angle, then I recommend checking out &#8220;<a href="https://www.ibm.com/developerworks/library/j-zerocopy/index.html">Efficient data transfer through zero copy</a>&#8221; by <a href="https://www.ibm.com/developerworks/library/j-zerocopy/index.html#author1">Sathish K. Palaniappan</a> and <a href="https://www.ibm.com/developerworks/library/j-zerocopy/index.html#author2">Pramod B. Nagaraja</a>. It&#8217;s from here I take the following performance results.</p>
 <table>
 <tr>
 <th>File size</th>
@@ -102,10 +102,10 @@
 </tr>
 </table>
 <p>It is hard to make a clear opinion on the exact speed increase, since the performance change is non-linear, but saying that you get a 2x performance would not be unreasonable.</p>
-<p>If you want to run your own tests to replicate this then <a href="http://www.ibm.com/developerworks/apps/download/index.jsp?contentid=333543&#038;filename=j-zerocopy.zip&#038;method=http&#038;locale=worldwide">the Java source code</a> is available on their article.</p>
-<p>Some other recent benchmarks by <a href="http://dev.sipdoc.net">Iñaki Baz Castillo</a>, which were written in Ruby, can be found <a href="http://librelist.com/browser//ruby.io.splice/2010/12/22/some-benchmarks/">here</a>. I use code from these benchmarks in <a href="/zero-copy-transfer-data-faster-in-ruby#ruby-example-copy-file-to-file">the example below</a>.</p>
+<p>If you want to run your own tests to replicate this then <a href="https://www.ibm.com/developerworks/apps/download/index.jsp?contentid=333543&#038;filename=j-zerocopy.zip&#038;method=http&#038;locale=worldwide">the Java source code</a> is available on their article.</p>
+<p>Some other recent benchmarks by <a href="https://dev.sipdoc.net">Iñaki Baz Castillo</a>, which were written in Ruby, can be found <a href="https://librelist.com/browser//ruby.io.splice/2010/12/22/some-benchmarks/">here</a>. I use code from these benchmarks in <a href="/zero-copy-transfer-data-faster-in-ruby#ruby-example-copy-file-to-file">the example below</a>.</p>
 <h2>Ruby Implementation</h2>
-<p>In Ruby there is an implementation of zero-copy called <a href="http://bogomips.org/ruby_io_splice">io_splice</a>. This is not supported on Mac OS X, since zero-copy is Linux specific. You will get installation problems if you install this on anything less than Linux Kernel 2.6.17.</p>
+<p>In Ruby there is an implementation of zero-copy called <a href="https://bogomips.org/ruby_io_splice">io_splice</a>. This is not supported on Mac OS X, since zero-copy is Linux specific. You will get installation problems if you install this on anything less than Linux Kernel 2.6.17.</p>
 <h3>Installing The Gem</h3>
 <p>You can install the gem in the same way you install other gems.</p>
 <pre>gem install io_splice</pre>
@@ -120,7 +120,7 @@ Installing RDoc documentation for io_splice-2.2.0...</pre>
 <p>In this example I will copy a file from one location to another.</p>
 <p>Let&#8217;s create an input file first, called <em>input_file.txt</em></p>
 <pre>ruby -e '1_000_000.times { puts rand.to_s }' &gt; input_file.txt</pre>
-<p>Now, I&#8217;m going to write a short Ruby script called <em>test_filecopy.rb</em>. I have taken the meat of this script from <a href="http://dev.sipdoc.net">Iñaki Baz Castillo</a>&#8216;s benchmark code. </p>
+<p>Now, I&#8217;m going to write a short Ruby script called <em>test_filecopy.rb</em>. I have taken the meat of this script from <a href="https://dev.sipdoc.net">Iñaki Baz Castillo</a>&#8216;s benchmark code. </p>
 <pre>#!/usr/bin/ruby
 
 require 'io/splice'
@@ -159,13 +159,13 @@ end
 <p>Zero-copy is way to increase performance when transferring static data between two end-points on your system. A good use-case for this is serving files to the web. Even though the disk is still a major bottle-neck, benchmarks do show it to be faster. If validating the data going out of your system is important to you then zero-copy may not be the solution you are looking for, as the data never enters user-space, so there is no chance to inspect it.</p>
 <h2>Resources</h2>
 <ul>
-<li><a href="http://en.wikipedia.org/wiki/Zero-copy">Zero-Copy On Wikipedia</a></li>
-<li><a href="http://www.linuxjournal.com/article/6345">Zero Copy I: User-Mode Perspective</a>
-<li><a href="http://bogomips.org/ruby_io_splice/IO.html">&#8220;Ruby IO Splice&#8221; Documentation</a></li>
-<li><a href="http://www.kernel.org/doc/man-pages/online/pages/man2/splice.2.html">Splice man-page</a></li>
-<li><a href="http://www.ibm.com/developerworks/library/j-zerocopy/index.html">Efficient data transfer through zero copy</a></li>
-<li><a href="http://bogomips.org/ruby_io_splice/">Ruby IO Splice Homepage</a></li>
-<li><a href="http://stackoverflow.com/questions/3137594/how-to-create-pi-sequentially-in-ruby">How to create PI sequentially in Ruby</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Zero-copy">Zero-Copy On Wikipedia</a></li>
+<li><a href="https://www.linuxjournal.com/article/6345">Zero Copy I: User-Mode Perspective</a>
+<li><a href="https://bogomips.org/ruby_io_splice/IO.html">&#8220;Ruby IO Splice&#8221; Documentation</a></li>
+<li><a href="https://www.kernel.org/doc/man-pages/online/pages/man2/splice.2.html">Splice man-page</a></li>
+<li><a href="https://www.ibm.com/developerworks/library/j-zerocopy/index.html">Efficient data transfer through zero copy</a></li>
+<li><a href="https://bogomips.org/ruby_io_splice/">Ruby IO Splice Homepage</a></li>
+<li><a href="https://stackoverflow.com/questions/3137594/how-to-create-pi-sequentially-in-ruby">How to create PI sequentially in Ruby</a></li>
 </ul>
 <h2>Posted in : <a href="/category/ruby-2"> Ruby</a></h2>
 <div id="post-484" class="hentry post publish post-7 odd author-admin category-data-processing category-hadoop-2 category-ruby-2 post_tag-amazon-ec2 post_tag-bash post_tag-cloudera post_tag-data-processing-2 post_tag-hadoop post_tag-hadoop-cluster post_tag-hadoop-streaming post_tag-hdfs post_tag-jclouds post_tag-map-reduce post_tag-ruby post_tag-whirr">
@@ -193,16 +193,16 @@ end
 
   <li id="comment-807" class="comment even thread-even depth-1 comment reader">
 
-    <a href="http://russbrooks.com" rel="external nofollow" title="iq9"><img alt='iq9' src='http://0.gravatar.com/avatar/092ff97a9cf1189c671baecc59f8bf65?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://russbrooks.com"><a href="http://russbrooks.com" title="iq9" class="url" rel="external nofollow">iq9</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, January 20th, 2011, 8:08 am">January 20, 2011</abbr> at <abbr class="comment-time" title="Thursday, January 20th, 2011, 8:08 am">8:08 am</abbr></span>  </div>
+    <a href="https://russbrooks.com" rel="external nofollow" title="iq9"><img alt='iq9' src='https://0.gravatar.com/avatar/092ff97a9cf1189c671baecc59f8bf65?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://russbrooks.com"><a href="https://russbrooks.com" title="iq9" class="url" rel="external nofollow">iq9</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, January 20th, 2011, 8:08 am">January 20, 2011</abbr> at <abbr class="comment-time" title="Thursday, January 20th, 2011, 8:08 am">8:08 am</abbr></span>  </div>
     <div class="comment-text">
 
-      <p>It would be interesting to see straight calls to `cp` in their benchmarks. <a href="http://librelist.com/browser//ruby.io.splice/2010/12/22/some-benchmarks/" rel="nofollow">http://librelist.com/browser//ruby.io.splice/2010/12/22/some-benchmarks/</a></p>
+      <p>It would be interesting to see straight calls to `cp` in their benchmarks. <a href="https://librelist.com/browser//ruby.io.splice/2010/12/22/some-benchmarks/" rel="nofollow">https://librelist.com/browser//ruby.io.splice/2010/12/22/some-benchmarks/</a></p>
     </div><!-- .comment-text -->
 
   </li><!-- .comment -->
   <li id="comment-813" class="comment odd alt thread-odd thread-alt depth-1 comment reader">
 
-    <img alt='Carl Youngblood' src='http://0.gravatar.com/avatar/eca15b2b601e7e577d38bd5210a753ac?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Carl Youngblood</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, January 20th, 2011, 11:51 pm">January 20, 2011</abbr> at <abbr class="comment-time" title="Thursday, January 20th, 2011, 11:51 pm">11:51 pm</abbr></span>  </div>
+    <img alt='Carl Youngblood' src='https://0.gravatar.com/avatar/eca15b2b601e7e577d38bd5210a753ac?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Carl Youngblood</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, January 20th, 2011, 11:51 pm">January 20, 2011</abbr> at <abbr class="comment-time" title="Thursday, January 20th, 2011, 11:51 pm">11:51 pm</abbr></span>  </div>
     <div class="comment-text">
 
       <p>I wonder if someone more familiar with OSX is aware of another construct in BSD land for doing the same thing. Any takers?</p>

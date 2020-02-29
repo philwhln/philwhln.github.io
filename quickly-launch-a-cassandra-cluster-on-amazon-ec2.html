@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
-<head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
+<head profile="https://gmpg.org/xfn/11">
 <title>Quickly Launch A Cassandra Cluster On Amazon EC2 | Big Fast Blog</title>
 
 <link rel="stylesheet" href="/wp-content/themes/hybrid/style.css" type="text/css" media="screen" />
@@ -49,8 +49,8 @@
         <h1 class="post-title entry-title"><a href="/quickly-launch-a-cassandra-cluster-on-amazon-ec2" title="Quickly Launch A Cassandra Cluster On Amazon EC2" rel="bookmark">Quickly Launch A Cassandra Cluster On Amazon EC2</a></h1><p class="byline"><span class="byline-prep byline-prep-author">By</span> <span class="author vcard"><span class="fn">Phil Whelan</span></span> <span class="byline-prep byline-prep-published">on</span> <abbr class="published" title="Friday, January 21st, 2011, 6:58 pm">January 21, 2011</abbr> </p>
         <div class="entry-content">
           <ul id="sharebar" style="background:#;border-color:#;">
-<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
-<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p><a href="http://www.flickr.com/photos/johanbrook/4481758659/" title="Today's Workplace by Johan Brook, on Flickr"><img src="http://commondatastorage.googleapis.com/philwhln/blog/images/launch_cassandra_amazon_ec2/launch_cassandra_cluster_ec2.jpg" width="380" height="285" alt="Today's Workplace" /></a></p>
+<li><a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="philwhln">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></li><li><iframe src="https://www.facebook.com/plugins/like.php?href=https://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe></li></ul><ul id="sharebarx">
+<li><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="philwhln">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></li><li><iframe src="https://www.facebook.com/plugins/like.php?href=https://www.bigfastblog.com/quickly-launch-a-cassandra-cluster-on-amazon-ec2&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li></ul><p><a href="https://www.flickr.com/photos/johanbrook/4481758659/" title="Today's Workplace by Johan Brook, on Flickr"><img src="https://commondatastorage.googleapis.com/philwhln/blog/images/launch_cassandra_amazon_ec2/launch_cassandra_cluster_ec2.jpg" width="380" height="285" alt="Today's Workplace" /></a></p>
 <p>If you have read my previous post, &#8220;<a href="/map-reduce-with-ruby-using-hadoop">Map-Reduce With Ruby Using Hadoop</a>&#8220;, then you will know that firing up a Hadoop cluster is really simple when you use Whirr. Without even ssh&#8217;ing on the machines in the cloud you can start-up your cluster and interact with it. In this post I&#8217;ll show you that it is just as easy to fire up a Cassandra cluster on Amazon EC2.</p>
 <h2>Install Whirr</h2>
 <p>I will fly through the setup of Whirr quite quickly. All the commands you need are here, but if you want a more thorough explanation then see my other post, &#8220;<a href="/map-reduce-with-ruby-using-hadoop">Map-Reduce With Ruby Using Hadoop</a>&#8220;.</p>
@@ -59,7 +59,7 @@
 sudo brew install maven
 mkdir ~/src/cloudera
 cd ~/src/cloudera
-wget http://archive.cloudera.com/cdh/3/whirr-0.1.0+23.tar.gz
+wget https://archive.cloudera.com/cdh/3/whirr-0.1.0+23.tar.gz
 tar -xvzf whirr-0.1.0+23.tar.gz
 cd whirr-0.1.0+23
 mvn clean install
@@ -88,7 +88,7 @@ google_ad_height = 90;
 //-->
 </script><br />
 <script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script></p>
 <h2>Launch Your Cluster</h2>
 <p>Now you are ready to fire-up your Cassandra cluster. Simply use the following command and then be prepared to wait 5-10 minutes while Amazon builds your machines. This time is variable. Sometimes Amazon is quick, sometimes not so quick.</p>
@@ -126,7 +126,7 @@ google_ad_height = 250;
 //-->
 </script><br />
 <script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 </div>
 <div style="padding-top: 40px">
@@ -161,7 +161,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
   <li id="comment-1141" class="comment even thread-even depth-1 comment reader">
 
-    <img alt='Kevin Rood' src='http://0.gravatar.com/avatar/0aae2c417490c285d978499f04292a9c?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Kevin Rood</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Friday, February 18th, 2011, 9:45 pm">February 18, 2011</abbr> at <abbr class="comment-time" title="Friday, February 18th, 2011, 9:45 pm">9:45 pm</abbr></span>  </div>
+    <img alt='Kevin Rood' src='https://0.gravatar.com/avatar/0aae2c417490c285d978499f04292a9c?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Kevin Rood</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Friday, February 18th, 2011, 9:45 pm">February 18, 2011</abbr> at <abbr class="comment-time" title="Friday, February 18th, 2011, 9:45 pm">9:45 pm</abbr></span>  </div>
     <div class="comment-text">
 
       <p>Thanks for the excellent post.  I tried setting up the cluster and while it did create three ec2 instances, Cassandra was not started on any of them.  The version installed was 6.x as well.  Do you have any further details on how to make sure Cassandra starts on each node?  Also, I would like to completely control which version of Cassandra gets installed on the nodes.  Any thoughts about how to do that?  Ideally I would like to control what base version of Linux is used as well.</p>
@@ -171,7 +171,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   </li><!-- .comment -->
   <li id="comment-19471" class="comment odd alt thread-odd thread-alt depth-1 comment reader">
 
-    <img alt='rashm' src='http://0.gravatar.com/avatar/e0385e24dcd5867ac073a99d43c70ab2?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">rashm</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, July 21st, 2012, 3:50 pm">July 21, 2012</abbr> at <abbr class="comment-time" title="Saturday, July 21st, 2012, 3:50 pm">3:50 pm</abbr></span>  </div>
+    <img alt='rashm' src='https://0.gravatar.com/avatar/e0385e24dcd5867ac073a99d43c70ab2?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">rashm</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Saturday, July 21st, 2012, 3:50 pm">July 21, 2012</abbr> at <abbr class="comment-time" title="Saturday, July 21st, 2012, 3:50 pm">3:50 pm</abbr></span>  </div>
     <div class="comment-text">
 
       <p>HI,</p>
@@ -185,7 +185,7 @@ rashmi</p>
   </li><!-- .comment -->
   <li id="comment-28187" class="comment even thread-even depth-1 comment reader">
 
-    <a href="http://bigdataconsultancy.wordpress.com/" rel="external nofollow" title="Chandra Shekher Gupta"><img alt='Chandra Shekher Gupta' src='http://1.gravatar.com/avatar/b4afd8bb270abc9eb60379433fa91df3?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="http://bigdataconsultancy.wordpress.com/"><a href="http://bigdataconsultancy.wordpress.com/" title="Chandra Shekher Gupta" class="url" rel="external nofollow">Chandra Shekher Gupta</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, December 6th, 2012, 9:32 am">December 6, 2012</abbr> at <abbr class="comment-time" title="Thursday, December 6th, 2012, 9:32 am">9:32 am</abbr></span>  </div>
+    <a href="https://bigdataconsultancy.wordpress.com/" rel="external nofollow" title="Chandra Shekher Gupta"><img alt='Chandra Shekher Gupta' src='https://1.gravatar.com/avatar/b4afd8bb270abc9eb60379433fa91df3?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://bigdataconsultancy.wordpress.com/"><a href="https://bigdataconsultancy.wordpress.com/" title="Chandra Shekher Gupta" class="url" rel="external nofollow">Chandra Shekher Gupta</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, December 6th, 2012, 9:32 am">December 6, 2012</abbr> at <abbr class="comment-time" title="Thursday, December 6th, 2012, 9:32 am">9:32 am</abbr></span>  </div>
     <div class="comment-text">
 
       <p>Few Question.</p>
@@ -198,11 +198,11 @@ rashmi</p>
 
   <li id="comment-28189" class="comment byuser comment-author-admin bypostauthor odd alt depth-2 comment role-administrator user-admin entry-author">
 
-    <a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='http://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, December 6th, 2012, 10:12 am">December 6, 2012</abbr> at <abbr class="comment-time" title="Thursday, December 6th, 2012, 10:12 am">10:12 am</abbr></span>  </div>
+    <a href="https://www.google.com/profiles/101358683928607234715" rel="external nofollow" title="Phil Whelan"><img alt='Phil Whelan' src='https://1.gravatar.com/avatar/5f357d996da96ccd36d3374e3728bf29?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /></a><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn" title="https://www.google.com/profiles/101358683928607234715"><a href="https://www.google.com/profiles/101358683928607234715" title="Phil Whelan" class="url" rel="external nofollow">Phil Whelan</a></cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Thursday, December 6th, 2012, 10:12 am">December 6, 2012</abbr> at <abbr class="comment-time" title="Thursday, December 6th, 2012, 10:12 am">10:12 am</abbr></span>  </div>
     <div class="comment-text">
 
       <p>Hi Chandra,</p>
-<p>You will be charged for any resources you use on Amazon EC2. They do have a &#8220;free tier&#8221;, but you will unlikely be able to set up a cluster on this. See <a href="http://aws.amazon.com/free/faqs/" rel="nofollow">http://aws.amazon.com/free/faqs/</a></p>
+<p>You will be charged for any resources you use on Amazon EC2. They do have a &#8220;free tier&#8221;, but you will unlikely be able to set up a cluster on this. See <a href="https://aws.amazon.com/free/faqs/" rel="nofollow">https://aws.amazon.com/free/faqs/</a></p>
 <p>Thanks,<br />
 Phil</p>
     </div><!-- .comment-text -->

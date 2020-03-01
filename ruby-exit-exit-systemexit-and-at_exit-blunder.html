@@ -10,13 +10,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; Ruby exit, exit!, SystemExit and at_exit blunder Comments Feed" href="/ruby-exit-exit-systemexit-and-at_exit-blunder/feed" />
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery.js'></script>
-<script type='text/javascript' src='/wp-content/plugins/sharebar/js/sharebar.js'></script>
 <meta name="description" content="Recently, we hit a problem with Ruby's exit command. If something went horribly wrong and it made no sense for our application to continue in its current state then we would abort with exit 1. We use supervisord to manage processes, so in this case when we exited with exit status of 1, supervisord would assume something went wrong and restart the process for us. Or at least that is what we thought..." />
 <meta name="keywords" content="at_exit,exception,exit,process management,rails,rescue,ruby,ruby on rails,supervisord,systemexit" />
 <link rel="canonical" href="/ruby-exit-exit-systemexit-and-at_exit-blunder" />
-  <link rel="stylesheet" href="/wp-content/plugins/sharebar/css/sharebar.css" type="text/css" media="screen" />
-<script type="text/javascript">jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal:'true',swidth:'65',minwidth:1000,position:'left',leftOffset:20,rightOffset:10}); });</script>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

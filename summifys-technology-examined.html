@@ -13,15 +13,14 @@
 <meta name="description" content="In this post I will look at the technology infrastructure behind Summify.com, a website that strives to make our lives easier and helps us deal with the information overload we all experience every time we sit down at our computers. Summify has aggregated over 200 million stories from the web and serves them up on-demand through a series of different mediums. The website uses Tornado to push real-time updates out to the users and they have developed over a dozen backend systems, some of which I will cover in this blog post." />
 <meta name="keywords" content="algorithms,amazon ec2,django,gunicorn,guy kawasaki,iphone api,jquery template,json api,mongodb,mysql,nginx,python,redis,slow clients,summify,the long tail,tornado,tornado swirl" />
 <link rel="canonical" href="/summifys-technology-examined" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15826070-1"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-15826070-1', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-15826070-1');
 </script>
 </head>
 

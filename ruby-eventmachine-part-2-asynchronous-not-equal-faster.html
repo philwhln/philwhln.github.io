@@ -13,15 +13,14 @@
 <meta name="description" content="In this post I will look synchronous vs asynchronous programming with Ruby's EventMachine, to show that asynchronous does not always mean that your code will run faster. In part 1 of this series on Ruby's EventMachine I discussed the benefits of event-based programming in general. I am a big fan of event-based programming, as you will see in these posts, but I wanted to flip the coin over and look at one of the down-sides of event-based programming." />
 <meta name="keywords" content="asynchronous,benchmark,event-loop,eventmachine,fast,memcached,ruby,synchronous,tornado" />
 <link rel="canonical" href="/ruby-eventmachine-part-2-asynchronous-not-equal-faster" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15826070-1"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-15826070-1', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-15826070-1');
 </script>
 </head>
 

@@ -9,7 +9,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; Ruby exit, exit!, SystemExit and at_exit blunder Comments Feed" href="/ruby-exit-exit-systemexit-and-at_exit-blunder/feed" />
-<script type='text/javascript' src='/js/jquery/jquery.js'></script>
+
 <meta name="description" content="Recently, we hit a problem with Ruby's exit command. If something went horribly wrong and it made no sense for our application to continue in its current state then we would abort with exit 1. We use supervisord to manage processes, so in this case when we exited with exit status of 1, supervisord would assume something went wrong and restart the process for us. Or at least that is what we thought..." />
 <meta name="keywords" content="at_exit,exception,exit,process management,rails,rescue,ruby,ruby on rails,supervisord,systemexit" />
 <link rel="canonical" href="/ruby-exit-exit-systemexit-and-at_exit-blunder" />

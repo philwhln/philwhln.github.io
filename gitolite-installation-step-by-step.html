@@ -9,7 +9,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="alternate" type="application/rss+xml" title="Big Fast Blog &raquo; Gitolite Installation Step-By-Step Comments Feed" href="/gitolite-installation-step-by-step/feed" />
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='/js/jquery/jquery.js'></script>
 <meta name="description" content="In this post I will walk you through how to setup your own gitolite server and start hosting your own git repositories. Gitolite is a great tool for doing this and works in a very git-like way for managing users, access-rights and setting up new repositories for collaboration between your team. A common reason to setup Gitolite is to remove reliance on services like GitHub." />
 <meta name="keywords" content="git,github,gitolite,ssh-keygen" />
 <link rel="canonical" href="/gitolite-installation-step-by-step" />
@@ -438,7 +438,7 @@ Phil</p>
     <img alt='bfn' src='https://0.gravatar.com/avatar/6b5fa39f5bc4b397eb7e55766eecd8c4?s=80&amp;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">bfn</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Sunday, September 30th, 2012, 6:32 am">September 30, 2012</abbr> at <abbr class="comment-time" title="Sunday, September 30th, 2012, 6:32 am">6:32 am</abbr></span>  </div>
     <div class="comment-text">
 
-      <p>This was a problem in the /etc/ssh/sshd_config file, I added “gitolite” user after the AllowUsers directive, and now this is ok <img src='/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+      <p>This was a problem in the /etc/ssh/sshd_config file, I added “gitolite” user after the AllowUsers directive, and now this is ok <img src='/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
 <p>(cf: <a href="https://sitaramc.github.com/gitolite/sts.html#stsapp1" rel="nofollow">https://sitaramc.github.com/gitolite/sts.html#stsapp1</a> )</p>
     </div><!-- .comment-text -->
 
@@ -464,7 +464,7 @@ Phil</p>
 <p>Note that whilst you still use the new user&#8217;s private key in IdentityFile, the magic comes from entering gitolite as the User as it is this username that is used to make the ssh connection that then passes the new_user_key for authentication. This works because when new users are added to gitolite-admin, the public keys are added as additional keys to the gitolite user on the server in .ssh/authorized_keys.</p>
 <p>You can now clone a remote repo to the new user&#8217;s machine with the following:</p>
 <p>git clone gitbox:your_repo_name</p>
-<p>Hope that saves a bit of someone&#8217;s time <img src='/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>Hope that saves a bit of someone&#8217;s time <img src='/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
 <p>Thanks</p>
 <p>Geoff.</p>
     </div><!-- .comment-text -->
@@ -490,7 +490,7 @@ Phil</p>
 
       <p>Hi,<br />
 I see the message &#8220;remote: Initialized empty Git repository in /home/gitolite/repositories/bigfastblog.git/&#8221;<br />
-But&#8230; when I my local machine I try to clone this not works <img src='/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /><br />
+But&#8230; when I my local machine I try to clone this not works <img src='/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /><br />
 $git clone gitbox:bigfastblog<br />
 ======<br />
 FATAL: R any bigfastblog gitolite DENIED by fallthru<br />
@@ -613,7 +613,7 @@ What am I doing wrong? Is that possible?</p>
     <div class="comment-text">
 
       <p>Hi Phil,<br />
-thanks for your answer <img src='/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+thanks for your answer <img src='/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
 <p>I&#8217;ve already done staging, commit and push the pub key for the user1. I see that with the command git log in user1 pc and I see the key file in /home/gitolite on the remote pc&#8230;</p>
 <p>What do you think about permission of /home/gitolite/user1.pub file on the remote pc? I seek:<br />
 chown gitolite:gitolite /home/gitolite/user1.pub<br />
@@ -749,7 +749,7 @@ export GIT_EXEC_PATH=/usr/libexec/git-core</p>
     <img alt='Geoff Ford' src='https://0.gravatar.com/avatar/a1534fcf8cbea6b06f93f9b4cb57c1b9?s=80&amp;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=PG' class='avatar avatar-80 photo' height='80' width='80' /><div class="comment-meta comment-meta-data"><div class="comment-author vcard"><cite class="fn">Geoff Ford</cite></div><!-- .comment-author .vcard --> <span class="published"><abbr class="comment-date" title="Friday, May 17th, 2013, 6:04 pm">May 17, 2013</abbr> at <abbr class="comment-time" title="Friday, May 17th, 2013, 6:04 pm">6:04 pm</abbr></span> | <a class="permalink" href="/gitolite-installation-step-by-step/comment-page-1#comment-45832" title="Permalink to comment ">Permalink</a>  </div>
     <div class="comment-text">
 
-      <p> <img src='/wp-includes/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> </p>
+      <p> <img src='/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> </p>
     </div><!-- .comment-text -->
 
   </li><!-- .comment -->

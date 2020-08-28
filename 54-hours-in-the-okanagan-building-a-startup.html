@@ -186,10 +186,9 @@ Cheers for now</p>
 
   <div id="primary" class="sidebar aside">
 
-
     <div id="top-videos" class="widget">
       <h3 class="widget-title">Top Videos</h3>
-      <div id="player"></div>
+      <div id="player-1"></div>
     </div>
 
     <script>
@@ -204,7 +203,7 @@ Cheers for now</p>
       //    after the API code downloads.
       var player;
       function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
+        player = new YT.Player('player-1', {
           height: '112',
           width: '200',
           videoId: 'VlVdh9R1ens'

@@ -1,5 +1,0 @@
-# global
-User-agent: *
-
-# wistia video sitemap
-Sitemap: https://app.wistia.com/sitemaps/9367.xml

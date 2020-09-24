@@ -1,4 +1,242 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Big Fast Blog]]></title><description><![CDATA[Musings on technology]]></description><link>https://bigfastblog.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Sep 2020 03:07:32 GMT</lastBuildDate><item><title><![CDATA[Ruby’s EventMachine – Part 3 : Thin]]></title><description><![CDATA[As mentioned in part 1 and part 2 of this series on Ruby's EventMachine, Thin is where most folks encounter EventMachine for the first time, even if they do not realize it. EventMachine is at the core of Thin and allows for the high concurrency that Thin provides to your Rails application. In this post I will look at Thin's usage of EventMachine.]]></description><link>https://bigfastblog.com/rubys-eventmachine-part-3-thin</link><guid isPermaLink="false">https://bigfastblog.com/rubys-eventmachine-part-3-thin</guid><pubDate>Tue, 30 Oct 2012 21:26:00 GMT</pubDate><content:encoded>&lt;p&gt;As mentioned in &lt;a href=&quot;/rubys-eventmachine-part-1-event-based-programming&quot;&gt;part 1&lt;/a&gt; and &lt;a href=&quot;/ruby-eventmachine-part-2-asynchronous-not-equal-faster&quot;&gt;part 2&lt;/a&gt; of this &lt;a href=&quot;/tag/eventmachine&quot;&gt;series on Ruby’s EventMachine&lt;/a&gt;, Thin is where most folks encounter EventMachine for the first time, even if they do not realize it. EventMachine is at the core of Thin and allows for the high concurrency that Thin provides to your Rails application. In this post I will look at Thin’s usage of EventMachine.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Big Fast Blog]]></title><description><![CDATA[Musings on technology]]></description><link>https://bigfastblog.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 24 Sep 2020 23:27:40 GMT</lastBuildDate><item><title><![CDATA[Remote Working Is Eating The World]]></title><description><![CDATA[Fully remote work for everyone was something that only a few companies did prior to earlier this year. Now, we're all doing it. In this post, I'm going to be discussing the impact this has on the tech industry and how it will change remote working forever.]]></description><link>https://bigfastblog.com/remote-work-is-eating-the-world</link><guid isPermaLink="false">https://bigfastblog.com/remote-work-is-eating-the-world</guid><pubDate>Thu, 24 Sep 2020 18:59:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f6d9e3b37f5aed25090682fd334f58b6/eea4a/zoom-squares.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQT/xAAXAQADAQAAAAAAAAAAAAAAAAABAgME/9oADAMBAAIQAxAAAAHlbX1QmXGH/8QAGhAAAwADAQAAAAAAAAAAAAAAAAECERMxIf/aAAgBAQABBQLY2V6a4G8R0nn/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEv/aAAgBAgEBPwFL/8QAGxAAAgEFAAAAAAAAAAAAAAAAAAEhAhARMaH/2gAIAQEABj8C0LLJr4Im3//EABoQAAIDAQEAAAAAAAAAAAAAAAABESExQVH/2gAIAQEAAT8hxdCUVPsHoIObWjblqMLWP//aAAwDAQACAAMAAAAQew//xAAWEQADAAAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8QahT/xAAWEQEBAQAAAAAAAAAAAAAAAAABACH/2gAIAQIBAT8QwITf/8QAGhABAQADAQEAAAAAAAAAAAAAAREAITFRQf/aAAgBAQABPxA5sICHJ5iGeFj6MutI0ej3EFm2zHStoV80YDSGKFOGf//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/f6d9e3b37f5aed25090682fd334f58b6/8ac56/zoom-squares.webp 240w,
+/static/f6d9e3b37f5aed25090682fd334f58b6/d3be9/zoom-squares.webp 480w,
+/static/f6d9e3b37f5aed25090682fd334f58b6/e46b2/zoom-squares.webp 960w,
+/static/f6d9e3b37f5aed25090682fd334f58b6/af3f0/zoom-squares.webp 1280w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/f6d9e3b37f5aed25090682fd334f58b6/09b79/zoom-squares.jpg 240w,
+/static/f6d9e3b37f5aed25090682fd334f58b6/7cc5e/zoom-squares.jpg 480w,
+/static/f6d9e3b37f5aed25090682fd334f58b6/6a068/zoom-squares.jpg 960w,
+/static/f6d9e3b37f5aed25090682fd334f58b6/eea4a/zoom-squares.jpg 1280w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/f6d9e3b37f5aed25090682fd334f58b6/6a068/zoom-squares.jpg&quot;
+          alt=&quot;zoom squares&quot;
+          title=&quot;zoom squares&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;intro&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#intro&quot; aria-label=&quot;intro permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Intro&lt;/h3&gt;
+&lt;p&gt;Fully remote work for everyone was something that only a few companies did prior to earlier this year. Now, we’re all doing it. &lt;/p&gt;
+&lt;p&gt;In this post, I’m going to be discussing the impact this has on the tech industry and how it will change remote working forever.&lt;/p&gt;
+&lt;h3 id=&quot;the-remote-last-experience&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#the-remote-last-experience&quot; aria-label=&quot;the remote last experience permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The “remote last” experience&lt;/h3&gt;
+&lt;p&gt;For most of my career I’ve worked in offices. Small offices, big offices, mostly open-plan. I’ve worked in the UK, Japan and Canada. I’ve worked remotely for a company in Palo Alto in the U.S and for a few small startups in Canada. I’m not an expert in remote working, but from my experience remote working is most successful when everyone is a “remote worker”.&lt;/p&gt;
+&lt;p&gt;For my previous company, I worked from home for a few days occasionally over several years. The experience was not good. It would a little something like this… &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I join the meeting on time.&lt;/li&gt;
+&lt;li&gt;Nobody is on the call.&lt;/li&gt;
+&lt;li&gt;After a few minutes, I’d jump on Slack and be like “Hi there! Anyone coming to the meeting? I’m on Zoom”&lt;/li&gt;
+&lt;li&gt;“Yeah, we’re having some technical difficulties”. Now, I live in Canada and my parents live in the UK, so I’m used to having the regular technical difficulties on calls. The fact that the room on the other end of call contains mostly Engineers seems to make no difference at all.&lt;/li&gt;
+&lt;li&gt;Once we finally establish the call, we go through a range of audio quality - from good to quiet to incoherent, and often “Is anyone still there?”&lt;/li&gt;
+&lt;li&gt;Often they can’t hear you informing them that you can’t hear them. You try and balance improving your experience with not wanting to interrupt the flow of the meeting. This, ultimately, is what perpetuates this cycles and sets up the next meeting for failure.&lt;/li&gt;
+&lt;li&gt;At the end of the meeting, you can hear everyone in the office are patting themselves on the back, “Hey, great meeting!“. “Oh, Phil, are you still there? Hanging up now”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.pexels.com/photo/photo-of-people-holding-each-other-s-hands-3184433/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.pexels.com/photo/photo-of-people-holding-each-other-s-hands-3184433/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I’m not alone in this experience. We’ve all encountered this from both ends of the call. It’s not fun.&lt;/p&gt;
+&lt;p&gt;The feeling of exclusion or isolation when working remotely in this situation is not sustainable. It’s hard to be a company that is primarily located in the office and succeed with having some workers being remote.&lt;/p&gt;
+&lt;p&gt;The solution to this is problem is to become a “remote first” organization, where the primary focus is on being remote. Being in the office is secondary. It definitely helps if it’s physically weighted that way, with more people actually being remote than not, but mostly it’s a frame of mind.&lt;/p&gt;
+&lt;h3 id=&quot;remote-first-organization&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#remote-first-organization&quot; aria-label=&quot;remote first organization permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Remote First Organization&lt;/h3&gt;
+&lt;p&gt;The idea of “remote first” is not new. Companies such as HashiCorp, CircleCI, Wordpress, Invision and SocialText has been doing it successfully for a long time.&lt;/p&gt;
+&lt;p&gt;The idea isn’t that some individuals are remote and others are in the office together. No, &lt;em&gt;everyone&lt;/em&gt; is remote. They just happen to be in the office, but they are remote, because… we’re all remote.&lt;/p&gt;
+&lt;p&gt;One fast track way to making this work effectively is having everyone dial-in from their own computer with their own headset, rather than share a camera and microphone in a communal office. This levels the playing field. &lt;/p&gt;
+&lt;p&gt;Although, if you’re in a crowded noisy open-plan office, this can be tricky. But good use of the mute button will help a lot.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Tip: In Zoom you can quickly unmute by pressed in the spacebar. Think of like a walky-talky - just don’t say “Over” when you’re done speaking.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/39bfddc6552f699f1cec9a2836a15d1d/3acf0/bill-murray-walkie-talkie.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 63.74999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBP/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABw2moprM3/8QAGRABAQADAQAAAAAAAAAAAAAAAgEDESEA/9oACAEBAAEFApPOHaPVj5ikYc0v/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BV//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EAB0QAAAFBQAAAAAAAAAAAAAAAAABEBExAgMhUZH/2gAIAQEABj8CMEzdS5W8HAztP//EABsQAAMAAwEBAAAAAAAAAAAAAAABESExUUFh/9oACAEBAAE/IU34cKGSe9qS1LvN4honMR8MRw//2gAMAwEAAgADAAAAEHQv/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAh/9oACAEDAQE/EByJ/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAIAQIBAT8QSS//xAAcEAEBAAMBAAMAAAAAAAAAAAARAQAhMWFBkaH/2gAIAQEAAT8QRklc81cSC4SePuRK3dTIUtKQNJ39w1NKXfnr6xm6gTuf/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/39bfddc6552f699f1cec9a2836a15d1d/8ac56/bill-murray-walkie-talkie.webp 240w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/d3be9/bill-murray-walkie-talkie.webp 480w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/e46b2/bill-murray-walkie-talkie.webp 960w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/f992d/bill-murray-walkie-talkie.webp 1440w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/882b9/bill-murray-walkie-talkie.webp 1920w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/b84eb/bill-murray-walkie-talkie.webp 2000w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/39bfddc6552f699f1cec9a2836a15d1d/09b79/bill-murray-walkie-talkie.jpg 240w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/7cc5e/bill-murray-walkie-talkie.jpg 480w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/6a068/bill-murray-walkie-talkie.jpg 960w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/644c5/bill-murray-walkie-talkie.jpg 1440w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/0f98f/bill-murray-walkie-talkie.jpg 1920w,
+/static/39bfddc6552f699f1cec9a2836a15d1d/3acf0/bill-murray-walkie-talkie.jpg 2000w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/39bfddc6552f699f1cec9a2836a15d1d/6a068/bill-murray-walkie-talkie.jpg&quot;
+          alt=&quot;bill murray walkie talkie&quot;
+          title=&quot;bill murray walkie talkie&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;why-is-this-better&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#why-is-this-better&quot; aria-label=&quot;why is this better permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Why is this better?&lt;/h3&gt;
+&lt;p&gt;Putting aside the fact a lot of us are forced to work remotely right now, let’s look at some benefits…&lt;/p&gt;
+&lt;p&gt;There are many benefits to being remote first, but one big plus is the ability to hire folks who want to work remotely full-time or live in another city or country. There may be financial benefits to the company, or it may be a case that you can find good people more quickly by not limiting the search to your own neighborhood. This was definitely the case when I was trying to hire a Platform Team Lead last year.&lt;/p&gt;
+&lt;p&gt;It was through these hiring struggles and discussions with others companies that had gone fully remote, we started looking at what it was going to take to become a “remote first” company.&lt;/p&gt;
+&lt;p&gt;And then the world changed…&lt;/p&gt;
+&lt;h3 id=&quot;were-all-remote&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#were-all-remote&quot; aria-label=&quot;were all remote permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;We’re all remote!&lt;/h3&gt;
+&lt;p&gt;“From Monday, we’re all working remotely.”&lt;/p&gt;
+&lt;p&gt;Most of the working world, with the ability to pickup their laptop and dial-in from home, heard this phrase earlier this year.&lt;/p&gt;
+&lt;p&gt;The pandemic has forced our hand. Companies like mine, who were struggling to make the leap, we’re pushed off the ledge and found that “Hey, this ain’t so hard”.&lt;/p&gt;
+&lt;p&gt;Thanks to a small army of folks shipping out desks, chairs and monitors we managed to quickly re-define ourselves as “remote-first” (remote only).&lt;/p&gt;
+&lt;p&gt;For some the transition was jarring. For other teams, such as mine, we didn’t skip a beat. Sure, I missed whiteboards to help convey my ideas, but quickly found that, yes, you can replace a picture with a thousand words. Sometimes, less. We’re humans, we can adapt to anything.&lt;/p&gt;
+&lt;h3 id=&quot;downsides&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#downsides&quot; aria-label=&quot;downsides permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Downsides&lt;/h3&gt;
+&lt;p&gt;Some people are enjoying the mandatory remote work less than others. If you live alone or with a partner and you’re trapped in your small studio apartment, that you have to expose on Zoom several times a day, it’s going to be less fun. Below a certain age our genes are screaming at us from literally every cell in our body to go out and socialize.&lt;/p&gt;
+&lt;p&gt;Other downsides involve the impact it will have building costs. If we’re not using them, there’s going to be some impact there.&lt;/p&gt;
+&lt;h3 id=&quot;impact-on-silicon-valley&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#impact-on-silicon-valley&quot; aria-label=&quot;impact on silicon valley permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Impact on Silicon Valley&lt;/h3&gt;
+&lt;p&gt;Jason Calacanis, is a prolific Angel Investor and has invested in over two hundred companies. In his words, “commercial real estate is going to collapse”.&lt;/p&gt;
+&lt;p&gt;Here he is back in May on CNBC&lt;/p&gt;
+&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/nTg5cw1YeAs?start=250&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen style=&quot; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=nTg5cw1YeAs&amp;#x26;feature=youtu.be&amp;#x26;t=250&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Jason Calacanis on CNBC&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;good-for-the-engineer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#good-for-the-engineer&quot; aria-label=&quot;good for the engineer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Good for the Engineer?&lt;/h3&gt;
+&lt;p&gt;If remote working is eating the world, is it good for the Engineers in the long-term? It depends on who are and where you are.&lt;/p&gt;
+&lt;p&gt;In a &lt;a href=&quot;https://www.seanblanda.com/our-remote-work-future-is-going-to-suck/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;recent post by Sean Blanda&lt;/a&gt;, he considers whether engineers in centralized tech hubs think of themselves as more valuable than engineers in other areas of the world, regardless of whether they are remote or not. He writes…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When you, the American worker, share this belief you are being blinded by an erroneous belief in American exceptionalism. When your company goes all-remote, it is starting a clock that ends in you eventually competing with the global talent market — especially if travel and visas continue to be restricted by the federal government.
+--- Sean Blanda&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As Sean points out, you and your neighborhood are not special. Sure, some great companies may have come from there, you may have great network of engineers similar to yourself who you’ve learnt from, go to meetups with, but ultimately great engineers exist everywhere that the Internet can reach.&lt;/p&gt;
+&lt;p&gt;As jobs go remote, real estate prices drop, as do salaries and the special status of tech hubs.&lt;/p&gt;
+&lt;h3 id=&quot;wrapping-up&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#wrapping-up&quot; aria-label=&quot;wrapping up permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrapping up&lt;/h3&gt;
+&lt;p&gt;So what do you think? Do you think we’ll all go back to normal at some point in the future? Will the pool of talented Software Engineers be spread more evenly around the world? Will this lower the cost of hiring Software Engineers and, potentially, your salary?&lt;/p&gt;
+&lt;p&gt;Leave a comment down below. &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This post can also be found on &lt;a href=&quot;https://www.youtube.com/watch?v=MbX71MLe-3Y&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;YouTube&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.youtube.com/embed/MbX71MLe-3Y&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen style=&quot; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Ruby’s EventMachine – Part 3 : Thin]]></title><description><![CDATA[As mentioned in part 1 and part 2 of this series on Ruby's EventMachine, Thin is where most folks encounter EventMachine for the first time, even if they do not realize it. EventMachine is at the core of Thin and allows for the high concurrency that Thin provides to your Rails application. In this post I will look at Thin's usage of EventMachine.]]></description><link>https://bigfastblog.com/rubys-eventmachine-part-3-thin</link><guid isPermaLink="false">https://bigfastblog.com/rubys-eventmachine-part-3-thin</guid><pubDate>Tue, 30 Oct 2012 21:26:00 GMT</pubDate><content:encoded>&lt;p&gt;As mentioned in &lt;a href=&quot;/rubys-eventmachine-part-1-event-based-programming&quot;&gt;part 1&lt;/a&gt; and &lt;a href=&quot;/ruby-eventmachine-part-2-asynchronous-not-equal-faster&quot;&gt;part 2&lt;/a&gt; of this &lt;a href=&quot;/tag/eventmachine&quot;&gt;series on Ruby’s EventMachine&lt;/a&gt;, Thin is where most folks encounter EventMachine for the first time, even if they do not realize it. EventMachine is at the core of Thin and allows for the high concurrency that Thin provides to your Rails application. In this post I will look at Thin’s usage of EventMachine.&lt;/p&gt;
 &lt;h2 id=&quot;thin&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#thin&quot; aria-label=&quot;thin permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Thin?&lt;/h2&gt;
 &lt;p&gt;Let’s start at the basics.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -5625,9 +5863,7 @@ One option is to simulate some load. Write a script that mimics the kinds of que
 “One resource we used as a guide is Steve Souders’ list of rules for high performance websites: &lt;a href=&quot;https://stevesouders.com/hpws/rules.php&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://stevesouders.com/hpws/rules.php&lt;/a&gt;”&lt;br&gt;
 &lt;small&gt;&lt;a href=&quot;https://www.quora.com/Why-is-the-Quora-website-so-fast&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt; – Charlie Cheever, Quora&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div&gt;
-&lt;div style=&quot;float: left&quot;&gt;
-Steve Souders&amp;#x2019; 14 rules are&amp;#x2026;
+&lt;p&gt;Steve Souders’ 14 rules are…&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Make Fewer HTTP Requests&lt;/li&gt;
 &lt;li&gt;Use a Content Delivery Network&lt;/li&gt;
@@ -5644,13 +5880,6 @@ Steve Souders&amp;#x2019; 14 rules are&amp;#x2026;
 &lt;li&gt;Configure ETags&lt;/li&gt;
 &lt;li&gt;Make AJAX Cacheable&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div style=&quot;float: left; padding-left: 80px;&quot;&gt;
-&lt;a href=&quot;https://www.amazon.com/gp/product/0596529309?ie=UTF8&amp;amp;tag=getafil-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=0596529309&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://images-na.ssl-images-amazon.com/media/images/I/41COtT-V1UL._SL160_.jpg&quot;&gt;&lt;/a&gt;&lt;img alt border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://www.assoc-amazon.com/e/ir?t=getafil-20&amp;amp;l=as2&amp;amp;o=1&amp;amp;a=0596529309&quot; style=&quot;border:none !important; margin:0px !important;&quot; width=&quot;1&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/gp/product/0596522304?ie=UTF8&amp;amp;tag=getafil-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=0596522304&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://images-na.ssl-images-amazon.com/media/images/I/41vfOvQugoL._SL160_.jpg&quot;&gt;&lt;/a&gt;&lt;img alt border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://www.assoc-amazon.com/e/ir?t=getafil-20&amp;amp;l=as2&amp;amp;o=1&amp;amp;a=0596522304&quot; style=&quot;border:none !important; margin:0px !important;&quot; width=&quot;1&quot;&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Quora is a great example of a modern tech start-up. They are very small team who understand the technologies they are using very well. They have made considered choices in the technology they have selected and have a good vision of which components would be better written from scratch. They seem keen to share these in-house technologies with the open-source community and I look forward to when they have the time to make this a reality.&lt;/p&gt;
 &lt;p&gt;I intend to keep following Quora and writing about them &lt;a href=&quot;/feed&quot;&gt;&lt;strong&gt;more in future blog posts&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
@@ -6126,31 +6355,32 @@ In a few of my recent posts I have covered the ease of deploying clusters of &lt
 &lt;p&gt;We will use the code from &lt;a href=&quot;https://svn.apache.org/repos/asf/incubator/whirr/trunk&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;trunk&lt;/a&gt;, which will give you the very latest version of the software.&lt;/p&gt;
 &lt;p&gt;Even though version 0.2.0 is currently the most recent stable version we can download on &lt;a href=&quot;https://incubator.apache.org/whirr/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;the official Whirr site&lt;/a&gt;, 0.3.0 is available here under the tagged releases and hence the trunk. So let’s download the source for that. Version 0.3.0 will soon be made the official release, but by following this step-by-step guide, you will be ahead of the pack.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cd ~/src&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;svn co &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;svn co https://svn.apache.org/repos/asf/incubator/whirr/trunk whirr-trunk&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cd whirr-trunk&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;a id=&quot;make-sure-you-have-those-dependencies&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;make-sure-you-have-those-dependencies&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#make-sure-you-have-those-dependencies&quot; aria-label=&quot;make sure you have those dependencies permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Make Sure You Have Those Dependencies&lt;/h2&gt;
 &lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cat BUILD.txt&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Looking at the dependencies in &lt;a href=&quot;https://svn.apache.org/repos/asf/incubator/whirr/trunk/BUILD.txt&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;BUILD.txt&lt;/a&gt;, you can see there is a few things we need. &lt;/p&gt;
-&lt;blockquote style=&quot;background: #eeeeee; padding: 15px; margin: 15px;&quot;&gt;&lt;p&gt;Apache Whirr Build Instructions&lt;/p&gt;
-&lt;p&gt;REQUIREMENTS&lt;/p&gt;
-&lt;p&gt;- Java 1.6&lt;br/&gt;
-- Apache Maven 2.2.1 or greater&lt;br/&gt;
-- Ruby 1.8.7 or greater (to run build-tools/update-versions)&lt;/p&gt;
-&lt;p&gt;BUILDING&lt;/p&gt;
-&lt;p&gt;To run unit tests and install artifacts locally:&lt;/p&gt;
-&lt;p&gt;mvn clean install&lt;/p&gt;
-&lt;p&gt;To build a source package:&lt;/p&gt;
-&lt;p&gt;mvn package -Ppackage
-&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;Apache Whirr Build Instructions&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;REQUIREMENTS&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;- Java 1.6&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;- Apache Maven 2.2.1 or greater&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;- Ruby 1.8.7 or greater (to run build-tools/update-versions)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;BUILDING&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;To run unit tests and install artifacts locally:&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;mvn clean install&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;To build a source package:&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;mvn package -Ppackage&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you have followed through one of my &lt;a href=&quot;/quickly-launch-a-cassandra-cluster-on-amazon-ec2&quot;&gt;previous&lt;/a&gt; &lt;a href=&quot;/map-reduce-with-ruby-using-hadoop&quot;&gt;posts&lt;/a&gt;, then you will likely have these dependencies all installed, but I will review them just encase.&lt;/p&gt;
 &lt;p&gt;Being on Mac OS X, I generally use &lt;a href=&quot;/homebrew-intro-to-the-mac-os-x-package-installer&quot;&gt;Homebrew&lt;/a&gt; so install my dependencies. This will install Maven on Mac OS X if you have &lt;a href=&quot;/homebrew-intro-to-the-mac-os-x-package-installer&quot;&gt;Homebrew installed&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sudo brew install maven&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sudo brew install maven&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you are on Debian Linux (eg. Ubuntu) use apt-get to install Maven.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sudo apt-get install maven2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sudo apt-get install maven2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;There are also instructions available for installing &lt;a href=&quot;https://maven.apache.org/download.html#Windows_2000XP&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Maven on Windows&lt;/a&gt; or &lt;a href=&quot;https://maven.apache.org/download.html#Installation&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;other platform&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you are using the latest Mac OS X then you should have Ruby 1.8.7 and Java 1.6 installed. If you have to upgrade your Ruby, then I recommend checking out &lt;a href=&quot;https://rvm.beginrescueend.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Ruby Version Manager (RVM)&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here’s how to check your versions and what I’m currently running…&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;# Ruby&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;# Ruby&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;ruby -v&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;ruby 1.9.2p94 (2010-12-08 revision 30140) [x86_64-darwin10.5.0]&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
@@ -6202,10 +6432,10 @@ In a few of my recent posts I have covered the ease of deploying clusters of &lt
 &lt;h2 id=&quot;building-whirr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#building-whirr&quot; aria-label=&quot;building whirr permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Building Whirr&lt;/h2&gt;
 &lt;p&gt;Let’s build Whirr 0.3.0!&lt;/p&gt;
 &lt;p&gt;Run the following command from inside the source directory.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cd ~/src/whirr-trunk&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cd ~/src/whirr-trunk&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;mvn clean install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The first time I installed this, it took 17 minutes to build, most of which was downloading dependencies. It failed downloading one of the dependencies and so failed to build.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[WARNING] Unable to get resource &amp;#39;org.apache.hadoop:hadoop-core:jar:0.20.2&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[WARNING] Unable to get resource &amp;#39;org.apache.hadoop:hadoop-core:jar:0.20.2&amp;#39;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;from repository central (https://repo1.maven.org/maven2):&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;GET request of:&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;org/apache/hadoop/hadoop-core/0.20.2/hadoop-core-0.20.2.jar&lt;/span&gt;&lt;/span&gt;
@@ -6221,9 +6451,9 @@ In a few of my recent posts I have covered the ease of deploying clusters of &lt
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;1) org.apache.hadoop:hadoop-core:jar:0.20.2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The path to this dependency was ok, so it must have just been one of those unfortunate glitches in the magic workings of the Internet. Please let me know if you have a similar experience. The chances of this happening to you are very slim.&lt;/p&gt;
 &lt;p&gt;I ran “mvn clean install” once more. &lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;mvn clean install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;mvn clean install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This time is only took 2 minutes and built successfully.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[INFO] ------------------------------------------------------------------------&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;9&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[INFO] ------------------------------------------------------------------------&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[INFO] Reactor Summary:&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[INFO] ------------------------------------------------------------------------&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[INFO] Whirr ................................................. SUCCESS [6.779s]&lt;/span&gt;&lt;/span&gt;
@@ -6244,7 +6474,7 @@ In a few of my recent posts I have covered the ease of deploying clusters of &lt
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[INFO] Final Memory: 90M/123M&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;[INFO] ------------------------------------------------------------------------&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now that our code is compiled, we can run the final build command.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;9&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;mvn package -Ppackage&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;10&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;mvn package -Ppackage&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;(reduced output)&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
@@ -6266,9 +6496,9 @@ In a few of my recent posts I have covered the ease of deploying clusters of &lt
 &lt;p&gt;&lt;a id=&quot;launch-a-hbase-cluster&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;launch-a-hbase-cluster&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#launch-a-hbase-cluster&quot; aria-label=&quot;launch a hbase cluster permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Launch A HBase Cluster&lt;/h2&gt;
 &lt;p&gt;Currently in trunk there is a &lt;em&gt;recipe&lt;/em&gt; under the “recipes” directory called “hbase-ec2″. We can copy that, although in this example we are not going to modify it.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;10&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cp recipes/hbase-ec2.properties .&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;11&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cp recipes/hbase-ec2.properties .&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;There is many comments in there, so here is a summary. &lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;11&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;whirr.cluster-name=hbase&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;12&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;whirr.cluster-name=hbase&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;whirr.instance-templates=1 zk+nn+jt+hbase-master,5 dn+tt+hbase-regionserver&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;whirr.provider=ec2&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;whirr.identity=${env:AWS_ACCESS_KEY_ID}&lt;/span&gt;&lt;/span&gt;
@@ -6290,10 +6520,10 @@ In a few of my recent posts I have covered the ease of deploying clusters of &lt
 &lt;/table&gt;
 &lt;p&gt;If you are interested in how all these Hadoop and HBase components work together, see Lars George’s excellent posts “&lt;a href=&quot;https://www.larsgeorge.com/2009/10/hbase-architecture-101-storage.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;HBase Architecture 101 – Storage&lt;/a&gt;” and &lt;a href=&quot;https://www.larsgeorge.com/2010/01/hbase-architecture-101-write-ahead-log.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;HBase Architecture 101 – Write-ahead-Log&lt;/a&gt;” or check-out the &lt;a href=&quot;https://wiki.apache.org/hadoop/Hbase/HbaseArchitecture&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;HBase wiki&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In previous Whirr examples I have defined the Amazon EC2 credentials in this properties file, but the above will pick them up from the environment, which is a better way to go. Export you credentials into your environment (here I use dumby credentials as an example). &lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;12&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;export AWS_ACCESS_KEY_ID=123456789ABCDEFGHIJKLM&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;13&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;export AWS_ACCESS_KEY_ID=123456789ABCDEFGHIJKLM&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;export AWS_SECRET_ACCESS_KEY=ABCDabcd1234/xyzXZY54321acbd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can now launch our cluster.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;13&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;bin/whirr launch-cluster --config hbase-ec2.properties&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;14&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;bin/whirr launch-cluster --config hbase-ec2.properties&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;Bootstrapping cluster&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;Configuring template&lt;/span&gt;&lt;/span&gt;
@@ -6325,7 +6555,7 @@ In a few of my recent posts I have covered the ease of deploying clusters of &lt
 &lt;p&gt;&lt;a id=&quot;destroy&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;destroy&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#destroy&quot; aria-label=&quot;destroy permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Destroy!&lt;/h2&gt;
 &lt;p&gt;At some point you will want to tear-down that cluster. Here is how you can do that.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;14&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;bin/whirr destroy-cluster --config hbase-ec2.properties&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container monokai&quot; data-language=&quot;&quot; data-index=&quot;15&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;bin/whirr destroy-cluster --config hbase-ec2.properties&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;Destroying hbase cluster&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;Cluster hbase destroyed&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;

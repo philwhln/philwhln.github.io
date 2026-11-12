@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en" data-original-tag="html"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MSPFL6RW84"></script><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="generator" content="Gatsby 5.16.1"/><meta name="theme-color" content="#F7A046"/><meta name="description" content="Last week I chatted with Mitchell Hashimoto about his recently released open-source project Consul for service discovery, which builds upon their previous project Serf." data-gatsby-head="true"/><meta property="og:site_name" content="Consul for Service Discovery - Mitchell Hashimoto Explains - Big Fast Blog" data-gatsby-head="true"/><meta property="og:image" content="https://bigfastblog.com/media/images/photo.jpg" data-gatsby-head="true"/><meta name="twitter:card" content="summary" data-gatsby-head="true"/><meta name="twitter:title" content="Consul for Service Discovery - Mitchell Hashimoto Explains - Big Fast Blog" data-gatsby-head="true"/><meta name="twitter:description" content="Last week I chatted with Mitchell Hashimoto about his recently released open-source project Consul for service discovery, which builds upon their previous project Serf." data-gatsby-head="true"/><meta name="twitter:image" content="https://bigfastblog.com/media/images/photo.jpg" data-gatsby-head="true"/><link rel="alternate" type="application/rss+xml" title="Big Fast Blog" href="/rss.xml"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><link rel="icon" href="/favicon-32x32.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><title data-gatsby-head="true">Consul for Service Discovery - Mitchell Hashimoto Explains - Big Fast Blog</title><style data-href="/styles.987111797530e4946cea.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-cyrillic-ext-opsz-normal-5aa29650eeedb28f59cee330781ca433.woff2) format("woff2-variations");unicode-range:u+0460-052f,u+1c80-1c8a,u+20b4,u+2de0-2dff,u+a640-a69f,u+fe2e-fe2f}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-cyrillic-opsz-normal-d022be7fe4277c756ccb01a7ccb81f82.woff2) format("woff2-variations");unicode-range:u+0301,u+0400-045f,u+0490-0491,u+04b0-04b1,u+2116}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-greek-opsz-normal-4c7084ddf942cf395a8791d13079a545.woff2) format("woff2-variations");unicode-range:u+0370-0377,u+037a-037f,u+0384-038a,u+038c,u+038e-03a1,u+03a3-03ff}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-vietnamese-opsz-normal-5f3efdbe61241d14f298e14fc7ca1679.woff2) format("woff2-variations");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-latin-ext-opsz-normal-686eb107ee2ed09f78eab8a216e1066a.woff2) format("woff2-variations");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c4,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-latin-opsz-normal-1a97523a10cc8481114067d18572ff29.woff2) format("woff2-variations");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-cyrillic-ext-opsz-italic-0bb7d60d3f35e3f8259155e543908254.woff2) format("woff2-variations");unicode-range:u+0460-052f,u+1c80-1c8a,u+20b4,u+2de0-2dff,u+a640-a69f,u+fe2e-fe2f}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-cyrillic-opsz-italic-f96bfe57267a1835da1160b20c1eb591.woff2) format("woff2-variations");unicode-range:u+0301,u+0400-045f,u+0490-0491,u+04b0-04b1,u+2116}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-greek-opsz-italic-4e7f954eae7ef9dcc568416a04756c53.woff2) format("woff2-variations");unicode-range:u+0370-0377,u+037a-037f,u+0384-038a,u+038c,u+038e-03a1,u+03a3-03ff}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-vietnamese-opsz-italic-45b692749e643b86d47044eaa39411e2.woff2) format("woff2-variations");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-latin-ext-opsz-italic-8e343cc43f8800efa4c49c39ade87bd6.woff2) format("woff2-variations");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c4,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-latin-opsz-italic-82eb2cde5aa1dde91d4126fb25e2873a.woff2) format("woff2-variations");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-cyrillic-ext-wght-normal-b5cdd4765614e027c252bcbea138906e.woff2) format("woff2-variations");unicode-range:u+0460-052f,u+1c80-1c8a,u+20b4,u+2de0-2dff,u+a640-a69f,u+fe2e-fe2f}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-cyrillic-wght-normal-49594fb515ba00213fc368d045955212.woff2) format("woff2-variations");unicode-range:u+0301,u+0400-045f,u+0490-0491,u+04b0-04b1,u+2116}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-greek-ext-wght-normal-f4df85d151e5ee39bc2b933a6e4d184b.woff2) format("woff2-variations");unicode-range:u+1f??}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-greek-wght-normal-4f908aee8194b11d9c35e80cb4580935.woff2) format("woff2-variations");unicode-range:u+0370-0377,u+037a-037f,u+0384-038a,u+038c,u+038e-03a1,u+03a3-03ff}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-vietnamese-wght-normal-ab4bb8dcda024fe6eff2d6f0548a8e65.woff2) format("woff2-variations");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-latin-ext-wght-normal-8bff79fbfaa8b8167a0bbeb807c5a831.woff2) format("woff2-variations");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-latin-wght-normal-4f2981d82860061bca3ecb967a2cd084.woff2) format("woff2-variations");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}:root{--font-serif:"Source Serif 4 Variable",Georgia,"Times New Roman",serif;--font-sans:"Inter Variable",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--measure:42rem;--gutter:1.5rem;--radius:8px;--bg:#fcfcfa;--surface:#f3f2ee;--text:#1d1f23;--muted:#5f6570;--border:#e3e1db;--accent:#1f5fd1;--accent-hover:#123f91;--accent-soft:rgba(31,95,209,.12);color-scheme:light dark}@media(prefers-color-scheme:dark){:root{--bg:#121417;--surface:#1b1e23;--text:#e6e4df;--muted:#9ca2ab;--border:#2b2f36;--accent:#8db4ff;--accent-hover:#b8d0ff;--accent-soft:rgba(141,180,255,.16)}}*,:after,:before{box-sizing:border-box}html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:var(--bg);color:var(--text);font-family:var(--font-serif);font-optical-sizing:auto;font-size:1.125rem;line-height:1.7;margin:0;text-rendering:optimizeLegibility}@media(min-width:48rem){body{font-size:1.1875rem}}h1,h2,h3,h4,h5,h6{text-wrap:balance;font-family:var(--font-sans);font-weight:650;letter-spacing:-.015em;line-height:1.25;margin:2em 0 .6em}h1{font-size:clamp(2rem,1.55rem + 2vw,2.75rem);letter-spacing:-.025em;line-height:1.15}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1.075rem}h5,h6{font-size:1rem}p{margin:0 0 1.25em}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:.18em}a:hover{color:var(--accent-hover)}b,strong{font-weight:650}iframe,img,video{max-width:100%}img{height:auto}hr{border:0;border-top:1px solid var(--border);margin:3rem auto;width:6rem}blockquote{border-left:3px solid var(--border);color:var(--muted);font-style:italic;margin:1.75em 0;padding:.1em 0 .1em 1.25em}code,kbd,samp{font-family:var(--font-mono);font-size:.875em}:not(pre)>code{background:var(--surface);border-radius:4px;padding:.15em .35em}table{border-collapse:collapse;display:block;font-family:var(--font-sans);font-size:.9rem;margin:1.75em 0;overflow-x:auto}td,th{border-bottom:1px solid var(--border);padding:.5rem .75rem;text-align:left;vertical-align:top}figure{margin:2em 0}.wp-caption-text,figcaption{color:var(--muted);font-family:var(--font-sans);font-size:.85rem;margin-top:.5rem;text-align:center}abbr[title]{text-decoration:none}::selection{background:var(--accent-soft)}:focus-visible{border-radius:2px;outline:2px solid var(--accent);outline-offset:2px}.anchor svg{fill:var(--muted)}.grvsc-container{--grvsc-padding-v:1rem;--grvsc-padding-h:1.25rem;--grvsc-border-radius:var(--radius);background-color:var(--surface)!important;border:1px solid var(--border);font-family:var(--font-mono);font-size:.85rem;line-height:1.6;margin:1.75em 0}#comments{margin-top:3rem}#comments ol,#comments ul{list-style:none;margin:0;padding:0}#comments li{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);font-size:.95rem;margin:0 0 1rem;overflow:hidden;padding:1rem 1.25rem}#comments li li{background:var(--bg);margin-top:1rem}.comment img.avatar{border-radius:50%;float:left;height:40px;margin:0 .75rem .5rem 0;width:40px}.comment-meta{color:var(--muted);font-family:var(--font-sans);font-size:.8rem;margin:0 0 .5rem}.comment-author{color:var(--text);font-size:.95rem;font-weight:600}.comment-author cite{font-style:normal}.comment-edit-link,.comment-reply-link,.permalink{color:var(--muted);font-style:italic}.comment-text{clear:left}.comment-text p:last-child{margin-bottom:0}.Icon-module--icon--1d7da{stroke-width:0;stroke:currentcolor;fill:currentcolor;speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-style:normal;font-variant:normal;font-weight:400;height:1em;line-height:1em;margin-left:.2em;margin-right:.2em;text-align:center;text-transform:none;width:1em}.Contacts-module--contacts--ef6aa{display:flex;gap:.125rem;list-style:none;margin:0;padding:0}.Contacts-module--contacts__link--1ca86{align-items:center;border-radius:50%;color:var(--muted);display:flex;font-size:1rem;height:2rem;justify-content:center;width:2rem}.Contacts-module--contacts__link--1ca86:hover{background:var(--surface);color:var(--text)}.Contacts-module--contacts__link--1ca86 svg{margin:0}.Menu-module--menu__list--b6322{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}.Menu-module--menu__list-item-link--43616{color:var(--muted);font-size:.9375rem;text-decoration:none}.Menu-module--menu__list-item-link--43616:hover{color:var(--text)}.Menu-module--menu__list-item-link--active--06f73{color:var(--text);font-weight:600}.Header-module--header--357cc{border-bottom:1px solid var(--border);font-family:var(--font-sans)}.Header-module--header__inner--44035{align-items:center;display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;justify-content:space-between;margin:0 auto;max-width:calc(var(--measure) + var(--gutter)*2);padding:1rem var(--gutter)}.Header-module--header__brand--dac05{align-items:center;color:var(--text);display:flex;font-size:1rem;font-weight:600;gap:.65rem;text-decoration:none}.Header-module--header__brand--dac05:hover{color:var(--accent)}.Header-module--header__photo--54444{border-radius:50%;height:36px;object-fit:cover;width:36px}.Header-module--header__links--429f4{align-items:center;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem}.Footer-module--footer--2d913{border-top:1px solid var(--border);color:var(--muted);font-family:var(--font-sans);font-size:.8125rem}.Footer-module--footer__inner--a9672{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;margin:0 auto;max-width:calc(var(--measure) + var(--gutter)*2);padding:1.5rem var(--gutter) 2rem}.Footer-module--footer__link--baf74{color:inherit}.Footer-module--footer__link--baf74:hover{color:var(--text)}.Layout-module--layout--2c933{display:flex;flex-direction:column;min-height:100vh}.Layout-module--layout__skip--fe44a{background:var(--text);border-radius:var(--radius);color:var(--bg);font-family:var(--font-sans);font-size:.875rem;left:-999px;padding:.5rem 1rem;position:absolute;top:1rem}.Layout-module--layout__skip--fe44a:focus{left:1rem;z-index:10}.Layout-module--layout__main--70a0a{flex:1 1;margin:0 auto;max-width:calc(var(--measure) + var(--gutter)*2);padding:2.5rem var(--gutter) 4rem;width:100%}@media(min-width:48rem){.Layout-module--layout__main--70a0a{padding-top:4rem}}.Feed-module--feed--a6204{list-style:none;margin:0;padding:0}.Feed-module--feed__item--619ca{border-top:1px solid var(--border);padding:1.75rem 0}.Feed-module--feed__item--619ca:first-child{border-top:0;padding-top:0}.Feed-module--feed__item-meta--40cc8{color:var(--muted);font-family:var(--font-sans);font-size:.8125rem;margin:0 0 .35rem}.Feed-module--feed__item-title--3920d{font-size:1.375rem;line-height:1.3;margin:0 0 .4rem}.Feed-module--feed__item-title-link--37758{color:var(--text);text-decoration:none}.Feed-module--feed__item-title-link--37758:hover{color:var(--accent)}.Feed-module--feed__item-description--be821{color:var(--muted);font-size:1.0625rem;margin:0}.Page-module--page__header--cec23{margin-bottom:2.5rem}.Page-module--page__title--5d268{margin:0}.Page-module--page__subtitle--88090{color:var(--muted);font-size:1.125rem;font-style:italic;margin:.5rem 0 0}.Pagination-module--pagination--d61cb{border-top:1px solid var(--border);display:flex;font-family:var(--font-sans);font-size:.9375rem;gap:1rem;justify-content:space-between;margin-top:2.5rem;padding-top:1.5rem}.Pagination-module--pagination__link--5565f{color:var(--accent);font-weight:500;text-decoration:none}.Pagination-module--pagination__link--5565f:hover{text-decoration:underline}.Author-module--author--1c58d{align-items:center;display:flex;gap:1rem}.Author-module--author__photo--8e689{border-radius:50%;flex:none;height:48px;object-fit:cover;width:48px}.Author-module--author__bio--f15ca{color:var(--muted);font-family:var(--font-sans);font-size:.875rem;line-height:1.5;margin:0}.Author-module--author__bio-x--a69d8{color:var(--text);display:block;font-size:.9375rem;text-decoration:none}.Author-module--author__bio-x--a69d8:hover{color:var(--accent)}.Content-module--content--80d58{overflow-wrap:break-word}.Content-module--content--80d58>:first-child{margin-top:0}.Content-module--content--80d58 h2{margin-top:2.25em}.Content-module--content--80d58 h3,.Content-module--content--80d58 h4{margin-top:2em}.Content-module--content--80d58 ol,.Content-module--content--80d58 ul{margin:0 0 1.25em;padding-left:1.4em}.Content-module--content--80d58 li{margin:.35em 0}.Content-module--content--80d58 li>p{margin:.5em 0}.Content-module--content--80d58 img{border-radius:6px;display:block;margin:2rem auto}.Content-module--content--80d58 dt{font-weight:650}.Content-module--content--80d58 dd{margin:0 0 1em 1.25em}.Meta-module--meta--dae0a{color:var(--muted);font-family:var(--font-sans);font-size:.875rem;margin:.75rem 0 0}.Post-module--post__header--477d0{margin-bottom:2.5rem}.Post-module--post__title--b2db3{margin:0}.Post-module--post__footer--0bca4{border-top:1px solid var(--border);display:grid;gap:2rem;margin-top:3.5rem;padding-top:2rem}.Post-module--post__back--fd0ea{font-family:var(--font-sans);font-size:.9375rem;text-decoration:none}.Post-module--post__back--fd0ea:hover{text-decoration:underline}</style><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MSPFL6RW84', {"send_page_view":false});
+      }
+      </script></head><body><div id="___gatsby"><link rel="preload" as="image" href="/media/images/photo.jpg"/><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Layout-module--layout--2c933"><a class="Layout-module--layout__skip--fe44a" href="#main">Skip to content</a><header class="Header-module--header--357cc"><div class="Header-module--header__inner--44035"><a class="Header-module--header__brand--dac05" href="/"><img src="/media/images/photo.jpg" class="Header-module--header__photo--54444" width="36" height="36" alt=""/>Phil Whelan</a><div class="Header-module--header__links--429f4"><nav aria-label="Main"><ul class="Menu-module--menu__list--b6322"><li><a class="Menu-module--menu__list-item-link--43616" href="/">Posts</a></li></ul></nav><ul class="Contacts-module--contacts--ef6aa"><li><a class="Contacts-module--contacts__link--1ca86" href="https://www.linkedin.com/in/philwhln" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 24 24"><title>LinkedIn</title><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg></a></li><li><a class="Contacts-module--contacts__link--1ca86" href="https://github.com/philwhln" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 26 28"><title>GitHub</title><path d="M10 19c0 1.141-0.594 3-2 3s-2-1.859-2-3 0.594-3 2-3 2 1.859 2 3zM20 19c0 1.141-0.594 3-2 3s-2-1.859-2-3 0.594-3 2-3 2 1.859 2 3zM22.5 19c0-2.391-1.453-4.5-4-4.5-1.031 0-2.016 0.187-3.047 0.328-0.812 0.125-1.625 0.172-2.453 0.172s-1.641-0.047-2.453-0.172c-1.016-0.141-2.016-0.328-3.047-0.328-2.547 0-4 2.109-4 4.5 0 4.781 4.375 5.516 8.188 5.516h2.625c3.813 0 8.188-0.734 8.188-5.516zM26 16.25c0 1.734-0.172 3.578-0.953 5.172-2.063 4.172-7.734 4.578-11.797 4.578-4.125 0-10.141-0.359-12.281-4.578-0.797-1.578-0.969-3.437-0.969-5.172 0-2.281 0.625-4.438 2.125-6.188-0.281-0.859-0.422-1.766-0.422-2.656 0-1.172 0.266-2.344 0.797-3.406 2.469 0 4.047 1.078 5.922 2.547 1.578-0.375 3.203-0.547 4.828-0.547 1.469 0 2.953 0.156 4.375 0.5 1.859-1.453 3.437-2.5 5.875-2.5 0.531 1.062 0.797 2.234 0.797 3.406 0 0.891-0.141 1.781-0.422 2.625 1.5 1.766 2.125 3.938 2.125 6.219z"></path></svg></a></li><li><a class="Contacts-module--contacts__link--1ca86" href="https://x.com/philwhln" aria-label="X" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 24 24"><title>X</title><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"></path></svg></a></li><li><a class="Contacts-module--contacts__link--1ca86" href="https://www.instagram.com/philwhln" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 24 24"><title>Instagram</title><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a></li><li><a class="Contacts-module--contacts__link--1ca86" href="https://www.youtube.com/channel/UCPoEu5suo5AEE_qXcQLfWZw" aria-label="YouTube" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 24 24"><title>YouTube</title><path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"></path></svg></a></li></ul></div></div></header><main id="main" class="Layout-module--layout__main--70a0a"><article><header class="Post-module--post__header--477d0"><h1 class="Post-module--post__title--b2db3">Consul for Service Discovery - Mitchell Hashimoto Explains</h1><p class="Meta-module--meta--dae0a"><time dateTime="2014-06-24">June 24, 2014</time></p></header><div class="Content-module--content--80d58"><p><em>This post was originally published on ActiveState’s blog. <a href="https://web.archive.org/web/2015/http://www.activestate.com/blog/2014/06/consul-service-discovery-mitchell-hashimoto-explains" target="_blank" rel="nofollow noopener noreferrer">View the archived original</a>.</em></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 240px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e6469f764f064d1ad0311df1595bb326/09b79/consul-service-discovery-mitchell-hashimoto-explains--gossip_men_240x161.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.08333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABhpzH5rxQf//EABkQAQEBAAMAAAAAAAAAAAAAAAECAwATIf/aAAgBAQABBQKGJYJLRK1p7sXxp5//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAEAAQQDAAAAAAAAAAAAAAABAAIQEVETIkH/2gAIAQEABj8CB1KuPrHG4sX1t//EABoQAQADAQEBAAAAAAAAAAAAAAEAESFBMVH/2gAIAQEAAT8h8DEiV3sJKWp+znKGWtHItnU1iGf/2gAMAwEAAgADAAAAENvf/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QJ//EABYRAQEBAAAAAAAAAAAAAAAAAAEQIf/aAAgBAgEBPxBMn//EABwQAQADAQADAQAAAAAAAAAAAAEAESExQVHh8P/aAAgBAQABPxC0G6qG1/jFoFWFEMzdqAWkkTiPmMhY16rkGovqdw+y9rzJ/9k='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/e6469f764f064d1ad0311df1595bb326/8ac56/consul-service-discovery-mitchell-hashimoto-explains--gossip_men_240x161.webp 240w"
+              sizes="(max-width: 240px) 100vw, 240px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/e6469f764f064d1ad0311df1595bb326/09b79/consul-service-discovery-mitchell-hashimoto-explains--gossip_men_240x161.jpg 240w"
+            sizes="(max-width: 240px) 100vw, 240px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/e6469f764f064d1ad0311df1595bb326/09b79/consul-service-discovery-mitchell-hashimoto-explains--gossip_men_240x161.jpg"
+            alt="Gossip Men"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>Last week I chatted with Mitchell Hashimoto about his recently released open-source project <a href="http://www.consul.io/" target="_blank" rel="nofollow noopener noreferrer">Consul</a> for service discovery, which builds upon their previous project <a href="http://www.serfdom.io/" target="_blank" rel="nofollow noopener noreferrer">Serf</a>.</p>
+<p>Many people will know Mitchell as the creator of <a href="http://www.vagrantup.com/" target="_blank" rel="nofollow noopener noreferrer">Vagrant</a>, but since then he has formed Hashicorp and released projects <a href="http://www.packer.io/" target="_blank" rel="nofollow noopener noreferrer">Packer</a>, Serf and now Consul.</p>
+<h2 id="vagrant" style="position:relative;"><a href="#vagrant" aria-label="vagrant permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vagrant</h2>
+<p>Mitchell said that he started Vagrant when he was in college and worked on it during his free time. He did development consultancy and found that jumping between clients meant rebuilding his machine to set up his development environment.</p>
+<p>He started to look for <em>easier</em> solutions. Using virtual machines seemed to be the best option and services like Amazon Web Services made it easy for him to fire up VMs quickly. Unfortunately, there was an hourly cost to doing this on Amazon and, as a developer, he preferred to have everything he needed on his local machine.</p>
+<p>The Vagrant project was what came out of Mitchell’s desire to make it easier for him to work with virtual machines for development on his local machine. It was not long before others were picking Vagrant and using it, and soon he was spending all his free time working on it.</p>
+<h2 id="hashicorp" style="position:relative;"><a href="#hashicorp" aria-label="hashicorp permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hashicorp</h2>
+<p>With the popularity of Vagrant and the extent to which it was draining so much of Mitchell’s time, he decided he needed to form a business around it, if he was going to sustain it.</p>
+<p>With his co-founder Armon Dadgar, Mitchell formed Hashicorp.</p>
+<h2 id="packer" style="position:relative;"><a href="#packer" aria-label="packer permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Packer</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7d362882507962cda49d7667caffc6c1/e07e9/consul-service-discovery-mitchell-hashimoto-explains--mitchell_hashimoto_200x227.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 113.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAXABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAH/2gAMAwEAAhADEAAAAb5RqXZDM4dhnYV//8QAGhABAAIDAQAAAAAAAAAAAAAAAQACERMhA//aAAgBAQABBQKy5sNIHNpu9L1oDxermbrT/8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8BI//EABYRAAMAAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPwFw/8QAHBAAAAYDAAAAAAAAAAAAAAAAAAEQERIhAkGR/9oACAEBAAY/AmLYvKSRPoY7W0//xAAcEAEAAgMAAwAAAAAAAAAAAAABABEhMUEQcYH/2gAIAQEAAT8hpUp6eQ4a3rXjGH6KtK62TRCNoilcubi5bVATj8n/2gAMAwEAAgADAAAAENPQg//EABYRAQEBAAAAAAAAAAAAAAAAABEAAf/aAAgBAwEBPxADMzt//8QAGBEBAQADAAAAAAAAAAAAAAAAABEBITH/2gAIAQIBAT8QzeIm0P/EAB4QAQACAgEFAAAAAAAAAAAAAAEAESFBMWGBobHR/9oACAEBAAE/EDFwNFZTl9TJQApI24camNblgVgoExdHwjg4SdDbAF2EEb1Ubst3ImJxEIC1bcvE/9k='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/7d362882507962cda49d7667caffc6c1/ba381/consul-service-discovery-mitchell-hashimoto-explains--mitchell_hashimoto_200x227.webp 200w"
+              sizes="(max-width: 200px) 100vw, 200px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/7d362882507962cda49d7667caffc6c1/e07e9/consul-service-discovery-mitchell-hashimoto-explains--mitchell_hashimoto_200x227.jpg 200w"
+            sizes="(max-width: 200px) 100vw, 200px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/7d362882507962cda49d7667caffc6c1/e07e9/consul-service-discovery-mitchell-hashimoto-explains--mitchell_hashimoto_200x227.jpg"
+            alt="Brandon Philips - CoreOS / Etcd"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>“Packer is a tool for creating identical machine images for multiple platforms from a single source configuration.”</p>
+<p>Packer was a new project that complimented Vagrant. Mitchell tells me that, “My goal was to make Ops easier and more enjoyable”.</p>
+<p>He was frustrated by building machines with slow Chef and Puppet runs and saw Packer as a way to solve that. Packer was also a way to narrow the gap between development and production.</p>
+<p>Packer was good at building virtual machines to run applications and services, but once something is <em>packerized</em> it is essentially set in stone. Mitchell said that he started to see the limitations in not being able to do more dynamic things and they started to look at <a href="/service-discovery-solutions">service discovery</a>.</p>
+<h2 id="serf" style="position:relative;"><a href="#serf" aria-label="serf permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Serf</h2>
+<p>Mitchell said that his co-founder Armon was the first to start looking at gossip protocols and they thought this would be a great basis for what they wanted to build.</p>
+<p>Cornell University had written some great papers on gossip protocols and they consumed them all.</p>
+<p>They created Serf, which is a product they built around the <a href="http://www.cs.cornell.edu/%7Easdas/research/dsn02-swim.pdf" target="_blank" rel="nofollow noopener noreferrer">SWIM</a> gossip protocol from Cornell. They have modified SWIM slightly for increased propagation speed and convergence rate.</p>
+<p>SWIM is very scalable. Unlike other algorithms, it scales linearly, rather than quadratically, with the number of nodes. It also consumes very little bandwidth. “We have users with 5 digit number of servers and the bandwidth usage doesn’t even register.”</p>
+<h2 id="zombies" style="position:relative;"><a href="#zombies" aria-label="zombies permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Zombies!</h2>
+<p>If you read up on Serf, you will hear the comparison to a zombie apocalypse. This is an interesting analogy, so I asked Mitchell about it.</p>
+<p>Serf nodes act in a similar way to how people act during a zombie apocalypse. If you see a zombie nearby you start screaming and you will immediately tell those close to you - your friends, your family. While it is impossible for everyone to tell everyone, the news spreads rapidly. Mitchell also compares this to how news quickly spreads on Twitter.</p>
+<p>When a node joins the cluster, it only needs to tell one other node and the gossip protocol ensures that everyone is <em>eventually</em> aware of the new node. All this is done over UDP.</p>
+<h2 id="evolution" style="position:relative;"><a href="#evolution" aria-label="evolution permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Evolution</h2>
+<p>Originally Serf had a description more focused on “service discovery”. Since Consul came out, they have re-positioned Serf more appropriately as “a decentralized solution for cluster membership, failure detection, and orchestration. Lightweight and highly available.”</p>
+<p>While they still think Serf is useful for the right applications, they found several limitations when using it for service discovery. This included not being able to fit enough metadata into UDP packets, having to manually configure DNS entries and the lack of support for health checks.</p>
+<h2 id="consul" style="position:relative;"><a href="#consul" aria-label="consul permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Consul</h2>
+<p>The limitations identified in Serf were addressed in Hashicorp’s next project, Consul, which also utilizes Serf’s gossip protocol.</p>
+<p>Mitchell sums up Consul as “service discovery and configuration made easy.” He described Serf as a lego block, which is not always clear to people how to use or where it fits. “Consul is a complete building, so it is more obvious what to use it for.”</p>
+<p>Consul uses the gossip protocol for small pieces of ephemeral information. Since the transport is UDP, it is unreliable. They use it for data that, if lost, would not be a big deal. This includes basic health state and cluster membership. It is also used to pass the addresses of nodes, so that more reliable TCP connections can be established for RPC.</p>
+<h2 id="agents" style="position:relative;"><a href="#agents" aria-label="agents permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Agents</h2>
+<p>A Consul cluster is comprised of agents that run on all nodes and all the nodes are included in the gossip protocol.</p>
+<h2 id="raft" style="position:relative;"><a href="#raft" aria-label="raft permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Raft</h2>
+<p>Consul also employs the Raft algorithm for consensus and can be used for leader election. Like Riak servers you can kill any node in the consensus cluster and the cluster will continue to function without losing data.</p>
+<p>While all agents are involved in the Consul cluster’s gossip protocol, Raft consensus is better limited to 3, 5 or 7 nodes. This is simply configured by setting a flag when the agent starts up, to say whether it is a “server” or not.</p>
+<p>Consensus requires quorum (n/2 + 1). While there is no real minimum on the number of nodes in the Raft cluster, an odd number is optimal and more than 7 will result in performance costs. For instance, if you have a 100 services, you need 51 of them to confirm that they have written to disk before proceeding. Even though Consul does do this in parallel, it is better to keep this number low for consistently good performance.</p>
+<p>Consul is written in Go, so I asked Mitchell why they did not use the Go library <a href="https://github.com/goraft/raft" target="_blank" rel="nofollow noopener noreferrer">go-raft</a> that <a href="/brandon-philips-explains-etcd">etcd</a> is built upon. He told me that they did look at it, but they hit some limitations that were fundamental to its design and they did not see it being easily adaptable to meet their needs.</p>
+<h2 id="key-value-store" style="position:relative;"><a href="#key-value-store" aria-label="key value store permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Key-Value Store</h2>
+<p>Consul provides a “theoretically unlimited number of keys and values” and they currently have users with 10,000s of keys who see no problem.</p>
+<p>The size of these keys and values is artificially limited to about 256kb. This limitation was driven by one of their customers seeing if they could use it as an Amazon S3-like storage.</p>
+<h2 id="multi-datacenter-support" style="position:relative;"><a href="#multi-datacenter-support" aria-label="multi datacenter support permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multi-Datacenter Support</h2>
+<p>One of the things that first grabbed my attention was the fact that Consul supports multiple data centers out-of-the-box. There are lots of new “cloud” technologies out there, but few are tackling this issue head-on.</p>
+<p>I asked Mitchell if this was just a nice byproduct of using the eventually consistent gossip protocol. “No, our customers demanded support to this, so this was a goal when building Consul.”</p>
+<p>Rather than have all nodes involved in cross-datacenter gossiping, only certain nodes are involved in the ”<a href="http://en.wikipedia.org/wiki/Wide_area_network" target="_blank" rel="nofollow noopener noreferrer">WAN</a>” gossip network. Each datacenter then has its own local ”<a href="http://en.wikipedia.org/wiki/Local_area_network" target="_blank" rel="nofollow noopener noreferrer">LAN</a>” gossip network.</p>
+<h2 id="health-checks" style="position:relative;"><a href="#health-checks" aria-label="health checks permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Health Checks</h2>
+<p>Agents perform two types of health checks.</p>
+<p>The first type of health check does a heartbeat check to determine the availability of other nodes. Each node will randomly choose another node to check every second. This randomness ensures that statistically all nodes will be checked, but keeps the network overhead of this cluster-wide checking very low.</p>
+<p>The second type of check is done locally by the agent on its own machine. For instance, this might be HTTP checks on the local web-server or disk-full checks. This is different to other solutions, such as Nagios, which call from a remote machine. Doing it this way makes the checks very quick and does not require network traffic across the cluster.</p>
+<p>I asked Mitchell whether this type of checking would fail to uncover issues such as my HTTP server being accessible locally, but inaccessible remotely. He said that checks should be done on the public interface and any network issues beyond the local machine should be picked up by the random heartbeat checks.</p>
+<p>Mitchell stressed that labelling a node as “unhealthy” is expensive - especially if you get it wrong. Therefore, if a health check fails, the node doing the check will contact 3 other nodes and say “have you talked to them recently?” before the cluster decides that a node is down.</p>
+<h2 id="dns-and-http" style="position:relative;"><a href="#dns-and-http" aria-label="dns and http permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DNS and HTTP</h2>
+<p>Consul supports two interfaces for service discovery - DNS and HTTP. I asked Mitchell why they provide both and not just one.</p>
+<p>“DNS is simple. It’s good for legacy applications, because it just works and applications can use Consul’s service discovery without even being aware that Consul exists”.</p>
+<p>HTTP adds a richer interface to Consul-aware applications. It provides more metadata on services and the ability to implement things like “watchers”.</p>
+<h2 id="sessions" style="position:relative;"><a href="#sessions" aria-label="sessions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sessions</h2>
+<p>Consul provides the concept of “sessions”. Mitchell said that this is a new thing that provides “locking” and enables walking the data stored in Consul.</p>
+<h2 id="encryption" style="position:relative;"><a href="#encryption" aria-label="encryption permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Encryption</h2>
+<p>All traffic is <a href="http://www.consul.io/docs/agent/encryption.html" target="_blank" rel="nofollow noopener noreferrer">encrypted</a> between agents.</p>
+<h2 id="private-betas" style="position:relative;"><a href="#private-betas" aria-label="private betas permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Private Betas</h2>
+<p>Mitchell told that me Hashicorp works with many organizations who have been using Consul and testing its scalability limitations even prior to the public release. They have done some hard stress-testing and driven features. They were also the driver for not using go-raft for Consul, after hitting limitations with etcd at scale.</p>
+<h2 id="production" style="position:relative;"><a href="#production" aria-label="production permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Production?</h2>
+<p>Consul is still at version 0.3, but Mitchell feels that they and their private beta customers have done a good job at stress testing it.</p>
+<p>Is it production ready? While “scary to say”, he does think it is safe now and they have seen no major issues from the large scale usage.</p>
+<p>Image courtesy of <a href="https://www.flickr.com/photos/hamedparham/2807721611" target="_blank" rel="nofollow noopener noreferrer">Hamed Parham via Flickr</a> under <a href="https://creativecommons.org/licenses/by-nd/2.0/" target="_blank" rel="nofollow noopener noreferrer">Creative Commons License</a></p>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+</style></div><footer class="Post-module--post__footer--0bca4"><div class="Author-module--author--1c58d"><img src="/media/images/photo.jpg" class="Author-module--author__photo--8e689" width="48" height="48" alt=""/><p class="Author-module--author__bio--f15ca">Software Engineer<a class="Author-module--author__bio-x--a69d8" href="https://x.com/philwhln" rel="noopener noreferrer" target="_blank"><strong>Phil Whelan</strong> on X</a></p></div><a class="Post-module--post__back--fd0ea" href="/">← All posts</a></footer></article></main><footer class="Footer-module--footer--2d913"><div class="Footer-module--footer__inner--a9672"><span>Copyright © 2026 Phil Whelan</span><a class="Footer-module--footer__link--baf74" href="/rss.xml">RSS</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/consul-service-discovery-mitchell-hashimoto-explains/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-a24d396ef7d5371e65e3.js\"],\"component---cache-caches-gatsby-plugin-offline-app-shell-js\":[\"/component---cache-caches-gatsby-plugin-offline-app-shell-js-e3e858f0d162b82bb8c4.js\"],\"component---src-templates-index-template-tsx\":[\"/component---src-templates-index-template-tsx-93fc57397b7aa5626471.js\"],\"component---src-templates-not-found-template-tsx\":[\"/component---src-templates-not-found-template-tsx-547299927e519c6479b2.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-464a0e2cbb6dcdf56b26.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="f48d0b8b62cc9debc753";</script><script src="/webpack-runtime-6af11a10176023f949b3.js" async></script><script src="/framework-6432cf253b3e6599f05c.js" async></script><script src="/app-a24d396ef7d5371e65e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

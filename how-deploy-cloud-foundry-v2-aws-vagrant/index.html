@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="en" data-original-tag="html"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MSPFL6RW84"></script><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="generator" content="Gatsby 5.16.1"/><meta name="theme-color" content="#F7A046"/><meta name="description" content="The easiest way to deploy Cloud Foundry version 2 (a.k.a &quot;ng&quot; or &quot;next generation&quot;) seems to be via Vagrant. The official way is via BOSH, but Gastón Ramos from Altoros Systems has created a…" data-gatsby-head="true"/><meta property="og:site_name" content="How to Deploy Cloud Foundry v2 to AWS via Vagrant - Big Fast Blog" data-gatsby-head="true"/><meta property="og:image" content="https://bigfastblog.com/media/images/photo.jpg" data-gatsby-head="true"/><meta name="twitter:card" content="summary" data-gatsby-head="true"/><meta name="twitter:title" content="How to Deploy Cloud Foundry v2 to AWS via Vagrant - Big Fast Blog" data-gatsby-head="true"/><meta name="twitter:description" content="The easiest way to deploy Cloud Foundry version 2 (a.k.a &quot;ng&quot; or &quot;next generation&quot;) seems to be via Vagrant. The official way is via BOSH, but Gastón Ramos from Altoros Systems has created a…" data-gatsby-head="true"/><meta name="twitter:image" content="https://bigfastblog.com/media/images/photo.jpg" data-gatsby-head="true"/><link rel="alternate" type="application/rss+xml" title="Big Fast Blog" href="/rss.xml"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><link rel="icon" href="/favicon-32x32.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=c42cfc86b75f7cc51dd49ceb0f10b5ec"/><title data-gatsby-head="true">How to Deploy Cloud Foundry v2 to AWS via Vagrant - Big Fast Blog</title><style data-href="/styles.987111797530e4946cea.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-cyrillic-ext-opsz-normal-5aa29650eeedb28f59cee330781ca433.woff2) format("woff2-variations");unicode-range:u+0460-052f,u+1c80-1c8a,u+20b4,u+2de0-2dff,u+a640-a69f,u+fe2e-fe2f}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-cyrillic-opsz-normal-d022be7fe4277c756ccb01a7ccb81f82.woff2) format("woff2-variations");unicode-range:u+0301,u+0400-045f,u+0490-0491,u+04b0-04b1,u+2116}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-greek-opsz-normal-4c7084ddf942cf395a8791d13079a545.woff2) format("woff2-variations");unicode-range:u+0370-0377,u+037a-037f,u+0384-038a,u+038c,u+038e-03a1,u+03a3-03ff}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-vietnamese-opsz-normal-5f3efdbe61241d14f298e14fc7ca1679.woff2) format("woff2-variations");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-latin-ext-opsz-normal-686eb107ee2ed09f78eab8a216e1066a.woff2) format("woff2-variations");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c4,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:normal;font-weight:200 900;src:url(/static/source-serif-4-latin-opsz-normal-1a97523a10cc8481114067d18572ff29.woff2) format("woff2-variations");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-cyrillic-ext-opsz-italic-0bb7d60d3f35e3f8259155e543908254.woff2) format("woff2-variations");unicode-range:u+0460-052f,u+1c80-1c8a,u+20b4,u+2de0-2dff,u+a640-a69f,u+fe2e-fe2f}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-cyrillic-opsz-italic-f96bfe57267a1835da1160b20c1eb591.woff2) format("woff2-variations");unicode-range:u+0301,u+0400-045f,u+0490-0491,u+04b0-04b1,u+2116}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-greek-opsz-italic-4e7f954eae7ef9dcc568416a04756c53.woff2) format("woff2-variations");unicode-range:u+0370-0377,u+037a-037f,u+0384-038a,u+038c,u+038e-03a1,u+03a3-03ff}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-vietnamese-opsz-italic-45b692749e643b86d47044eaa39411e2.woff2) format("woff2-variations");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-latin-ext-opsz-italic-8e343cc43f8800efa4c49c39ade87bd6.woff2) format("woff2-variations");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c4,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-display:swap;font-family:"Source Serif 4 Variable";font-style:italic;font-weight:200 900;src:url(/static/source-serif-4-latin-opsz-italic-82eb2cde5aa1dde91d4126fb25e2873a.woff2) format("woff2-variations");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-cyrillic-ext-wght-normal-b5cdd4765614e027c252bcbea138906e.woff2) format("woff2-variations");unicode-range:u+0460-052f,u+1c80-1c8a,u+20b4,u+2de0-2dff,u+a640-a69f,u+fe2e-fe2f}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-cyrillic-wght-normal-49594fb515ba00213fc368d045955212.woff2) format("woff2-variations");unicode-range:u+0301,u+0400-045f,u+0490-0491,u+04b0-04b1,u+2116}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-greek-ext-wght-normal-f4df85d151e5ee39bc2b933a6e4d184b.woff2) format("woff2-variations");unicode-range:u+1f??}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-greek-wght-normal-4f908aee8194b11d9c35e80cb4580935.woff2) format("woff2-variations");unicode-range:u+0370-0377,u+037a-037f,u+0384-038a,u+038c,u+038e-03a1,u+03a3-03ff}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-vietnamese-wght-normal-ab4bb8dcda024fe6eff2d6f0548a8e65.woff2) format("woff2-variations");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-latin-ext-wght-normal-8bff79fbfaa8b8167a0bbeb807c5a831.woff2) format("woff2-variations");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-display:swap;font-family:Inter Variable;font-style:normal;font-weight:100 900;src:url(/static/inter-latin-wght-normal-4f2981d82860061bca3ecb967a2cd084.woff2) format("woff2-variations");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}:root{--font-serif:"Source Serif 4 Variable",Georgia,"Times New Roman",serif;--font-sans:"Inter Variable",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--measure:42rem;--gutter:1.5rem;--radius:8px;--bg:#fcfcfa;--surface:#f3f2ee;--text:#1d1f23;--muted:#5f6570;--border:#e3e1db;--accent:#1f5fd1;--accent-hover:#123f91;--accent-soft:rgba(31,95,209,.12);color-scheme:light dark}@media(prefers-color-scheme:dark){:root{--bg:#121417;--surface:#1b1e23;--text:#e6e4df;--muted:#9ca2ab;--border:#2b2f36;--accent:#8db4ff;--accent-hover:#b8d0ff;--accent-soft:rgba(141,180,255,.16)}}*,:after,:before{box-sizing:border-box}html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:var(--bg);color:var(--text);font-family:var(--font-serif);font-optical-sizing:auto;font-size:1.125rem;line-height:1.7;margin:0;text-rendering:optimizeLegibility}@media(min-width:48rem){body{font-size:1.1875rem}}h1,h2,h3,h4,h5,h6{text-wrap:balance;font-family:var(--font-sans);font-weight:650;letter-spacing:-.015em;line-height:1.25;margin:2em 0 .6em}h1{font-size:clamp(2rem,1.55rem + 2vw,2.75rem);letter-spacing:-.025em;line-height:1.15}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1.075rem}h5,h6{font-size:1rem}p{margin:0 0 1.25em}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:.18em}a:hover{color:var(--accent-hover)}b,strong{font-weight:650}iframe,img,video{max-width:100%}img{height:auto}hr{border:0;border-top:1px solid var(--border);margin:3rem auto;width:6rem}blockquote{border-left:3px solid var(--border);color:var(--muted);font-style:italic;margin:1.75em 0;padding:.1em 0 .1em 1.25em}code,kbd,samp{font-family:var(--font-mono);font-size:.875em}:not(pre)>code{background:var(--surface);border-radius:4px;padding:.15em .35em}table{border-collapse:collapse;display:block;font-family:var(--font-sans);font-size:.9rem;margin:1.75em 0;overflow-x:auto}td,th{border-bottom:1px solid var(--border);padding:.5rem .75rem;text-align:left;vertical-align:top}figure{margin:2em 0}.wp-caption-text,figcaption{color:var(--muted);font-family:var(--font-sans);font-size:.85rem;margin-top:.5rem;text-align:center}abbr[title]{text-decoration:none}::selection{background:var(--accent-soft)}:focus-visible{border-radius:2px;outline:2px solid var(--accent);outline-offset:2px}.anchor svg{fill:var(--muted)}.grvsc-container{--grvsc-padding-v:1rem;--grvsc-padding-h:1.25rem;--grvsc-border-radius:var(--radius);background-color:var(--surface)!important;border:1px solid var(--border);font-family:var(--font-mono);font-size:.85rem;line-height:1.6;margin:1.75em 0}#comments{margin-top:3rem}#comments ol,#comments ul{list-style:none;margin:0;padding:0}#comments li{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);font-size:.95rem;margin:0 0 1rem;overflow:hidden;padding:1rem 1.25rem}#comments li li{background:var(--bg);margin-top:1rem}.comment img.avatar{border-radius:50%;float:left;height:40px;margin:0 .75rem .5rem 0;width:40px}.comment-meta{color:var(--muted);font-family:var(--font-sans);font-size:.8rem;margin:0 0 .5rem}.comment-author{color:var(--text);font-size:.95rem;font-weight:600}.comment-author cite{font-style:normal}.comment-edit-link,.comment-reply-link,.permalink{color:var(--muted);font-style:italic}.comment-text{clear:left}.comment-text p:last-child{margin-bottom:0}.Icon-module--icon--1d7da{stroke-width:0;stroke:currentcolor;fill:currentcolor;speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-style:normal;font-variant:normal;font-weight:400;height:1em;line-height:1em;margin-left:.2em;margin-right:.2em;text-align:center;text-transform:none;width:1em}.Contacts-module--contacts--ef6aa{display:flex;gap:.125rem;list-style:none;margin:0;padding:0}.Contacts-module--contacts__link--1ca86{align-items:center;border-radius:50%;color:var(--muted);display:flex;font-size:1rem;height:2rem;justify-content:center;width:2rem}.Contacts-module--contacts__link--1ca86:hover{background:var(--surface);color:var(--text)}.Contacts-module--contacts__link--1ca86 svg{margin:0}.Menu-module--menu__list--b6322{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}.Menu-module--menu__list-item-link--43616{color:var(--muted);font-size:.9375rem;text-decoration:none}.Menu-module--menu__list-item-link--43616:hover{color:var(--text)}.Menu-module--menu__list-item-link--active--06f73{color:var(--text);font-weight:600}.Header-module--header--357cc{border-bottom:1px solid var(--border);font-family:var(--font-sans)}.Header-module--header__inner--44035{align-items:center;display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;justify-content:space-between;margin:0 auto;max-width:calc(var(--measure) + var(--gutter)*2);padding:1rem var(--gutter)}.Header-module--header__brand--dac05{align-items:center;color:var(--text);display:flex;font-size:1rem;font-weight:600;gap:.65rem;text-decoration:none}.Header-module--header__brand--dac05:hover{color:var(--accent)}.Header-module--header__photo--54444{border-radius:50%;height:36px;object-fit:cover;width:36px}.Header-module--header__links--429f4{align-items:center;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem}.Footer-module--footer--2d913{border-top:1px solid var(--border);color:var(--muted);font-family:var(--font-sans);font-size:.8125rem}.Footer-module--footer__inner--a9672{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;margin:0 auto;max-width:calc(var(--measure) + var(--gutter)*2);padding:1.5rem var(--gutter) 2rem}.Footer-module--footer__link--baf74{color:inherit}.Footer-module--footer__link--baf74:hover{color:var(--text)}.Layout-module--layout--2c933{display:flex;flex-direction:column;min-height:100vh}.Layout-module--layout__skip--fe44a{background:var(--text);border-radius:var(--radius);color:var(--bg);font-family:var(--font-sans);font-size:.875rem;left:-999px;padding:.5rem 1rem;position:absolute;top:1rem}.Layout-module--layout__skip--fe44a:focus{left:1rem;z-index:10}.Layout-module--layout__main--70a0a{flex:1 1;margin:0 auto;max-width:calc(var(--measure) + var(--gutter)*2);padding:2.5rem var(--gutter) 4rem;width:100%}@media(min-width:48rem){.Layout-module--layout__main--70a0a{padding-top:4rem}}.Feed-module--feed--a6204{list-style:none;margin:0;padding:0}.Feed-module--feed__item--619ca{border-top:1px solid var(--border);padding:1.75rem 0}.Feed-module--feed__item--619ca:first-child{border-top:0;padding-top:0}.Feed-module--feed__item-meta--40cc8{color:var(--muted);font-family:var(--font-sans);font-size:.8125rem;margin:0 0 .35rem}.Feed-module--feed__item-title--3920d{font-size:1.375rem;line-height:1.3;margin:0 0 .4rem}.Feed-module--feed__item-title-link--37758{color:var(--text);text-decoration:none}.Feed-module--feed__item-title-link--37758:hover{color:var(--accent)}.Feed-module--feed__item-description--be821{color:var(--muted);font-size:1.0625rem;margin:0}.Page-module--page__header--cec23{margin-bottom:2.5rem}.Page-module--page__title--5d268{margin:0}.Page-module--page__subtitle--88090{color:var(--muted);font-size:1.125rem;font-style:italic;margin:.5rem 0 0}.Pagination-module--pagination--d61cb{border-top:1px solid var(--border);display:flex;font-family:var(--font-sans);font-size:.9375rem;gap:1rem;justify-content:space-between;margin-top:2.5rem;padding-top:1.5rem}.Pagination-module--pagination__link--5565f{color:var(--accent);font-weight:500;text-decoration:none}.Pagination-module--pagination__link--5565f:hover{text-decoration:underline}.Author-module--author--1c58d{align-items:center;display:flex;gap:1rem}.Author-module--author__photo--8e689{border-radius:50%;flex:none;height:48px;object-fit:cover;width:48px}.Author-module--author__bio--f15ca{color:var(--muted);font-family:var(--font-sans);font-size:.875rem;line-height:1.5;margin:0}.Author-module--author__bio-x--a69d8{color:var(--text);display:block;font-size:.9375rem;text-decoration:none}.Author-module--author__bio-x--a69d8:hover{color:var(--accent)}.Content-module--content--80d58{overflow-wrap:break-word}.Content-module--content--80d58>:first-child{margin-top:0}.Content-module--content--80d58 h2{margin-top:2.25em}.Content-module--content--80d58 h3,.Content-module--content--80d58 h4{margin-top:2em}.Content-module--content--80d58 ol,.Content-module--content--80d58 ul{margin:0 0 1.25em;padding-left:1.4em}.Content-module--content--80d58 li{margin:.35em 0}.Content-module--content--80d58 li>p{margin:.5em 0}.Content-module--content--80d58 img{border-radius:6px;display:block;margin:2rem auto}.Content-module--content--80d58 dt{font-weight:650}.Content-module--content--80d58 dd{margin:0 0 1em 1.25em}.Meta-module--meta--dae0a{color:var(--muted);font-family:var(--font-sans);font-size:.875rem;margin:.75rem 0 0}.Post-module--post__header--477d0{margin-bottom:2.5rem}.Post-module--post__title--b2db3{margin:0}.Post-module--post__footer--0bca4{border-top:1px solid var(--border);display:grid;gap:2rem;margin-top:3.5rem;padding-top:2rem}.Post-module--post__back--fd0ea{font-family:var(--font-sans);font-size:.9375rem;text-decoration:none}.Post-module--post__back--fd0ea:hover{text-decoration:underline}</style><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MSPFL6RW84', {"send_page_view":false});
+      }
+      </script></head><body><div id="___gatsby"><link rel="preload" as="image" href="/media/images/photo.jpg"/><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Layout-module--layout--2c933"><a class="Layout-module--layout__skip--fe44a" href="#main">Skip to content</a><header class="Header-module--header--357cc"><div class="Header-module--header__inner--44035"><a class="Header-module--header__brand--dac05" href="/"><img src="/media/images/photo.jpg" class="Header-module--header__photo--54444" width="36" height="36" alt=""/>Phil Whelan</a><div class="Header-module--header__links--429f4"><nav aria-label="Main"><ul class="Menu-module--menu__list--b6322"><li><a class="Menu-module--menu__list-item-link--43616" href="/">Posts</a></li></ul></nav><ul class="Contacts-module--contacts--ef6aa"><li><a class="Contacts-module--contacts__link--1ca86" href="https://www.linkedin.com/in/philwhln" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 24 24"><title>LinkedIn</title><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg></a></li><li><a class="Contacts-module--contacts__link--1ca86" href="https://github.com/philwhln" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 26 28"><title>GitHub</title><path d="M10 19c0 1.141-0.594 3-2 3s-2-1.859-2-3 0.594-3 2-3 2 1.859 2 3zM20 19c0 1.141-0.594 3-2 3s-2-1.859-2-3 0.594-3 2-3 2 1.859 2 3zM22.5 19c0-2.391-1.453-4.5-4-4.5-1.031 0-2.016 0.187-3.047 0.328-0.812 0.125-1.625 0.172-2.453 0.172s-1.641-0.047-2.453-0.172c-1.016-0.141-2.016-0.328-3.047-0.328-2.547 0-4 2.109-4 4.5 0 4.781 4.375 5.516 8.188 5.516h2.625c3.813 0 8.188-0.734 8.188-5.516zM26 16.25c0 1.734-0.172 3.578-0.953 5.172-2.063 4.172-7.734 4.578-11.797 4.578-4.125 0-10.141-0.359-12.281-4.578-0.797-1.578-0.969-3.437-0.969-5.172 0-2.281 0.625-4.438 2.125-6.188-0.281-0.859-0.422-1.766-0.422-2.656 0-1.172 0.266-2.344 0.797-3.406 2.469 0 4.047 1.078 5.922 2.547 1.578-0.375 3.203-0.547 4.828-0.547 1.469 0 2.953 0.156 4.375 0.5 1.859-1.453 3.437-2.5 5.875-2.5 0.531 1.062 0.797 2.234 0.797 3.406 0 0.891-0.141 1.781-0.422 2.625 1.5 1.766 2.125 3.938 2.125 6.219z"></path></svg></a></li><li><a class="Contacts-module--contacts__link--1ca86" href="https://x.com/philwhln" aria-label="X" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 24 24"><title>X</title><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"></path></svg></a></li><li><a class="Contacts-module--contacts__link--1ca86" href="https://www.instagram.com/philwhln" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 24 24"><title>Instagram</title><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a></li><li><a class="Contacts-module--contacts__link--1ca86" href="https://www.youtube.com/channel/UCPoEu5suo5AEE_qXcQLfWZw" aria-label="YouTube" rel="noopener noreferrer" target="_blank"><svg class="Icon-module--icon--1d7da" viewBox="0 0 24 24"><title>YouTube</title><path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"></path></svg></a></li></ul></div></div></header><main id="main" class="Layout-module--layout__main--70a0a"><article><header class="Post-module--post__header--477d0"><h1 class="Post-module--post__title--b2db3">How to Deploy Cloud Foundry v2 to AWS via Vagrant</h1><p class="Meta-module--meta--dae0a"><time dateTime="2013-07-23">July 23, 2013</time></p></header><div class="Content-module--content--80d58"><p><em>This post was originally published on ActiveState’s blog. <a href="https://web.archive.org/web/2015/http://www.activestate.com/blog/2013/07/how-deploy-cloud-foundry-v2-aws-vagrant" target="_blank" rel="nofollow noopener noreferrer">View the archived original</a>.</em></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 283px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f7205a0580884d4cf51d60b07d11fe35/bde6a/how-deploy-cloud-foundry-v2-aws-vagrant--2013-07-23_1131.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 78.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVElEQVR42oVUW4tSURQ+P7Gp14phIhiCprfRJmlemrculNCMEMGUg1QUxcQkiAqOoqSoIFoo4v1+vN+vX67lbD3qSAs2Z+2z9/7Wt9a39pZwZZPJBEobj8dotVqo1+uo1WpoNpsYDAb4n0mrIDR6vR5yuRyq1Sra7TYPAs3n8yiXyxykUqnwP9p7LSAtFgoFyLLMYJ1OZ415v99HNptl5jSINQWhs0uAFK1YLK7RJzABOJkyXy2LMAIl1gw4HA6RTqeXAFYPink8FsXR0TPs7T3E8xevMByO+D+lnclkZoBUE0p1NT3hU03JCrk0tra28MtkRlku4dbNG/ho+Mxr3W4X4XCYz0hEV6BfB0gZkF2c/8AHvWG+fqDeh97whX0CC4VCM4aNRgM+n28txc40qhCCVB4ranh2+h53tnfQG8xSJqGSyeRCFEJ3OBwKZhOcnOh4brz4iUuHi333byce7O5CfaCBXK5clWQWhEQltRmwVCrxIBuNZlF1x2/h9fqgfaPluUF/in3VY/z5G57vU2onSidRSqlUaqm5yc6/f8XOvfvIF2V8+3SG23e30Wx1UKtWkEgkpkL0lvYHAgG+CBI1aCQSmUcVInjdLhzr3rGvff1y2iqPcHj4FGqVCk80GsSSCxJUQ4/Hs6ih2+2es9zUvJssHo/DYrHMb5Yk+shqtcLlcnE06s1cLssbo9Ho2q2h1IxGI0wmE4tJWYo9krJ2dNhut8Nms/GX+ou+TqeTOyEYDLJvNptZAPEwKLOSNj1fwqiusViMe9Xv97OvfMZWz/0DJOupAwFjuYkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/f7205a0580884d4cf51d60b07d11fe35/8ac56/how-deploy-cloud-foundry-v2-aws-vagrant--2013-07-23_1131.webp 240w,
+/static/f7205a0580884d4cf51d60b07d11fe35/30314/how-deploy-cloud-foundry-v2-aws-vagrant--2013-07-23_1131.webp 283w"
+              sizes="(max-width: 283px) 100vw, 283px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/f7205a0580884d4cf51d60b07d11fe35/8ff5a/how-deploy-cloud-foundry-v2-aws-vagrant--2013-07-23_1131.png 240w,
+/static/f7205a0580884d4cf51d60b07d11fe35/bde6a/how-deploy-cloud-foundry-v2-aws-vagrant--2013-07-23_1131.png 283w"
+            sizes="(max-width: 283px) 100vw, 283px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/f7205a0580884d4cf51d60b07d11fe35/bde6a/how-deploy-cloud-foundry-v2-aws-vagrant--2013-07-23_1131.png"
+            alt="Stackato 2.10.6"
+            title="Stackato 2.10.6"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
+Stackato is built on top Cloud Foundry (plus other open source packages), so we’re excited about Cloud Foundry v2 and are watching it closely as it evolves. In this post I’m going to quickly run through how I got up and running with Cloud Foundry v2. These notes are based on my colleague’s instructions, who is in the process of giving Cloud Foundry v2’s tires a good kicking.</p>
+<p>The easiest way to deploy Cloud Foundry version 2 (a.k.a “ng” or “next generation”) seems to be via Vagrant. The official way is via BOSH, but <a href="https://github.com/gramos" target="_blank" rel="nofollow noopener noreferrer">Gastón Ramos</a> from <a href="https://www.altoros.com/" target="_blank" rel="nofollow noopener noreferrer">Altoros Systems</a> has created a method which makes it much easier to spin up a single instance of Cloud Foundry v2 on Amazon EC2. We found with BOSH we needed 14 instances to get up and running and it took much longer.</p>
+<h3 id="install-the-installer" style="position:relative;"><a href="#install-the-installer" aria-label="install the installer permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install The Installer</h3>
+<p>You start by git-cloning the <a href="https://github.com/Altoros/cf-vagrant-installer" target="_blank" rel="nofollow noopener noreferrer">cf-vagrant-installer</a> repository from GitHub.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ git clone https://github.com/Altoros/cf-vagrant-installer</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ cd cf-vagrant-installer</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ cat README.md</span></span></code></pre>
+<p>As you will see in the README.md, there are a few vagrant dependencies, the first of which is Vagrant itself.</p>
+<h3 id="install-vagrant" style="position:relative;"><a href="#install-vagrant" aria-label="install vagrant permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install Vagrant</h3>
+<p>If you do not have Vagrant installed, you can install it from <a href="http://downloads.vagrantup.com/" target="_blank" rel="nofollow noopener noreferrer">http://downloads.vagrantup.com/</a>. I installed the .dmg for my Mac, which was pretty straight-forward.</p>
+<h3 id="install-vagrant-plugins" style="position:relative;"><a href="#install-vagrant-plugins" aria-label="install vagrant plugins permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install Vagrant Plugins</h3>
+<p>The Vagrant plugins required (if they have not changed) were <a href="https://github.com/riotgames/vagrant-berkshelf" target="_blank" rel="nofollow noopener noreferrer">vagrant-berkshelf</a>, which adds Berkshelf integration to the Chef provisioners, <a href="https://github.com/schisamo/vagrant-omnibus" target="_blank" rel="nofollow noopener noreferrer">vagrant-omnibus</a>, which ensures the desired version of Chef is installed via the platform-specific Omnibus packages, and <a href="https://github.com/mitchellh/vagrant-aws" target="_blank" rel="nofollow noopener noreferrer">vagrant-aws</a>, which adds an AWS provider to Vagrant, allowing Vagrant to control and provision machines in EC2.</p>
+<p>Installation of these plugins could not be simpler</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ vagrant plugin install vagrant-berkshelf</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ vagrant plugin install vagrant-omnibus</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ vagrant plugin install vagrant-aws</span></span></code></pre>
+<h3 id="run-the-bootstrap" style="position:relative;"><a href="#run-the-bootstrap" aria-label="run the bootstrap permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run The Bootstrap</h3>
+<p>Next, make sure we are in the cf-vagrant-installer (which we cloned above) directory and run the rake command to download all the Cloud Foundry components.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ rake host:bootstrap</span></span></code></pre>
+<p>The output of this rake command will look something like this…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">(in /Users/phil/src/cfv2/cf-vagrant-installer)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">==&gt; Init Git submodules</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Submodule &#39;cloud_controller_ng&#39; (https://github.com/cloudfoundry/cloud_controller_ng.git) registered for path &#39;cloud_controller_ng&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Submodule &#39;dea_ng&#39; (https://github.com/cloudfoundry/dea_ng.git) registered for path &#39;dea_ng&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Submodule &#39;gorouter&#39; (https://github.com/cloudfoundry/gorouter.git) registered for path &#39;gorouter&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Submodule &#39;health_manager&#39; (https://github.com/cloudfoundry/health_manager.git) registered for path &#39;health_manager&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Submodule &#39;uaa&#39; (https://github.com/cloudfoundry/uaa.git) registered for path &#39;uaa&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Submodule &#39;warden&#39; (git://github.com/cloudfoundry/warden.git) registered for path &#39;warden&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Cloning into &#39;cloud_controller_ng&#39;...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">remote: Counting objects: 13057, done.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">remote: Compressing objects: 100% (7357/7357), done.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">remote: Total 13057 (delta 7851), reused 10513 (delta 5512)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Receiving objects: 100% (13057/13057), 4.07 MiB | 1.34 MiB/s, done.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Resolving deltas: 100% (7851/7851), done.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Submodule path &#39;cloud_controller_ng&#39;: checked out &#39;4b9208900c54181d539c9cc93519277d7c2702b5&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Submodule &#39;vendor/errors&#39; (https://github.com/cloudfoundry/errors.git) registered for path &#39;vendor/errors&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Cloning into &#39;vendor/errors&#39;...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">remote: Counting objects: 58, done.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">remote: Compressing objects: 100% (45/45), done.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">... (truncated) ...</span></span></code></pre>
+<hr>
+<hr>
+<h3 id="set-up-aws-credentials" style="position:relative;"><a href="#set-up-aws-credentials" aria-label="set up aws credentials permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Up AWS Credentials</h3>
+<p>Next, you will need to edit the Vagrantfile</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ vim Vagrantfile</span></span></code></pre>
+<p>Add the following section directly above the <em>config.vm.provider :vmware_fusion</em> line:</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">  config.vm.provider :aws do |aws, override|</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    override.vm.box_url = &quot;http://files.vagrantup.com/precise64.box&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">    aws.access_key_id = &quot;YOUR AWS ACCESS KEY&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    aws.secret_access_key = &quot;YOUR AWS SECRET KEY&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    aws.keypair_name = &quot;YOUR AWS KEYPAIR NAME&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    aws.ami = &quot;ami-23d9a94a&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    aws.instance_type = &quot;m1.large&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    aws.region = &quot;us-east-1&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    aws.security_groups = [&quot;open&quot;]</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">    aws.user_data = File.read(&#39;ec2-setup.sh&#39;)</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">    override.ssh.username = &quot;vagrant&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    override.ssh.private_key_path = &quot;THE LOCAL PATH TO YOUR AWS PRIVATE KEY&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  end</span></span></code></pre>
+<p>Then replace “YOUR AWS ACCESS KEY”, “YOUR AWS SECRET KEY” and “YOUR AWS KEYPAIR NAME” with your own AWS credentials.</p>
+<h3 id="an-open-security-group" style="position:relative;"><a href="#an-open-security-group" aria-label="an open security group permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>An Open Security Group</h3>
+<p>The AWS security group used in the above example is one called “open”. This is just one with all open ports. You will need to create it if you do not have it already. You can do this through the <a href="https://console.aws.amazon.com/ec2/home?#s=SecurityGroups" target="_blank" rel="nofollow noopener noreferrer">AWS console</a>.</p>
+<h3 id="create-an-ec2-setup-script" style="position:relative;"><a href="#create-an-ec2-setup-script" aria-label="create an ec2 setup script permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create An EC2 Setup Script</h3>
+<p>Next, you’ll need to create an <em>ec2-setup.sh</em> file directly in the <em>cf-vagrant-installer</em> directory. It should look exactly like the following…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">#!/bin/bash -ex</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">usermod -l vagrant ubuntu</span></span>
+<span class="grvsc-line"><span class="grvsc-source">groupmod -n vagrant ubuntu</span></span>
+<span class="grvsc-line"><span class="grvsc-source">usermod -d /home/vagrant -m vagrant</span></span>
+<span class="grvsc-line"><span class="grvsc-source">mv /etc/sudoers.d/90-cloudimg-ubuntu /etc/sudoers.d/90-cloudimg-vagrant</span></span>
+<span class="grvsc-line"><span class="grvsc-source">perl -pi -e &quot;s/ubuntu/vagrant/g;&quot; /etc/sudoers.d/90-cloudimg-vagrant</span></span></code></pre>
+<h3 id="build-the-ec2-instance-running-cfv2" style="position:relative;"><a href="#build-the-ec2-instance-running-cfv2" aria-label="build the ec2 instance running cfv2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build The EC2 Instance Running CFv2</h3>
+<p>Finally, run <em>“vagrant up —provider=aws”</em> and your instance will be built.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ vagrant up --provider=aws</span></span></code></pre>
+<p>My output looked something like this… (truncated)</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">Bringing machine &#39;cf-install&#39; up with &#39;aws&#39; provider...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Updating Vagrant&#39;s berkshelf: &#39;/Users/phil/.berkshelf/cf-install/vagrant/berkshelf-20130717-81754-5vjx63-cf-install&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using apt (1.10.0)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using git (2.5.2)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using sqlite (1.0.0)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using mysql (3.0.2)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using postgresql (3.0.2)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using chef-golang (1.0.1)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using java (1.12.0)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using ruby_build (0.8.0)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Installing rbenv (0.7.3) from git: &#39;git://github.com/fnichol/chef-rbenv.git&#39; with branch: &#39;master&#39; at ref: &#39;e10f98d5fd07bdb8d212ebf42160b65c39036b90&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using rbenv-alias (0.0.0) at &#39;./chef/rbenv-alias&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using rbenv-sudo (0.0.1) at &#39;./chef/rbenv-sudo&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using cloudfoundry (0.0.0) at &#39;./chef/cloudfoundry&#39;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using dmg (1.1.0)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using build-essential (1.4.0)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using yum (2.3.0)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using windows (1.10.0)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using chef_handler (1.1.4)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using runit (1.1.6)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[Berkshelf] Using openssl (1.0.2)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Warning! The AWS provider doesn&#39;t support any of the Vagrant</span></span>
+<span class="grvsc-line"><span class="grvsc-source">high-level network configurations (`config.vm.network`). They</span></span>
+<span class="grvsc-line"><span class="grvsc-source">will be silently ignored.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Launching an instance with the following settings...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install]  -- Type: m1.large</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install]  -- AMI: ami-23d9a94a</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install]  -- Region: us-east-1</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install]  -- Security Groups: [&quot;open&quot;]</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Waiting for instance to become &quot;ready&quot;...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Waiting for SSH to become available...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Machine is booted and ready for use!</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Rsyncing folder: /Users/phil/src/cfv2/cf-vagrant-installer/ =&gt; /vagrant</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Rsyncing folder: /Users/phil/.berkshelf/cf-install/vagrant/berkshelf-20130717-81754-5vjx63-cf-install/ =&gt; /tmp/vagrant-chef-1/chef-solo-1/cookbooks</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Installing Chef 11.4.0 Omnibus package...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[cf-install] Running provisioner: chef_solo...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Generating chef JSON and uploading...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Running chef-solo...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">stdin: is not a tty</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:43:22+00:00] INFO: *** Chef 11.4.0 ***</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:43:23+00:00] INFO: Setting the run_list to [&quot;recipe[cloudfoundry::vagrant-provision-start]&quot;, &quot;recipe[apt::default]&quot;, &quot;recipe[git]&quot;, &quot;recipe[chef-golang]&quot;, &quot;recipe[ruby_build]&quot;, &quot;recipe[rbenv::user]&quot;, &quot;recipe[java::openjdk]&quot;, &quot;recipe[sqlite]&quot;, &quot;recipe[mysql::server]&quot;, &quot;recipe[postgresql::server]&quot;, &quot;recipe[rbenv-alias]&quot;, &quot;recipe[rbenv-sudo]&quot;, &quot;recipe[cloudfoundry::warden]&quot;, &quot;recipe[cloudfoundry::dea]&quot;, &quot;recipe[cloudfoundry::uaa]&quot;, &quot;recipe[cloudfoundry::cf_bootstrap]&quot;, &quot;recipe[cloudfoundry::vagrant-provision-end]&quot;] from JSON</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:43:23+00:00] INFO: Run List is [recipe[cloudfoundry::vagrant-provision-start], recipe[apt::default], recipe[git], recipe[chef-golang], recipe[ruby_build], recipe[rbenv::user], recipe[java::openjdk], recipe[sqlite], recipe[mysql::server], recipe[postgresql::server], recipe[rbenv-alias], recipe[rbenv-sudo], recipe[cloudfoundry::warden], recipe[cloudfoundry::dea], recipe[cloudfoundry::uaa], recipe[cloudfoundry::cf_bootstrap], recipe[cloudfoundry::vagrant-provision-end]]</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:43:23+00:00] INFO: Run List expands to [cloudfoundry::vagrant-provision-start, apt::default, git, chef-golang, ruby_build, rbenv::user, java::openjdk, sqlite, mysql::server, postgresql::server, rbenv-alias, rbenv-sudo, cloudfoundry::warden, cloudfoundry::dea, cloudfoundry::uaa, cloudfoundry::cf_bootstrap, cloudfoundry::vagrant-provision-end]</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:43:23+00:00] INFO: Starting Chef Run for ip-10-77-71-207.ec2.internal</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:43:23+00:00] INFO: Running start handlers</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:43:23+00:00] INFO: Start handlers complete.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:43:24+00:00] INFO: AptPreference light-weight provider already initialized -- overriding!</span></span>
+<span class="grvsc-line"><span class="grvsc-source">... (truncated) ...</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:58:50+00:00] INFO: Processing package[zip] action install (cloudfoundry::dea line 9)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:58:55+00:00] INFO: Processing package[unzip] action install (cloudfoundry::dea line 13)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:58:55+00:00] INFO: Processing package[maven] action install (cloudfoundry::uaa line 1)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T19:59:38+00:00] INFO: Processing execute[run rake cf:bootstrap] action run (cloudfoundry::cf_bootstrap line 3)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T20:05:35+00:00] INFO: execute[run rake cf:bootstrap] ran successfully</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T20:05:35+00:00] INFO: Processing bash[emit provision complete] action run (cloudfoundry::vagrant-provision-end line 2)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T20:05:35+00:00] INFO: bash[emit provision complete] ran successfully</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T20:05:35+00:00] INFO: Chef Run complete in 1332.027903781 seconds</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T20:05:35+00:00] INFO: Running report handlers</span></span>
+<span class="grvsc-line"><span class="grvsc-source">[2013-07-17T20:05:35+00:00] INFO: Report handlers complete</span></span></code></pre>
+<p>We can now log into our new EC2 instance, which is running Cloud Foundry v2…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ vagrant ssh</span></span></code></pre>
+<p>Note: All commands that follow are intended to be run on the EC2 instance.</p>
+<h3 id="push-an-app" style="position:relative;"><a href="#push-an-app" aria-label="push an app permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Push An App</h3>
+<p>First, we must initialize the Cloud Foundry v2 command-line interface with the following command…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ cd /vagrant</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ rake cf:init_cf_cli</span></span></code></pre>
+<p>Here is the output of that command…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="11"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">==&gt; Initializing cf CLI</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Setting target to http://127.0.0.1:8181... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">target: http://127.0.0.1:8181</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">Authenticating... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">There are no spaces. You may want to create one with create-space.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Creating organization myorg... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Switching to organization myorg... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">There are no spaces. You may want to create one with create-space.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Creating space myspace... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Adding you as a manager... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Adding you as a developer... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Space created! Use `cf switch-space myspace` to target it.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Switching to space myspace... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">Target Information (where will apps be pushed):</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  CF instance: http://127.0.0.1:8181 (API version: 2)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  user: admin</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  target app space: myspace (org: myorg)</span></span></code></pre>
+<p>Now you can deploy one of the test apps. We will use a Node.js “Hello World” app…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ cd test-apps/hello-node</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ cf push</span></span></code></pre>
+<p>We see the output</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="13"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">Warning: url is not a valid manifest attribute. Please remove this attribute from your manifest to get rid of this warning</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Using manifest file manifest.yml</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">Creating hello-node... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">1: hello-node</span></span>
+<span class="grvsc-line"><span class="grvsc-source">2: none</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Subdomain&gt; hello-node</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">1: vcap.me</span></span>
+<span class="grvsc-line"><span class="grvsc-source">2: none</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Domain&gt; 1</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">Creating route hello-node.vcap.me... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Binding hello-node.vcap.me to hello-node... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Uploading hello-node... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Preparing to start hello-node... OK</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Checking status of app &#39;hello-node&#39;...........................</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  0 of 1 instances running (1 starting)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  0 of 1 instances running (1 starting)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  1 of 1 instances running (1 running)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Push successful! App &#39;hello-node&#39; available at http://hello-node.vcap.me</span></span></code></pre>
+<p>Cloud Foundry v2 is running on localhost on our EC2 instance, so our app is not accessible from our web-browser, but we can test the app exists using curl from the EC2 instance.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="14"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ curl http://hello-node.vcap.me/</span></span></code></pre>
+<p>Here is what is output by curl…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="15"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">Hello from Cloud Foundry</span></span></code></pre>
+<h3 id="delete-the-app" style="position:relative;"><a href="#delete-the-app" aria-label="delete the app permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delete The App</h3>
+<p>To delete the app, you can use <em>cf delete</em></p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="16"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ cf delete</span></span></code></pre>
+<p>The following output is seen</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="17"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">Warning: url is not a valid manifest attribute. Please remove this attribute from your manifest to get rid of this warning</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Using manifest file manifest.yml</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">Really delete hello-node?&gt; y</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">Deleting hello-node... OK</span></span></code></pre>
+<h3 id="inside-out" style="position:relative;"><a href="#inside-out" aria-label="inside out permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inside Out</h3>
+<p><strong>xip.io</strong></p>
+<p>From the notes I was given…</p>
+<p><em>Now, to expose apps externally, it gets trickier. First, you’ll need to provision an elastic IP in the AWS console and attach it to the EC2 instance that’s running the cf v2 install. Then, you’ll need to set up a wildcard DNS record to point to that IP (*.domain and domain should point to that IP). xip.io might work here, but I’m not familiar enough with it to know for sure.</em></p>
+<p>xip.io is actually perfect for this. All I need is my external IP, which was 50.19.50.63, and I append “.xip.io”, which gives me “50.19.50.63.xip.io” as well as wildcard “*.50.19.50.63.xip.io” for the Cloud Foundry API and any apps I deploy. This is a zero configuration service. The IP that you want to resolve to is included in the hostname you create and the DNS service simply returns you the IP. This means you can have a valid globally resolvable DNS hostname instantly.</p>
+<p>I can also get a simpler hostname by checking the DNS record of this hostname, which is actually just a CNAME.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="18"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ host 50.19.50.63.xip.io</span></span></code></pre>
+<p>Which outputs…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="19"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">50.19.50.63.xip.io is an alias for hj8raq.xip.io.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">hj8raq.xip.io has address 50.19.50.63</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Host hj8raq.xip.io not found: 3(NXDOMAIN)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">Host hj8raq.xip.io not found: 3(NXDOMAIN)</span></span></code></pre>
+<p>…so I can use hj8raq.xip.io instead, since it is shorter and I just want to use it temporarily.</p>
+<p><strong>Updating More Config</strong></p>
+<p>Since we now have an external domain name, not just localhost, we need to update some configuration files within the <em>custom_config_files</em> directory.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="20"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ cd /vagrant/custom_config_files</span></span></code></pre>
+<p>Assuming you are running under the domain <em>“yourdomain”</em> (or <em>“hj8raq.xip.io”</em> in my case), you should edit the <em>cloud_controller.yml</em> as follows…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="21"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ (cd cloud_controller_ng; vim cloud_controller.yml)</span></span></code></pre>
+<ul>
+<li>change <strong>external_domain</strong> to <strong>api.yourdomain</strong></li>
+<li>change <strong>system_domain</strong> to <strong>yourdomain</strong></li>
+<li>change <strong>app_domains</strong> to <strong>yourdomain</strong></li>
+<li>change <strong>uaa:url</strong> to <strong><a href="http://yourdomain:8080/uaa" target="_blank" rel="nofollow noopener noreferrer">http://yourdomain:8080/uaa</a></strong></li>
+</ul>
+<p>Next, edit the DEA configuration.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="22"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ (cd dea_ng; vim dea.yml)</span></span></code></pre>
+<ul>
+<li>change <strong>domain</strong> to <strong>yourdomain</strong></li>
+</ul>
+<p>And finally, the configuration of the Health Manager…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="23"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ (cd health_manager; vim health_manager.yml)</span></span></code></pre>
+<ul>
+<li>change <strong>bulk_api:host</strong> to <strong><a href="http://api.yourdomain:8181" target="_blank" rel="nofollow noopener noreferrer">http://api.yourdomain:8181</a></strong></li>
+</ul>
+<p><strong>Router Registry Bug</strong></p>
+<p>There was a small bug on my AWS deployment that may have been fixed. This was related to a incompatibility with the JSON between the Cloud Controller and the Router when registering the API endpoint with the router. Here’s the fix…</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="24"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ cd /vagrant/cloud_controller_ng/lib/cloud_controller</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ vim message_bus.rb</span></span></code></pre>
+<p>and change the line</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="25"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">        :uris =&gt; config[:external_domain],</span></span></code></pre>
+<p>to this</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="26"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">        :uris =&gt; [config[:external_domain]],</span></span></code></pre>
+<p>This will make :uris an array, not a string. Probably better to fix this in the gorouter, but this is quicker for now.</p>
+<p><strong>Restart CC DB</strong></p>
+<p>Now we need to reset the Cloud Controller database.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="27"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ cd /vagrant/</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ rake cf:bootstrap</span></span></code></pre>
+<p>Finally, reboot the machine.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="28"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ sudo reboot</span></span></code></pre>
+<p>When the machine comes back up, we can ssh back into it</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="29"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ vagrant ssh</span></span></code></pre>
+<p>and run the <strong>./start.sh</strong> command to start Cloud Foundry components.</p>
+<pre class="grvsc-container default-light grvsc-mm-tYvMB2" data-language="" data-index="30"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">$ cd /vagrant</span></span>
+<span class="grvsc-line"><span class="grvsc-source">$ ./start.sh</span></span></code></pre>
+<p>Now, Cloud Foundry v2 should be running with your externally accessible endpoint.</p>
+<h3 id="what-comes-next" style="position:relative;"><a href="#what-comes-next" aria-label="what comes next permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What Comes Next?</h3>
+<p>The great thing about Cloud Foundry v2 is that the basic architecture hasn’t changed from v1. That gives ActiveState the luxury of integrating one Cloud Foundry v2 component into Stackato at a time and ensuring our enterprise customers are not negatively impacted by a sudden wholesale change. (We’re already using the new Health Manager, for example.) Over the next few months, you can expect to see some exciting new features and capabilities available in Stackato that build on top of Cloud Foundry v2’s framework. I’ll post more details as I have them.</p>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .default-light {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+  .default-light .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+  
+  /* Default Dark+ */
+  @media (prefers-color-scheme: dark) {
+    .grvsc-mm-tYvMB2 {
+      background-color: #1E1E1E;
+      color: #D4D4D4;
+    }
+    .grvsc-mm-tYvMB2 .grvsc-line-highlighted::before {
+      background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+      box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+    }
+  }
+</style></div><footer class="Post-module--post__footer--0bca4"><div class="Author-module--author--1c58d"><img src="/media/images/photo.jpg" class="Author-module--author__photo--8e689" width="48" height="48" alt=""/><p class="Author-module--author__bio--f15ca">Software Engineer<a class="Author-module--author__bio-x--a69d8" href="https://x.com/philwhln" rel="noopener noreferrer" target="_blank"><strong>Phil Whelan</strong> on X</a></p></div><a class="Post-module--post__back--fd0ea" href="/">← All posts</a></footer></article></main><footer class="Footer-module--footer--2d913"><div class="Footer-module--footer__inner--a9672"><span>Copyright © 2026 Phil Whelan</span><a class="Footer-module--footer__link--baf74" href="/rss.xml">RSS</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/how-deploy-cloud-foundry-v2-aws-vagrant/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-a24d396ef7d5371e65e3.js\"],\"component---cache-caches-gatsby-plugin-offline-app-shell-js\":[\"/component---cache-caches-gatsby-plugin-offline-app-shell-js-e3e858f0d162b82bb8c4.js\"],\"component---src-templates-index-template-tsx\":[\"/component---src-templates-index-template-tsx-93fc57397b7aa5626471.js\"],\"component---src-templates-not-found-template-tsx\":[\"/component---src-templates-not-found-template-tsx-547299927e519c6479b2.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-464a0e2cbb6dcdf56b26.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="f48d0b8b62cc9debc753";</script><script src="/webpack-runtime-6af11a10176023f949b3.js" async></script><script src="/framework-6432cf253b3e6599f05c.js" async></script><script src="/app-a24d396ef7d5371e65e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

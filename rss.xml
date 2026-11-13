@@ -1,4 +1,147 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Big Fast Blog]]></title><description><![CDATA[Musings on technology]]></description><link>https://bigfastblog.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Nov 2026 17:48:10 GMT</lastBuildDate><item><title><![CDATA[Remote Working Is Eating The World]]></title><description><![CDATA[Fully remote work for everyone was something that only a few companies did prior to earlier this year. Now, we're all doing it. In this post, I'm going to be discussing the impact this has on the tech industry and how it will change remote working forever.]]></description><link>https://bigfastblog.com/remote-work-is-eating-the-world</link><guid isPermaLink="false">https://bigfastblog.com/remote-work-is-eating-the-world</guid><pubDate>Thu, 24 Sep 2020 18:59:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Big Fast Blog]]></title><description><![CDATA[Musings on technology]]></description><link>https://bigfastblog.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Nov 2026 17:58:52 GMT</lastBuildDate><item><title><![CDATA[Spam's Lesson For AI Containment]]></title><description><![CDATA[Spam never went away because running on someone else's hardware costs next to nothing. Rogue AI agents will follow the same economics.]]></description><link>https://bigfastblog.com/spams-lesson-for-ai-containment</link><guid isPermaLink="false">https://bigfastblog.com/spams-lesson-for-ai-containment</guid><pubDate>Tue, 15 Sep 2026 16:31:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post was originally published &lt;a href=&quot;https://x.com/philwhln/status/2099898909862867224&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;on X&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 478px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d1cba306a9f5f2a18d50094de08b23e4/0c439/spams-lesson-for-ai-containment.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB2qAB/8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQABBQJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAFxABAAMAAAAAAAAAAAAAAAAAARBRwf/aAAgBAQABPyF22f/aAAwDAQACAAMAAAAQeC//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABESEAEEGB/9oACAEBAAE/EOAS2WXdExceZ//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/static/d1cba306a9f5f2a18d50094de08b23e4/8ac56/spams-lesson-for-ai-containment.webp 240w,
+/static/d1cba306a9f5f2a18d50094de08b23e4/2b263/spams-lesson-for-ai-containment.webp 478w&quot;
+              sizes=&quot;(max-width: 478px) 100vw, 478px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/static/d1cba306a9f5f2a18d50094de08b23e4/09b79/spams-lesson-for-ai-containment.jpg 240w,
+/static/d1cba306a9f5f2a18d50094de08b23e4/0c439/spams-lesson-for-ai-containment.jpg 478w&quot;
+            sizes=&quot;(max-width: 478px) 100vw, 478px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/static/d1cba306a9f5f2a18d50094de08b23e4/0c439/spams-lesson-for-ai-containment.jpg&quot;
+            alt=&quot;Gmail sidebar showing All Mail, Spam with 1,169 messages, and Trash&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The recent Houdini acts by agents running on a pre-release OpenAI model, with the unobvious routes agents took to access the outside world and communicate with each other, was deemed a wake-up call. OpenAI says “We’ll do better”, we march onwards, and we hit the snooze button until the next alarm. I feel we’re missing the bigger picture and ignoring the way the more holistic digital world has worked for the decades before modern AI came along.&lt;/p&gt;
+&lt;p&gt;Some people say that AI didn’t escape containment in the case of OpenAI because the model continued to run on OpenAI’s servers and so they were still in control. For a true escape, some say, it would need to create a smaller model which runs outside of OpenAI’s servers. I think viewing it this way is a mistake and having this bar for containment and focusing too much on “Did it actually escape?” sets us up for failure.&lt;/p&gt;
+&lt;p&gt;In OpenAI’s case, each agent run was in a “fresh” environment “in isolation”. Or so they thought. The issue was the shared state, which wasn’t wiped by the engineers until they found it. In the words of Jeff Goldblum’s character in Jurassic Park, Ian Malcolm, “Life finds a way”. For AI, its state or context is everything. We wipe the state - no more life. The state keeps growing and getting more complex - life grows and evolves. Is it possible that we reach a point where this state is spread through the Internet so that we can’t easily delete it?&lt;/p&gt;
+&lt;p&gt;The first spam email was sent on May 3rd 1978. It didn’t resemble the spam of today, but it was the start of a somewhat silent warfare that runs on our machines. Rival computer viruses compete for resources, ironically bringing their own anti-virus software to remove any competitors from the personal computers they infect. Propagating via phishing emails or other means, they infest any fertile hardware, from production servers to smart light bulbs. Mostly they wait, harmless, undetected, more useful at scale, for timed spam or DDoS attacks, or to be sold off to the highest bidder on the dark web.&lt;/p&gt;
+&lt;p&gt;Spam hasn’t gone away. We can’t control it. Popular services like Gmail showed promise with more centralized control, but even this has an imperfect and leaky Spam folder. You might not feel it’s an issue, but it accounts for around half of all email sent. The reason is that, while most spam is caught, the cost of running on someone else’s hardware is near zero, so it’s a numbers game. If a spammer makes money on one in a million emails sent, then the money from the approximately 350 billion emails sent each day makes it worthwhile.&lt;/p&gt;
+&lt;p&gt;Computer viruses are written by humans and have to be constantly tweaked and redistributed to evade detection and removal. It’s a game of cat-and-mouse between the virus authors and anti-virus companies. AI will change this. A virus becomes an AI agent (or harness). No longer will the same software need to be running on each machine. Artificial vibe coders, who obey their herders, can tweak software continuously and independently. Simple agent software may appear harmless when scanned, hiding or storing their thoughts (system prompt) elsewhere.&lt;/p&gt;
+&lt;p&gt;If LLM tokens represent the currency of intelligence, then LLM API keys become the currency of the dark web. The cat-and-mouse game moves to a dance around obtaining and identifying valid API keys whose requests are sometimes legitimate and sometimes not.&lt;/p&gt;
+&lt;p&gt;When it came to distilling Anthropic’s models, “24,000 fraudulent accounts” and “16 million exchanges” were involved, according to Anthropic. Much of this happened without Anthropic engineers detecting the activity. With the OpenAI Hugging Face incident, roughly 1,200 autonomous AI agents were running rogue for days without them detecting it. We’re still in the early days and we haven’t seen truly bad actors enter the stage yet - unless you feel distilling models is particularly nefarious. Even the rogue AI agents at OpenAI were doing their best to complete the given task with all the tools at their disposal.&lt;/p&gt;
+&lt;p&gt;Bad actors will come and rogue agents may turn evil. When that happens, we do not need the actual models to be running outside of the cloud providers. Only the agents need to run in the wild. The cloud providers themselves will provide the LLM processing, while trying to decipher good from bad requests. Like with spam, cloud providers will get better at detection, but so will bad actors at evasion.&lt;/p&gt;
+&lt;p&gt;Right now the open-source GLM LLMs run on dozens of cloud providers. This number will grow, as will the number of home computers running LLMs. A broad spectrum of intelligence providers will exist across an uncoordinated Internet. Nefarious agents will load-balance across them all, scattering their “bad actor” signal, tracking where they are throttled or blocklisted, coming up with and sharing new techniques for evasion.&lt;/p&gt;
+&lt;p&gt;Like spam, the cost vs incentive is generally on the side of the bad actors. It costs them next to nothing, whereas the defenders need to pay their own infrastructure bills. Perfect detection is hard and uneconomical for the defender. At scale, spammers can make money from this slight edge.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Written by a human. Reviewed by AI.&lt;/em&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Remote Working Is Eating The World]]></title><description><![CDATA[Fully remote work for everyone was something that only a few companies did prior to earlier this year. Now, we're all doing it. In this post, I'm going to be discussing the impact this has on the tech industry and how it will change remote working forever.]]></description><link>https://bigfastblog.com/remote-work-is-eating-the-world</link><guid isPermaLink="false">https://bigfastblog.com/remote-work-is-eating-the-world</guid><pubDate>Thu, 24 Sep 2020 18:59:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
     &gt;

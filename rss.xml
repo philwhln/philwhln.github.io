@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Big Fast Blog]]></title><description><![CDATA[Musings on technology]]></description><link>https://bigfastblog.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 16 Nov 2026 19:45:30 GMT</lastBuildDate><item><title><![CDATA[Spam's Lesson For AI Containment]]></title><description><![CDATA[Spam never went away because running on someone else's hardware costs next to nothing. Rogue AI agents will follow the same economics.]]></description><link>https://bigfastblog.com/spams-lesson-for-ai-containment</link><guid isPermaLink="false">https://bigfastblog.com/spams-lesson-for-ai-containment</guid><pubDate>Tue, 15 Sep 2026 16:31:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post was originally published &lt;a href=&quot;https://x.com/philwhln/status/2099898909862867224&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;on X&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Big Fast Blog]]></title><description><![CDATA[Musings on technology]]></description><link>https://bigfastblog.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 16 Nov 2026 23:58:07 GMT</lastBuildDate><item><title><![CDATA[AI Is Fire]]></title><description><![CDATA[AI is going to kill us all. Just as fire did.]]></description><link>https://bigfastblog.com/ai-is-fire</link><guid isPermaLink="false">https://bigfastblog.com/ai-is-fire</guid><pubDate>Mon, 16 Nov 2026 17:30:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/281267d87ba237c7d1640acc031d4d59/1a4ae/caveman-health-and-safety.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 67.08333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwAC/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgH/2gAMAwEAAhADEAAAAQAtBBblP//EABkQAAMBAQEAAAAAAAAAAAAAAAABAhIDIf/aAAgBAQABBQLSxMLpXhLKRk//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAZEAACAwEAAAAAAAAAAAAAAAAQIQABYXH/2gAIAQEABj8C2XwpD//EABwQAAICAgMAAAAAAAAAAAAAAAABEUExcSFRYf/aAAgBAQABPyHCS7CTvFmjJEvBDtoyF8n/2gAMAwEAAgADAAAAEDgP/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAB/9oACAEDAQE/EByL/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEx/9oACAECAQE/EMV//8QAGhABAQADAQEAAAAAAAAAAAAAAREAITFBYf/aAAgBAQABPxBFp0arJOTAAB0mA3v2HmINBTTXrjU2bS+5B1QkwUdq9X3P/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/static/281267d87ba237c7d1640acc031d4d59/8ac56/caveman-health-and-safety.webp 240w,
+/static/281267d87ba237c7d1640acc031d4d59/d3be9/caveman-health-and-safety.webp 480w,
+/static/281267d87ba237c7d1640acc031d4d59/e46b2/caveman-health-and-safety.webp 960w,
+/static/281267d87ba237c7d1640acc031d4d59/910f4/caveman-health-and-safety.webp 1264w&quot;
+              sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/static/281267d87ba237c7d1640acc031d4d59/09b79/caveman-health-and-safety.jpg 240w,
+/static/281267d87ba237c7d1640acc031d4d59/7cc5e/caveman-health-and-safety.jpg 480w,
+/static/281267d87ba237c7d1640acc031d4d59/6a068/caveman-health-and-safety.jpg 960w,
+/static/281267d87ba237c7d1640acc031d4d59/1a4ae/caveman-health-and-safety.jpg 1264w&quot;
+            sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/static/281267d87ba237c7d1640acc031d4d59/6a068/caveman-health-and-safety.jpg&quot;
+            alt=&quot;A caveman in safety goggles lights a fire in a cave while a health and safety inspector crouches beside him with a fire extinguisher and clipboard&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;AI is going to kill us all. AI is also going to bring unbounded technology, prosperity and a bountiful future for us all. It will most definitely help us eradicate cancer, but whether that’s by eradicating humans or by making us into super-humans is yet to be seen. If it’s the former, then we need to stop it immediately before an army of Terminators descends on us! If it’s the latter, then we need to double down and nurture it to help save ourselves and our loved ones from the diseases that take too many too young.&lt;/p&gt;
+&lt;p&gt;It feels like we haven’t been in this situation before, we haven’t seen anything like AI, and so drawing parallels is impossible. A technology with unbounded potential. A technology that can do incredible good and unimaginable bad. A technology that, no matter how long we live, there’ll always be another level to what we can do with it. We have been here before - at least 400,000 years ago.&lt;/p&gt;
+&lt;p&gt;Before we harnessed the power of fire, we’d each spend many hours just chewing our food. This was needed to extract the calories we needed to hunt, gather, and procreate. Only when we started to cook food did we dramatically reduce the time it took to consume calories, increase the calories we consumed, and grow our brains.&lt;/p&gt;
+&lt;p&gt;Fire must have been incredibly mysterious and terrifying. If you wanted to survive, then you’d want to avoid it at all costs. When no good comes from fire, it means only “Run!“. A big enough fire could easily wipe out your entire population.&lt;/p&gt;
+&lt;p&gt;Once some brave folks began to experiment with starting and harnessing fire, it set us on the course we are still on. Bigger brains for humans, more tools, more technology, computers, and ultimately AI. As some were harnessing it and some were not, how did people of the time view fire? Most were probably fearful, as they saw the horrific things fire could do in battle or in accidents. Regardless, we continued to harness the power of fire and, because we endeavoured despite the risks, we’re now sending more and more powerful rockets to the heavens. The potential of fire, or more abstractly energy, and what we can do with it is still unbounded.&lt;/p&gt;
+&lt;p&gt;Now we have AI. It is neither good nor bad. It is, like fire, an energy or force that can be applied in many ways. Unfortunately, people often simplify “AI” into some extremely narrow application they know, such as answering basic questions (“AI makes up facts”) or completing essay assignments (“AI is a tool for cheating on homework”). Like binary zeros and ones in a computer, which in aggregate build up to an incredibly rich and powerful user experience, AI provides similarly simple probabilistic yes and no answers, which in aggregate can build powerful user experiences or intelligent systems. Even though AI is vastly more flexible, powerful, and unexplored than classic computer software, people often have strong opinions on how it should be used, even though they wouldn’t do the same for classic computer software. “AI should be banned from schools” is a strong opinion some have, but we rarely hear “Computer software should be banned from schools”. This is due to this narrow view of what it is and it mirrors our ancestors’ naive, but understandable, opinion that “fire bad!“.&lt;/p&gt;
+&lt;p&gt;Unlike classical computers, AI can create both its own questions and answers, which makes it unbounded in its intelligence potential and, like fire, it can spread uncontrollably if not contained. To burn, fire needs three things. A fuel source, such as wood, plus oxygen and heat. Remove any of these and the fire stops. AI needs computer chips and energy to power them. Turning off the supply of energy seems easy enough, since we can just unplug it, but when compute is spread over the planet and is controlled by many different invested parties, it’s not so easy. Fully turning off AI, by overcoming the logistics and politics, seems near impossible, even before you consider that AI is being baked into all forms of our digital solutions, communication, and decision making. More and more we’re relying on AI to build and roll out software changes. We already might not be able to put the genie back in the bottle, even if we wanted to.&lt;/p&gt;
+&lt;p&gt;If we can’t turn it off and it’s here to stay, can we control it? Not perfectly. It’s a force that’s incredibly powerful. We’d be naive to think such a force would be perfectly containable. With all our progress and technology, 400,000 years later, we still can’t perfectly contain fire. It still burns down the homes - even of the wealthiest, most resourceful people, without regard for laws, or for right or wrong. AI will be the same.&lt;/p&gt;
+&lt;p&gt;With fire, we don’t have one giant bonfire on the top of the hill, that specialist fire experts maintain and keep contained. Instead, almost anyone can start a fire. Stores, or some countries, may have rules and laws preventing the sale of matches to minors, but a gas cooker or some way to create fire is never far away. Campfires are popular, but banned when the forest-fire risks are high. We simply trust people will follow the rules. We use fire to fight fire, as fire trucks rush to put out fires, their six-cylinder diesel engines combust to get there quickly. We burn fossil fuels to make everything in our world, from creature comforts to fire-resistant materials and sprinklers. It’s this layered tapestry of our use of fire that balances risk, so that the upside greatly outweighs the downside risk, with common sense being the final layer and safety net. Don’t explore a dry forest in a lightning storm, don’t show your kids how to access the dark web, and don’t say “Surprise me!” to an AI that has access to your bank accounts.&lt;/p&gt;
+&lt;p&gt;All technology is imperfect and we’re never able to bring solely positive outcomes. Rarely is something without risk. Lives are still regularly lost from our imperfect harnessing of fire. Sleeping pills seem benign until you swallow a jarful. The Internet has utopian potential, but is also a place where some of humanity’s worst activity takes place. AI will likewise be used for incredible good and some unfortunate bad.&lt;/p&gt;
+&lt;p&gt;AI good. Mostly.&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Spam's Lesson For AI Containment]]></title><description><![CDATA[Spam never went away because running on someone else's hardware costs next to nothing. Rogue AI agents will follow the same economics.]]></description><link>https://bigfastblog.com/spams-lesson-for-ai-containment</link><guid isPermaLink="false">https://bigfastblog.com/spams-lesson-for-ai-containment</guid><pubDate>Tue, 15 Sep 2026 16:31:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post was originally published &lt;a href=&quot;https://x.com/philwhln/status/2099898909862867224&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;on X&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 478px; &quot;
